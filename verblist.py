@@ -44,7 +44,6 @@ verbs_of_motion = ["идти","ходить","ехать","ездить","беж
 for sentence in corpus:
     for word in sentence:
         if word['upostag']=='VERB':
-            x+=1
             if word["lemma"] in verbs_of_change:
                 changefile.write(sentence.serialize())
             elif word["lemma"] in verbs_of_motion:
