@@ -16,14 +16,13 @@ import conllu
 from conllu import parse
 from conllu import parse_tree
 
-file= '/Users/walterlehner/Google Drive/workspace/ru_syntagrus-ud-dev.conllu'
+file= 'ru_syntagrus-ud-dev.conllu'
+file2= 'ru_syntagrus-ud-test.conllu'
+file3= 'ru_syntagrus-ud-train.conllu'
 #file2= '/Users/walterlehner/Documents/MA_Project/UD_English-EWT-master/en_ewt-ud-dev.conllu'
-#data_stream = open(file,"r",encoding ="utf-8")
-changefilename= '/Users/walterlehner/Google Drive/workspace/change.conllu'
-motionfilename= '/Users/walterlehner/Google Drive/workspace/motion.conllu'
+changefilename= 'change.conllu'
+motionfilename= 'motion.conllu'
 
-corpus = parse(open(file, 'r',encoding ="utf-8").read())
-  
 changefile = open(changefilename, "w",encoding="utf-8")
 motionfile = open(motionfilename, "w",encoding="utf-8")
 
@@ -40,17 +39,24 @@ verbs_of_motion = ["идти","ходить","ехать","ездить","беж
                    "ползать","везти","возить","нести","носить","вести",
                    "водить","тащить","таскать"]
 
+def readcorpus(filename):
+    return parse(open(filename, 'r',encoding ="utf-8").read())
 
-for sentence in corpus:
-    for word in sentence:
-        if word['upostag']=='VERB':
-            if word["lemma"] in verbs_of_change:
-                changefile.write(sentence.serialize())
-            elif word["lemma"] in verbs_of_motion:
-                motionfile.write(sentence.serialize())
-                
-motioncorpus = parse(open(motionfilename, 'r',encoding ="utf-8").read())
-changecorpus = parse(open(changefilename, 'r',encoding ="utf-8").read())
+def writeverbs(corp):
+    for sentence in corp:
+        for word in sentence:
+            if word['upostag']=='VERB':
+                if word["lemma"] in verbs_of_change:
+                    changefile.write(sentence.serialize())
+                elif word["lemma"] in verbs_of_motion:
+                    motionfile.write(sentence.serialize())
+                    
+writeverbs(readcorpus(file))
+writeverbs(readcorpus(file2))
+writeverbs(readcorpus(file3))
+
+motioncorpus = readcorpus(motionfilename)
+changecorpus = readcorpus(changefilename)
 
 print("Examples of Verbs of Motion: ", len(motioncorpus))
 print("Examples with Change of State Verbs: ", len(changecorpus))

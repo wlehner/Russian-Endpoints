@@ -13,11 +13,7 @@ from googletrans import Translator
 changefilename= 'change.conllu'
 motionfilename= 'motion.conllu'
 
-locindir = []
-dirinloc = []
-locinloc = []
-dirindir = []
-otherlist = []
+translator = Translator()
 
 motioncorpus = parse(open(motionfilename, 'r',encoding ="utf-8").read())
 changecorpus = parse(open(changefilename, 'r',encoding ="utf-8").read())
@@ -52,6 +48,7 @@ def testphrase(prepstring, casestring):
         if casestring == "Gen":
             return "dir"
         else:
+#            print("Preposition: ", prepstring, "Case: ", casestring)
             return "other"
     return "other"
             
@@ -63,7 +60,7 @@ def testupos(node, string):
         return False
 
     
-def searchtree(tree):
+def searchtree(tree, typelist):
 #    print("Current Node: ", tree.token["lemma"])
     if tree.children:
         if testupos(tree, "NOUN"):
@@ -81,53 +78,58 @@ def searchtree(tree):
                             prep2 = grandchild.token["lemma"]
                             case2 = child.token["feats"]["Case"]
                 if first and second:
-                    print("Nested Phrase Type:")
                     firstphrase = testphrase(prep1, case1)
                     secondphrase = testphrase(prep2, case2)
                     if (firstphrase == "other" or secondphrase == "other"):
-                        print("Other")
-                        return "other"
+                        typelist.append("other")
                     if (firstphrase == "loc" and secondphrase == "dir"):
-                        print("Directional in Locational")
-                        return "dirinloc"
+                        typelist.append("dirinloc")
                     if (firstphrase == "dir" and secondphrase == "loc"):
-                        print("Locational in Directional")
-                        return "dirinloc"
+                        typelist.append("locindir")
                     if (firstphrase == "loc" and secondphrase == "loc"):
-                        print("Locational in Locational")
-                        return "locinloc"
+                        typelist.append("locinloc")
                     if (firstphrase == "dir" and secondphrase == "dir"):
-                        print("Directional in Directional?")
-                        return "dirindir"
-                searchtree(child)
-#if anything other than a noun
+                        typelist.append("dirindir")
+                searchtree(child,typelist)
         else:
             for childe in tree.children:
-                searchtree(childe)
+                searchtree(childe,typelist)
+    return typelist
+                
 
 
 def searchcorpus(manytrees):
+    finalresult = {"locindir":[],"dirinloc":[],"locinloc":[],"dirindir":[],"other":[]}
     for tree in manytrees:
-        result = searchtree(tree)
+        result = searchtree(tree,[])
         if result:
-            if result == "locindir":
-                locindir.append(tree)
-            elif result == "dirinloc":
-                dirinloc.append(tree)
-            elif result == "locinloc":
-                locinloc.append(tree)
-            elif result == "dirindir":
-                dirindir.append(tree)
-            elif result == "other":
-                otherlist.append(tree)
+            if "locindir" in result:
+                finalresult["locindir"].append(tree)
+            elif "dirinloc" in result:
+                finalresult["dirinloc"].append(tree)
+            elif "locinloc" in result:
+                finalresult["locinloc"].append(tree)
+            elif "dirindir" in result:
+                finalresult["dirindir"].append(tree)
+            elif "other" in result:
+                finalresult["other"].append(tree)
+    return finalresult
             
-
+def printresult(resultdict):
+    print("Directional in Locational: ", len(resultdict["dirinloc"]))
+    print("Locational in Directional: ", len(resultdict["locindir"]))
+    print("Locational in Locational: ", len(resultdict["locinloc"]))
+    print("Directional in Directional: ", len(resultdict["dirindir"]))
+    print("Other situations: ", len(resultdict["other"]))
+    
 translator = Translator()
-searchcorpus(motiontrees)
-print("Directional in Locational: ", len(dirinloc))
-print("Locational in Directional: ", len(locindir))
-print("Locational in Locational: ", len(locinloc))
-print("Other situations: ", len(otherlist))
+motionresult = searchcorpus(motiontrees)
+changeresult = searchcorpus(changetrees)
+print("For Verbs of Motion:")
+printresult(motionresult)
+print("For Change of State Verbs:")
+printresult(changeresult)
+
 #print(changecorpus[3][4])
 #print(translator.translate(changecorpus[3].metadata["text"], src="ru", dest= "en").text)
 #searchtree(changetrees[3])
