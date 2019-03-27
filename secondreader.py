@@ -23,6 +23,12 @@ changetrees = parse_tree(open(changefilename, 'r',encoding ="utf-8").read())
 
 prepositions = ["в","на","за","к","из","с","от"]
 
+def gettext(sentence_ru):
+    return sentence_ru.metadata["text"]
+
+def ru_translate(sentence_ru):
+    return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
+
 def testprep(node):
     if node.token["lemma"] in prepositions:
         return node.token["lemma"]
@@ -122,13 +128,27 @@ def printresult(resultdict):
     print("Directional in Directional: ", len(resultdict["dirindir"]))
     print("Other situations: ", len(resultdict["other"]))
     
-translator = Translator()
+def printtranslate(sentencelist):
+    for sentence in sentencelist:
+        print(gettext(sentence))
+        print(ru_translate(sentence) + "\n")
+    
+
 motionresult = searchcorpus(motiontrees)
 changeresult = searchcorpus(changetrees)
-print("For Verbs of Motion:")
-printresult(motionresult)
-print("For Change of State Verbs:")
+#print("For Verbs of Motion:")
+#printresult(motionresult)
+print("\nFor Change of State Verbs:")
 printresult(changeresult)
+print("\nLocational in Directional")
+printtranslate(changeresult["locindir"])
+print("\nDirectional in Locational")
+printtranslate(changeresult["dirinloc"])
+print("\nDirectional in Directional")
+printtranslate(changeresult["dirindir"])
+
+
+
 
 #print(changecorpus[3][4])
 #print(translator.translate(changecorpus[3].metadata["text"], src="ru", dest= "en").text)

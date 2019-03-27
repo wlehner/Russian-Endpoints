@@ -16,7 +16,7 @@ import conllu
 from conllu import parse
 from conllu import parse_tree
 
-file= 'ru_syntagrus-ud-dev.conllu'
+file1= 'ru_syntagrus-ud-dev.conllu'
 file2= 'ru_syntagrus-ud-test.conllu'
 file3= 'ru_syntagrus-ud-train.conllu'
 #file2= '/Users/walterlehner/Documents/MA_Project/UD_English-EWT-master/en_ewt-ud-dev.conllu'
@@ -50,13 +50,14 @@ def writeverbs(corp):
                     changefile.write(sentence.serialize())
                 elif word["lemma"] in verbs_of_motion:
                     motionfile.write(sentence.serialize())
-                    
-writeverbs(readcorpus(file))
+
+#Processes the three conllu files                    
+writeverbs(readcorpus(file1))
 writeverbs(readcorpus(file2))
 writeverbs(readcorpus(file3))
 
+#Print the number of examples in each new file
 motioncorpus = readcorpus(motionfilename)
 changecorpus = readcorpus(changefilename)
-
 print("Examples of Verbs of Motion: ", len(motioncorpus))
 print("Examples with Change of State Verbs: ", len(changecorpus))
