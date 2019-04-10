@@ -1,0 +1,2273 @@
+<?xml version="1.0" encoding="windows-1251"?><html><head>
+<title>П.Н. Бибило. Логическое перепроектирование схем, реализованных на FPGA, в схемы на базовых матричных кристаллах // «Информационные технологии», 2004</title>
+<meta content="manual" name="tagging"></meta>
+<meta content="001" name="issue"></meta>
+<meta content="Бибило П.Н." name="author"></meta>
+<meta content="Логическое перепроектирование схем, реализованных на FPGA, в схемы на базовых матричных кристаллах" name="header"></meta>
+<meta content="2004.01.26" name="created"></meta>
+<meta content="2069" name="words"></meta>
+<meta content="учебно-научная" name="sphere"></meta>
+<meta content="статья" name="type"></meta>
+<meta content="наука и технологии" name="topic"></meta>
+<meta content="информатика" name="topic"></meta>
+<meta content="специальный" name="style"></meta>
+<meta content="н-возраст" name="audience_age"></meta>
+<meta content="высокий" name="audience_level"></meta>
+<meta content="средняя" name="audience_size"></meta>
+<meta content="«Информационные технологии», 2004, № 1" name="source"></meta>
+<meta content="«Информационные технологии»" name="publication"></meta>
+<meta content="2004" name="publ_year"></meta>
+<meta content="журнал" name="medium"></meta>
+<meta content="54248df0.5c32e431" name="docid"></meta>
+<meta content="ПК письменных текстов" name="subcorpus"></meta>
+</head>
+<body>
+<p><se>
+<w><ana lex="П" gr="INIT=abbr"></ana>П</w>. 
+<w><ana lex="Н" gr="INIT=abbr"></ana>Н</w>. 
+<w><ana lex="Бибило" gr="S,m-f,famn,anim,0=sg,nom"></ana>Бибило</w> .<b>
+<w><ana lex="логический" gr="A=n,sg,nom,plen"></ana>Лог`ическое</w>
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,nom"></ana>перепроектирование</w> 
+<w><ana lex="схема" gr="S,f,inan=pl,gen"></ana>схем</w> , 
+<w><ana lex="реализовать" gr="V,ipf,tran=partcp,pl,gen,pass,praet,plen"></ana>реализ`ованных</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>,
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="схема" gr="S,f,inan=pl,acc"></ana>сх`емы</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="базовый" gr="A=pl,loc,plen"></ana>б`азовых</w>
+<w><ana lex="матричный" gr="A=pl,loc,plen"></ana>м`атричных</w>
+<w><ana lex="кристалл" gr="S,m,inan=pl,loc"></ana>крист`аллах</w> </b></se>
+</p>
+<p><se>
+<w><ana lex="предлагаться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>Предлаг`аются</w>
+<w><ana lex="подход" gr="S,m,inan=pl,nom"></ana>подх`оды</w> 
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,dat"></ana>перепроектированию</w> 
+<w><ana lex="программировать" gr="V,ipf,tran=partcp,pl,gen,pass,praes,plen"></ana>программ`ируемых</w>
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="схема" gr="S,f,inan=pl,gen"></ana>схем</w> 
+<w><ana lex="тип" gr="S,m,inan=sg,gen"></ana>т`ипа</w>
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="полузаказной" gr="A=pl,acc,inan,plen"></ana>полузаказные</w> 
+<w><ana lex="Сбис" gr="S,f,inan,0=pl,acc"></ana>СБИС</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="основа" gr="S,f,inan=sg,loc"></ana>осн`ове</w> 
+<w><ana lex="базовый" gr="A=pl,gen,plen"></ana>б`азовых</w>
+<w><ana lex="матричный" gr="A=pl,gen,plen"></ana>м`атричных</w>
+<w><ana lex="кристалл" gr="S,m,inan=pl,gen"></ana>крист`аллов</w> .</se>
+<se>
+<w><ana lex="исходный" gr="A=n,sg,nom,plen"></ana>Исх`одное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="проект" gr="S,m,inan=pl,gen"></ana>про`ектов</w>
+<w><ana lex="представляться" gr="V,pf,intr,med=sg,fut,3p,indic"></ana>представл`яется</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,loc"></ana>язык`е</w> 
+<w><ana lex="высокий" gr="A=m,sg,gen,plen"></ana>выс`окого</w>
+<w><ana lex="уровень" gr="S,m,inan=sg,gen"></ana>`уровня</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>.</se></p>
+<p><se>
+<w><ana lex="программировать" gr="V,ipf,tran=partcp,pl,nom,pass,praes,plen"></ana>Программ`ируемые</w>
+<w><ana lex="пользователь" gr="S,m,anim=pl,ins"></ana>п`ользователями</w> 
+<w><ana lex="вентильный" gr="A=pl,nom,plen"></ana>в`ентильные</w>
+<w><ana lex="матрица" gr="S,f,inan=pl,nom"></ana>м`атрицы</w>
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>( 
+<w><ana lex="Field" gr="NONLEX"></ana>Field</w>-
+<w><ana lex="Programmable" gr="NONLEX"></ana>Programmable</w> 
+<w><ana lex="Gate" gr="NONLEX"></ana>Gate</w> 
+<w><ana lex="Arrays" gr="NONLEX"></ana>Arrays</w>)
+<w><ana lex="являться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>явл`яются</w> 
+<w><ana lex="широко" gr="ADV"></ana>широк`о</w>
+<w><ana lex="распространить" gr="V,pf,tran=partcp,f,sg,ins,pass,praet,plen"></ana>распространённой</w>
+<w><ana lex="элементный" gr="A=f,sg,ins,plen"></ana>элементной</w> 
+<w><ana lex="база" gr="S,f,inan=sg,ins"></ana>б`азой</w>
+<w><ana lex="реализация" gr="S,f,inan=sg,gen"></ana>реализ`ации</w> 
+<w><ana lex="цифровой" gr="A=pl,gen,plen"></ana>цифров`ых</w>
+<w><ana lex="система" gr="S,f,inan=pl,gen"></ana>сист`ем</w> ,
+<w><ana lex="особенно" gr="ADV"></ana>ос`обенно</w> 
+<w><ana lex="при" gr="PR"></ana>при</w> 
+<w><ana lex="небольшой" gr="A=pl,loc,plen"></ana>небольш`их</w>
+<w><ana lex="серия" gr="S,f,inan=pl,loc"></ana>с`ериях</w> 
+<w><ana lex="выпуск" gr="S,m,inan=sg,gen"></ana>в`ыпуска</w> 
+<w><ana lex="цифровой" gr="A=f,sg,gen,plen"></ana>цифров`ой</w>
+<w><ana lex="аппаратура" gr="S,f,inan=sg,gen"></ana>аппарат`уры</w> .</se>
+<se>
+<w><ana lex="зачастую" gr="ADV"></ana>Зачаст`ую</w> 
+<w><ana lex="реализация" gr="S,f,inan=sg,nom"></ana>реализ`ация</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="предшествовать" gr="V,ipf,intr,act=sg,praes,3p,indic"></ana>предш`ествует</w> 
+<w><ana lex="создание" gr="S,n,inan=sg,dat"></ana>созд`анию</w> 
+<w><ana lex="заказной" gr="A=f,sg,gen,plen"></ana>заказн`ой</w>
+<w><ana lex="либо" gr="CONJ"></ana>л`ибо</w>
+<w><ana lex="полузаказной" gr="A=f,sg,gen,plen"></ana>полузаказной</w> 
+<w><ana lex="Сбис" gr="S,f,inan,0=sg,gen"></ana>СБИС</w> (
+<w><ana lex="сверхбольшой" gr="S,m,anim=sg,nom"></ana>сверхбольшой</w> 
+<w><ana lex="интегральный" gr="A=f,sg,gen,plen"></ana>интегр`альной</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> ).</se>
+<se>
+<w><ana lex="заметить" gr="V,pf,tran=pl,act,1p,imper"></ana>Зам`етим</w> ,
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w> 
+<w><ana lex="также" gr="ADV"></ana>т`акже</w>
+<w><ana lex="представлять" gr="V,ipf,tran=pl,act,praes,3p,indic"></ana>представл`яют</w>
+<w><ana lex="себя" gr="S-PRO=ins"></ana>соб`ой</w>
+<w><ana lex="Сбис" gr="S,f,inan,0=sg,acc"></ana>СБИС</w> , 
+<w><ana lex="однако" gr="CONJ"></ana>одн`ако</w>
+<w><ana lex="относиться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>отн`осятся</w> 
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="класс" gr="S,m,inan=sg,dat"></ana>кл`ассу</w>
+<w><ana lex="ПЛИС" gr="S,f,inan,0=pl,gen"></ana>ПЛИС</w> (
+<w><ana lex="программировать" gr="V,ipf,tran=partcp,pl,gen,pass,praes,plen"></ana>программ`ируемых</w>
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="интегральный" gr="A=pl,gen,plen"></ana>интегр`альных</w>
+<w><ana lex="схема" gr="S,f,inan=pl,gen"></ana>схем</w> )[
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>].</se>
+<se>
+<w><ana lex="при" gr="PR"></ana>При</w> 
+<w><ana lex="достаточно" gr="ADV"></ana>дост`аточно</w>
+<w><ana lex="большой" gr="A=pl,loc,plen"></ana>больш`их</w>
+<w><ana lex="серия" gr="S,f,inan=pl,loc"></ana>с`ериях</w> 
+<w><ana lex="либо" gr="CONJ"></ana>л`ибо</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="специальный" gr="A=pl,loc,plen"></ana>специ`альных</w>
+<w><ana lex="применение" gr="S,n,inan=pl,loc"></ana>примен`ениях</w> ,
+<w><ana lex="когда" gr="ADV-PRO"></ana>когд`а</w>
+<w><ana lex="требоваться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>тр`ебуются</w>
+<w><ana lex="отечественный" gr="A=pl,nom,plen"></ana>от`ечественные</w> ,
+<w><ana lex="а" gr="CONJ"></ana>а</w> 
+<w><ana lex="не" gr="PART"></ana>не</w> 
+<w><ana lex="зарубежный" gr="A=pl,nom,plen"></ana>заруб`ежные</w>
+<w><ana lex="электронный" gr="A=pl,nom,plen"></ana>электр`онные</w>
+<w><ana lex="компонент" gr="S,m,inan=pl,nom"></ana>компон`енты</w> ,
+<w><ana lex="возникать" gr="V,ipf,intr,act=sg,praes,3p,indic"></ana>возник`ает</w>
+<w><ana lex="проблема" gr="S,f,inan=sg,nom"></ana>пробл`ема</w> 
+<w><ana lex="быстрый" gr="A=n,sg,gen,plen"></ana>б`ыстрого</w>
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,gen"></ana>перепроектирования</w> 
+<w><ana lex="схема" gr="S,f,inan=pl,gen"></ana>схем</w> , 
+<w><ana lex="реализовать" gr="V,ipf,tran=partcp,pl,gen,pass,praet,plen"></ana>реализ`ованных</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>,
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="схема" gr="S,f,inan=pl,acc"></ana>сх`емы</w> 
+<w><ana lex="полузаказной" gr="A=pl,gen,plen"></ana>полузаказных</w> 
+<w><ana lex="СБИС" gr="S,f,inan,0=pl,gen"></ana>СБИС</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="основа" gr="S,f,inan=sg,loc"></ana>осн`ове</w>
+<w><ana lex="БМК" gr="S,m,inan,0=pl,gen"></ana>БМК</w> (
+<w><ana lex="базовый" gr="A=pl,gen,plen"></ana>б`азовых</w>
+<w><ana lex="матричный" gr="A=pl,gen,plen"></ana>м`атричных</w>
+<w><ana lex="кристалл" gr="S,m,inan=pl,gen"></ana>крист`аллов</w> ).</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="статья" gr="S,f,inan=sg,loc"></ana>стать`е</w>
+<w><ana lex="предлагаться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>предлаг`аются</w> 
+<w><ana lex="некоторый" gr="A-PRO=pl,nom"></ana>н`екоторые</w>
+<w><ana lex="подход" gr="S,m,inan=pl,nom"></ana>подх`оды</w> 
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="решение" gr="S,n,inan=sg,dat"></ana>реш`ению</w> 
+<w><ana lex="данный" gr="A-PRO=f,sg,gen"></ana>д`анной</w>
+<w><ana lex="проблема" gr="S,f,inan=sg,gen"></ana>пробл`емы</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="уровень" gr="S,m,inan=sg,loc"></ana>`уровне</w> 
+<w><ana lex="алгоритмический" gr="A=n,sg,gen,plen"></ana>алгоритм`ического</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="логический" gr="A=n,sg,gen,plen"></ana>лог`ического</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w> .</se></p>
+<p><se>
+<w><ana lex="весьма" gr="ADV"></ana>Весьм`а</w>
+<w><ana lex="желательно" gr="PRAEDIC"></ana>жел`ательно</w> , 
+<w><ana lex="чтобы" gr="CONJ"></ana>чт`обы</w>
+<w><ana lex="читатель" gr="S,m,anim=sg,nom"></ana>чит`атель</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=m,sg,praet,indic"></ana>был</w> 
+<w><ana lex="знакомый" gr="A=m,sg,brev"></ana>знак`ом</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="основа" gr="S,f,inan=pl,ins"></ana>осн`овами</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,gen"></ana>язык`а</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>(
+<w><ana lex="Very" gr="NONLEX"></ana>Very</w> 
+<w><ana lex="high" gr="NONLEX"></ana>high</w> 
+<w><ana lex="speed" gr="NONLEX"></ana>speed</w> 
+<w><ana lex="integrated" gr="NONLEX"></ana>integrated</w> 
+<w><ana lex="circuits" gr="NONLEX"></ana>circuits</w> 
+<w><ana lex="Hardware" gr="NONLEX"></ana>Hardware</w> 
+<w><ana lex="Description" gr="NONLEX"></ana>Description</w> 
+<w><ana lex="Language" gr="NONLEX"></ana>Language</w>)[
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>].</se></p>
+<p><se>
+<w><ana lex="конкретизировать" gr="V,pf,tran=pl,act,1p,imper"></ana>Конкретиз`ируем</w> 
+<w><ana lex="рассматривать" gr="V,ipf,tran=partcp,f,sg,acc,pass,praes,plen"></ana>рассм`атриваемую</w>
+<w><ana lex="проблема" gr="S,f,inan=sg,acc"></ana>пробл`ему</w> .</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="качество" gr="S,n,inan=sg,loc"></ana>к`ачестве</w>
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=pl,1p,imper"></ana>б`удем</w> 
+<w><ana lex="рассматривать" gr="V,ipf,tran=inf,act"></ana>рассм`атривать</w> 
+<w><ana lex="кристалл" gr="S,m,inan=pl,acc"></ana>крист`аллы</w> ,
+<w><ana lex="выпускать" gr="V,ipf,tran=partcp,pl,acc,pass,praes,plen"></ana>выпуск`аемые</w> 
+<w><ana lex="фирма" gr="S,f,inan=sg,ins"></ana>ф`ирмой</w>
+<w><ana lex="Xilinx" gr="NONLEX"></ana>Xilinx</w>.</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="качество" gr="S,n,inan=sg,loc"></ana>к`ачестве</w> 
+<w><ana lex="система" gr="S,f,inan=sg,gen"></ana>сист`емы</w> 
+<w><ana lex="автоматизированный" gr="A=n,sg,gen,plen"></ana>автоматизированного</w> 
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w> (
+<w><ana lex="сапр" gr="S,f,inan,0=sg,gen"></ana>САПР</w>) 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=pl,1p,imper"></ana>б`удем</w> 
+<w><ana lex="рассматривать" gr="V,ipf,tran=inf,act"></ana>рассм`атривать</w> 
+<w><ana lex="интегрировать" gr="V,ipf,tran=partcp,f,sg,acc,pass,praet,plen"></ana>интегр`ированную</w>
+<w><ana lex="среда" gr="S,f,inan=sg,acc"></ana>сред`у</w> 
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w> 
+<w><ana lex="WebPack" gr="NONLEX"></ana>WebPack</w> 
+<w><ana lex="ISE" gr="NONLEX"></ana>ISE</w>
+<w><ana lex="5" gr="NUM=ciph"></ana>5</w>.
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>, 
+<w><ana lex="предназначить" gr="V,pf,tran=partcp,f,sg,acc,pass,praet,plen"></ana>предназн`аченную</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="сквозной" gr="A=n,sg,gen,plen"></ana>сквозн`ого</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w> 
+<w><ana lex="кристалл" gr="S,m,inan=pl,gen"></ana>крист`аллов</w>
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>.</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="качество" gr="S,n,inan=sg,loc"></ana>к`ачестве</w> 
+<w><ana lex="полузаказной" gr="A=pl,gen,plen"></ana>полузаказных</w> 
+<w><ana lex="Сбис" gr="S,f,inan,0=pl,gen"></ana>СБИС</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="основа" gr="S,f,inan=sg,loc"></ana>осн`ове</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="взять" gr="V,pf,tran=pl,act,1p,imper"></ana>возьмём</w>
+<w><ana lex="серия" gr="S,f,inan=sg,acc"></ana>с`ерию</w> 
+<w><ana lex="К" gr="INIT=abbr"></ana>К</w>
+<w><ana lex="1574" gr="NUM=ciph"></ana>1574</w>, 
+<w><ana lex="производить" gr="V,ipf,tran=partcp,f,sg,acc,pass,praes,plen"></ana>производ`имую</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="НПО" gr="S,n,inan,0=sg,loc"></ana>НПО</w> " 
+<w><ana lex="интеграл" gr="S,m,inan=sg,nom"></ana>Интегр`ал</w>".</se>
+<se>
+<w><ana lex="число" gr="S,n,inan=sg,nom"></ana>Числ`о</w> 
+<w><ana lex="внешний" gr="A=pl,gen,plen"></ana>вн`ешних</w>
+<w><ana lex="вывод" gr="S,m,inan=pl,gen"></ana>в`ыводов</w>
+<w><ana lex="микросхема" gr="S,f,inan=pl,gen"></ana>микросхем</w> 
+<w><ana lex="серия" gr="S,f,inan=sg,gen"></ana>с`ерии</w>
+<w><ana lex="К" gr="INIT=abbr"></ana>К</w>
+<w><ana lex="1574" gr="NUM=ciph"></ana>1574</w>--
+<w><ana lex="до" gr="PR"></ana>до</w>
+<w><ana lex="168" gr="NUM=ciph"></ana>168</w>;
+<w><ana lex="число" gr="S,n,inan=sg,nom"></ana>числ`о</w> 
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="вентиль" gr="S,m,inan=pl,gen"></ana>в`ентилей</w> --
+<w><ana lex="до" gr="PR"></ana>до</w> 
+<w><ana lex="75" gr="NUM=ciph"></ana>75</w> 
+<w><ana lex="тысяча" gr="S,f,inan=pl,gen=abbr"></ana>тыс</w>.
+<w><ana lex="кристалл" gr="S,m,inan=pl,nom"></ana>Крист`аллы</w>
+<w><ana lex="изготовляться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>изготовл`яются</w>
+<w><ana lex="по" gr="PR"></ana>по</w> 
+<w><ana lex="кмоп-технология" gr="S,f,inan=sg,dat"></ana>КМОП-технологии</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="мочь" gr="V,ipf,intr,act=pl,praes,3p,indic"></ana>м`огут</w>
+<w><ana lex="работать" gr="V,ipf,intr,act=inf"></ana>раб`отать</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="частота" gr="S,f,inan=sg,loc"></ana>частот`е</w> 
+<w><ana lex="до" gr="PR"></ana>до</w> 
+<w><ana lex="50" gr="NUM=ciph"></ana>50</w> 
+<w><ana lex="Мгц" gr="S,m,inan=pl,gen"></ana>МГц</w> [
+<w><ana lex="3" gr="NUM=ciph"></ana>3</w>].</se>
+<se>
+<w><ana lex="результат" gr="S,m,inan=sg,ins"></ana>Результ`атом</w> 
+<w><ana lex="алгоритмический" gr="A=n,sg,gen,plen"></ana>алгоритм`ического</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="логический" gr="A=n,sg,gen,plen"></ana>лог`ического</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w>
+<w><ana lex="Сбис" gr="S,f,inan,0=pl,gen"></ana>СБИС</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="основа" gr="S,f,inan=sg,loc"></ana>осн`ове</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w> 
+<w><ana lex="логический" gr="A=f,sg,nom,plen"></ana>лог`ическая</w>
+<w><ana lex="схема" gr="S,f,inan=sg,nom"></ana>сх`ема</w> ,
+<w><ana lex="представить" gr="V,pf,tran=partcp,f,sg,nom,pass,praet,plen"></ana>предст`авленная</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="базис" gr="S,m,inan=sg,loc"></ana>б`азисе</w> 
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w>.</se></p>
+<p><se>
+<w><ana lex="постановка" gr="S,f,inan=sg,nom"></ana>Постан`овка</w>
+<w><ana lex="задача" gr="S,f,inan=sg,gen"></ana>зад`ачи</w> .</se>
+<se>
+<w><ana lex="требоваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>Тр`ебуется</w> 
+<w><ana lex="перепроектировать" gr="V,ipf,tran=inf,act"></ana>перепроект`ировать</w> 
+<w><ana lex="схема" gr="S,f,inan=sg,acc"></ana>сх`ему</w> ,
+<w><ana lex="реализовать" gr="V,ipf,tran=partcp,f,sg,acc,pass,praet,plen"></ana>реализ`ованную</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="фирма" gr="S,f,inan=sg,gen"></ana>ф`ирмы</w>
+<w><ana lex="Xilinx" gr="NONLEX"></ana>Xilinx</w>
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="помощь" gr="S,f,inan=sg,ins"></ana>п`омощью</w> 
+<w><ana lex="САПР" gr="S,f,inan,0=sg,gen"></ana>САПР</w> 
+<w><ana lex="WebPack" gr="NONLEX"></ana>WebPack</w> 
+<w><ana lex="ISE" gr="NONLEX"></ana>ISE</w>
+<w><ana lex="5" gr="NUM=ciph"></ana>5</w>.
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>,
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="схема" gr="S,f,inan=sg,acc"></ana>сх`ему</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,loc"></ana>библиот`еке</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="серия" gr="S,f,inan=sg,gen"></ana>с`ерии</w>
+<w><ana lex="К" gr="INIT=abbr"></ana>К</w>
+<w><ana lex="1574" gr="NUM=ciph"></ana>1574</w>.</se></p>
+<p><se>
+<w><ana lex="реализация" gr="S,f,inan=sg,nom"></ana>Реализ`ация</w>
+<w><ana lex="схема" gr="S,f,inan=pl,gen"></ana>схем</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>.</se>
+<se>
+<w><ana lex="среда" gr="S,f,inan=sg,nom"></ana>Сред`а</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w> 
+<w><ana lex="WebPack" gr="NONLEX"></ana>WebPack</w> 
+<w><ana lex="ISE" gr="NONLEX"></ana>ISE</w>
+<w><ana lex="5" gr="NUM=ciph"></ana>5</w>.
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>
+<w><ana lex="представлять" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>представл`яет</w>
+<w><ana lex="себя" gr="S-PRO=ins"></ana>соб`ой</w> 
+<w><ana lex="программный" gr="A=pl,acc,inan,plen"></ana>прогр`аммные</w>
+<w><ana lex="средство" gr="S,n,inan=pl,acc"></ana>ср`едства</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="сквозной" gr="A=n,sg,gen,plen"></ana>сквозн`ого</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w> --
+<w><ana lex="от" gr="PR"></ana>от</w> 
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="поведение" gr="S,n,inan=sg,gen"></ana>повед`ения</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,loc"></ana>язык`е</w> 
+<w><ana lex="высокий" gr="A=m,sg,gen,plen"></ana>выс`окого</w>
+<w><ana lex="уровень" gr="S,m,inan=sg,gen"></ana>`уровня</w> 
+<w><ana lex="до" gr="PR"></ana>до</w> 
+<w><ana lex="файл" gr="S,m,inan=sg,gen"></ana>файла</w> 
+<w><ana lex="конфигурация" gr="S,f,inan=sg,gen"></ana>конфигур`ации</w> .</se>
+<se>
+<w><ana lex="файл" gr="S,m,inan=sg,nom"></ana>Файл</w> 
+<w><ana lex="конфигурация" gr="S,f,inan=sg,gen"></ana>конфигур`ации</w> --
+<w><ana lex="это" gr="PART"></ana>`это</w>
+<w><ana lex="файл" gr="S,m,inan=sg,nom"></ana>файл</w> 
+<w><ana lex="настройка" gr="S,f,inan=sg,gen"></ana>настр`ойки</w>
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>, 
+<w><ana lex="который" gr="A-PRO=m,sg,nom"></ana>кот`орый</w>
+<w><ana lex="загружаться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>загруж`ается</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="микросхема" gr="S,f,inan=sg,acc"></ana>микросхему</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>.</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="качество" gr="S,n,inan=sg,loc"></ana>к`ачестве</w>
+<w><ana lex="язык" gr="S,m,inan=pl,gen"></ana>язык`ов</w> 
+<w><ana lex="высокий" gr="A=m,sg,gen,plen"></ana>выс`окого</w>
+<w><ana lex="уровень" gr="S,m,inan=sg,gen"></ana>`уровня</w> 
+<w><ana lex="исходный" gr="A=n,sg,gen,plen"></ana>исх`одного</w>
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w>
+<w><ana lex="выступать" gr="V,ipf,intr,act=pl,praes,3p,indic"></ana>выступ`ают</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,nom"></ana>яз`ык</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,nom"></ana>яз`ык</w>
+<w><ana lex="Verilog" gr="NONLEX"></ana>Verilog</w>.</se>
+<se>
+<w><ana lex="частично" gr="ADV"></ana>Част`ично</w>(
+<w><ana lex="либо" gr="CONJ"></ana>л`ибо</w>
+<w><ana lex="полностью" gr="ADV"></ana>п`олностью</w>)
+<w><ana lex="проект" gr="S,m,inan=sg,nom"></ana>про`ект</w> 
+<w><ana lex="мочь" gr="V,ipf,intr,act=sg,praes,3p,indic"></ana>м`ожет</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="создать" gr="V,pf,tran=partcp,m,sg,brev,pass,praet"></ana>с`оздан</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="схемотехнический" gr="A=m,sg,loc,plen"></ana>схемотехническом</w> ( 
+<w><ana lex="графический" gr="A=m,sg,loc,plen"></ana>граф`ическом</w>)
+<w><ana lex="редактор" gr="S,m,anim=sg,loc"></ana>ред`акторе</w>.</se>
+<se>
+<w><ana lex="логический" gr="A=pl,nom,plen"></ana>Лог`ические</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,nom"></ana>элем`енты</w>,
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="тот" gr="A-PRO=n,sg,loc"></ana>том</w> 
+<w><ana lex="число" gr="S,n,inan=sg,loc"></ana>числ`е</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="макроэлемент" gr="S,m,inan=pl,nom"></ana>макроэлементы</w> , 
+<w><ana lex="параметризовать" gr="V,ipf,tran=partcp,pl,nom,pass,praes,plen"></ana>параметризуемые</w> 
+<w><ana lex="по" gr="PR"></ana>по</w> 
+<w><ana lex="разрядность" gr="S,f,inan=sg,dat"></ana>разрядности</w> (
+<w><ana lex="сумматор" gr="S,m,inan=pl,nom"></ana>сумм`аторы</w>,
+<w><ana lex="дешифратор" gr="S,m,inan=pl,nom"></ana>дешифр`аторы</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="так" gr="ADV-PRO=abbr"></ana>т</w>. 
+<w><ana lex="далее" gr="ADV=abbr"></ana>д</w>.),
+<w><ana lex="мочь" gr="V,ipf,intr,act=pl,praes,3p,indic"></ana>м`огут</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="взять" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>вз`яты</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="системный" gr="A=f,sg,gen,plen"></ana>сист`емной</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w> 
+<w><ana lex="либо" gr="CONJ"></ana>л`ибо</w> 
+<w><ana lex="создать" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>с`озданы</w>
+<w><ana lex="проектировщик" gr="S,m,anim=sg,ins"></ana>проектир`овщиком</w> ,
+<w><ana lex="при" gr="PR"></ana>при</w> 
+<w><ana lex="это" gr="S-PRO,n,sg=loc"></ana>`этом</w> 
+<w><ana lex="функционирование" gr="S,n,inan=sg,nom"></ana>функцион`ирование</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="также" gr="ADV"></ana>т`акже</w>
+<w><ana lex="должен" gr="A,brev=n,sg"></ana>должн`о</w> 
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="описать" gr="V,pf,tran=partcp,n,sg,brev,pass,praet"></ana>оп`исано</w>.</se>
+<se>
+<w><ana lex="проектный" gr="A=pl,nom,plen"></ana>Про`ектные</w>
+<w><ana lex="операция" gr="S,f,inan=pl,nom"></ana>опер`ации</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="этап" gr="S,m,inan=pl,loc"></ana>эт`апах</w> 
+<w><ana lex="алгоритмический" gr="A=n,sg,gen,plen"></ana>алгоритм`ического</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="логический" gr="A=n,sg,gen,plen"></ana>лог`ического</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w> 
+<w><ana lex="сосредоточить" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>сосредот`очены</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="два" gr="NUM=f,loc"></ana>двух</w> 
+<w><ana lex="подсистема" gr="S,f,inan=pl,loc"></ana>подсист`емах</w> :
+<w><ana lex="подсистема" gr="S,f,inan=sg,loc"></ana>подсист`еме</w>
+<w><ana lex="моделирование" gr="S,n,inan=sg,gen"></ana>модел`ирования</w> (
+<w><ana lex="программа" gr="S,f,inan=sg,nom"></ana>прогр`амма</w>
+<w><ana lex="ModelSim" gr="NONLEX"></ana>ModelSim</w>) 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="подсистема" gr="S,f,inan=sg,loc"></ana>подсист`еме</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> (
+<w><ana lex="синтезатор" gr="S,m,inan=sg,loc"></ana>синтезаторе</w>).</se>
+<se>
+<w><ana lex="пользователь" gr="S,m,anim=sg,nom"></ana>П`ользователь</w> 
+<w><ana lex="мочь" gr="V,ipf,intr,act=sg,praes,3p,indic"></ana>м`ожет</w> 
+<w><ana lex="выбирать" gr="V,ipf,tran=inf,act"></ana>выбир`ать</w> 
+<w><ana lex="различный" gr="A=pl,acc,inan,plen"></ana>разл`ичные</w>
+<w><ana lex="синтезатор" gr="S,m,inan=pl,acc"></ana>синтезаторы</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="зависимость" gr="S,f,inan=sg,loc"></ana>зав`исимости</w> 
+<w><ana lex="от" gr="PR"></ana>от</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,gen"></ana>язык`а</w> 
+<w><ana lex="исходный" gr="A=n,sg,gen,plen"></ana>исх`одного</w>
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w> .</se>
+<se>
+<w><ana lex="некоторый" gr="A-PRO=pl,acc,inan"></ana>Н`екоторые</w>
+<w><ana lex="сведение" gr="S,n,inan=pl,acc"></ana>св`едения</w> 
+<w><ana lex="о" gr="PR"></ana>о</w> 
+<w><ana lex="система" gr="S,f,inan=sg,loc"></ana>сист`еме</w> 
+<w><ana lex="моделирование" gr="S,n,inan=sg,gen"></ana>модел`ирования</w>
+<w><ana lex="ModelSim" gr="NONLEX"></ana>ModelSim</w>
+<w><ana lex="можно" gr="PRAEDIC"></ana>м`ожно</w>
+<w><ana lex="почерпнуть" gr="V,pf,tran=inf,act"></ana>почерпн`уть</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="работа" gr="S,f,inan=sg,gen"></ana>раб`оты</w> [
+<w><ana lex="4" gr="NUM=ciph"></ana>4</w>].</se>
+<se>
+<w><ana lex="система" gr="S,f,inan=sg,nom"></ana>Сист`ема</w> 
+<w><ana lex="WebPack" gr="NONLEX"></ana>WebPack</w> 
+<w><ana lex="ISE" gr="NONLEX"></ana>ISE</w>
+<w><ana lex="описать" gr="V,pf,tran=partcp,f,sg,brev,pass,praet"></ana>оп`исана</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="статья" gr="S,f,inan=pl,loc"></ana>стать`ях</w> [
+<w><ana lex="5" gr="NUM=ciph"></ana>5</w>,
+<w><ana lex="6" gr="NUM=ciph"></ana>6</w>].</se></p>
+<p><se>
+<w><ana lex="предлагаться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>Предлаг`ается</w> 
+<w><ana lex="решать" gr="V,ipf,tran=inf,act"></ana>реш`ать</w> 
+<w><ana lex="поставить" gr="V,pf,tran=partcp,f,sg,acc,pass,praet,plen"></ana>пост`авленную</w>
+<w><ana lex="задача" gr="S,f,inan=sg,acc"></ana>зад`ачу</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="использование" gr="S,n,inan=sg,ins"></ana>исп`ользованием</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,gen"></ana>язык`а</w> 
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="синтезатор" gr="S,m,inan=sg,gen"></ana>синтезатора</w> 
+<w><ana lex="LeonardoSpectrum" gr="NONLEX"></ana>LeonardoSpectrum</w>.</se></p>
+<p><se>
+<w><ana lex="далее" gr="ADV"></ana>Д`алее</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=pl,1p,imper"></ana>б`удем</w>
+<w><ana lex="пользоваться" gr="V,ipf,intr,med=inf"></ana>п`ользоваться</w> 
+<w><ana lex="сократить" gr="V,pf,tran=partcp,pl,ins,pass,praet,plen"></ana>сокращёнными</w>
+<w><ana lex="имя" gr="S,n,inan=pl,ins"></ana>имен`ами</w> :
+<w><ana lex="система" gr="S,f,inan=sg,acc"></ana>сист`ему</w> 
+<w><ana lex="WebPack" gr="NONLEX"></ana>WebPack</w> 
+<w><ana lex="ISE" gr="NONLEX"></ana>ISE</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=pl,1p,imper"></ana>б`удем</w> 
+<w><ana lex="именовать" gr="V,ipf,tran=inf,act"></ana>именов`ать</w>
+<w><ana lex="Web" gr="NONLEX"></ana>Web</w>- 
+<w><ana lex="Pack" gr="NONLEX"></ana>Pack</w>,
+<w><ana lex="синтезатор" gr="S,m,inan=sg,acc"></ana>синтезатор</w> 
+<w><ana lex="LeonardoSpectrum" gr="NONLEX"></ana>LeonardoSpectrum</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=pl,1p,imper"></ana>б`удем</w> 
+<w><ana lex="называть" gr="V,ipf,tran=inf,act"></ana>назыв`ать</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>,
+<w><ana lex="полузаказной" gr="A=f,sg,acc,plen"></ana>полузаказную</w> 
+<w><ana lex="Сбис" gr="S,f,inan,0=sg,acc"></ana>СБИС</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="основа" gr="S,f,inan=sg,loc"></ana>осн`ове</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="назвать" gr="V,pf,tran=pl,act,1p,imper"></ana>назовём</w>
+<w><ana lex="просто" gr="PART"></ana>пр`осто</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,ins"></ana>БМК</w> , 
+<w><ana lex="элемент" gr="S,m,inan=pl,acc"></ana>элем`енты</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="назвать" gr="V,pf,tran=pl,act,1p,imper"></ana>назовём</w>
+<w><ana lex="примитив" gr="S,m,inan=pl,ins"></ana>примит`ивами</w>.</se></p>
+<p><se>
+<w><ana lex="синтезатор" gr="S,m,inan=sg,nom"></ana>Синтезатор</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>.</se>
+<se>
+<w><ana lex="синтезатор" gr="S,m,inan=sg,nom"></ana>Синтезатор</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="позволять" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>позвол`яет</w> 
+<w><ana lex="получать" gr="V,ipf,tran=inf,act"></ana>получ`ать</w>
+<w><ana lex="схема" gr="S,f,inan=pl,acc"></ana>сх`емы</w> 
+<w><ana lex="по" gr="PR"></ana>по</w> 
+<w><ana lex="описание" gr="S,n,inan=pl,dat"></ana>опис`аниям</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>
+<w><ana lex="только" gr="PART"></ana>т`олько</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="специально" gr="ADV"></ana>специ`ально</w>
+<w><ana lex="выделить" gr="V,pf,tran=partcp,n,sg,gen,pass,praet,plen"></ana>в`ыделенного</w>
+<w><ana lex="подмножество" gr="S,n,inan=sg,gen"></ana>подмножества</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,gen"></ana>язык`а</w> .</se>
+<se>
+<w><ana lex="обычно" gr="ADV"></ana>Об`ычно</w> 
+<w><ana lex="данный" gr="A-PRO=n,sg,nom"></ana>д`анное</w>
+<w><ana lex="подмножество" gr="S,n,inan=sg,nom"></ana>подмножество</w> 
+<w><ana lex="называться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>назыв`ается</w>
+<w><ana lex="синтезировать" gr="V,ipf,tran=partcp,n,sg,ins,pass,praes,plen"></ana>синтез`ируемым</w>.</se>
+<se>
+<w><ana lex="синтезировать" gr="V,ipf,tran=partcp,n,sg,nom,pass,praes,plen"></ana>Синтез`ируемое</w>
+<w><ana lex="подмножество" gr="S,n,inan=sg,nom"></ana>подмножество</w> 
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="синтезатор" gr="S,m,inan=sg,gen"></ana>синтезатора</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="другой" gr="A-PRO=pl,nom"></ana>друг`ие</w>
+<w><ana lex="аспект" gr="S,m,inan=pl,nom"></ana>асп`екты</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> 
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="схема" gr="S,f,inan=pl,gen"></ana>схем</w> 
+<w><ana lex="по" gr="PR"></ana>по</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=pl,dat"></ana>опис`аниям</w>
+<w><ana lex="изучить" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>из`учены</w>
+<w><ana lex="в" gr="PR"></ana>в</w>[
+<w><ana lex="7" gr="NUM=ciph"></ana>7</w>].</se></p>
+<p><se>
+<w><ana lex="еще" gr="PART"></ana>Ещё</w> 
+<w><ana lex="один" gr="A-PRO=n,sg,ins"></ana>одн`им</w>
+<w><ana lex="важный" gr="A=n,sg,ins,plen"></ana>в`ажным</w>
+<w><ana lex="обстоятельство" gr="S,n,inan=sg,ins"></ana>обсто`ятельством</w>
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w>
+<w><ana lex="то" gr="S-PRO,n,sg=nom"></ana>то</w> , 
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="позволять" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>позвол`яет</w> 
+<w><ana lex="синтезировать" gr="V,ipf,tran=inf,act"></ana>синтез`ировать</w> 
+<w><ana lex="логический" gr="A=pl,acc,inan,plen"></ana>лог`ические</w>
+<w><ana lex="схема" gr="S,f,inan=pl,acc"></ana>сх`емы</w> 
+<w><ana lex="не" gr="PART"></ana>не</w> 
+<w><ana lex="только" gr="PART"></ana>т`олько</w>
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="ПЛИС" gr="S,f,inan,0=pl,gen"></ana>ПЛИС</w> , 
+<w><ana lex="но" gr="CONJ"></ana>но</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se>
+<se>
+<w><ana lex="для" gr="PR"></ana>Для</w> 
+<w><ana lex="это" gr="S-PRO,n,sg=gen"></ana>`этого</w>
+<w><ana lex="пользователь" gr="S,m,anim=sg,nom"></ana>п`ользователь</w>
+<w><ana lex="должен" gr="A,brev=m,sg"></ana>д`олжен</w> 
+<w><ana lex="описать" gr="V,pf,tran=inf,act"></ana>опис`ать</w> 
+<w><ana lex="функция" gr="S,f,inan=pl,acc"></ana>ф`ункции</w>
+<w><ana lex="примитив" gr="S,m,inan=pl,gen"></ana>примит`ивов</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="создать" gr="V,pf,tran=inf,act"></ana>созд`ать</w>
+<w><ana lex="средство" gr="S,n,inan=pl,ins"></ana>ср`едствами</w>
+<w><ana lex="система" gr="S,f,inan=sg,gen"></ana>сист`емы</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="собственный" gr="A=f,sg,acc,plen"></ana>с`обственную</w>
+<w><ana lex="целевой" gr="A=f,sg,acc,plen"></ana>целев`ую</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,acc"></ana>библиот`еку</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w>.</se>
+<se>
+<w><ana lex="библиотека" gr="S,f,inan=pl,nom"></ana>Библиот`еки</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w>
+<w><ana lex="кристалл" gr="S,m,inan=pl,gen"></ana>крист`аллов</w>
+<w><ana lex="ПЛИС" gr="S,f,inan,0=pl,gen"></ana>ПЛИС</w> 
+<w><ana lex="встроить" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>встр`оены</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>.
+<w><ana lex="подчеркнуть" gr="V,pf,tran=pl,act,1p,imper"></ana>Подчеркнём</w> ,
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="иметься" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>им`еется</w> 
+<w><ana lex="специальный" gr="A=f,sg,nom,plen"></ana>специ`альная</w>
+<w><ana lex="программа" gr="S,f,inan=sg,nom"></ana>прогр`амма</w> ,
+<w><ana lex="позволять" gr="V,ipf,tran=partcp,f,sg,nom,act,praes,plen"></ana>позвол`яющая</w> 
+<w><ana lex="создать" gr="V,pf,tran=inf,act"></ana>созд`ать</w> 
+<w><ana lex="собственный" gr="A=f,sg,acc,plen"></ana>с`обственную</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,acc"></ana>библиот`еку</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> .</se>
+<se>
+<w><ana lex="важный" gr="A=n,sg,brev"></ana>В`ажно</w>
+<w><ana lex="также" gr="ADV"></ana>т`акже</w>
+<w><ana lex="то" gr="S-PRO,n,sg=nom"></ana>то</w> , 
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="при" gr="PR"></ana>при</w> 
+<w><ana lex="создание" gr="S,n,inan=sg,loc"></ana>созд`ании</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="функция" gr="S,f,inan=pl,nom"></ana>ф`ункции</w> 
+<w><ana lex="комбинационный" gr="A=pl,gen,plen"></ana>комбинаци`онных</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="описываться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>оп`исываются</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="явный" gr="A=f,sg,loc,plen"></ana>`явной</w>
+<w><ana lex="форма" gr="S,f,inan=sg,loc"></ana>ф`орме</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="вид" gr="S,m,inan=sg,loc"></ana>в`иде</w> 
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="уравнение" gr="S,n,inan=pl,gen"></ana>уравн`ений</w> ,
+<w><ana lex="однако" gr="CONJ"></ana>одн`ако</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="поведение" gr="S,n,inan=sg,gen"></ana>повед`ения</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w>(
+<w><ana lex="триггер" gr="S,m,inan=pl,gen"></ana>триггеров</w>) 
+<w><ana lex="осуществляться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>осуществл`яется</w> 
+<w><ana lex="косвенный" gr="A=m,sg,ins,plen"></ana>к`освенным</w>
+<w><ana lex="образ" gr="S,m,inan=sg,ins"></ana>`образом</w> ,
+<w><ana lex="путем" gr="PR"></ana>путём</w> 
+<w><ana lex="внесение" gr="S,n,inan=sg,gen"></ana>внес`ения</w> 
+<w><ana lex="определенный" gr="A=f,sg,gen,plen"></ana>определённой</w>
+<w><ana lex="информация" gr="S,f,inan=sg,gen"></ana>информ`ации</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="системный" gr="A=pl,acc,inan,plen"></ana>сист`емные</w> "
+<w><ana lex="заготовка" gr="S,f,inan=pl,acc"></ana>загот`овки</w>".</se></p>
+<p><se>
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>С`интез</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="осуществляться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>осуществл`яется</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="два" gr="NUM=m,acc,inan"></ana>два</w> 
+<w><ana lex="этап" gr="S,m,inan=sg,gen"></ana>эт`апа</w> :
+<w><ana lex="первый" gr="ANUM=m,sg,nom"></ana>п`ервый</w>
+<w><ana lex="этап" gr="S,m,inan=sg,nom"></ana>эт`ап</w> --
+<w><ana lex="высокоуровневый" gr="A=m,sg,nom,plen"></ana>высокоуровневый</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>с`интез</w> ,
+<w><ana lex="второй" gr="ANUM=m,sg,nom"></ana>втор`ой</w>
+<w><ana lex="этап" gr="S,m,inan=sg,nom"></ana>эт`ап</w> --
+<w><ana lex="логический" gr="A=m,sg,nom,plen"></ana>лог`ический</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>с`интез</w> [
+<w><ana lex="7" gr="NUM=ciph"></ana>7</w>].</se>
+<se>
+<w><ana lex="результат" gr="S,m,inan=sg,ins"></ana>Результ`атом</w> 
+<w><ana lex="высокоуровневый" gr="A=m,sg,gen,plen"></ana>высокоуровневого</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> 
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w>
+<w><ana lex="RTL" gr="NONLEX"></ana>RTL</w>-
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> ,
+<w><ana lex="то" gr="S-PRO,n,sg=dat=abbr"></ana>т</w>. 
+<w><ana lex="быть" gr="V,ipf,intr,act=praes,sg,3p,indic"></ana>е</w>.
+<w><ana lex="представление" gr="S,n,inan=sg,nom"></ana>представл`ение</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="вид" gr="S,m,inan=sg,loc"></ana>в`иде</w> 
+<w><ana lex="двухвходовый" gr="A=pl,gen,plen"></ana>двухвходовых</w> 
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w> 
+<w><ana lex="и" gr="CONJ"></ana>И</w> , 
+<w><ana lex="или" gr="CONJ"></ana>`ИЛИ</w>,
+<w><ana lex="инвертор" gr="S,m,inan=pl,gen"></ana>инв`ерторов</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w> .</se></p>
+<p><se>
+<w><ana lex="рассмотреть" gr="V,pf,tran=pl,act,1p,imper"></ana>Рассм`отрим</w> 
+<w><ana lex="три" gr="NUM=acc,inan"></ana>три</w> 
+<w><ana lex="подход" gr="S,m,inan=sg,gen"></ana>подх`ода</w> 
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="решение" gr="S,n,inan=sg,dat"></ana>реш`ению</w> 
+<w><ana lex="поставить" gr="V,pf,tran=partcp,f,sg,gen,pass,praet,plen"></ana>пост`авленной</w>
+<w><ana lex="задача" gr="S,f,inan=sg,gen"></ana>зад`ачи</w> .</se>
+<se>
+<w><ana lex="подход" gr="S,m,inan=pl,nom"></ana>Подх`оды</w>
+<w><ana lex="различаться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>различ`аются</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="зависимость" gr="S,f,inan=sg,loc"></ana>зав`исимости</w> 
+<w><ana lex="от" gr="PR"></ana>от</w> 
+<w><ana lex="способ" gr="S,m,inan=sg,gen"></ana>сп`особа</w> 
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w> 
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w> ,
+<w><ana lex="реализовать" gr="V,ipf,tran=partcp,m,sg,gen,pass,praet,plen"></ana>реализ`ованного</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>.</se></p>
+<p><se>
+<w><ana lex="подход" gr="S,m,inan=sg,nom"></ana>Подх`од</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>.</se>
+<se>
+<w><ana lex="реализация" gr="S,f,inan=sg,nom"></ana>Реализ`ация</w>
+<w><ana lex="структурный" gr="A=n,sg,gen,plen"></ana>структ`урного</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>-
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w> </se></p>
+<p><se>
+<w><ana lex="исходный" gr="A=n,sg,nom,plen"></ana>Исх`одное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w>
+<w><ana lex="представлять" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>представл`яет</w>
+<w><ana lex="себя" gr="S-PRO=ins"></ana>соб`ой</w> 
+<w><ana lex="логический" gr="A=f,sg,acc,plen"></ana>лог`ическую</w>
+<w><ana lex="схема" gr="S,f,inan=sg,acc"></ana>сх`ему</w> ,
+<w><ana lex="выполнить" gr="V,pf,tran=partcp,f,sg,acc,pass,praet,plen"></ana>в`ыполненную</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="вид" gr="S,m,inan=sg,loc"></ana>в`иде</w>
+<w><ana lex="иерархический" gr="A=n,sg,gen,plen"></ana>иерарх`ического</w>
+<w><ana lex="структурный" gr="A=n,sg,gen,plen"></ana>структ`урного</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w> ,
+<w><ana lex="листовой" gr="A=pl,ins,plen"></ana>листов`ыми</w>
+<w><ana lex="описание" gr="S,n,inan=pl,ins"></ana>опис`аниями</w>
+<w><ana lex="который" gr="A-PRO=n,sg,gen"></ana>кот`орого</w>
+<w><ana lex="являться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>явл`яются</w>
+<w><ana lex="примитив" gr="S,m,inan=pl,nom"></ana>примит`ивы</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w>.</se></p>
+<p><se>
+<w><ana lex="основной" gr="A=n,sg,nom,plen"></ana>Основн`ое</w>
+<w><ana lex="достоинство" gr="S,n,inan=sg,nom"></ana>дост`оинство</w> 
+<w><ana lex="данный" gr="A-PRO=m,sg,gen"></ana>д`анного</w>
+<w><ana lex="подход" gr="S,m,inan=sg,gen"></ana>подх`ода</w> --
+<w><ana lex="простота" gr="S,f,inan=sg,nom"></ana>простот`а</w>.</se>
+<se>
+<w><ana lex="по" gr="PR"></ana>По</w> 
+<w><ana lex="существо" gr="S,n,inan=sg,dat"></ana>существ`у</w> ,
+<w><ana lex="он" gr="S-PRO,m,sg,3p=nom"></ana>он</w> 
+<w><ana lex="полностью" gr="ADV"></ana>п`олностью</w>
+<w><ana lex="ориентировать" gr="V,pf,tran=partcp,m,sg,brev,pass,praet"></ana>ориент`ирован</w>
+<w><ana lex="только" gr="PART"></ana>т`олько</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="будущий" gr="A=f,sg,acc,plen"></ana>б`удущую</w>
+<w><ana lex="реализация" gr="S,f,inan=sg,acc"></ana>реализ`ацию</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,loc"></ana>БМК</w> , 
+<w><ana lex="так" gr="ADV-PRO"></ana>так</w> 
+<w><ana lex="как" gr="ADV-PRO"></ana>как</w> 
+<w><ana lex="логический" gr="A=n,sg,nom,plen"></ana>лог`ическое</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,nom"></ana>проект`ирование</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="сводиться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>св`одится</w>
+<w><ana lex="только" gr="PART"></ana>т`олько</w> 
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="моделирование" gr="S,n,inan=sg,dat"></ana>модел`ированию</w> 
+<w><ana lex="исходный" gr="A=n,sg,gen,plen"></ana>исх`одного</w>
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w> .</se>
+<se>
+<w><ana lex="при" gr="PR"></ana>При</w> 
+<w><ana lex="такой" gr="A-PRO=m,sg,loc"></ana>так`ом</w>
+<w><ana lex="подход" gr="S,m,inan=sg,loc"></ana>подх`оде</w> 
+<w><ana lex="весь" gr="A-PRO=pl,nom"></ana>все</w> 
+<w><ana lex="примитив" gr="S,m,inan=pl,nom"></ana>примит`ивы</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="мочь" gr="V,ipf,intr,act=pl,praes,3p,indic"></ana>м`огут</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="описать" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>оп`исаны</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>, 
+<w><ana lex="поэтому" gr="ADV-PRO"></ana>по`этому</w> 
+<w><ana lex="реализация" gr="S,f,inan=sg,nom"></ana>реализ`ация</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="скорее" gr="ADV"></ana>скор`ее</w>
+<w><ana lex="всё" gr="S-PRO,n,sg=gen"></ana>всег`о</w> 
+<w><ana lex="не" gr="PART"></ana>не</w> 
+<w><ana lex="вызвать" gr="V,pf,tran=sg,act,fut,3p,indic"></ana>в`ызовет</w>
+<w><ana lex="затруднение" gr="S,n,inan=pl,gen"></ana>затрудн`ений</w> 
+<w><ana lex="по" gr="PR"></ana>по</w> 
+<w><ana lex="ограничение" gr="S,n,inan=pl,dat"></ana>огранич`ениям</w> 
+<w><ana lex="использовать" gr="V,ipf,tran=partcp,pl,gen,pass,praes,plen"></ana>исп`ользуемых</w>
+<w><ana lex="средство" gr="S,n,inan=pl,gen"></ana>средств</w> 
+<w><ana lex="САПР" gr="S,f,inan,0=sg,gen"></ana>САПР</w>.</se>
+<se>
+<w><ana lex="недостаток" gr="S,m,inan=sg,ins"></ana>Недост`атком</w> 
+<w><ana lex="такой" gr="A-PRO=m,sg,gen"></ana>так`ого</w>
+<w><ana lex="подход" gr="S,m,inan=sg,gen"></ana>подх`ода</w> 
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w> "
+<w><ana lex="ручной" gr="A=m,sg,nom,plen"></ana>ручн`ой</w> "
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>с`интез</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="соответствовать" gr="V,ipf,intr,act=partcp,f,sg,nom,praes,plen"></ana>соотв`етствующая</w>
+<w><ana lex="он" gr="S-PRO,m,sg,3p=dat"></ana>ем`у</w> 
+<w><ana lex="большой" gr="A=f,sg,nom,plen"></ana>больш`ая</w>
+<w><ana lex="трудоемкость" gr="S,f,inan=sg,nom"></ana>трудоёмкость</w> .</se></p>
+<p><se>
+<w><ana lex="подход" gr="S,m,inan=sg,nom"></ana>Подх`од</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="естественный" gr="A=m,sg,brev"></ana>ест`ественен</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="решение" gr="S,n,inan=sg,gen"></ana>реш`ения</w> 
+<w><ana lex="как" gr="CONJ"></ana>как</w> 
+<w><ana lex="раз" gr="S,m,inan=sg,nom"></ana>раз</w> 
+<w><ana lex="противоположный" gr="A=f,sg,gen,plen"></ana>противопол`ожной</w>
+<w><ana lex="проблема" gr="S,f,inan=sg,gen"></ana>пробл`емы</w> ,
+<w><ana lex="когда" gr="ADV-PRO"></ana>когд`а</w> 
+<w><ana lex="иметься" gr="V,ipf,intr,med=partcp,f,sg,acc,praes,plen"></ana>им`еющуюся</w>
+<w><ana lex="схема" gr="S,f,inan=sg,acc"></ana>сх`ему</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="требоваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>тр`ебуется</w>
+<w><ana lex="реализовать" gr="V,pf,tran=inf,act"></ana>реализов`ать</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>, 
+<w><ana lex="то" gr="S-PRO,n,sg=dat=abbr"></ana>т</w>. 
+<w><ana lex="быть" gr="V,ipf,intr,act=praes,sg,3p,indic"></ana>е</w>.
+<w><ana lex="провести" gr="V,pf,tran=inf,act"></ana>провест`и</w>
+<w><ana lex="макетирование" gr="S,n,inan=sg,acc"></ana>макет`ирование</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="будущий" gr="A=f,sg,gen,plen"></ana>б`удущей</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se>
+<se>
+<w><ana lex="при" gr="PR"></ana>При</w> 
+<w><ana lex="использование" gr="S,n,inan=sg,loc"></ana>исп`ользовании</w>
+<w><ana lex="подход" gr="S,m,inan=sg,gen"></ana>подх`ода</w> 
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="необходимый" gr="A=n,sg,brev"></ana>необход`имо</w> 
+<w><ana lex="выполнение" gr="S,n,inan=sg,nom"></ana>выполн`ение</w>
+<w><ana lex="требование" gr="S,n,inan=sg,gen"></ana>тр`ебования</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>.</se></p>
+<p><se>
+<w><ana lex="требование" gr="S,n,inan=sg,nom"></ana>Тр`ебование</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>.</se>
+<se>
+<w><ana lex="создание" gr="S,n,inan=sg,nom"></ana>Созд`ание</w>
+<w><ana lex="VHDL" gr="ANUM=ciph"></ana>VHDL</w>- 
+<w><ana lex="модель" gr="S,f,inan=pl,gen"></ana>мод`елей</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="примитив" gr="S,m,inan=pl,gen"></ana>примит`ивов</w> (
+<w><ana lex="комбинационный" gr="A=pl,gen,plen"></ana>комбинаци`онных</w>
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="триггер" gr="S,m,inan=pl,gen"></ana>триггеров</w> )
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se></p>
+<p><se>
+<w><ana lex="подход" gr="S,m,inan=sg,nom"></ana>Подх`од</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>.</se>
+<se>
+<w><ana lex="реализация" gr="S,f,inan=sg,nom"></ana>Реализ`ация</w>
+<w><ana lex="функционально-структурный" gr="A=n,sg,gen,plen"></ana>функционально-структурного</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>-
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w> </se></p>
+<p><se>
+<w><ana lex="исходный" gr="A=n,sg,nom,plen"></ana>Исх`одное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w>
+<w><ana lex="представлять" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>представл`яет</w>
+<w><ana lex="себя" gr="S-PRO=ins"></ana>соб`ой</w>
+<w><ana lex="иерархический" gr="A=n,sg,acc,inan,plen"></ana>иерарх`ическое</w>
+<w><ana lex="функционально-структурный" gr="A=n,sg,acc,inan,plen"></ana>функционально-структурное</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,acc"></ana>опис`ание</w>.</se>
+<se>
+<w><ana lex="комбинационный" gr="A=f,sg,nom,plen"></ana>Комбинаци`онная</w>
+<w><ana lex="логика" gr="S,f,inan=sg,nom"></ana>л`огика</w>
+<w><ana lex="задаваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>задаётся</w> 
+<w><ana lex="произвольный" gr="A=m,sg,ins,plen"></ana>произв`ольным</w>
+<w><ana lex="образ" gr="S,m,inan=sg,ins"></ana>`образом</w> ,
+<w><ana lex="однако" gr="CONJ"></ana>одн`ако</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="качество" gr="S,n,inan=sg,loc"></ana>к`ачестве</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w> 
+<w><ana lex="исходный" gr="A=n,sg,gen,plen"></ana>исх`одного</w>
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="выступать" gr="V,ipf,intr,act=pl,praes,3p,indic"></ana>выступ`ают</w>
+<w><ana lex="триггер" gr="S,m,inan=pl,nom"></ana>триггеры</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se></p>
+<p><se>
+<w><ana lex="достоинство" gr="S,n,inan=sg,nom"></ana>Дост`оинство</w> 
+<w><ana lex="данный" gr="A-PRO=m,sg,gen"></ana>д`анного</w>
+<w><ana lex="подход" gr="S,m,inan=sg,gen"></ana>подх`ода</w> --
+<w><ana lex="неизменность" gr="S,f,inan=sg,nom"></ana>неизм`енность</w> 
+<w><ana lex="общий" gr="A=f,sg,gen,plen"></ana>`общей</w>
+<w><ana lex="архитектура" gr="S,f,inan=sg,gen"></ana>архитект`уры</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> , 
+<w><ana lex="так" gr="ADV-PRO"></ana>так</w> 
+<w><ana lex="как" gr="ADV-PRO"></ana>как</w> 
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,dat"></ana>перепроектированию</w> 
+<w><ana lex="подвергаться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>подверг`аются</w>
+<w><ana lex="только" gr="PART"></ana>т`олько</w> 
+<w><ana lex="блок" gr="S,m,inan=pl,nom"></ana>бл`оки</w> 
+<w><ana lex="комбинационный" gr="A=f,sg,gen,plen"></ana>комбинаци`онной</w>
+<w><ana lex="логика" gr="S,f,inan=sg,gen"></ana>л`огики</w> .</se>
+<se>
+<w><ana lex="недостаток" gr="S,m,inan=sg,nom"></ana>Недост`аток</w>--
+<w><ana lex="невозможность" gr="S,f,inan=sg,nom"></ana>невозм`ожность</w> 
+<w><ana lex="исходный" gr="A=n,sg,gen,plen"></ana>исх`одного</w>
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w> 
+<w><ana lex="весь" gr="A-PRO=m,sg,gen"></ana>всег`о</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w>
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="чисто" gr="ADV"></ana>ч`исто</w>
+<w><ana lex="алгоритмический" gr="A=m,sg,loc,plen"></ana>алгоритм`ическом</w>(
+<w><ana lex="поведенческий" gr="A=m,sg,loc,plen"></ana>поведенческом</w>) 
+<w><ana lex="уровень" gr="S,m,inan=sg,loc"></ana>`уровне</w>.</se></p>
+<p><se>
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,nom"></ana>Перепроектирование</w>(
+<w><ana lex="повторный" gr="A=m,sg,nom,plen"></ana>повт`орный</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>с`интез</w> )
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="мочь" gr="V,ipf,intr,act=sg,praes,3p,indic"></ana>м`ожет</w>
+<w><ana lex="вестись" gr="V,ipf,intr,med=inf"></ana>вест`ись</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="данный" gr="A-PRO=m,sg,loc"></ana>д`анном</w>
+<w><ana lex="случай" gr="S,m,inan=sg,loc"></ana>сл`учае</w> 
+<w><ana lex="два" gr="NUM=m,ins"></ana>двум`я</w> 
+<w><ana lex="способ" gr="S,m,inan=pl,ins"></ana>сп`особами</w> .</se></p>
+<p><se>
+<w><ana lex="способ" gr="S,m,inan=sg,nom"></ana>Сп`особ</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="сводиться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>св`одится</w> 
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="использование" gr="S,n,inan=sg,dat"></ana>исп`ользованию</w>
+<w><ana lex="только" gr="PART"></ana>т`олько</w>
+<w><ana lex="синтезатор" gr="S,m,inan=sg,gen"></ana>синтезатора</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>, 
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,nom"></ana>перепроектирование</w> --
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,dat"></ana>с`интезу</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="по" gr="PR"></ana>по</w> 
+<w><ana lex="исходный" gr="A=n,sg,dat,plen"></ana>исх`одному</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,dat"></ana>опис`анию</w> ,
+<w><ana lex="при" gr="PR"></ana>при</w> 
+<w><ana lex="это" gr="S-PRO,n,sg=loc"></ana>`этом</w> 
+<w><ana lex="элемент" gr="S,m,inan=pl,nom"></ana>элем`енты</w>
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w> 
+<w><ana lex="не" gr="PART"></ana>не</w> 
+<w><ana lex="перепроектироваться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>перепроектируются</w> -- 
+<w><ana lex="объявляться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>объявл`яются</w> 
+<w><ana lex="при" gr="PR"></ana>при</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,loc"></ana>с`интезе</w> "
+<w><ana lex="черный" gr="A=pl,ins,plen"></ana>чёрными</w>
+<w><ana lex="ящик" gr="S,m,inan=pl,ins"></ana>`ящиками</w> "(
+<w><ana lex="black" gr="NONLEX"></ana>black</w> 
+<w><ana lex="box" gr="NONLEX"></ana>box</w>).</se>
+<se>
+<w><ana lex="поздно" gr="ADV=comp"></ana>П`озже</w> 
+<w><ana lex="это" gr="S-PRO,n,sg=nom"></ana>`это</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=sg,fut,3p,indic"></ana>б`удет</w>
+<w><ana lex="показать" gr="V,pf,tran=partcp,n,sg,brev,pass,praet"></ana>пок`азано</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="пример" gr="S,m,inan=sg,loc"></ana>прим`ере</w> .</se>
+<se>
+<w><ana lex="при" gr="PR"></ana>При</w> 
+<w><ana lex="подход" gr="S,m,inan=sg,loc"></ana>подх`оде</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w> 
+<w><ana lex="необходимый" gr="A=n,sg,brev"></ana>необход`имо</w> 
+<w><ana lex="выполнение" gr="S,n,inan=sg,nom"></ana>выполн`ение</w> 
+<w><ana lex="требование" gr="S,n,inan=pl,gen"></ana>тр`ебований</w> 
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>,
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>.</se></p>
+<p><se>
+<w><ana lex="требование" gr="S,n,inan=sg,nom"></ana>Тр`ебование</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>.</se>
+<se>
+<w><ana lex="создание" gr="S,n,inan=sg,nom"></ana>Созд`ание</w>(
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>)
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="рамка" gr="S,f,inan=pl,loc"></ana>р`амках</w>
+<w><ana lex="система" gr="S,f,inan=sg,gen"></ana>сист`емы</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="собственный" gr="A=f,sg,gen,plen"></ana>с`обственной</w>
+<w><ana lex="целевой" gr="A=f,sg,gen,plen"></ana>целев`ой</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> ,
+<w><ana lex="куда" gr="ADV-PRO"></ana>куд`а</w>
+<w><ana lex="должен" gr="A,brev=pl"></ana>должн`ы</w> 
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="включить" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>включен`ы</w>
+<w><ana lex="описание" gr="S,n,inan=pl,nom"></ana>опис`ания</w>
+<w><ana lex="только" gr="PART"></ana>т`олько</w> 
+<w><ana lex="комбинационный" gr="A=pl,gen,plen"></ana>комбинаци`онных</w>
+<w><ana lex="примитив" gr="S,m,inan=pl,gen"></ana>примит`ивов</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se></p>
+<p><se>
+<w><ana lex="выполнение" gr="S,n,inan=sg,nom"></ana>Выполн`ение</w> 
+<w><ana lex="данный" gr="A-PRO=n,sg,gen"></ana>д`анного</w>
+<w><ana lex="требование" gr="S,n,inan=sg,gen"></ana>тр`ебования</w> 
+<w><ana lex="достаточно" gr="ADV"></ana>дост`аточно</w>
+<w><ana lex="простой" gr="A=n,sg,brev"></ana>пр`осто</w> ,
+<w><ana lex="ибо" gr="CONJ"></ana>`ибо</w> ,
+<w><ana lex="как" gr="ADV-PRO"></ana>как</w> 
+<w><ana lex="уже" gr="ADV"></ana>уж`е</w>
+<w><ana lex="говориться" gr="V,ipf,intr,med=n,sg,praet,indic"></ana>говор`илось</w>
+<w><ana lex="ранее" gr="ADV"></ana>р`анее</w> ,
+<w><ana lex="функция" gr="S,f,inan=pl,nom"></ana>ф`ункции</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w> 
+<w><ana lex="целевой" gr="A=f,sg,gen,plen"></ana>целев`ой</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="описываться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>оп`исываются</w> 
+<w><ana lex="явный" gr="A=m,sg,ins,plen"></ana>`явным</w>
+<w><ana lex="образ" gr="S,m,inan=sg,ins"></ana>`образом</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="вид" gr="S,m,inan=sg,loc"></ana>в`иде</w> 
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="уравнение" gr="S,n,inan=pl,gen"></ana>уравн`ений</w> .</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="кроме" gr="PR"></ana>Кр`оме</w>
+<w><ana lex="то" gr="S-PRO,n,sg=gen"></ana>тог`о</w> ,
+<w><ana lex="мочь" gr="V,ipf,intr,act=pl,praes,3p,indic"></ana>м`огут</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="указать" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>ук`азаны</w> 
+<w><ana lex="требовать" gr="V,ipf,tran=partcp,pl,nom,pass,praes,plen"></ana>тр`ебуемые</w>
+<w><ana lex="временной" gr="A=pl,nom,plen"></ana>временн`ые</w>
+<w><ana lex="задержка" gr="S,f,inan=pl,nom"></ana>зад`ержки</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w> ,
+<w><ana lex="что" gr="S-PRO,n,sg=nom"></ana>что</w> 
+<w><ana lex="сделать" gr="V,pf,tran=sg,act,fut,3p,indic"></ana>сд`елает</w> 
+<w><ana lex="более" gr="ADV"></ana>б`олее</w>
+<w><ana lex="достоверный" gr="A=n,sg,ins,plen"></ana>достов`ерным</w> 
+<w><ana lex="логический" gr="A=n,sg,acc,inan,plen"></ana>лог`ическое</w>
+<w><ana lex="моделирование" gr="S,n,inan=sg,acc"></ana>модел`ирование</w> 
+<w><ana lex="повторно" gr="ADV"></ana>повт`орно</w>
+<w><ana lex="синтезировать" gr="V,pf,tran=partcp,f,sg,gen,pass,praet,plen"></ana>синтез`ированной</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> .</se></p>
+<p><se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="подход" gr="S,m,inan=sg,loc"></ana>подх`оде</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>
+<w><ana lex="комбинационный" gr="A=pl,nom,plen"></ana>комбинаци`онные</w>
+<w><ana lex="блок" gr="S,m,inan=pl,nom"></ana>бл`оки</w> 
+<w><ana lex="мочь" gr="V,ipf,intr,act=pl,praes,3p,indic"></ana>м`огут</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="описать" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>оп`исаны</w> "
+<w><ana lex="произвольный" gr="A=m,sg,ins,plen"></ana>произв`ольным</w> "
+<w><ana lex="образ" gr="S,m,inan=sg,ins"></ana>`образом</w>.</se>
+<se>
+<w><ana lex="пояснить" gr="V,pf,tran=pl,act,1p,imper"></ana>Поясн`им</w> 
+<w><ana lex="этот" gr="A-PRO=n,sg,acc,inan"></ana>`это</w>
+<w><ana lex="расплывчатый" gr="A=n,sg,acc,inan,plen"></ana>распл`ывчатое</w>
+<w><ana lex="понятие" gr="S,n,inan=sg,acc"></ana>пон`ятие</w> .</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="данный" gr="A-PRO=m,sg,loc"></ana>д`анном</w>
+<w><ana lex="случай" gr="S,m,inan=sg,loc"></ana>сл`учае</w> 
+<w><ana lex="речь" gr="S,f,inan=sg,nom"></ana>речь</w> 
+<w><ana lex="идти" gr="V,ipf,intr,act=sg,praes,3p,indic"></ana>идёт</w> 
+<w><ana lex="о" gr="PR"></ana>о</w> 
+<w><ana lex="то" gr="S-PRO,n,sg=loc"></ana>том</w> , 
+<w><ana lex="чтобы" gr="CONJ"></ana>чт`обы</w> 
+<w><ana lex="синтезатор" gr="S,m,inan=sg,nom"></ana>синтезатор</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="смочь" gr="V,pf,intr,act=m,sg,praet,indic"></ana>смог</w> 
+<w><ana lex="по" gr="PR"></ana>по</w> 
+<w><ana lex="произвольный" gr="A=n,sg,dat,plen"></ana>произв`ольному</w>
+<w><ana lex="алгоритмический" gr="A=n,sg,dat,plen"></ana>алгоритм`ическому</w>
+<w><ana lex="описание" gr="S,n,inan=sg,dat"></ana>опис`анию</w> 
+<w><ana lex="построить" gr="V,pf,tran=inf,act"></ana>постр`оить</w> 
+<w><ana lex="комбинационный" gr="A=f,sg,acc,plen"></ana>комбинаци`онную</w>
+<w><ana lex="схема" gr="S,f,inan=sg,acc"></ana>сх`ему</w> 
+<w><ana lex="только" gr="PART"></ana>т`олько</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="комбинационный" gr="A=pl,gen,plen"></ana>комбинаци`онных</w>
+<w><ana lex="примитив" gr="S,m,inan=pl,gen"></ana>примит`ивов</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se>
+<se>
+<w><ana lex="например" gr="PARENTH"></ana>Наприм`ер</w> , 
+<w><ana lex="если" gr="CONJ"></ana>`если</w>
+<w><ana lex="алгоритмический" gr="A=n,sg,nom,plen"></ana>алгоритм`ическое</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="представить" gr="V,pf,tran=partcp,n,sg,brev,pass,praet"></ana>предст`авлено</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="стиль" gr="S,m,inan=sg,loc"></ana>ст`иле</w> 
+<w><ana lex="data" gr="NONLEX"></ana>data</w> 
+<w><ana lex="flow" gr="NONLEX"></ana>flow</w>[
+<w><ana lex="7" gr="NUM=ciph"></ana>7</w>], 
+<w><ana lex="то" gr="CONJ"></ana>то</w> 
+<w><ana lex="синтезатор" gr="S,m,inan=sg,nom"></ana>синтезатор</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="легко" gr="ADV"></ana>легк`о</w>
+<w><ana lex="строить" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>стр`оит</w> 
+<w><ana lex="логический" gr="A=f,sg,acc,plen"></ana>лог`ическую</w>
+<w><ana lex="схема" gr="S,f,inan=sg,acc"></ana>сх`ему</w> .</se>
+<se>
+<w><ana lex="стиль" gr="S,m,inan=sg,nom"></ana>Стиль</w> 
+<w><ana lex="data" gr="NONLEX"></ana>data</w> 
+<w><ana lex="flow" gr="NONLEX"></ana>flow</w>
+<w><ana lex="использовать" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>исп`ользует</w>
+<w><ana lex="оператор" gr="S,m,inan=pl,acc"></ana>опер`аторы</w>
+<w><ana lex="назначение" gr="S,n,inan=sg,gen"></ana>назнач`ения</w>
+<w><ana lex="сигнал" gr="S,m,inan=pl,gen"></ana>сигн`алов</w>,
+<w><ana lex="логический" gr="A=pl,nom,plen"></ana>лог`ические</w>,
+<w><ana lex="арифметический" gr="A=pl,acc,inan,plen"></ana>арифмет`ические</w>
+<w><ana lex="оператор" gr="S,m,inan=pl,acc"></ana>опер`аторы</w> ,
+<w><ana lex="оператор" gr="S,m,inan=pl,acc"></ana>опер`аторы</w>
+<w><ana lex="процесс" gr="S,m,inan=pl,gen"></ana>проц`ессов</w>
+<w><ana lex="язык" gr="S,m,inan=sg,gen"></ana>язык`а</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>.</se>
+<se>
+<w><ana lex="способ" gr="S,m,inan=sg,nom"></ana>Сп`особ</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="требовать" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>тр`ебует</w> 
+<w><ana lex="опыт" gr="S,m,inan=sg,gen"></ana>`опыта</w>
+<w><ana lex="работа" gr="S,f,inan=sg,gen"></ana>раб`оты</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="синтезатор" gr="S,m,inan=sg,ins"></ana>синтезатором</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>.</se>
+<se>
+<w><ana lex="требоваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>Тр`ебуется</w> 
+<w><ana lex="ясный" gr="A=n,sg,nom,plen"></ana>`ясное</w>
+<w><ana lex="понимание" gr="S,n,inan=sg,nom"></ana>поним`ание</w> 
+<w><ana lex="тот" gr="A-PRO=pl,gen"></ana>тех</w> 
+<w><ana lex="конструкция" gr="S,f,inan=pl,gen"></ana>констр`укций</w>
+<w><ana lex="язык" gr="S,m,inan=sg,gen"></ana>язык`а</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>, 
+<w><ana lex="который" gr="A-PRO=pl,nom"></ana>кот`орые</w>
+<w><ana lex="приводить" gr="V,ipf,tran=pl,act,praes,3p,indic"></ana>прив`одят</w> 
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="появление" gr="S,n,inan=sg,dat"></ana>появл`ению</w> 
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="логический" gr="A=pl,loc,plen"></ana>лог`ических</w>
+<w><ana lex="схема" gr="S,f,inan=pl,loc"></ana>сх`емах</w> .</se>
+<se>
+<w><ana lex="данный" gr="A-PRO=f,sg,acc"></ana>Д`анную</w>
+<w><ana lex="информация" gr="S,f,inan=sg,acc"></ana>информ`ацию</w> 
+<w><ana lex="во" gr="PR"></ana>во</w> 
+<w><ana lex="многое" gr="S-PRO,n,sg=loc"></ana>мн`огом</w> 
+<w><ana lex="можно" gr="PRAEDIC"></ana>м`ожно</w>
+<w><ana lex="почерпнуть" gr="V,pf,tran=inf,act"></ana>почерпн`уть</w>
+<w><ana lex="из" gr="PR"></ana>из</w>[
+<w><ana lex="7" gr="NUM=ciph"></ana>7</w>].</se></p>
+<p><se>
+<w><ana lex="способ" gr="S,m,inan=sg,nom"></ana>Сп`особ</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>.</se>
+<se>
+<w><ana lex="использование" gr="S,n,inan=sg,nom"></ana>Исп`ользование</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,gen"></ana>перепроектирования</w> 
+<w><ana lex="два" gr="NUM=f,gen"></ana>двух</w> 
+<w><ana lex="система" gr="S,f,inan=pl,gen"></ana>сист`ем</w> :
+<w><ana lex="синтезатор" gr="S,m,inan=sg,gen"></ana>синтезатора</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="система" gr="S,f,inan=sg,gen"></ana>сист`емы</w> "
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>С`интез</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> ".</se></p>
+<p><se>
+<w><ana lex="система" gr="S,f,inan=sg,nom"></ana>Сист`ема</w>"
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>С`интез</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> "[
+<w><ana lex="8" gr="NUM=ciph"></ana>8</w>] 
+<w><ana lex="предназначить" gr="V,pf,tran=partcp,f,sg,brev,pass,praet"></ana>предназн`ачена</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="логический" gr="A=n,sg,gen,plen"></ana>лог`ического</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w> 
+<w><ana lex="схема" gr="S,f,inan=pl,gen"></ana>схем</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="данный" gr="A-PRO=m,sg,loc"></ana>д`анном</w>
+<w><ana lex="случай" gr="S,m,inan=sg,loc"></ana>сл`учае</w> 
+<w><ana lex="синтезатор" gr="S,m,inan=sg,nom"></ana>синтезатор</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="выполнять" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>выполн`яет</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,acc"></ana>с`интез</w> ,
+<w><ana lex="схема" gr="S,f,inan=sg,nom"></ana>сх`ема</w>
+<w><ana lex="сохраняться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>сохран`яется</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="вид" gr="S,m,inan=sg,loc"></ana>в`иде</w>
+<w><ana lex="структурный" gr="A=n,sg,gen,plen"></ana>структ`урного</w>
+<w><ana lex="Е" gr="INIT=abbr"></ana>Е</w>
+<w><ana lex="DIF" gr="NONLEX"></ana>DIF</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>.</se>
+<se>
+<w><ana lex="затем" gr="ADV"></ana>Зат`ем</w>
+<w><ana lex="возможный" gr="A=m,sg,brev"></ana>возм`ожен</w>
+<w><ana lex="еще" gr="PART"></ana>ещё</w> 
+<w><ana lex="один" gr="ANUM=m,nom"></ana>од`ин</w> 
+<w><ana lex="повторный" gr="A=m,sg,nom,plen"></ana>повт`орный</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>с`интез</w> 
+<w><ana lex="комбинированный" gr="A=pl,ins,plen"></ana>комбин`ированными</w>
+<w><ana lex="алгоритм" gr="S,m,inan=pl,ins"></ana>алгор`итмами</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="система" gr="S,f,inan=sg,loc"></ana>сист`еме</w> "
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>С`интез</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> ".</se>
+<se>
+<w><ana lex="достоинство" gr="S,n,inan=sg,ins"></ana>Дост`оинством</w> 
+<w><ana lex="такой" gr="A-PRO=m,sg,gen"></ana>так`ого</w>
+<w><ana lex="подход" gr="S,m,inan=sg,gen"></ana>подх`ода</w> 
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w>
+<w><ana lex="то" gr="S-PRO,n,sg=nom"></ana>то</w> , 
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="некоторый" gr="A-PRO=pl,loc"></ana>н`екоторых</w> (
+<w><ana lex="примерно" gr="ADV"></ana>прим`ерно</w>
+<w><ana lex="20" gr="NUM=ciph"></ana>20</w>%)
+<w><ana lex="случай" gr="S,m,inan=pl,loc"></ana>сл`учаях</w> 
+<w><ana lex="удаваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>удаётся</w> 
+<w><ana lex="получить" gr="V,pf,tran=inf,act"></ana>получ`ить</w> 
+<w><ana lex="логический" gr="A=pl,acc,inan,plen"></ana>лог`ические</w>
+<w><ana lex="схема" gr="S,f,inan=pl,acc"></ana>сх`емы</w> 
+<w><ana lex="меньший" gr="A=f,sg,gen,plen"></ana>м`еньшей</w>
+<w><ana lex="сложность" gr="S,f,inan=sg,gen"></ana>сл`ожности</w> .</se>
+<se>
+<w><ana lex="заметить" gr="V,pf,tran=pl,act,1p,imper"></ana>Зам`етим</w> ,
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="система" gr="S,f,inan=sg,loc"></ana>сист`еме</w> "
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>С`интез</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> " 
+<w><ana lex="оптимизация" gr="S,f,inan=sg,dat"></ana>оптимиз`ации</w>
+<w><ana lex="подвергаться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>подверг`ается</w>
+<w><ana lex="только" gr="PART"></ana>т`олько</w> 
+<w><ana lex="комбинационный" gr="A=f,sg,nom,plen"></ana>комбинаци`онная</w>
+<w><ana lex="логика" gr="S,f,inan=sg,nom"></ana>л`огика</w> ,
+<w><ana lex="элемент" gr="S,m,inan=pl,nom"></ana>элем`енты</w>
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w>
+<w><ana lex="оставаться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>оста`ются</w> 
+<w><ana lex="без" gr="PR"></ana>без</w> 
+<w><ana lex="изменение" gr="S,n,inan=pl,gen"></ana>измен`ений</w> .</se></p>
+<p><se>
+<w><ana lex="пример" gr="S,m,inan=sg,nom"></ana>Прим`ер</w>.</se>
+<se>
+<w><ana lex="проиллюстрировать" gr="V,pf,tran=pl,act,fut,1p,indic"></ana>Проиллюстр`ируем</w>
+<w><ana lex="подход" gr="S,m,inan=sg,acc"></ana>подх`од</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="пример" gr="S,m,inan=sg,loc"></ana>прим`ере</w> 
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="D" gr="NONLEX"></ana>D</w>( 
+<w><ana lex="рисунок" gr="S,m,inan=sg,nom=abbr"></ana>рис</w>.
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>).</se></p>
+<p><se>
+<w><ana lex="привести" gr="V,pf,tran=partcp,n,sg,nom,pass,praet,plen"></ana>Приведённое</w>
+<w><ana lex="ниже" gr="ADV"></ana>н`иже</w>
+<w><ana lex="исходный" gr="A=n,sg,nom,plen"></ana>исх`одное</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="D" gr="NONLEX"></ana>D</w> 
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w>
+<w><ana lex="функционально-структурный" gr="A=n,sg,ins,plen"></ana>функционально-структурным</w>.</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="элемент" gr="S,m,inan=sg,nom"></ana>Элем`ент</w>(
+<w><ana lex="компонент" gr="S,m,inan=sg,nom"></ana>компон`ент</w>)
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>-- 
+<w><ana lex="это" gr="PART"></ana>`это</w>
+<w><ana lex="D" gr="NONLEX"></ana>D</w>-
+<w><ana lex="триггер" gr="S,m,inan=sg,nom" joined="hyphen"></ana>тр`иггер</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se>
+<se>
+<w><ana lex="ниже" gr="ADV"></ana>Н`иже</w>
+<w><ana lex="приводиться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>прив`одится</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="триггер" gr="S,m,inan=sg,gen"></ana>триггера</w> 
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>.</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="подсхема" gr="S,f,inan=sg,nom"></ana>Подсхема</w>( 
+<w><ana lex="компонент" gr="S,m,inan=sg,nom"></ana>компон`ент</w>)
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="D" gr="NONLEX"></ana>D</w>( 
+<w><ana lex="рисунок" gr="S,m,inan=sg,nom=abbr"></ana>рис</w>.
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>) 
+<w><ana lex="представлять" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>представл`яет</w>
+<w><ana lex="себя" gr="S-PRO=ins"></ana>соб`ой</w> 
+<w><ana lex="комбинационный" gr="A=m,sg,acc,inan,plen"></ana>комбинаци`онный</w>
+<w><ana lex="блок" gr="S,m,inan=sg,acc"></ana>блок</w> , 
+<w><ana lex="описать" gr="V,pf,tran=partcp,m,sg,acc,pass,praet,plen"></ana>оп`исанный</w>
+<w><ana lex="иерархически" gr="ADV"></ana>иерархически</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="функционально-структурный" gr="A=m,sg,loc,plen"></ana>функционально-структурном</w> 
+<w><ana lex="уровень" gr="S,m,inan=sg,loc"></ana>`уровне</w> .</se></p>
+<p><se>
+<w><ana lex="комбинационный" gr="A=m,sg,nom,plen"></ana>Комбинаци`онный</w>
+<w><ana lex="блок" gr="S,m,inan=sg,nom"></ana>блок</w> 
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>
+<w><ana lex="реализовать" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>реализ`ует</w> 
+<w><ana lex="следующий" gr="A=m,sg,acc,inan,plen"></ana>сл`едующий</w>
+<w><ana lex="алгоритм" gr="S,m,inan=sg,acc"></ana>алгор`итм</w> [
+<w><ana lex="7" gr="NUM=ciph"></ana>7</w>].</se>
+<se>
+<w><ana lex="на" gr="PR"></ana>На</w> 
+<w><ana lex="входной" gr="A=pl,acc,inan,plen"></ana>входн`ые</w>
+<w><ana lex="полюс" gr="S,m,inan=pl,acc"></ana>п`олюсы</w> 
+<w><ana lex="подаваться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>пода`ются</w> 
+<w><ana lex="два" gr="NUM=m,nom"></ana>два</w> 
+<w><ana lex="двухразрядный" gr="A=pl,gen,plen"></ana>двухразрядных</w> 
+<w><ana lex="число" gr="S,n,inan=sg,gen"></ana>числ`а</w> 
+<w><ana lex="a" gr="NONLEX"></ana>a</w>=(
+<w><ana lex="a" gr="NONLEX"></ana>a</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="a" gr="NONLEX"></ana>a</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>), 
+<w><ana lex="b" gr="NONLEX"></ana>b</w>=(
+<w><ana lex="b" gr="NONLEX"></ana>b</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="b" gr="NONLEX"></ana>b</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>), 
+<w><ana lex="где" gr="ADV-PRO"></ana>где</w> 
+<w><ana lex="a" gr="NONLEX"></ana>a</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="b" gr="NONLEX"></ana>b</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>--
+<w><ana lex="старший" gr="A=pl,nom,plen"></ana>ст`аршие</w>
+<w><ana lex="разряд" gr="S,m,inan=pl,nom"></ana>разр`яды</w>
+<w><ana lex="число" gr="S,n,inan=pl,gen"></ana>ч`исел</w>
+<w><ana lex="a" gr="NONLEX"></ana>a</w>,
+<w><ana lex="b" gr="NONLEX"></ana>b</w> 
+<w><ana lex="соответственно" gr="CONJ"></ana>соотв`етственно</w> , 
+<w><ana lex="и" gr="CONJ"></ana>и</w>
+<w><ana lex="x" gr="NONLEX"></ana>x</w>--
+<w><ana lex="управляющий" gr="A=m,sg,nom,plen"></ana>управляющий</w> 
+<w><ana lex="сигнал" gr="S,m,inan=sg,nom"></ana>сигн`ал</w> .</se></p>
+<p><se>
+<w><ana lex="если" gr="CONJ"></ana>`Если</w> 
+<w><ana lex="x" gr="NONLEX"></ana>x</w>=
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>,
+<w><ana lex="блок" gr="S,m,inan=sg,nom"></ana>блок</w> 
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="должен" gr="A,brev=m,sg"></ana>д`олжен</w> 
+<w><ana lex="перемножить" gr="V,pf,tran=inf,act"></ana>перемн`ожить</w> 
+<w><ana lex="число" gr="S,n,inan=pl,acc"></ana>ч`исла</w>
+<w><ana lex="a" gr="NONLEX"></ana>a</w>, 
+<w><ana lex="b" gr="NONLEX"></ana>b</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="выдать" gr="V,pf,tran=inf,act"></ana>в`ыдать</w> 
+<w><ana lex="четырехразрядный" gr="A=n,sg,acc,inan,plen"></ana>четырехразрядное</w> 
+<w><ana lex="число" gr="S,n,inan=sg,acc"></ana>числ`о</w>
+<w><ana lex="d" gr="NONLEX"></ana>d</w>=(
+<w><ana lex="d" gr="NONLEX"></ana>d</w>
+<w><ana lex="4" gr="NUM=ciph"></ana>4</w>,
+<w><ana lex="d" gr="NONLEX"></ana>d</w>
+<w><ana lex="3" gr="NUM=ciph"></ana>3</w>,
+<w><ana lex="d" gr="NONLEX"></ana>d</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="d" gr="NONLEX"></ana>d</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>)(
+<w><ana lex="a" gr="NONLEX"></ana>a</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>, 
+<w><ana lex="al" gr="NONLEX"></ana>al</w>)&#215;(b2,b1)=(d4,d3,d2,d1).</se></p>
+<p><se>
+<w><ana lex="если" gr="CONJ"></ana>`Если</w> 
+<w><ana lex="x" gr="NONLEX"></ana>x</w>=
+<w><ana lex="0" gr="NUM=ciph"></ana>0</w>, 
+<w><ana lex="то" gr="CONJ"></ana>то</w> 
+<w><ana lex="число" gr="S,n,inan=pl,nom"></ana>ч`исла</w>
+<w><ana lex="a" gr="NONLEX"></ana>a</w>, 
+<w><ana lex="b" gr="NONLEX"></ana>b</w>
+<w><ana lex="должен" gr="A,brev=pl"></ana>должн`ы</w> 
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="сложить" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>сл`ожены</w> (
+<w><ana lex="a" gr="NONLEX"></ana>a</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>, 
+<w><ana lex="al" gr="NONLEX"></ana>al</w>)+(
+<w><ana lex="b" gr="NONLEX"></ana>b</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>, 
+<w><ana lex="bl" gr="NONLEX"></ana>bl</w>)=(
+<w><ana lex="c" gr="NONLEX"></ana>c</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="s" gr="NONLEX"></ana>s</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="s" gr="NONLEX"></ana>s</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>),
+<w><ana lex="при" gr="PR"></ana>при</w> 
+<w><ana lex="это" gr="S-PRO,n,sg=loc"></ana>`этом</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="разряд" gr="S,m,inan=sg,loc"></ana>разр`яде</w> 
+<w><ana lex="d" gr="NONLEX"></ana>d</w>
+<w><ana lex="4" gr="NUM=ciph"></ana>4</w>
+<w><ana lex="всегда" gr="ADV-PRO"></ana>всегд`а</w>
+<w><ana lex="должен" gr="A,brev=m,sg"></ana>д`олжен</w> 
+<w><ana lex="быть" gr="V,ipf,intr,act=inf"></ana>быть</w> 
+<w><ana lex="нуль" gr="S,m,inan=sg,nom"></ana>нуль</w>,
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="разряд" gr="S,m,inan=sg,loc"></ana>разр`яде</w> 
+<w><ana lex="d" gr="NONLEX"></ana>d</w>
+<w><ana lex="3" gr="NUM=ciph"></ana>3</w>--
+<w><ana lex="перенос" gr="S,m,inan=sg,nom"></ana>перен`ос</w>
+<w><ana lex="c" gr="NONLEX"></ana>c</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="разряд" gr="S,m,inan=sg,loc"></ana>разр`яде</w> 
+<w><ana lex="d" gr="NONLEX"></ana>d</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>--
+<w><ana lex="старший" gr="A=m,sg,nom,plen"></ana>ст`арший</w>
+<w><ana lex="разряд" gr="S,m,inan=sg,nom"></ana>разр`яд</w>
+<w><ana lex="сумма" gr="S,f,inan=sg,gen"></ana>с`уммы</w> 
+<w><ana lex="s" gr="NONLEX"></ana>s</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="разряд" gr="S,m,inan=sg,loc"></ana>разр`яде</w> 
+<w><ana lex="d" gr="NONLEX"></ana>d</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>--
+<w><ana lex="младший" gr="A=m,sg,nom,plen"></ana>мл`адший</w>
+<w><ana lex="разряд" gr="S,m,inan=sg,nom"></ana>разр`яд</w>
+<w><ana lex="сумма" gr="S,f,inan=sg,gen"></ana>с`уммы</w> 
+<w><ana lex="s" gr="NONLEX"></ana>s</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>.</se></p>
+<p><se>
+<w><ana lex="функция" gr="S,f,inan=sg,acc"></ana>Ф`ункцию</w>
+<w><ana lex="сложение" gr="S,n,inan=sg,gen"></ana>слож`ения</w>
+<w><ana lex="число" gr="S,n,inan=pl,gen"></ana>ч`исел</w>
+<w><ana lex="выполнять" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>выполн`яет</w> 
+<w><ana lex="подсхема" gr="S,f,inan=sg,nom"></ana>подсхема</w> 
+<w><ana lex="adder" gr="NONLEX"></ana>adder</w>_
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="функция" gr="S,f,inan=sg,acc"></ana>ф`ункцию</w>
+<w><ana lex="умножение" gr="S,n,inan=sg,gen"></ana>умнож`ения</w> --
+<w><ana lex="подсхема" gr="S,f,inan=sg,nom"></ana>подсхема</w> 
+<w><ana lex="mult" gr="NONLEX"></ana>mult</w>_
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>, 
+<w><ana lex="управление" gr="S,n,inan=sg,acc"></ana>управл`ение</w>
+<w><ana lex="подача" gr="S,f,inan=sg,ins"></ana>под`ачей</w> 
+<w><ana lex="выходной" gr="A=pl,gen,plen"></ana>выходн`ых</w>
+<w><ana lex="сигнал" gr="S,m,inan=pl,gen"></ana>сигн`алов</w> --
+<w><ana lex="подсхема" gr="S,f,inan=sg,nom"></ana>подсхема</w> 
+<w><ana lex="YY" gr="NONLEX"></ana>YY</w>_ 
+<w><ana lex="MUX" gr="NONLEX"></ana>MUX</w>(
+<w><ana lex="выходной" gr="A=pl,nom,plen"></ana>выходн`ые</w>
+<w><ana lex="мультиплексор" gr="S,m,inan=pl,nom"></ana>мультиплексоры</w> ).
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>-
+<w><ana lex="описание" gr="S,n,inan=pl,nom"></ana>опис`ания</w> 
+<w><ana lex="данный" gr="A-PRO=pl,gen"></ana>д`анных</w>
+<w><ana lex="подсхема" gr="S,f,inan=pl,gen"></ana>подсхем</w> 
+<w><ana lex="привести" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>приведен`ы</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="приложение" gr="S,n,inan=sg,loc"></ana>Прилож`ении</w> .</se></p>
+<p><se>
+<w><ana lex="схема" gr="S,f,inan=sg,nom"></ana>Сх`ема</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="D" gr="NONLEX"></ana>D</w> 
+<w><ana lex="быть" gr="V,ipf,intr,act=f,sg,praet,indic"></ana>был`а</w>
+<w><ana lex="реализовать" gr="V,pf,tran=partcp,f,sg,brev,pass,praet"></ana>реализ`ована</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w> 
+<w><ana lex="тип" gr="S,m,inan=sg,gen"></ana>т`ипа</w> 
+<w><ana lex="Spartan" gr="NONLEX"></ana>Spartan</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>(
+<w><ana lex="Device" gr="NONLEX"></ana>Device</w> 
+<w><ana lex="Family" gr="NONLEX"></ana>Family</w>), 
+<w><ana lex="микросхема" gr="S,f,inan=sg,nom"></ana>микросхема</w>
+<w><ana lex="xc" gr="NONLEX"></ana>xc</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>
+<w><ana lex="s" gr="NONLEX"></ana>s</w>
+<w><ana lex="15" gr="NUM=ciph"></ana>15</w>( 
+<w><ana lex="Device" gr="NONLEX"></ana>Device</w>)
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="сапр" gr="S,m,inan=sg,acc"></ana>САПР</w> 
+<w><ana lex="WebPack" gr="NONLEX"></ana>WebPack</w>.</se>
+<se>
+<w><ana lex="некоторый" gr="A-PRO=f,sg,nom"></ana>Н`екоторая</w>
+<w><ana lex="информация" gr="S,f,inan=sg,nom"></ana>информ`ация</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="отчет" gr="S,m,inan=sg,gen"></ana>отчёта</w> 
+<w><ana lex="по" gr="PR"></ana>по</w> 
+<w><ana lex="результат" gr="S,m,inan=pl,dat"></ana>результ`атам</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w>
+<w><ana lex="структура" gr="S,f,inan=sg,gen"></ana>структ`уры</w>
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w> 
+<w><ana lex="привести" gr="V,pf,tran=partcp,f,sg,brev,pass,praet"></ana>приведен`а</w>
+<w><ana lex="ниже" gr="ADV"></ana>н`иже</w>.</se></p>
+<p><se>
+<w><ana lex="рассмотреть" gr="V,pf,tran=pl,act,1p,imper"></ana>Рассм`отрим</w>
+<w><ana lex="способ" gr="S,m,inan=sg,acc"></ana>сп`особ</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>.</se>
+<se>
+<w><ana lex="для" gr="PR"></ana>Для</w> 
+<w><ana lex="реализация" gr="S,f,inan=sg,gen"></ana>реализ`ации</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,loc"></ana>БМК</w> 
+<w><ana lex="использоваться" gr="V,ipf,intr,med=f,sg,praet,indic"></ana>исп`ользовалась</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,nom"></ana>библиот`ека</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> , 
+<w><ana lex="описать" gr="V,pf,tran=partcp,f,sg,nom,pass,praet,plen"></ana>оп`исанная</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="работа" gr="S,f,inan=sg,loc"></ana>раб`оте</w> [
+<w><ana lex="6" gr="NUM=ciph"></ana>6</w>].</se>
+<se>
+<w><ana lex="пример" gr="S,m,inan=pl,nom"></ana>Прим`еры</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="привести" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>приведен`ы</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="таблица" gr="S,f,inan=sg,loc"></ana>табл`ице</w> .</se></p>
+<p><se>
+<w><ana lex="выполнить" gr="V,pf,tran=pl,act,1p,imper"></ana>В`ыполним</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,acc"></ana>с`интез</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="WebPack" gr="NONLEX"></ana>WebPack</w>
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="помощь" gr="S,f,inan=sg,ins"></ana>п`омощью</w> 
+<w><ana lex="система" gr="S,f,inan=sg,gen"></ana>сист`емы</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="зафиксировать" gr="V,pf,tran=pl,act,1p,imper"></ana>зафикс`ируем</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,acc"></ana>опис`ание</w> 
+<w><ana lex="после" gr="PR"></ana>п`осле</w> 
+<w><ana lex="этап" gr="S,m,inan=sg,gen"></ana>эт`апа</w> 
+<w><ana lex="высокоуровневый" gr="A=m,sg,gen,plen"></ana>высокоуровневого</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> (
+<w><ana lex="RTL" gr="NONLEX"></ana>RTL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,acc"></ana>опис`ание</w>).</se>
+<se>
+<w><ana lex="на" gr="PR"></ana>На</w> 
+<w><ana lex="уровень" gr="S,m,inan=sg,loc"></ana>`уровне</w>
+<w><ana lex="RTL" gr="NONLEX"></ana>RTL</w> 
+<w><ana lex="иерархия" gr="S,f,inan=sg,nom"></ana>иер`архия</w>
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w>
+<w><ana lex="сохраниться" gr="V,pf,intr,med=f,sg,praet,indic"></ana>сохран`илась</w>.</se>
+<se>
+<w><ana lex="триггер" gr="S,m,inan=sg,nom"></ana>Триггер</w> 
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>
+<w><ana lex="оказаться" gr="V,pf,intr,med=m,sg,praet,indic"></ana>оказ`ался</w>
+<w><ana lex="реализовать" gr="V,ipf,tran=partcp,m,sg,ins,pass,praet,plen"></ana>реализ`ованным</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="помощь" gr="S,f,inan=sg,ins"></ana>п`омощью</w> 
+<w><ana lex="процедура" gr="S,f,inan=sg,gen"></ana>процед`уры</w>
+<w><ana lex="DFFPC" gr="NONLEX"></ana>DFFPC</w>.</se></p>
+<p><se>
+<w><ana lex="целевой" gr="A=f,sg,nom,plen"></ana>Целев`ая</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,nom"></ana>библиот`ека</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>( 
+<w><ana lex="библиотека" gr="S,f,inan=sg,nom"></ana>библиот`ека</w>
+<w><ana lex="проектирование" gr="S,n,inan=sg,gen"></ana>проект`ирования</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w>)</se></p>
+<p><se>
+<w><ana lex="реализация" gr="S,f,inan=sg,nom"></ana>Реализ`ация</w>
+<w><ana lex="триггер" gr="S,m,inan=sg,gen"></ana>триггера</w> 
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>,
+<w><ana lex="получить" gr="V,pf,tran=partcp,f,sg,nom,pass,praet,plen"></ana>пол`ученная</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>, 
+<w><ana lex="привести" gr="V,pf,tran=partcp,f,sg,brev,pass,praet"></ana>приведен`а</w>
+<w><ana lex="ниже" gr="ADV"></ana>н`иже</w>.</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="далее" gr="ADV"></ana>Д`алее</w>
+<w><ana lex="привести" gr="V,pf,tran=pl,act,1p,imper"></ana>приведём</w>
+<w><ana lex="текст" gr="S,m,inan=sg,acc"></ana>текст</w> 
+<w><ana lex="процедура" gr="S,f,inan=sg,gen"></ana>процед`уры</w>
+<w><ana lex="DFFPC" gr="NONLEX"></ana>DFFPC</w>(
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="тело" gr="S,n,inan=sg,loc"></ana>т`еле</w> 
+<w><ana lex="пакет" gr="S,m,inan=sg,gen"></ana>пак`ета</w>
+<w><ana lex="components" gr="NONLEX"></ana>components</w>), 
+<w><ana lex="сгенерировать" gr="V,pf,tran=partcp,m,sg,nom,pass,praet,plen"></ana>сгенерированный</w> 
+<w><ana lex="система" gr="S,f,inan=sg,ins"></ana>сист`емой</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>:</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="иерархия" gr="S,f,inan=sg,nom"></ana>Иер`архия</w>
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w> 
+<w><ana lex="комбинационный" gr="A=m,sg,gen,plen"></ana>комбинаци`онного</w>
+<w><ana lex="блок" gr="S,m,inan=sg,gen"></ana>бл`ока</w>
+<w><ana lex="сохраниться" gr="V,pf,intr,med=f,sg,praet,indic"></ana>сохран`илась</w>,
+<w><ana lex="однако" gr="CONJ"></ana>одн`ако</w> 
+<w><ana lex="листовой" gr="A=pl,nom,plen"></ana>листов`ые</w>
+<w><ana lex="описание" gr="S,n,inan=pl,nom"></ana>опис`ания</w>
+<w><ana lex="подсхема" gr="S,f,inan=pl,gen"></ana>подсхем</w> 
+<w><ana lex="add" gr="NONLEX"></ana>add</w>
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>,
+<w><ana lex="add" gr="NONLEX"></ana>add</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w> 
+<w><ana lex="измениться" gr="V,pf,intr,med=pl,praet,indic"></ana>измен`ились</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="представляться" gr="V,pf,intr,med=pl,fut,3p,indic"></ana>представляются</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="уровень" gr="S,m,inan=sg,loc"></ana>`уровне</w> 
+<w><ana lex="двухвходовый" gr="A=pl,gen,plen"></ana>двухвходовых</w> 
+<w><ana lex="логический" gr="A=pl,gen,plen"></ana>лог`ических</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="инвертор" gr="S,m,inan=pl,gen"></ana>инв`ерторов</w> .</se></p>
+<p><se>
+<w><ana lex="например" gr="PARENTH"></ana>Наприм`ер</w> ,
+<w><ana lex="RTL" gr="NONLEX"></ana>RTL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="подсхема" gr="S,f,inan=sg,gen"></ana>подсхемы</w> 
+<w><ana lex="addl" gr="NONLEX"></ana>addl</w>(
+<w><ana lex="одноразрядний" gr="A=m,sg,gen,plen"></ana>одноразрядного</w> 
+<w><ana lex="полусумматор" gr="S,m,inan=sg,gen"></ana>полусумматора</w> )
+<w><ana lex="выглядеть" gr="V,ipf,intr,act=sg,praes,3p,indic"></ana>в`ыглядит</w> 
+<w><ana lex="следующий" gr="A=m,sg,ins,plen"></ana>сл`едующим</w>
+<w><ana lex="образ" gr="S,m,inan=sg,ins"></ana>`образом</w> (
+<w><ana lex="сравнить" gr="V,pf,tran=pl,act,2p,imper"></ana>сравн`ите</w>
+<w><ana lex="оно" gr="S-PRO,n,sg,3p=acc"></ana>ег`о</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="привести" gr="V,pf,tran=partcp,n,sg,ins,pass,praet,plen"></ana>приведённым</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="приложение" gr="S,n,inan=sg,loc"></ana>Прилож`ении</w> ):</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="RTL" gr="NONLEX"></ana>RTL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="подсхема" gr="S,f,inan=sg,gen"></ana>подсхемы</w> 
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="быть" gr="V,ipf,intr,act=sg,fut,3p,indic"></ana>б`удет</w>
+<w><ana lex="исходный" gr="A=n,sg,ins,plen"></ana>исх`одным</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="примитив" gr="S,m,inan=pl,gen"></ana>примит`ивов</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="результат" gr="S,m,inan=sg,loc"></ana>результ`ате</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="целевой" gr="A=f,sg,loc,plen"></ana>целев`ой</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,loc"></ana>библиот`еке</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="RTL" gr="NONLEX"></ana>RTL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="подсхема" gr="S,f,inan=sg,gen"></ana>подсхемы</w> 
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="быть" gr="V,ipf,intr,act=n,sg,praet,indic"></ana>б`ыло</w>
+<w><ana lex="получить" gr="V,pf,tran=partcp,n,sg,brev,pass,praet"></ana>пол`учено</w> 
+<w><ana lex="структурный" gr="A=n,sg,nom,plen"></ana>структ`урное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w> 
+<w><ana lex="логический" gr="A=f,sg,gen,plen"></ana>лог`ической</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="примитив" gr="S,m,inan=pl,gen"></ana>примит`ивов</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se>
+<se>
+<w><ana lex="выдержка" gr="S,f,inan=sg,nom"></ana>В`ыдержка</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="отчет" gr="S,m,inan=sg,gen"></ana>отчёта</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> 
+<w><ana lex="привести" gr="V,pf,tran=partcp,f,sg,brev,pass,praet"></ana>приведен`а</w>
+<w><ana lex="ниже" gr="ADV"></ana>н`иже</w>:</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="синтезировать" gr="V,pf,tran=partcp,f,sg,nom,pass,praet,plen"></ana>Синтез`ированная</w>
+<w><ana lex="подсхема" gr="S,f,inan=sg,nom"></ana>подсхема</w> (
+<w><ana lex="структурный" gr="A=n,sg,nom,plen"></ana>структ`урное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w> )
+<w><ana lex="быть" gr="V,ipf,intr,act=f,sg,praet,indic"></ana>был`а</w>
+<w><ana lex="сохранить" gr="V,pf,tran=partcp,f,sg,brev,pass,praet"></ana>сохранен`а</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,loc"></ana>язык`е</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>.</se>
+<se>
+<w><ana lex="общий" gr="A=n,sg,nom,plen"></ana>`Общее</w>
+<w><ana lex="структурный" gr="A=n,sg,nom,plen"></ana>структ`урное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=n,sg,praet,indic"></ana>б`ыло</w> 
+<w><ana lex="затем" gr="ADV"></ana>зат`ем</w>
+<w><ana lex="промоделировать" gr="V,pf,tran=partcp,n,sg,brev,pass,praet"></ana>промоделировано</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="ModelSim" gr="NONLEX"></ana>ModelSim</w>
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="тот" gr="A-PRO=pl,loc"></ana>тех</w> 
+<w><ana lex="же" gr="PART"></ana>же</w> 
+<w><ana lex="тест" gr="S,m,inan=pl,loc"></ana>т`естах</w> ,
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="исходный" gr="A=m,sg,nom,plen"></ana>исх`одный</w>
+<w><ana lex="проект" gr="S,m,inan=sg,nom"></ana>про`ект</w> .</se>
+<se>
+<w><ana lex="моделирование" gr="S,n,inan=sg,nom"></ana>Модел`ирование</w> 
+<w><ana lex="показать" gr="V,pf,tran=n,sg,act,praet,indic"></ana>показ`ало</w> 
+<w><ana lex="функциональный" gr="A=f,sg,acc,plen"></ana>функцион`альную</w>
+<w><ana lex="эквивалентность" gr="S,f,inan=sg,acc"></ana>эквивал`ентность</w> 
+<w><ana lex="исходный" gr="A=n,sg,gen,plen"></ana>исх`одного</w>
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="синтезировать" gr="V,pf,tran=partcp,f,sg,gen,pass,praet,plen"></ana>синтез`ированной</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> .</se>
+<se>
+<w><ana lex="моделирование" gr="S,n,inan=sg,nom"></ana>Модел`ирование</w>
+<w><ana lex="проводиться" gr="V,ipf,intr,med=n,sg,praet,indic"></ana>проводилось</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="примитив" gr="S,m,inan=pl,gen"></ana>примит`ивов</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="нулевой" gr="A=pl,ins,plen"></ana>нулев`ыми</w>
+<w><ana lex="задержка" gr="S,f,inan=pl,ins"></ana>зад`ержками</w> .</se>
+<se>
+<w><ana lex="однако" gr="CONJ"></ana>Одн`ако</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="действительность" gr="S,f,inan=sg,loc"></ana>действ`ительности</w> 
+<w><ana lex="примитив" gr="S,m,inan=pl,nom"></ana>примит`ивы</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> 
+<w><ana lex="иметь" gr="V,ipf,tran=pl,act,praes,3p,indic"></ana>им`еют</w> 
+<w><ana lex="вполне" gr="ADV"></ana>вполн`е</w>
+<w><ana lex="определенный" gr="A=pl,acc,inan,plen"></ana>определённые</w> (
+<w><ana lex="ненулевой" gr="A=pl,acc,inan,plen"></ana>ненулевые</w>) 
+<w><ana lex="задержка" gr="S,f,inan=pl,acc"></ana>зад`ержки</w> ,
+<w><ana lex="поэтому" gr="ADV-PRO"></ana>по`этому</w> 
+<w><ana lex="основной" gr="A=f,sg,ins,plen"></ana>основн`ой</w>
+<w><ana lex="проблема" gr="S,f,inan=sg,ins"></ana>пробл`емой</w> 
+<w><ana lex="при" gr="PR"></ana>при</w> 
+<w><ana lex="автоматизированный" gr="A=n,sg,loc,plen"></ana>автоматизированном</w> 
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,loc"></ana>перепроектировании</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,loc"></ana>БМК</w> 
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w> 
+<w><ana lex="проблема" gr="S,f,inan=sg,nom"></ana>пробл`ема</w> 
+<w><ana lex="не" gr="PART"></ana>не</w> 
+<w><ana lex="функциональный" gr="A=f,sg,gen,plen"></ana>функцион`альной</w>
+<w><ana lex="эквивалентность" gr="S,f,inan=sg,gen"></ana>эквивал`ентности</w> ,
+<w><ana lex="а" gr="CONJ"></ana>а</w> 
+<w><ana lex="согласование" gr="S,n,inan=sg,gen"></ana>согласов`ания</w> 
+<w><ana lex="временной" gr="A=pl,gen,plen"></ana>временн`ых</w>
+<w><ana lex="задержка" gr="S,f,inan=pl,gen"></ana>зад`ержек</w> .</se>
+<se>
+<w><ana lex="схема" gr="S,f,inan=sg,nom"></ana>Сх`ема</w>
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="мочь" gr="V,ipf,intr,act=sg,praes,3p,indic"></ana>м`ожет</w> 
+<w><ana lex="иметь" gr="V,ipf,tran=inf,act"></ana>им`еть</w> 
+<w><ana lex="один" gr="A-PRO=f,sg,acc"></ana>одн`у</w>
+<w><ana lex="задержка" gr="S,f,inan=sg,acc"></ana>зад`ержку</w> ,
+<w><ana lex="схема" gr="S,f,inan=sg,nom"></ana>сх`ема</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> , 
+<w><ana lex="получить" gr="V,pf,tran=partcp,f,sg,nom,pass,praet,plen"></ana>пол`ученная</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="результат" gr="S,m,inan=sg,loc"></ana>результ`ате</w>
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,gen"></ana>перепроектирования</w> ,-- 
+<w><ana lex="другой" gr="A-PRO=f,sg,acc"></ana>друг`ую</w>.</se></p>
+<p><se>
+<w><ana lex="примечание" gr="S,n,inan=sg,nom"></ana>Примеч`ание</w>.</se>
+<se>
+<w><ana lex="если" gr="CONJ"></ana>`Если</w> 
+<w><ana lex="не" gr="PART"></ana>не</w> 
+<w><ana lex="включать" gr="V,ipf,tran=inf,act"></ana>включ`ать</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="проект" gr="S,m,inan=sg,acc"></ana>про`ект</w> 
+<w><ana lex="функциональный" gr="A=n,sg,acc,inan,plen"></ana>функцион`альное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,acc"></ana>опис`ание</w>
+<w><ana lex="элемент" gr="S,m,inan=sg,gen"></ana>элем`ента</w> 
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>, 
+<w><ana lex="то" gr="CONJ"></ana>то</w> 
+<w><ana lex="при" gr="PR"></ana>при</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,loc"></ana>с`интезе</w> 
+<w><ana lex="элемент" gr="S,m,inan=sg,nom"></ana>элем`ент</w>
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=sg,fut,3p,indic"></ana>б`удет</w>
+<w><ana lex="объявить" gr="V,pf,tran=partcp,m,sg,brev,pass,praet"></ana>объ`явлен</w> "
+<w><ana lex="черный" gr="A=m,sg,ins,plen"></ana>чёрным</w>
+<w><ana lex="ящик" gr="S,m,inan=sg,ins"></ana>`ящиком</w> ".</se></p>
+<p><se>
+<w><ana lex="рассмотреть" gr="V,pf,tran=pl,act,1p,imper"></ana>Рассм`отрим</w>
+<w><ana lex="способ" gr="S,m,inan=sg,acc"></ana>сп`особ</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>.</se>
+<se>
+<w><ana lex="после" gr="PR"></ana>П`осле</w>
+<w><ana lex="сохранение" gr="S,n,inan=sg,gen"></ana>сохран`ения</w> 
+<w><ana lex="синтезировать" gr="V,ipf,tran=partcp,f,sg,gen,pass,praet,plen"></ana>синтез`ированной</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="D" gr="NONLEX"></ana>D</w>
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="формат" gr="S,m,inan=sg,loc"></ana>форм`ате</w>
+<w><ana lex="EDIF" gr="NONLEX"></ana>EDIF</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=m,sg,praet,indic"></ana>был</w> 
+<w><ana lex="провести" gr="V,pf,tran=partcp,m,sg,brev,pass,praet"></ana>проведён</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>с`интез</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="система" gr="S,f,inan=sg,loc"></ana>сист`еме</w> "
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>С`интез</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> ".</se></p>
+<p><se>
+<w><ana lex="однако" gr="CONJ"></ana>Одн`ако</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="данный" gr="A-PRO=m,sg,loc"></ana>д`анном</w>
+<w><ana lex="пример" gr="S,m,inan=sg,loc"></ana>прим`ере</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="помощь" gr="S,f,inan=sg,ins"></ana>п`омощью</w> 
+<w><ana lex="программа" gr="S,f,inan=pl,gen"></ana>прогр`амм</w>
+<w><ana lex="система" gr="S,f,inan=sg,gen"></ana>сист`емы</w> "
+<w><ana lex="синтез" gr="S,m,inan=sg,nom"></ana>С`интез</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> "
+<w><ana lex="улучшить" gr="V,pf,tran=inf,act"></ana>ул`учшить</w> 
+<w><ana lex="результат" gr="S,m,inan=sg,acc"></ana>результ`ат</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> (
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="сравнение" gr="S,n,inan=sg,loc"></ana>сравн`ении</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>)
+<w><ana lex="не" gr="PART"></ana>не</w> 
+<w><ana lex="удаться" gr="V,pf,intr,med=n,sg,praet,indic"></ana>удал`ось</w> .</se></p>
+<p><se>
+<w><ana lex="подход" gr="S,m,inan=sg,nom"></ana>Подх`од</w>
+<w><ana lex="3" gr="NUM=ciph"></ana>3</w>.</se>
+<se>
+<w><ana lex="реализация" gr="S,f,inan=sg,nom"></ana>Реализ`ация</w>
+<w><ana lex="алгоритмический" gr="A=n,sg,gen,plen"></ana>алгоритм`ического</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>-
+<w><ana lex="описание" gr="S,n,inan=sg,gen"></ana>опис`ания</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w> </se></p>
+<p><se>
+<w><ana lex="исходный" gr="A=n,sg,nom,plen"></ana>Исх`одное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w>
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w>
+<w><ana lex="алгоритмический" gr="A=n,sg,ins,plen"></ana>алгоритм`ическим</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,ins"></ana>опис`анием</w>.</se>
+<se>
+<w><ana lex="иначе" gr="ADV-PRO"></ana>Ин`аче</w>
+<w><ana lex="говорить" gr="V,ipf,tran=ger,act,praes"></ana>говор`я</w> ,
+<w><ana lex="это" gr="S-PRO,n,sg=nom"></ana>`это</w> 
+<w><ana lex="общий" gr="A=m,sg,nom,plen"></ana>`общий</w>
+<w><ana lex="случай" gr="S,m,inan=sg,nom"></ana>сл`учай</w> ,
+<w><ana lex="когда" gr="ADV-PRO"></ana>когд`а</w> 
+<w><ana lex="исходный" gr="A=n,sg,nom,plen"></ana>исх`одное</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="проект" gr="S,m,inan=sg,gen"></ana>про`екта</w>
+<w><ana lex="представить" gr="V,pf,tran=partcp,n,sg,brev,pass,praet"></ana>предст`авлено</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="синтезировать" gr="V,ipf,tran=partcp,n,sg,loc,pass,praes,plen"></ana>синтез`ируемом</w>
+<w><ana lex="подмножество" gr="S,n,inan=sg,loc"></ana>подмножестве</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,gen"></ana>язык`а</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>.</se>
+<se>
+<w><ana lex="тогда" gr="ADV-PRO"></ana>Тогд`а</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,acc"></ana>библиот`еку</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="требоваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>тр`ебуется</w> 
+<w><ana lex="внести" gr="V,pf,tran=inf,act"></ana>внест`и</w> 
+<w><ana lex="триггер" gr="S,m,inan=pl,acc"></ana>триггеры</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="комбинационный" gr="A=pl,acc,inan,plen"></ana>комбинаци`онные</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,acc"></ana>элем`енты</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se></p>
+<p><se>
+<w><ana lex="требование" gr="S,n,inan=sg,nom"></ana>Тр`ебование</w>
+<w><ana lex="3" gr="NUM=ciph"></ana>3</w>.</se>
+<se>
+<w><ana lex="точный" gr="A=n,sg,nom,plen"></ana>Т`очное</w>
+<w><ana lex="согласование" gr="S,n,inan=sg,nom"></ana>согласов`ание</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>-
+<w><ana lex="модель" gr="S,f,inan=pl,gen"></ana>мод`елей</w> 
+<w><ana lex="триггер" gr="S,m,inan=pl,gen"></ana>триггеров</w> , 
+<w><ana lex="настраивать" gr="V,ipf,tran=partcp,pl,gen,pass,praes,plen"></ana>настр`аиваемых</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,loc"></ana>библиот`еке</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>, 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="триггер" gr="S,m,inan=pl,gen"></ana>триггеров</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se></p>
+<p><se>
+<w><ana lex="выполнить" gr="V,pf,tran=inf,act"></ana>В`ыполнить</w> 
+<w><ana lex="данный" gr="A-PRO=n,sg,acc,inan"></ana>д`анное</w>
+<w><ana lex="требование" gr="S,n,inan=sg,acc"></ana>тр`ебование</w> 
+<w><ana lex="трудно" gr="PRAEDIC"></ana>тр`удно</w> , 
+<w><ana lex="так" gr="ADV-PRO"></ana>так</w> 
+<w><ana lex="как" gr="ADV-PRO"></ana>как</w> 
+<w><ana lex="пользователь" gr="S,m,anim=sg,dat"></ana>п`ользователю</w>
+<w><ana lex="недоступный" gr="A=pl,brev"></ana>недост`упны</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>-
+<w><ana lex="модель" gr="S,f,inan=pl,nom"></ana>мод`ели</w> 
+<w><ana lex="триггер" gr="S,m,inan=pl,gen"></ana>триггеров</w> , 
+<w><ana lex="формировать" gr="V,ipf,tran=partcp,pl,gen,pass,praes,plen"></ana>формир`уемых</w>
+<w><ana lex="по" gr="PR"></ana>по</w> " 
+<w><ana lex="заготовка" gr="S,f,inan=pl,dat"></ana>загот`овкам</w> "
+<w><ana lex="система" gr="S,f,inan=sg,gen"></ana>сист`емы</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>.</se>
+<se>
+<w><ana lex="если" gr="CONJ"></ana>`Если</w>
+<w><ana lex="же" gr="PART"></ana>же</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="целевой" gr="A=f,sg,acc,plen"></ana>целев`ую</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,acc"></ana>библиот`еку</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="не" gr="PART"></ana>не</w> 
+<w><ana lex="вносить" gr="V,ipf,tran=inf,act"></ana>внос`ить</w> 
+<w><ana lex="элемент" gr="S,m,inan=pl,acc"></ana>элем`енты</w>
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w> ,
+<w><ana lex="то" gr="CONJ"></ana>то</w> 
+<w><ana lex="проект" gr="S,m,inan=sg,nom"></ana>про`ект</w>
+<w><ana lex="быть" gr="V,ipf,intr,act=sg,fut,3p,indic"></ana>б`удет</w>
+<w><ana lex="реализовать" gr="V,pf,tran=partcp,m,sg,brev,pass,praet"></ana>реализ`ован</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="комбинационный" gr="A=pl,loc,plen"></ana>комбинаци`онных</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,loc"></ana>элем`ентах</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="тот" gr="A-PRO=pl,loc"></ana>тех</w> 
+<w><ana lex="элемент" gr="S,m,inan=pl,loc"></ana>элем`ентах</w>
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w> ,
+<w><ana lex="который" gr="A-PRO=pl,acc,inan"></ana>кот`орые</w> 
+<w><ana lex="создать" gr="V,pf,tran=sg,act,fut,3p,indic"></ana>созд`аст</w>
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>.</se>
+<se>
+<w><ana lex="пример" gr="S,m,inan=sg,ins"></ana>Прим`ером</w>
+<w><ana lex="то" gr="S-PRO,n,sg=dat"></ana>том`у</w> 
+<w><ana lex="являться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>явл`яется</w> 
+<w><ana lex="процедура" gr="S,f,inan=sg,nom"></ana>процед`ура</w>
+<w><ana lex="DFFPC" gr="NONLEX"></ana>DFFPC</w>.</se>
+<se>
+<w><ana lex="теперь" gr="ADV-PRO"></ana>Теп`ерь</w>
+<w><ana lex="проектировщик" gr="S,m,anim=sg,dat"></ana>проектир`овщику</w> 
+<w><ana lex="прийтись" gr="V,pf,intr,med=sg,fut,3p,indic"></ana>придётся</w>
+<w><ana lex="провести" gr="V,pf,tran=inf,act"></ana>провест`и</w>
+<w><ana lex="отдельно" gr="ADV"></ana>отд`ельно</w>
+<w><ana lex="реализация" gr="S,f,inan=sg,acc"></ana>реализ`ацию</w>
+<w><ana lex="процедура" gr="S,f,inan=pl,gen"></ana>процед`ур</w>
+<w><ana lex="тип" gr="S,m,inan=sg,gen"></ana>т`ипа</w>
+<w><ana lex="DFFPC" gr="NONLEX"></ana>DFFPC</w>
+<w><ana lex="структурный" gr="A=pl,ins,plen"></ana>структ`урными</w>
+<w><ana lex="модель" gr="S,f,inan=pl,ins"></ana>мод`елями</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="использование" gr="S,n,inan=sg,ins"></ana>исп`ользованием</w> 
+<w><ana lex="собственный" gr="A=pl,gen,plen"></ana>с`обственных</w>
+<w><ana lex="модель" gr="S,f,inan=pl,gen"></ana>мод`елей</w>
+<w><ana lex="триггер" gr="S,m,inan=pl,gen"></ana>триггеров</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w>.</se>
+<se>
+<w><ana lex="это" gr="S-PRO,n,sg=nom"></ana>`Это</w>
+<w><ana lex="требоваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>тр`ебуется</w>
+<w><ana lex="как" gr="ADV-PRO"></ana>как</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="получение" gr="S,n,inan=sg,gen"></ana>получ`ения</w> 
+<w><ana lex="логический" gr="A=f,sg,gen,plen"></ana>лог`ической</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> ,
+<w><ana lex="так" gr="ADV-PRO"></ana>так</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="то" gr="S-PRO,n,sg=gen"></ana>тог`о</w> , 
+<w><ana lex="чтобы" gr="CONJ"></ana>чт`обы</w> 
+<w><ana lex="иметь" gr="V,ipf,tran=inf,act"></ana>им`еть</w>
+<w><ana lex="возможность" gr="S,f,inan=sg,acc"></ana>возм`ожность</w> 
+<w><ana lex="провести" gr="V,pf,tran=inf,act"></ana>провест`и</w>
+<w><ana lex="моделирование" gr="S,n,inan=sg,acc"></ana>модел`ирование</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,loc"></ana>язык`е</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>
+<w><ana lex="синтезировать" gr="V,pf,tran=partcp,f,sg,gen,pass,praet,plen"></ana>синтез`ированной</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w>
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w>.</se></p>
+<p><se>
+<w><ana lex="частично" gr="ADV"></ana>Част`ично</w>
+<w><ana lex="продемонстрировать" gr="V,pf,tran=pl,act,1p,imper"></ana>продемонстр`ируем</w>
+<w><ana lex="подход" gr="S,m,inan=sg,acc"></ana>подх`од</w>
+<w><ana lex="3" gr="NUM=ciph"></ana>3</w>
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="пример" gr="S,m,inan=sg,loc"></ana>прим`ере</w> 
+<w><ana lex="тот" gr="A-PRO=f,sg,gen"></ana>той</w> 
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="D" gr="NONLEX"></ana>D</w>,
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="который" gr="A-PRO=f,sg,loc"></ana>кот`орой</w> 
+<w><ana lex="комбинационный" gr="A=m,sg,nom,plen"></ana>комбинаци`онный</w>
+<w><ana lex="блок" gr="S,m,inan=sg,nom"></ana>блок</w> 
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="описать" gr="V,pf,tran=partcp,m,sg,brev,pass,praet"></ana>оп`исан</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="алгоритмический" gr="A=m,sg,loc,plen"></ana>алгоритм`ическом</w>
+<w><ana lex="уровень" gr="S,m,inan=sg,loc"></ana>`уровне</w> .</se>
+<se>
+<w><ana lex="подсхема" gr="S,f,inan=sg,acc"></ana>Подсхему</w> ,
+<w><ana lex="реализовать" gr="V,ipf,tran=partcp,f,sg,acc,act,praes,plen"></ana>реализ`ующую</w>
+<w><ana lex="функция" gr="S,f,inan=pl,acc"></ana>ф`ункции</w> 
+<w><ana lex="блок" gr="S,m,inan=sg,gen"></ana>бл`ока</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="алгоритмический" gr="A=m,sg,loc,plen"></ana>алгоритм`ическом</w>
+<w><ana lex="уровень" gr="S,m,inan=sg,loc"></ana>`уровне</w> ,
+<w><ana lex="назвать" gr="V,pf,tran=pl,act,1p,imper"></ana>назовём</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="F" gr="NONLEX"></ana>F</w>.</se></p>
+<p><se>
+<w><ana lex="алгоритмический" gr="A=n,sg,nom,plen"></ana>Алгоритм`ическое</w>
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="комбинационный" gr="A=m,sg,gen,plen"></ana>комбинаци`онного</w>
+<w><ana lex="блок" gr="S,m,inan=sg,gen"></ana>бл`ока</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="F" gr="NONLEX"></ana>F</w>
+<w><ana lex="иметь" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>им`еет</w> 
+<w><ana lex="следующий" gr="A=m,sg,acc,inan,plen"></ana>сл`едующий</w>
+<w><ana lex="вид" gr="S,m,inan=sg,acc"></ana>вид</w> :</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="заметить" gr="V,pf,tran=pl,act,1p,imper"></ana>Зам`етим</w> ,
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="порт" gr="S,m,inan=pl,nom"></ana>п`орт`ы</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="подсхема" gr="S,f,inan=sg,loc"></ana>подсхеме</w> 
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="F" gr="NONLEX"></ana>F</w> 
+<w><ana lex="описать" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>оп`исаны</w> 
+<w><ana lex="другой" gr="A-PRO=pl,ins"></ana>друг`ими</w>
+<w><ana lex="тип" gr="S,m,inan=pl,ins"></ana>т`ипами</w>
+<w><ana lex="данные" gr="S,pl=gen"></ana>д`анных</w> .</se>
+<se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="алгоритмический" gr="A=n,sg,loc,plen"></ana>алгоритм`ическом</w>
+<w><ana lex="описание" gr="S,n,inan=sg,loc"></ana>опис`ании</w> 
+<w><ana lex="использоваться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>исп`ользуются</w> 
+<w><ana lex="функция" gr="S,f,inan=pl,nom"></ana>ф`ункции</w>
+<w><ana lex="to" gr="NONLEX"></ana>to</w>_
+<w><ana lex="integer" gr="NONLEX"></ana>integer</w>, 
+<w><ana lex="to" gr="NONLEX"></ana>to</w>_ 
+<w><ana lex="unsigned" gr="NONLEX"></ana>unsigned</w> 
+<w><ana lex="пакет" gr="S,m,inan=sg,gen"></ana>пак`ета</w>
+<w><ana lex="numeric" gr="NONLEX"></ana>numeric</w>_ 
+<w><ana lex="std" gr="NONLEX"></ana>std</w>
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="перевод" gr="S,m,inan=sg,gen"></ana>перев`ода</w>
+<w><ana lex="тип" gr="S,m,inan=pl,gen"></ana>т`ипов</w> 
+<w><ana lex="данные" gr="S,pl=gen"></ana>д`анных</w>.</se></p>
+<p><se>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=sg,nom"></ana>опис`ание</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w>
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="D" gr="NONLEX"></ana>D</w>
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="использование" gr="S,n,inan=sg,ins"></ana>исп`ользованием</w> 
+<w><ana lex="подсхема" gr="S,f,inan=sg,gen"></ana>подсхемы</w> 
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>_ 
+<w><ana lex="F" gr="NONLEX"></ana>F</w>
+<w><ana lex="иметь" gr="V,ipf,tran=sg,act,praes,3p,indic"></ana>им`еет</w>
+<w><ana lex="вид" gr="S,m,inan=sg,acc"></ana>вид</w> ;</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="чтобы" gr="CONJ"></ana>Чт`обы</w> 
+<w><ana lex="провести" gr="V,pf,tran=inf,act"></ana>провест`и</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,acc"></ana>с`интез</w> 
+<w><ana lex="без" gr="PR"></ana>без</w> 
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,gen"></ana>перепроектирования</w> 
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w>
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>, 
+<w><ana lex="требоваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>тр`ебуется</w> 
+<w><ana lex="пакет" gr="S,m,inan=sg,nom"></ana>пак`ет</w>
+<w><ana lex="exemplar" gr="NONLEX"></ana>exemplar</w>_
+<w><ana lex="1164" gr="NUM=ciph"></ana>1164</w>.</se>
+<se>
+<w><ana lex="использование" gr="S,n,inan=sg,nom"></ana>Исп`ользование</w> 
+<w><ana lex="данный" gr="A-PRO=m,sg,gen"></ana>д`анного</w>
+<w><ana lex="пакет" gr="S,m,inan=sg,gen"></ana>пак`ета</w> 
+<w><ana lex="задаваться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>задаётся</w>
+<w><ana lex="строка" gr="S,f,inan=pl,ins"></ana>стр`оками</w> </se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="триггер" gr="S,m,inan=pl,nom"></ana>Триггеры</w> 
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>
+<w><ana lex="объявляться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>объявл`яются</w> 
+<w><ana lex="черный" gr="A=pl,ins,plen"></ana>чёрными</w>
+<w><ana lex="ящик" gr="S,m,inan=pl,ins"></ana>`ящиками</w> 
+<w><ana lex="с" gr="PR"></ana>с</w> 
+<w><ana lex="помощь" gr="S,f,inan=sg,ins"></ana>п`омощью</w>
+<w><ana lex="атрибут" gr="S,m,inan=sg,gen"></ana>атриб`ута</w>
+<w><ana lex="noopt" gr="NONLEX"></ana>noopt</w> 
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w>;</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="данный" gr="A-PRO=m,sg,loc"></ana>д`анном</w>
+<w><ana lex="пример" gr="S,m,inan=sg,loc"></ana>прим`ере</w> 
+<w><ana lex="синтезатор" gr="S,m,inan=sg,nom"></ana>синтезатор</w> 
+<w><ana lex="Leonardo" gr="NONLEX"></ana>Leonardo</w>
+<w><ana lex="построить" gr="V,pf,tran=m,sg,act,praet,indic"></ana>постр`оил</w>
+<w><ana lex="схема" gr="S,f,inan=sg,acc"></ana>сх`ему</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="элемент" gr="S,m,inan=pl,loc"></ana>элем`ентах</w>
+<w><ana lex="библиотека" gr="S,f,inan=sg,gen"></ana>библиот`еки</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="компонент" gr="S,m,inan=pl,loc"></ana>компон`ентах</w>
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>.</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="выдержка" gr="S,f,inan=sg,nom"></ana>В`ыдержка</w> 
+<w><ana lex="из" gr="PR"></ana>из</w> 
+<w><ana lex="отчет" gr="S,m,inan=sg,gen"></ana>отчёта</w>
+<w><ana lex="синтез" gr="S,m,inan=sg,gen"></ana>с`интеза</w> 
+<w><ana lex="приводиться" gr="V,ipf,intr,med=sg,praes,3p,indic"></ana>прив`одится</w>
+<w><ana lex="ниже" gr="ADV"></ana>н`иже</w>.</se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="видно" gr="PRAEDIC"></ana>В`идно</w> , 
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="отчет" gr="S,m,inan=sg,loc"></ana>отчёте</w> 
+<w><ana lex="триггер" gr="S,m,inan=sg,nom"></ana>триггер</w> 
+<w><ana lex="DFF" gr="NONLEX"></ana>DFF</w>
+<w><ana lex="объявить" gr="V,pf,tran=partcp,m,sg,brev,pass,praet"></ana>объ`явлен</w> 
+<w><ana lex="черный" gr="A=m,sg,ins,plen"></ana>чёрным</w>
+<w><ana lex="ящик" gr="S,m,inan=sg,ins"></ana>`ящиком</w> (
+<w><ana lex="Black" gr="NONLEX"></ana>Black</w> 
+<w><ana lex="Box" gr="NONLEX"></ana>Box</w>).</se></p>
+<p><se>
+<w><ana lex="моделирование" gr="S,n,inan=sg,nom"></ana>Модел`ирование</w> 
+<w><ana lex="получить" gr="V,pf,tran=partcp,f,sg,gen,pass,praet,plen"></ana>пол`ученной</w>
+<w><ana lex="схема" gr="S,f,inan=sg,gen"></ana>сх`емы</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="сравнение" gr="S,n,inan=sg,nom"></ana>сравн`ение</w>
+<w><ana lex="ее" gr="A-PRO"></ana>её</w> 
+<w><ana lex="со" gr="PR"></ana>со</w> 
+<w><ana lex="схема" gr="S,f,inan=sg,ins"></ana>сх`емой</w> ,
+<w><ana lex="получить" gr="V,pf,tran=partcp,f,sg,ins,pass,praet,plen"></ana>пол`ученной</w> 
+<w><ana lex="по" gr="PR"></ana>по</w> 
+<w><ana lex="подход" gr="S,m,inan=sg,dat"></ana>подх`оду</w>
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>,
+<w><ana lex="показать" gr="V,pf,tran=n,sg,act,praet,indic"></ana>показ`ало</w> 
+<w><ana lex="функциональный" gr="A=f,sg,acc,plen"></ana>функцион`альную</w>
+<w><ana lex="эквивалентность" gr="S,f,inan=sg,acc"></ana>эквивал`ентность</w> 
+<w><ana lex="синтезировать" gr="V,ipf,tran=partcp,pl,gen,pass,praet,plen"></ana>синтез`ированных</w>
+<w><ana lex="схема" gr="S,f,inan=pl,gen"></ana>схем</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se></p>
+<p>***</p>
+<p><se>
+<w><ana lex="в" gr="PR"></ana>В</w> 
+<w><ana lex="статья" gr="S,f,inan=sg,loc"></ana>стать`е</w>
+<w><ana lex="сформулировать" gr="V,pf,tran=partcp,pl,brev,pass,praet"></ana>сформул`ированы</w> 
+<w><ana lex="основной" gr="A=pl,nom,plen"></ana>основн`ые</w>
+<w><ana lex="требование" gr="S,n,inan=pl,nom"></ana>тр`ебования</w> ,
+<w><ana lex="выполнение" gr="S,n,inan=sg,nom"></ana>выполн`ение</w>
+<w><ana lex="который" gr="A-PRO=pl,gen"></ana>кот`орых</w>
+<w><ana lex="необходимо" gr="PRAEDIC"></ana>необход`имо</w> 
+<w><ana lex="для" gr="PR"></ana>для</w> 
+<w><ana lex="осуществление" gr="S,n,inan=sg,gen"></ana>осуществл`ения</w> 
+<w><ana lex="предложить" gr="V,pf,tran=partcp,pl,gen,pass,praet,plen"></ana>предл`оженных</w>
+<w><ana lex="подход" gr="S,m,inan=pl,gen"></ana>подх`одов</w> 
+<w><ana lex="к" gr="PR"></ana>к</w> 
+<w><ana lex="перепроектирование" gr="S,n,inan=sg,dat"></ana>перепроектированию</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w>
+<w><ana lex="в" gr="PR"></ana>в</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,loc"></ana>БМК</w> .</se>
+<se>
+<w><ana lex="предложить" gr="V,pf,tran=partcp,pl,nom,pass,praet,plen"></ana>Предл`оженные</w>
+<w><ana lex="подход" gr="S,m,inan=pl,nom"></ana>подх`оды</w>
+<w><ana lex="опираться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>опир`аются</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="современный" gr="A=pl,acc,inan,plen"></ana>соврем`енные</w>
+<w><ana lex="средство" gr="S,n,inan=pl,acc"></ana>ср`едства</w> 
+<w><ana lex="САПР" gr="S,f,inan,0=pl,gen"></ana>САПР</w> , 
+<w><ana lex="оперировать" gr="V,ipf,tran=partcp,pl,acc,act,praes,plen"></ana>опер`ирующие</w> 
+<w><ana lex="описание" gr="S,n,inan=pl,ins"></ana>опис`аниями</w>
+<w><ana lex="проект" gr="S,m,inan=pl,gen"></ana>про`ектов</w> 
+<w><ana lex="на" gr="PR"></ana>на</w> 
+<w><ana lex="язык" gr="S,m,inan=sg,loc"></ana>язык`е</w> 
+<w><ana lex="высокий" gr="A=m,sg,gen,plen"></ana>выс`окого</w>
+<w><ana lex="уровень" gr="S,m,inan=sg,gen"></ana>`уровня</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>.</se>
+<se>
+<w><ana lex="установить" gr="V,pf,tran=partcp,n,sg,brev,pass,praet"></ana>Устан`овлено</w> ,
+<w><ana lex="что" gr="CONJ"></ana>что</w> 
+<w><ana lex="основной" gr="A=pl,ins,plen"></ana>основн`ыми</w>
+<w><ana lex="проблема" gr="S,f,inan=pl,ins"></ana>пробл`емами</w>
+<w><ana lex="являться" gr="V,ipf,intr,med=pl,praes,3p,indic"></ana>явл`яются</w>
+<w><ana lex="согласование" gr="S,n,inan=sg,nom"></ana>согласов`ание</w>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="модель" gr="S,f,inan=pl,gen"></ana>мод`елей</w>
+<w><ana lex="элемент" gr="S,m,inan=pl,gen"></ana>элем`ентов</w> 
+<w><ana lex="память" gr="S,f,inan=sg,gen"></ana>п`амяти</w>
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="согласование" gr="S,n,inan=sg,nom"></ana>согласов`ание</w> 
+<w><ana lex="временной" gr="A=pl,gen,plen"></ana>временн`ых</w>
+<w><ana lex="задержка" gr="S,f,inan=pl,gen"></ana>зад`ержек</w> 
+<w><ana lex="FPGA" gr="NONLEX"></ana>FPGA</w> 
+<w><ana lex="и" gr="CONJ"></ana>и</w> 
+<w><ana lex="Бмк" gr="S,m,inan,0=pl,gen"></ana>БМК</w> .</se></p>
+<p>***</p>
+<p><se>
+<w><ana lex="приложение" gr="S,n,inan=sg,nom"></ana>Прилож`ение</w> </se></p>
+<p><se>
+<w><ana lex="VHDL" gr="NONLEX"></ana>VHDL</w>- 
+<w><ana lex="описание" gr="S,n,inan=pl,nom"></ana>опис`ания</w>
+<w><ana lex="подсхема" gr="S,f,inan=pl,gen"></ana>подсхем</w> 
+<w><ana lex="mult" gr="NONLEX"></ana>mult</w>_
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>, 
+<w><ana lex="adder" gr="NONLEX"></ana>adder</w>_
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>, 
+<w><ana lex="YY" gr="NONLEX"></ana>YY</w>_ 
+<w><ana lex="MUX" gr="NONLEX"></ana>MUX</w></se></p>
+<p>&#60; formula&#62;</p>
+<p><se>
+<w><ana lex="рисунок" gr="S,m,inan=sg,nom=abbr"></ana>Рис</w>.
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w>.</se>
+<se>
+<w><ana lex="схема" gr="S,f,inan=sg,nom"></ana>Сх`ема</w>
+<w><ana lex="VSLI" gr="NONLEX"></ana>VSLI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w> 
+<w><ana lex="D" gr="NONLEX"></ana>D</w></se></p>
+<p><se>
+<w><ana lex="рисунок" gr="S,m,inan=sg,nom=abbr"></ana>Рис</w>.
+<w><ana lex="2" gr="NUM=ciph"></ana>2</w>.</se>
+<se>
+<w><ana lex="подсхема" gr="S,f,inan=sg,nom"></ana>Подсхема</w> 
+<w><ana lex="VLSI" gr="NONLEX"></ana>VLSI</w>_
+<w><ana lex="1" gr="NUM=ciph"></ana>1</w></se></p>
+</body></html>
