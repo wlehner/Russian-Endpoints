@@ -43,13 +43,19 @@ def readcorpus(filename):
     return parse(open(filename, 'r',encoding ="utf-8").read())
 
 def writeverbs(corp):
+#    longest_sent = 0
     for sentence in corp:
         for word in sentence:
             if word['upostag']=='VERB':
                 if word["lemma"] in verbs_of_change:
                     changefile.write(sentence.serialize())
+#                    if len(sentence) > longest_sent:
+#                        longest_sent = len(sentence)
                 elif word["lemma"] in verbs_of_motion:
                     motionfile.write(sentence.serialize())
+#                    if len(sentence) > longest_sent:
+#                        longest_sent = len(sentence)
+#    print('Length of Longest Sentence: ', longest_sent)
 
 #Processes the three conllu files                    
 writeverbs(readcorpus(file1))

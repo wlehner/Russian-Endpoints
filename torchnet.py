@@ -8,7 +8,7 @@ Created on Wed Apr  3 14:17:13 2019
 from __future__ import print_function
 from conllu import parse
 import os, gensim, torch, conllu
-from gensim.models import word2vec
+from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 import numpy as np
 
@@ -20,29 +20,14 @@ file2= 'ru_syntagrus-ud-test.conllu'
 file3= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
-sentlen = 15
+sentlen = 205 #205???
 featsnum = 12
 
 prepositions = ["в","на","за","к","из","с","от"]
 
 
-#Takes Conllu File and Produces a List of Sentences as lists of Lemmas
-def conllulemlist(file):
-    result = []
-    corpus = parse(open(file, 'r',encoding ="utf-8").read())
-    for sentence in corpus:
-        sentlist = []
-        for word in sentence:
-            sentlist.append(word["lemma"])
-        result.append(sentlist)
-    return result
-
-
-sentences = conllulemlist(file3)
-model = gensim.models.Word2Vec(sentences, min_count=1)
-model.save("word2vec.model")
+model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
-#del model
 
 #Takes Conllu Format and Produces a list of examples
 
@@ -61,15 +46,13 @@ def processconllu(file):
 def processconlsent(sentence, preplist):
     for prep in preplist:
         example = np.zeros((featsnum,sentlen))
-        column = 0
-        for word in sentence:
+        for column, word in enumerate(sentence):
             example[column,0] = word_vectors[word['lemma']]
             featlist = processpos(word)
             for x in range(featsnum-1):
                 example[column,(x+1)] = featlist[x]
-            column += 1
 
-#FEATURES: (lemma)POS, number, person, verbform, aspect, tense, voice, mood, case, gender, animacy,
+#FEATURES: (lemma), POS, number, person, verbform, aspect, tense, voice, mood, case, gender, animacy,
 def processpos(word):
     feats = [0] * (featsnum-1)
     if word['upostag']=='VERB':
