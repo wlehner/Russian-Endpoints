@@ -20,8 +20,7 @@ file2= 'ru_syntagrus-ud-test.conllu'
 file3= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
-sentlen = 205 #205???
-featsnum = 12
+sentlen = 205
 
 prepositions = ["в","на","за","к","из","с","от"]
 
@@ -40,113 +39,74 @@ def processconllu(file):
             if word['lemma'] in prepositions:
                 sentprep.append(word['lemma'])
         if sentprep:
-            examples.append(processconlsent(sentence, sentprep))
+            sentexamples = processconlsent(sentence, sentprep)
+            if sentexamples:
+                examples.append(sentexamples)
     return examples
             
 def processconlsent(sentence, preplist):
+    examples = []
     for prep in preplist:
-        example = np.zeros((featsnum,sentlen))
+        example = np.zeros(sentlen)
+        index = 0
         for column, word in enumerate(sentence):
-            example[column,0] = word_vectors[word['lemma']]
+            example.appen[word_vectors[word['lemma']]]
+            index+= 1
             featlist = processpos(word)
-            for x in range(featsnum-1):
-                example[column,(x+1)] = featlist[x]
+            if word['lemma'] == prep:
+                featlist[1] = 1
+            if(sentlen-len(featlist))> index:
+                for feats in featlist:
+                    example.append(feats)
+                    index += 1
+            else:
+                break
+        examples.append(example)
+    return examples
 
 #FEATURES: (lemma), POS, number, person, verbform, aspect, tense, voice, mood, case, gender, animacy,
 def processpos(word):
-    feats = [0] * (featsnum-1)
+    feats = []
     if word['upostag']=='VERB':
-        feats[0] = 1
-        feats[1] = processnum(word)
-        feats[2] = processperson(word)
-        feats[3] = processverbform(word)
-        feats[4] = processaspect(word)
-        feats[5] = processtense(word)
-        feats[6] = processvoice(word)
-        feats[7] = processmood(word)
-        feats[8] = processcase(word)
-        feats[9] = processgender(word)
-        feats[10] = processanimacy(word)
-        return feats
+        feats = [1, processnum(word), processperson(word), processverbform(word), processaspect(word), 
+                 processtense(word), processvoice(word), processmood(word), processcase(word), 
+                 processgender(word), processanimacy(word)]
     elif word['upostag']== 'NOUN':
-        feats[0] = 2
-        feats[1] = processnum(word)
-        feats[8] = processcase(word)
-        feats[9] = processgender(word)
-        feats[10] = processanimacy(word)
-        return feats
+        feats = [2, processnum(word), processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'ADJ':
-        feats[0] = 3
-        feats[1] = processnum(word)
-        feats[8] = processcase(word)
-        feats[9] = processgender(word)
-        feats[10] = processanimacy(word)
-        return feats
+        feats = [3, processnum(word), processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'ADV':
-        feats[0] = 4
-        return feats
+        feats = [4]
     elif word['upostag']== 'AUX':
-        feats[0] = 5
-        feats[1] = processnum(word)
-        feats[2] = processperson(word)
-        feats[3] = processverbform(word)
-        feats[4] = processaspect(word)
-        feats[5] = processtense(word)
-        feats[6] = processvoice(word)
-        feats[7] = processmood(word)
-        feats[8] = processcase(word)
-        feats[9] = processgender(word)
-        return feats
+        feats = [5, processnum(word), processperson(word), processverbform(word), processaspect(word), 
+              processtense(word), processvoice(word), processmood(word), processcase(word), 
+              processgender(word)]
     elif word['upostag']== 'CCONJ':
-        feats[0] = 6
-        return feats
+        feats = [6]
     elif word['upostag']== 'DET':
-        feats[0] = 7
-        feats[1] = processnum(word)
-        feats[8] = processcase(word)
-        feats[9] = processgender(word)
-        feats[10] = processanimacy(word)
-        return feats
+        feats = [7, processnum(word), processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'INTJ':
-        feats[0] = 8
-        return feats
+        feats = [8]
     elif word['upostag']== 'NUM':
-        feats[0] = 9
-        feats[8] = processcase(word)
-        feats[9] = processgender(word)
-        feats[10] = processanimacy(word)
-        return feats
+        feats = [9, processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'PART':
-        feats[0] = 10
-        feats[7] = processmood(word)
-        return feats
+        feats = [10, processmood(word)]
     elif word['upostag']== 'PRON':
-        feats[0] = 11
-        feats[1] = processnum(word)
-        feats[2] = processperson(word)
-        feats[8] = processcase(word)
-        feats[9] = processgender(word)
-        feats[10] = processanimacy(word)
-        return feats
+        feats = [11, processnum(word), processperson(word), processcase(word), processgender(word), 
+                 processanimacy(word)]
     elif word['upostag']== 'PROPN':
-        feats[0] = 12
-        feats[1] = processnum(word)
-        feats[8] = processcase(word)
-        feats[9] = processgender(word)
-        feats[10] = processanimacy(word)
-        return feats
+        feats = [12, processnum(word), processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'PUNCT':
-        feats[0] = 13
-        return feats
+        feats = [13]
     elif word['upostag']== 'SCONJ':
-        feats[0] = 14
-        return feats
+        feats = [14]
     elif word['upostag']== 'SYM':
-        feats[0] = 15
-        return feats
+        feats = [15]
     elif word['upostag']== 'X':
-        feats[0] = 16
-        return feats
+        feats = [16]
+    elif word['upostag']== 'ADP':
+        feats = [17, 0]
+    return feats
 
 def processnum(word):
     number = {'Sing':1, 'Plur':2}

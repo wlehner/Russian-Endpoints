@@ -24,19 +24,20 @@ file3= 'ru_syntagrus-ud-train.conllu'
 #Takes Conllu File and Produces a List of Sentences as lists of Lemmas
 def conllulemlist(file):
     result = []
-#    longest_sent = 0
+    summ = 0
     corpus = parse(open(file, 'r',encoding ="utf-8").read())
     for sentence in corpus:
-#        if len(sentence) > longest_sent:
-#            longest_sent = len(sentence)
+        summ += len(sentence)
         sentlist = []
         for word in sentence:
             sentlist.append(word["lemma"])
         result.append(sentlist)
-#    print(longest_sent)
+    print(summ/(len(corpus)))
     return result
 
 
 sentences = conllulemlist(file3)
 model = gensim.models.Word2Vec(sentences, min_count=1)
 model.save("word2vec.model")
+
+
