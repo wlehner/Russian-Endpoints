@@ -43,25 +43,36 @@ def processconllu(file):
             if sentexamples:
                 examples.append(sentexamples)
     return examples
+
+def searchtree(tree, preposition):
+    if tree.children:
+        for child in tree.children:
+            if child['lemma'] == preposition:
+                return (tree['id']-1)
+            return searchtree(child, preposition)
+    
             
 def processconlsent(sentence, preplist):
     examples = []
     for prep in preplist:
-        example = np.zeros(sentlen)
+        example = []
         index = 0
-        for column, word in enumerate(sentence):
-            example.appen[word_vectors[word['lemma']]]
+        for word in sentence:
+            example.append[word_vectors[word['lemma']]]
             index+= 1
             featlist = processpos(word)
             if word['lemma'] == prep:
                 featlist[1] = 1
-            if(sentlen-len(featlist))> index:
+            if sentlen < (len(featlist)+index):
                 for feats in featlist:
                     example.append(feats)
                     index += 1
             else:
                 break
-        examples.append(example)
+            if len(example) < sentlen:
+                for x in range(sentlen- len(example)):
+                    example.append(0)
+            examples.append(example, searchtree(sentence, prep))
     return examples
 
 #FEATURES: (lemma), POS, number, person, verbform, aspect, tense, voice, mood, case, gender, animacy,
