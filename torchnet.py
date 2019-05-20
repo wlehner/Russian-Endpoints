@@ -28,6 +28,8 @@ prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 
+#class model
+
 #Takes Conllu Format and Produces a list of examples
 
 def processconllu(file):
@@ -92,7 +94,7 @@ def processpos(word):
         feats = [5, processnum(word), processperson(word), processverbform(word), processaspect(word), 
               processtense(word), processvoice(word), processmood(word), processcase(word), 
               processgender(word)]
-    elif word['upostag']== 'CCONJ':
+    elif word['upostag']== 'CCONJ': #Simplify to Conj
         feats = [6]
     elif word['upostag']== 'DET':
         feats = [7, processnum(word), processcase(word), processgender(word), processanimacy(word)]
@@ -105,11 +107,11 @@ def processpos(word):
     elif word['upostag']== 'PRON':
         feats = [11, processnum(word), processperson(word), processcase(word), processgender(word), 
                  processanimacy(word)]
-    elif word['upostag']== 'PROPN':
+    elif word['upostag']== 'PROPN': #Simplify to Noun
         feats = [12, processnum(word), processcase(word), processgender(word), processanimacy(word)]
-    elif word['upostag']== 'PUNCT':
+    elif word['upostag']== 'PUNCT': #Kill?
         feats = [13]
-    elif word['upostag']== 'SCONJ':
+    elif word['upostag']== 'SCONJ': #Simplify to Conj
         feats = [14]
     elif word['upostag']== 'SYM':
         feats = [15]

@@ -24,6 +24,7 @@ corpusfiles = 'sample_ar/TEXTS/.*.xhtml'
 
 sentchangelist = []
 sentmotionlist = []
+sentlen = 205
 
 verbs_of_change = ["стать","встать","поставить","лечь","класть",
                     "положить","уложить","садиться","посадить","сесть",
@@ -52,8 +53,70 @@ def processdirectory(directory):
                 if word[0].get('lex') in verbs_of_motion:
                     sentmotionlist.append(sentence)
                     
-processdirectory(fiction_root)
-print(sentmotionlist)
+#processdirectory(fiction_root)
+#print(sentmotionlist)
+
+def processsentence(sentence):
+    product = []
+    for word in sentence.iter('w'):
+        feats = processword(word)
+        
+# http://www.ruscorpora.ru/en/corpora-morph.html
+# https://universaldependencies.org/treebanks/ru_syntagrus/index.html
+        
+def processword(word):
+    featsfinal = []
+    feats = word.get('gr').split(',' and '=')
+    if feats[0] == 'V': #Verb
+        featsfinal = [1]
+    elif feats[0] == 'S': #Noun
+        featsfinal = [2]
+    elif feats[0] == 'A': #Adj
+        featsfinal = [3]
+    elif feats[0] == 'ADV' or 'ADV-PRO' or 'PRAEDIC' or 'PARENTH': #Adv, some ADV-PRO could be particles
+        featsfinal = [4]                                #Predicatives are also questionable
+#    elif feats[0] == 'S': #Aux-> kill lump with verb
+#        featsfinal = [5]
+    elif feats[0] == 'CONJ': #CConj and sconj
+        featsfinal = [6]
+    elif feats[0] == 'A-PRO': #Det, but could be Pronoun
+        featsfinal = [7]
+    elif feats[0] == 'INTJ': #Intj
+        featsfinal = [8]
+    elif feats[0] == 'NUM' or 'A-NUM': #NUM
+        featsfinal = [9]
+    elif feats[0] == 'PART': #Part
+        featsfinal = [10]
+    elif feats[0] == 'S-PRO': #Pron
+        featsfinal = [11]
+#    elif feats[0] == 'S': #Propn-> to kill, lump with noun
+#        featsfinal = [12]
+#    elif feats[0] == 'S': #Punc-> to kill, no equivalent
+#        featsfinal = [13]
+#    elif feats[0] == 'S': #Sconj-> to kill, lump with cconj
+#        featsfinal = [14]
+#    elif feats[0] == 'S': #Sym-< to kill, no equivalent
+#        featsfinal = [15]
+#    elif feats[0] == 'S': #X -> Turn into ambiguious case or 0?
+#        featsfinal = [16]
+    elif feats[0] == 'PR': #Adp Preposition
+        featsfinal = [17]
+    
+
+def testprocess(directory):
+    file = os.listdir(directory)[1]
+    filexml = ET.parse(directory + file)
+    root = filexml.getroot()
+    sentence = root[1][1][1]
+    word = sentence[2][0]
+    print(word.get('lex'))
+    print(word.get('gr').split(',' and '='))
+    
+testprocess(fiction_root)
+        
+    
+
+            
 
 #testwords = testfiction.findall("w")
 
