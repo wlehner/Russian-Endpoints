@@ -11,6 +11,7 @@ import os, gensim, torch, conllu
 from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 import numpy as np
+import torch.nn as nn
 
 corpus_root= 'sample_ar/TEXTS'
 fiction_root= 'sample_ar/TEXTS/Fiction/'
@@ -20,7 +21,9 @@ file2= 'ru_syntagrus-ud-test.conllu'
 file3= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
-sentlen = 205
+input_size = 205
+hidden_size = 205
+output_size = 20
 
 prepositions = ["в","на","за","к","из","с","от"]
 
@@ -29,6 +32,21 @@ model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 
 #class model
+class Net(nn.Module):
+    def _init_(self, input_size, hidden_size, output_size):
+        super(Net, self)._init_()
+        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(hidden_size, output_size)
+        
+    def forward(self, x):
+        out = self.fc1(x)
+        out = self.relu(out)
+        out = self.fc2(out)
+        return out
+    
+    
+
 
 #Takes Conllu Format and Produces a list of examples
 
@@ -65,14 +83,14 @@ def processconlsent(sentence, preplist):
             featlist = processpos(word)
             if word['lemma'] == prep:
                 featlist[1] = 1
-            if sentlen < (len(featlist)+index):
+            if input_size < (len(featlist)+index):
                 for feats in featlist:
                     example.append(feats)
                     index += 1
             else:
                 break
-            if len(example) < sentlen:
-                for x in range(sentlen- len(example)):
+            if len(example) < input_size:
+                for x in range(input_size- len(example)):
                     example.append(0)
             examples.append(example, searchtree(sentence, prep))
     return examples
@@ -80,21 +98,17 @@ def processconlsent(sentence, preplist):
 #FEATURES: (lemma), POS, number, person, verbform, aspect, tense, voice, mood, case, gender, animacy,
 def processpos(word):
     feats = []
-    if word['upostag']=='VERB':
+    if word['upostag']=='VERB' or 'AUX': #Aux doesn't have animacy, should be okay
         feats = [1, processnum(word), processperson(word), processverbform(word), processaspect(word), 
                  processtense(word), processvoice(word), processmood(word), processcase(word), 
                  processgender(word), processanimacy(word)]
-    elif word['upostag']== 'NOUN':
+    elif word['upostag']== 'NOUN' or 'PROPN':
         feats = [2, processnum(word), processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'ADJ':
         feats = [3, processnum(word), processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'ADV':
         feats = [4]
-    elif word['upostag']== 'AUX':
-        feats = [5, processnum(word), processperson(word), processverbform(word), processaspect(word), 
-              processtense(word), processvoice(word), processmood(word), processcase(word), 
-              processgender(word)]
-    elif word['upostag']== 'CCONJ': #Simplify to Conj
+    elif word['upostag']== 'CCONJ' or 'SCONJ':
         feats = [6]
     elif word['upostag']== 'DET':
         feats = [7, processnum(word), processcase(word), processgender(word), processanimacy(word)]
@@ -107,23 +121,16 @@ def processpos(word):
     elif word['upostag']== 'PRON':
         feats = [11, processnum(word), processperson(word), processcase(word), processgender(word), 
                  processanimacy(word)]
-    elif word['upostag']== 'PROPN': #Simplify to Noun
-        feats = [12, processnum(word), processcase(word), processgender(word), processanimacy(word)]
-    elif word['upostag']== 'PUNCT': #Kill?
-        feats = [13]
-    elif word['upostag']== 'SCONJ': #Simplify to Conj
-        feats = [14]
-    elif word['upostag']== 'SYM':
-        feats = [15]
-    elif word['upostag']== 'X':
-        feats = [16]
     elif word['upostag']== 'ADP':
-        feats = [17, 0]
+        feats = [12, 0]
+    else: # 'PUNCT' 'SYM' 'X'
+        feats = [13]
+
     return feats
 
 def processnum(word):
     number = {'Sing':1, 'Plur':2}
-    if word['feats']['Number']:
+    if word['feats']['Number'] in number:
         return number[word['feats']['Number']]
     else:
         return 0
@@ -178,7 +185,7 @@ def processperson(word):
         return 0
     
 def processverbform(word):
-    verbform = {'Conv':1,'Fin':2, 'Inf':3, 'Part':4}
+    verbform = {'Conv':2,'Fin':0, 'Inf':2, 'Part':3} #Fin is normal
     if word['feats']['VerbForm'] in verbform:
         return verbform[word['feats']['VerbForm']]
     else:
