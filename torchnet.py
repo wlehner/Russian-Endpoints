@@ -7,11 +7,15 @@ Created on Wed Apr  3 14:17:13 2019
 """
 from __future__ import print_function
 from conllu import parse
+from conllu import parse_tree
 import os, gensim, torch, conllu
 from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 import numpy as np
 import torch.nn as nn
+from googletrans import Translator
+
+translator = Translator()
 
 corpus_root= 'sample_ar/TEXTS'
 fiction_root= 'sample_ar/TEXTS/Fiction/'
@@ -21,9 +25,9 @@ file2= 'ru_syntagrus-ud-test.conllu'
 file3= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
-input_size = 205
-hidden_size = 205
-output_size = 20
+input_size = 154
+hidden_size = 154
+output_size = 35
 
 prepositions = ["в","на","за","к","из","с","от"]
 
@@ -31,13 +35,16 @@ prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 
+def ru_translate(sentence_ru):
+    return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
+
 #class model
 class Net(nn.Module):
-    def _init_(self, input_size, hidden_size, output_size):
+    def _init_(self, inputs, hiddens, outputs):
         super(Net, self)._init_()
-        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.fc1 = nn.Linear(inputs, hiddens)
         self.relu = nn.ReLU()
-        self.fc2 = nn.Linear(hidden_size, output_size)
+        self.fc2 = nn.Linear(hiddens, outputs)
         
     def forward(self, x):
         out = self.fc1(x)
@@ -45,8 +52,6 @@ class Net(nn.Module):
         out = self.fc2(out)
         return out
     
-    
-
 
 #Takes Conllu Format and Produces a list of examples
 
@@ -67,9 +72,10 @@ def processconllu(file):
 def searchtree(tree, preposition):
     if tree.children:
         for child in tree.children:
-            if child['lemma'] == preposition:
-                return (tree['id']-1)
-            return searchtree(child, preposition)
+            print(child.token['lemma'])
+            if child.token['lemma'] == preposition:
+                return (tree.token['lemma'])
+            searchtree(child, preposition)
     
             
 def processconlsent(sentence, preplist):
@@ -197,6 +203,22 @@ def processanimacy(word):
         return animacy[word['feats']['Animacy']]
     else:
         return 0
+
+def teststuff(file):
+    corpus = parse(open(file, 'r',encoding ="utf-8").read())
+    corpustree = parse_tree(open(file, 'r',encoding ="utf-8").read())
+    sentence = corpus[12]
+    sentencetree = corpustree[12]
+    sentencetree.print_tree()
+    print(ru_translate(sentence))
+    print('Modified Word: ', searchtree(sentencetree,'в'))
+    for word in sentence:
+        print(word['id'], ': ', word['lemma'])
+    
+teststuff(file1)
+
+#Actual NN
+#testnet = Net(input_size, hidden_size, output_size)
 
 
 #vector = word_vectors["word"]

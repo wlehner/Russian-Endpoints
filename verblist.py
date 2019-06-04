@@ -43,27 +43,79 @@ def readcorpus(filename):
     return parse(open(filename, 'r',encoding ="utf-8").read())
 
 def writeverbs(corp):
-#    longest_sent = 0
     for sentence in corp:
         for word in sentence:
             if word['upostag']=='VERB':
                 if word["lemma"] in verbs_of_change:
                     changefile.write(sentence.serialize())
-#                    if len(sentence) > longest_sent:
-#                        longest_sent = len(sentence)
                 elif word["lemma"] in verbs_of_motion:
                     motionfile.write(sentence.serialize())
-#                    if len(sentence) > longest_sent:
-#                        longest_sent = len(sentence)
-#    print('Length of Longest Sentence: ', longest_sent)
 
-#Processes the three conllu files                    
-writeverbs(readcorpus(file1))
-writeverbs(readcorpus(file2))
-writeverbs(readcorpus(file3))
+#Processes the three conllu files
+def writingcorpi():                  
+    writeverbs(readcorpus(file1))
+    writeverbs(readcorpus(file2))
+    writeverbs(readcorpus(file3))
 
 #Print the number of examples in each new file
-motioncorpus = readcorpus(motionfilename)
-changecorpus = readcorpus(changefilename)
-print("Examples of Verbs of Motion: ", len(motioncorpus))
-print("Examples with Change of State Verbs: ", len(changecorpus))
+def testcorpi():
+    motioncorpus = readcorpus(motionfilename)
+    changecorpus = readcorpus(changefilename)
+    print("Examples of Verbs of Motion: ", len(motioncorpus))
+    print("Examples with Change of State Verbs: ", len(changecorpus))
+    
+#writingcorpi()
+#testcorpi()
+
+def sentlengths(corp):
+    lengths = [0]*215
+    total = 0
+    for sentence in corp:
+        lengths[len(sentence)]+= 1
+    for x in range(len(lengths)):
+        total += x*lengths[x]
+        print(x , ": " , lengths[x])
+    print("Average: " , (total/len(corp)))
+    
+def sentfeatlengths(corp):
+    lengths = [0]*300
+    total = 0
+    for sentence in corp:
+        if len(sentence)<35:
+            clength = 0
+            for word in sentence:
+                if word['upostag']=='VERB' or 'AUX': #Aux doesn't have animacy, should be okay
+                    clength += 8
+                elif word['upostag']== 'NOUN' or 'PROPN':
+                    clength += 5
+                elif word['upostag']== 'ADJ':
+                    clength += 5
+                elif word['upostag']== 'ADV':
+                    clength += 1
+                elif word['upostag']== 'CCONJ' or 'SCONJ':
+                    clength += 1
+                elif word['upostag']== 'DET':
+                    clength += 5
+                elif word['upostag']== 'INTJ':
+                    clength += 1
+                elif word['upostag']== 'NUM':
+                    clength += 4
+                elif word['upostag']== 'PART':
+                    clength += 3
+                elif word['upostag']== 'PRON':
+                    clength += 6
+                elif word['upostag']== 'ADP':
+                    clength += 2
+                else: # 'PUNCT' 'SYM' 'X'
+                    clength += 1
+            lengths[clength] += 1
+    for x in range(len(lengths)):
+        total += x*lengths[x]
+        print(x, ": ", lengths[x])
+    print("Average: ", (total/len(corp)))
+
+        
+
+sentfeatlengths(readcorpus(file2))
+#sentlengths(readcorpus(file3))
+
