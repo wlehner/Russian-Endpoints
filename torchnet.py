@@ -150,70 +150,70 @@ def processpos(word):
 
 def processnum(word):
     number = {'Sing':1, 'Plur':2}
-    if word['feats']['Number'] in number:
+    if 'Number' in word['feats'] and word['feats']['Number'] in number:
         return number[word['feats']['Number']]
     else:
         return 0
 
 def processcase(word):
     case = {'Acc':1, 'Dat':2, 'Gen':3, 'Ins':4, 'Loc':5, 'Nom':6, 'Par':7, 'Voc':8}
-    if word['feats']['Case'] in case:
+    if 'Case' in word['feats'] and word['feats']['Case'] in case:
         return case[word['feats']['Case']]
     else:
         return 0
 
 def processgender(word):
     gender = {'Fem':1, 'Masc':2, 'Neut':3}
-    if word['feats']['Gender'] in gender:
+    if 'Gender' in word['feats'] and word['feats']['Gender'] in gender:
         return gender[word['feats']['Gender']]
     else:
         return 0
     
 def processtense(word):
     tense = {'Fut':1, 'Past':2, 'Pres':3}
-    if word['feats']['Tense'] in tense:
+    if 'Tense' in word['feats'] and word['feats']['Tense'] in tense:
         return word['feats']['Tense']
     else:
         return 0
     
 def processvoice(word):
     voice = {'Act':1, 'Mid':2, 'Pass':3}
-    if word['feats']['Voice'] in voice:
+    if 'Voice' in word['feats'] and word['feats']['Voice'] in voice:
         return voice[word['feats']['Voice']]
     else:
         return 0
 
 def processaspect(word):
     aspect = {'Imp':1, 'Perf':2}
-    if word['feats']['Aspect'] in aspect:
+    if 'Aspect' in word['feats'] and word['feats']['Aspect'] in aspect:
         return aspect[word['feats']['Aspect']]
     else:
         return 0
 
 def processmood(word):
     mood = {'Imp':1, 'Ind':2}
-    if word['feats']['Mood'] in mood:
+    if 'Mood' in word['feats'] and word['feats']['Mood'] in mood:
         return mood[word['feats']['Mood']]
     else:
         return 0
 
 def processperson(word):
     person = {1:1, 2:2, 3:3}
-    if word['feats']['Person'] in person:
+    if 'Person' in word['feats'] and word['feats']['Person'] in person:
         return person[word['feats']['Person']]
     else:
         return 0
     
 def processverbform(word):
     verbform = {'Conv':2,'Fin':0, 'Inf':2, 'Part':3} #Fin is normal
-    if word['feats']['VerbForm'] in verbform:
+    if 'VerbForm' in word['feats'] and word['feats']['VerbForm'] in verbform:
         return verbform[word['feats']['VerbForm']]
     else:
         return 0
 
 def processanimacy(word):
     animacy = {'Anim':1, 'Inan':2}
-    if word['feats']['Animacy'] in animacy:
+    if 'Animacy' in word['feats'] and word['feats']['Animacy'] in animacy:
         return animacy[word['feats']['Animacy']]
     else:
         return 0
@@ -243,9 +243,9 @@ def teststuff(file):
 #    mod = searchtree(sentencetree,8)
 #    print(ru_translate(sentence))
 #    print('Modified Word: ', mod.token['lemma'], ' - ', mod.token['id'])
-#    print('Question: ', makequestion(sentence,8))
-#    print('Answer: ', makeanswer(sentencetree,8))
-    print(sentence[3])
+    print('Question: ', makequestion(sentence,8))
+    print('Answer: ', makeanswer(sentencetree,8))
+#    print(sentence[3])
 #    print(sentence[1]['lemma'], ': ',processpos(sentence[1]))
     
 teststuff(file1)
