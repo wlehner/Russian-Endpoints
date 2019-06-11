@@ -15,11 +15,9 @@ import numpy as np
 import torch.nn as nn
 from googletrans import Translator
 
-translator = Translator()
-
+#Files
 corpus_root= 'sample_ar/TEXTS'
 fiction_root= 'sample_ar/TEXTS/Fiction/'
-
 file1= 'ru_syntagrus-ud-dev.conllu' #EMPTY???
 file2= 'ru_syntagrus-ud-test.conllu'
 file3= 'ru_syntagrus-ud-train.conllu'
@@ -29,11 +27,16 @@ input_size = 154
 hidden_size = 154
 output_size = 35
 
+##NN Stuff
+num_epochs = 2
+batch_size = 100
+learning_rate = 0.001
+
+#Other
 prepositions = ["в","на","за","к","из","с","от"]
-
-
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
+translator = Translator()
 
 def ru_translate(sentence_ru):
     return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
@@ -54,7 +57,6 @@ class Net(nn.Module):
     
 
 #Takes Conllu Format and Produces a list of examples
-
 def processconllu(file):
     corpus = parse(open(file, 'r',encoding ="utf-8").read())
     examples = []
@@ -62,7 +64,7 @@ def processconllu(file):
         sentprep = []
         for word in sentence:
             if word['lemma'] in prepositions:
-                sentprep.append(word['lemma'])
+                sentprep.append(word['id'])
         if sentprep:
             sentexamples = processconlsent(sentence, sentprep)
             if sentexamples:
@@ -72,49 +74,61 @@ def processconllu(file):
 def searchtree(tree, preposition):
     if tree.children:
         for child in tree.children:
-            print(child.token['lemma'])
-            if child.token['lemma'] == preposition:
-                return (tree.token['lemma'])
-            searchtree(child, preposition)
-    
-            
+#            print(child.token['lemma'])
+            if child.children:
+                for grandchild in child.children:
+                    if grandchild.token['id'] == preposition:
+                        return (tree)
+                x = searchtree(child, preposition)
+                if x:
+                    return x
+                
+def makeanswer(tree, preposition):
+    node = searchtree(tree, preposition)
+    answer = [0]*output_size
+    answer[node.token['id']]= 1
+    return torch.from_numpy(np.array(answer))
+
+def makequestion(sentence, preposition):
+    question = [0]*input_size
+    index = 0
+    for word in sentence:
+        question[index] = word_vectors[word['lemma']]
+        index+= 1
+        featlist = processpos(word)
+        if word['id'] == preposition:
+            featlist[1] = 1
+        if (index+ len(featlist))< input_size:          
+            for feature in featlist:
+                question[index] = feature
+                index+= 1
+        else:
+            return False
+    return torch.from_numpy(np.array(question))
+              
 def processconlsent(sentence, preplist):
     examples = []
-    for prep in preplist:
-        example = []
-        index = 0
-        for word in sentence:
-            example.append[word_vectors[word['lemma']]]
-            index+= 1
-            featlist = processpos(word)
-            if word['lemma'] == prep:
-                featlist[1] = 1
-            if input_size < (len(featlist)+index):
-                for feats in featlist:
-                    example.append(feats)
-                    index += 1
-            else:
-                break
-            if len(example) < input_size:
-                for x in range(input_size- len(example)):
-                    example.append(0)
-            examples.append(example, searchtree(sentence, prep))
+    for preposition in preplist:
+        question = makequestion(sentence, preposition)
+        if question:
+            examples.append(question, makeanswer(sentence.to_tree(), preposition))
     return examples
 
 #FEATURES: (lemma), POS, number, person, verbform, aspect, tense, voice, mood, case, gender, animacy,
 def processpos(word):
+    print(word['lemma'])
     feats = []
-    if word['upostag']=='VERB' or 'AUX': #Aux doesn't have animacy, should be okay
+    if word['upostag']== ('VERB' or 'AUX'): #Aux doesn't have animacy, should be okay
         feats = [1, processnum(word), processperson(word), processverbform(word), processaspect(word), 
                  processtense(word), processvoice(word), processmood(word), processcase(word), 
                  processgender(word), processanimacy(word)]
-    elif word['upostag']== 'NOUN' or 'PROPN':
+    elif word['upostag']== ('NOUN' or 'PROPN'):
         feats = [2, processnum(word), processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'ADJ':
         feats = [3, processnum(word), processcase(word), processgender(word), processanimacy(word)]
     elif word['upostag']== 'ADV':
         feats = [4]
-    elif word['upostag']== 'CCONJ' or 'SCONJ':
+    elif word['upostag']== ('CCONJ' or 'SCONJ'):
         feats = [6]
     elif word['upostag']== 'DET':
         feats = [7, processnum(word), processcase(word), processgender(word), processanimacy(word)]
@@ -203,6 +217,22 @@ def processanimacy(word):
         return animacy[word['feats']['Animacy']]
     else:
         return 0
+    
+#NN    
+#net = Net(input_size, hidden_size, output_size)
+#criterion = nn.CrossEntropyLoss()
+#optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
+    
+def train(examplelist):
+    for epoch in range(num_epochs):
+        for i, (question, answer) in examplelist:
+            optimizer.zero_grad()
+            output = net(question)
+            loss = criterion(output, answer)
+            loss.backward()
+            optimizer.step()
+            
+#examples = processconllu(file2)
 
 def teststuff(file):
     corpus = parse(open(file, 'r',encoding ="utf-8").read())
@@ -210,16 +240,20 @@ def teststuff(file):
     sentence = corpus[12]
     sentencetree = corpustree[12]
     sentencetree.print_tree()
-    print(ru_translate(sentence))
-    print('Modified Word: ', searchtree(sentencetree,'в'))
-    for word in sentence:
-        print(word['id'], ': ', word['lemma'])
+#    mod = searchtree(sentencetree,8)
+#    print(ru_translate(sentence))
+#    print('Modified Word: ', mod.token['lemma'], ' - ', mod.token['id'])
+#    print('Question: ', makequestion(sentence,8))
+#    print('Answer: ', makeanswer(sentencetree,8))
+    print(sentence[3])
+#    print(sentence[1]['lemma'], ': ',processpos(sentence[1]))
     
 teststuff(file1)
 
-#Actual NN
-#testnet = Net(input_size, hidden_size, output_size)
 
+#List of Problems
+#1- Punctuation
+#2- Line up all features
 
 #vector = word_vectors["word"]
 #wv = KeyedVectors.load("model.wv", mmap='r')
