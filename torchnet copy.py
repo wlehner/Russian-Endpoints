@@ -174,11 +174,7 @@ def processgender(word):
 def processtense(word):
     tense = {'Fut':1, 'Past':2, 'Pres':3}
     if 'Tense' in word['feats'] and word['feats']['Tense'] in tense:
-<<<<<<< HEAD
         return tense[word['feats']['Tense']]
-=======
-        return word['feats']['Tense']
->>>>>>> 6aba5474c89055b0e0b5d109d93cd4cbb073979c
     else:
         return 0
     
@@ -212,11 +208,7 @@ def processperson(word):
     
 def processverbform(word):
     verbform = {'Conv':2,'Fin':0, 'Inf':2, 'Part':3} #Fin is normal
-<<<<<<< HEAD
     if 'Verbform' in word['feats'] and word['feats']['VerbForm'] in verbform:
-=======
-    if 'VerbForm' in word['feats'] and word['feats']['VerbForm'] in verbform:
->>>>>>> 6aba5474c89055b0e0b5d109d93cd4cbb073979c
         return verbform[word['feats']['VerbForm']]
     else:
         return 0
@@ -255,11 +247,7 @@ def teststuff(file):
 #    print(ru_translate(sentence))
 #    print('Modified Word: ', mod.token['lemma'], ' - ', mod.token['id'])
     print('Question: ', makequestion(sentence,8))
-<<<<<<< HEAD
 #    print('Answer: ', makeanswer(sentencetree,8))
-=======
-    print('Answer: ', makeanswer(sentencetree,8))
->>>>>>> 6aba5474c89055b0e0b5d109d93cd4cbb073979c
 #    print(sentence[3])
 #    print(sentence[1]['lemma'], ': ',processpos(sentence[1]))
     
