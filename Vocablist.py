@@ -37,7 +37,9 @@ def conllulemlist(file):
 
 
 sentences = conllulemlist(file3)
-model = gensim.models.Word2Vec(sentences, min_count=1)
+sentences.extend(conllulemlist(file2))
+sentences.extend(conllulemlist(file1))
+model = gensim.models.Word2Vec(sentences, size=1, min_count=1)
 model.save("word2vec.model")
 
 
