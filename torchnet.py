@@ -41,10 +41,13 @@ translator = Translator()
 def ru_translate(sentence_ru):
     return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
 
+def totensor(list):
+    return torch.from_numpy(np.array(list))
+
 #class model
 class Net(nn.Module):
-    def _init_(self, inputs, hiddens, outputs):
-        super(Net, self)._init_()
+    def __init__(self, inputs, hiddens, outputs):
+        super(Net, self).__init__()
         self.fc1 = nn.Linear(inputs, hiddens)
         self.relu = nn.ReLU()
         self.fc2 = nn.Linear(hiddens, outputs)
@@ -61,14 +64,15 @@ def processconllu(file):
     corpus = parse(open(file, 'r',encoding ="utf-8").read())
     examples = []
     for sentence in corpus:
-        sentprep = []
-        for word in sentence:
-            if word['lemma'] in prepositions:
-                sentprep.append(word['id'])
-        if sentprep:
-            sentexamples = processconlsent(sentence, sentprep)
-            if sentexamples:
-                examples.append(sentexamples)
+        if len(sentence)< output_size:
+            sentprep = []
+            for word in sentence:
+                if word['lemma'] in prepositions:
+                    sentprep.append(word['id'])
+            if sentprep:
+                sentexamples = processconlsent(sentence, sentprep)
+                if sentexamples:
+                    examples.append(sentexamples)
     return examples
 
 def searchtree(tree, preposition):
@@ -85,9 +89,12 @@ def searchtree(tree, preposition):
                 
 def makeanswer(tree, preposition):
     node = searchtree(tree, preposition)
-    answer = [0]*output_size
-    answer[node.token['id']]= 1
-    return torch.from_numpy(np.array(answer))
+    if node:
+        answer = [0]*output_size
+        answer[node.token['id']]= 1
+        return answer
+    else:
+        return False
 
 def makequestion(sentence, preposition):
     question = []
@@ -106,14 +113,15 @@ def makequestion(sentence, preposition):
             return False
     question.extend([0]*input_size)
     question[:input_size]
-    return torch.from_numpy(np.array(question))
+    return question
               
 def processconlsent(sentence, preplist):
     examples = []
     for preposition in preplist:
         question = makequestion(sentence, preposition)
-        if question:
-            examples.append(question, makeanswer(sentence.to_tree(), preposition))
+        answer = makeanswer(sentence.to_tree(), preposition)
+        if question and answer:
+            examples.append((totensor(question), totensor(answer)))
     return examples
 
 #FEATURES: (lemma), POS, number, person, verbform, aspect, tense, voice, mood, case, gender, animacy,
@@ -152,84 +160,76 @@ def processpos(word):
 
 def processnum(word):
     number = {'Sing':1, 'Plur':2}
-    if 'Number' in word['feats'] and word['feats']['Number'] in number:
+    if word['feats'] != None and 'Number' in word['feats'] and word['feats']['Number'] in number:
         return number[word['feats']['Number']]
     else:
         return 0
 
 def processcase(word):
     case = {'Acc':1, 'Dat':2, 'Gen':3, 'Ins':4, 'Loc':5, 'Nom':6, 'Par':7, 'Voc':8}
-    if 'Case' in word['feats'] and word['feats']['Case'] in case:
+    if word['feats'] != None and 'Case' in word['feats'] and word['feats']['Case'] in case:
         return case[word['feats']['Case']]
     else:
         return 0
 
 def processgender(word):
     gender = {'Fem':1, 'Masc':2, 'Neut':3}
-    if 'Gender' in word['feats'] and word['feats']['Gender'] in gender:
+    if word['feats'] != None and 'Gender' in word['feats'] and word['feats']['Gender'] in gender:
         return gender[word['feats']['Gender']]
     else:
         return 0
     
 def processtense(word):
     tense = {'Fut':1, 'Past':2, 'Pres':3}
-    if 'Tense' in word['feats'] and word['feats']['Tense'] in tense:
-<<<<<<< HEAD
+    if word['feats'] != None and 'Tense' in word['feats'] and word['feats']['Tense'] in tense:
         return tense[word['feats']['Tense']]
-=======
-        return word['feats']['Tense']
->>>>>>> 6aba5474c89055b0e0b5d109d93cd4cbb073979c
     else:
         return 0
     
 def processvoice(word):
     voice = {'Act':1, 'Mid':2, 'Pass':3}
-    if 'Voice' in word['feats'] and word['feats']['Voice'] in voice:
+    if word['feats'] != None and 'Voice' in word['feats'] and word['feats']['Voice'] in voice:
         return voice[word['feats']['Voice']]
     else:
         return 0
 
 def processaspect(word):
     aspect = {'Imp':1, 'Perf':2}
-    if 'Aspect' in word['feats'] and word['feats']['Aspect'] in aspect:
+    if word['feats'] != None and 'Aspect' in word['feats'] and word['feats']['Aspect'] in aspect:
         return aspect[word['feats']['Aspect']]
     else:
         return 0
 
 def processmood(word):
     mood = {'Imp':1, 'Ind':2}
-    if 'Mood' in word['feats'] and word['feats']['Mood'] in mood:
+    if word['feats'] != None and 'Mood' in word['feats'] and word['feats']['Mood'] in mood:
         return mood[word['feats']['Mood']]
     else:
         return 0
 
 def processperson(word):
     person = {1:1, 2:2, 3:3}
-    if 'Person' in word['feats'] and word['feats']['Person'] in person:
+    if word['feats'] != None and 'Person' in word['feats'] and word['feats']['Person'] in person:
         return person[word['feats']['Person']]
     else:
         return 0
     
 def processverbform(word):
     verbform = {'Conv':2,'Fin':0, 'Inf':2, 'Part':3} #Fin is normal
-<<<<<<< HEAD
-    if 'Verbform' in word['feats'] and word['feats']['VerbForm'] in verbform:
-=======
-    if 'VerbForm' in word['feats'] and word['feats']['VerbForm'] in verbform:
->>>>>>> 6aba5474c89055b0e0b5d109d93cd4cbb073979c
+    if word['feats'] != None and 'Verbform' in word['feats'] and word['feats']['VerbForm'] in verbform:
         return verbform[word['feats']['VerbForm']]
     else:
         return 0
 
 def processanimacy(word):
     animacy = {'Anim':1, 'Inan':2}
-    if 'Animacy' in word['feats'] and word['feats']['Animacy'] in animacy:
+    if word['feats'] != None and 'Animacy' in word['feats'] and word['feats']['Animacy'] in animacy:
         return animacy[word['feats']['Animacy']]
     else:
         return 0
     
 #NN    
-net = Net(input_size, hidden_size, output_size)
+net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size)
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
     
@@ -250,18 +250,20 @@ def teststuff(file):
     corpustree = parse_tree(open(file, 'r',encoding ="utf-8").read())
     sentence = corpus[12]
     sentencetree = corpustree[12]
-    sentencetree.print_tree()
+#    sentencetree.print_tree()
 #    mod = searchtree(sentencetree,8)
 #    print(ru_translate(sentence))
 #    print('Modified Word: ', mod.token['lemma'], ' - ', mod.token['id'])
-    print('Question: ', makequestion(sentence,8))
-<<<<<<< HEAD
+#    print('Question: ', makequestion(sentence,8))
 #    print('Answer: ', makeanswer(sentencetree,8))
-=======
-    print('Answer: ', makeanswer(sentencetree,8))
->>>>>>> 6aba5474c89055b0e0b5d109d93cd4cbb073979c
 #    print(sentence[3])
 #    print(sentence[1]['lemma'], ': ',processpos(sentence[1]))
+    for word in sentence:
+        print (word)
+        if 'feats' in word:
+            print ('yes')
+        else:
+            print('no')
     
 #teststuff(file1)
 
