@@ -241,8 +241,11 @@ def train(examplelist):
             loss = criterion(output, answer)
             loss.backward()
             optimizer.step()
+#            if (i+1) % 100 == 0:                              # Logging
+#                print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(train_dataset)//batch_size, loss.data[0]))
             
 examples = processconllu(file2)
+train(examples)
 
 
 def teststuff(file):
