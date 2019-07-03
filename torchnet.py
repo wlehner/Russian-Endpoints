@@ -54,8 +54,11 @@ class Net(nn.Module):
         
     def forward(self, x):
         out = self.fc1(x)
+        print('Step One')
         out = self.relu(out)
+        print('Step Two')
         out = self.fc2(out)
+        print('Step Three')
         return out
     
 
@@ -112,7 +115,7 @@ def makequestion(sentence, preposition):
         else:
             return False
     question.extend([0]*input_size)
-    question[:input_size]
+    question = question[:input_size]
     return question
               
 def processconlsent(sentence, preplist):
@@ -230,6 +233,7 @@ def processanimacy(word):
     
 #NN    
 net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size)
+net = net.float()
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
     
@@ -237,7 +241,7 @@ def train(examplelist):
     for epoch in range(num_epochs):
         for i, (question, answer) in examplelist:
             optimizer.zero_grad()
-            output = net(question)
+            output = net(question.float())
             loss = criterion(output, answer)
             loss.backward()
             optimizer.step()
