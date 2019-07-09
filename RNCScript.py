@@ -5,8 +5,6 @@ Created on Mon Jun 18 17:18:41 2018
 
 @author: walterlehner
 """
-#https://towardsdatascience.com/a-simple-starter-guide-to-build-a-neural-network-3c2cf07b8d7c
-#https://pytorch.org/tutorials/beginner/nlp/deep_learning_tutorial.html#sphx-glr-beginner-nlp-deep-learning-tutorial-py
 
 import nltk
 import chardet

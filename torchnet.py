@@ -38,6 +38,7 @@ model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
 
+
 def ru_translate(sentence_ru):
     return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
 
@@ -54,11 +55,8 @@ class Net(nn.Module):
         
     def forward(self, x):
         out = self.fc1(x)
-        print('Step One')
         out = self.relu(out)
-        print('Step Two')
         out = self.fc2(out)
-        print('Step Three')
         return out
     
 
@@ -117,13 +115,17 @@ def makequestion(sentence, preposition):
     question.extend([0]*input_size)
     question = question[:input_size]
     return question
-              
+
+
+           
 def processconlsent(sentence, preplist):
     examples = []
     for preposition in preplist:
         question = makequestion(sentence, preposition)
         answer = makeanswer(sentence.to_tree(), preposition)
         if question and answer:
+#            print('Question: ', question)
+#            print('Answer: ', answer, '\n')
             examples.append((totensor(question), totensor(answer)))
     return examples
 
@@ -234,7 +236,8 @@ def processanimacy(word):
 #NN    
 net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size)
 net = net.float()
-criterion = nn.CrossEntropyLoss()
+criterion = nn.SmoothL1Loss()
+#criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
     
 def train(examplelist):
@@ -242,14 +245,21 @@ def train(examplelist):
         for i, (question, answer) in examplelist:
             optimizer.zero_grad()
             output = net(question.float())
-            loss = criterion(output, answer)
+            loss = criterion(output, answer.float())
             loss.backward()
             optimizer.step()
+            print('Successful Step')
 #            if (i+1) % 100 == 0:                              # Logging
 #                print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(train_dataset)//batch_size, loss.data[0]))
+def testdata(examplelist):
+    for i in range(40):
+        print('Unit Length :', len(examplelist[i]))
             
 examples = processconllu(file2)
+#print('Number of Examples: ', len(examples))
+testdata(examples)
 train(examples)
+
 
 
 def teststuff(file):
@@ -279,10 +289,9 @@ def teststuff(file):
 #1- Punctuation
 #2- Line up all features
 
-#vector = word_vectors["word"]
-#wv = KeyedVectors.load("model.wv", mmap='r')
-#Construct examples
-#   Go through the sentences in Connllu
-#       Use vocabulary to make list of words
-#       Append a second dimension of grammatical tags
-#       Produce appropriate 
+#Loss Functions
+#https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7
+
+#Examples
+#https://towardsdatascience.com/a-simple-starter-guide-to-build-a-neural-network-3c2cf07b8d7c
+#https://pytorch.org/tutorials/beginner/nlp/deep_learning_tutorial.html#sphx-glr-beginner-nlp-deep-learning-tutorial-py
