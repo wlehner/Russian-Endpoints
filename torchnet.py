@@ -73,7 +73,7 @@ def processconllu(file):
             if sentprep:
                 sentexamples = processconlsent(sentence, sentprep)
                 if sentexamples:
-                    examples.append(sentexamples)
+                    examples += sentexamples
     return examples
 
 def searchtree(tree, preposition):
@@ -242,22 +242,18 @@ optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
     
 def train(examplelist):
     for epoch in range(num_epochs):
-        for i, (question, answer) in examplelist:
+        for i, (question, answer) in enumerate(examplelist):
             optimizer.zero_grad()
             output = net(question.float())
             loss = criterion(output, answer.float())
             loss.backward()
             optimizer.step()
-            print('Successful Step')
-#            if (i+1) % 100 == 0:                              # Logging
-#                print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(train_dataset)//batch_size, loss.data[0]))
-def testdata(examplelist):
-    for i in range(40):
-        print('Unit Length :', len(examplelist[i]))
+#            print('Successful Step')
+            if (i+1) % 100 == 0:                              # Logging
+                print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
+
             
 examples = processconllu(file2)
-#print('Number of Examples: ', len(examples))
-testdata(examples)
 train(examples)
 
 

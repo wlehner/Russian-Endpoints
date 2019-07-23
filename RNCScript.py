@@ -71,11 +71,11 @@ def processword(word):
     featsfinal = []
     feats = re.split('[,=]',word.get('gr'))
     if feats[0] == 'V': #Verb
-        featsfinal = [1, processnum(feats[3])]
+        featsfinal = [1, processnum(feats)]
     elif feats[0] == 'S': #Noun
-        featsfinal = [2, processnum(feats[3])]
+        featsfinal = [2, processnum(feats)]
     elif feats[0] == 'A': #Adj
-        featsfinal = [3, processnum(feats[1])]
+        featsfinal = [3, processnum(feats)]
     elif feats[0] == 'ADV' or 'ADV-PRO' or 'PRAEDIC' or 'PARENTH': #Adv, some ADV-PRO could be particles
         featsfinal = [4]                                #Predicatives are also questionable
     elif feats[0] == 'CONJ': #CConj and sconj
@@ -94,75 +94,79 @@ def processword(word):
         featsfinal = [12, 0]
     return featsfinal
 
-#Process features methods are all going to take strings
-def processnum(number):
+#Process features methods are all going to take lists of strings
+def processnum(feats):
     numbers = {'sg':1,'pl':2}
-    if number in numbers:
-        return numbers[number]
-    else:
-        return 0
+    for feat in feats:
+        if feat in numbers:
+            return numbers[feat]
+    return 0
     
-def processcase(case):
+def processcase(feats):
     cases = {'nom':6, 'gen':3, 'dat':2, 'acc':1, 'ins':4, 'loc':5, # Lack of 'Par'? Need to look up
              'gen2':3, 'acc2':1, 'loc2':5, 'voc':8, 'adnum':0}     # all these weird cases
-    if case in cases:
-        return cases(case)
-    else:
-        return 0
+    for feat in feats:
+        if feat in cases:
+            return cases(feat)
+    return 0
     
-def processanimacy(anim):
+def processanimacy(feats):
     anims = {'anim':1, 'inan':2}
-    if anim in anims:
-        return anims(anim)
-    else:
-        return 0
+    for feat in feats:
+        if feat in anims:
+            return anims(feat)
+    return 0
     
-def processgender(gen):
+def processgender(feats):
     gens = {'f':1, 'm':2, 'm-f':3, 'n':3} #Need to check on common gender...
-    if gen in gens:
-        return gens(gen)
+    for feat in feats:
+        if feat in gens:
+            return gens(feat)
     else:
         return 0
     
-def processmood(mood):
+def processmood(feats):
     moods = {'imper':1, 'imper2':1, 'indic':2}
-    if mood in moods:
-        return moods(mood)
-    else:
-        return 0
+    for feat in feats:
+        if feat in moods:
+            return moods(feat)
+    return 0
              
-def processtense(tense):
+def processtense(feats):
     tenses = {'praet':2, 'praes':3, 'fut':1}
-    if tense in tenses:
-        return tenses(tense)
-    else:
-        return 0
+    for feat in feats:
+        if feat in tenses:
+            return tenses(feat)
+    return 0
     
-def processaspect(aspect):
+def processaspect(feats):
     aspects = {'pf':2, 'ipf':1}
-    if aspect in aspects:
-        return aspects(aspect)
-    else:
-        return 0
+    for feat in feats:
+        if feat in aspects:
+            return aspects(feat)
+    return 0
     
-def processvoice(voice):
+def processvoice(feats):
     voices = {'act':1, 'pass':3, 'med':2} #med seems to mean reflexive
-    if voice in voices:
-        return voices(voice)
+    for feat in feats:
+        if feat in voices:
+            return voices(feat)
     else:
         return 0
     
-def processperson(person):
+def processperson(feats):
     persons = {'1p':1, '2p':2, '3p':3}
-    if person in persons:
-        return persons(person)
+    for feat in feats:
+        if feat in persons:
+            return persons(feat)
     else:
         return 0
     
-def processverbform(form):
+def processverbform(feats):
     forms = {'inf':2, 'partcp':3, 'ger':1}
-    if form in forms:
-        return forms(form)
+    for feat in feats:
+        if feat in forms:
+            return forms(feat)
     else:
         return 0
 
