@@ -71,27 +71,32 @@ def processword(word):
     featsfinal = []
     feats = re.split('[,=]',word.get('gr'))
     if feats[0] == 'V': #Verb
-        featsfinal = [1, processnum(feats)]
+        featsfinal = [1, processnum(feats), processperson(feats), processverbform(feats), processaspect(feats),
+                      processtense(feats), processvoice(feats), processmood(feats), processcase(feats),
+                      processgender(feats), processanimacy(feats)]
     elif feats[0] == 'S': #Noun
-        featsfinal = [2, processnum(feats)]
+        featsfinal = [2, processnum(feats), processcase(feats), processgender(feats), processanimacy(feats)]
     elif feats[0] == 'A': #Adj
-        featsfinal = [3, processnum(feats)]
+        featsfinal = [3, processnum(feats), processcase(feats), processgender(feats), processanimacy(feats)]
     elif feats[0] == 'ADV' or 'ADV-PRO' or 'PRAEDIC' or 'PARENTH': #Adv, some ADV-PRO could be particles
         featsfinal = [4]                                #Predicatives are also questionable
     elif feats[0] == 'CONJ': #CConj and sconj
         featsfinal = [6]
     elif feats[0] == 'A-PRO': #Det, but could be Pronoun
-        featsfinal = [7, processnum(feats[1])]
+        featsfinal = [7, processnum(feats), processcase(feats), processgender(feats), processanimacy(feats)]
     elif feats[0] == 'INTJ': #Intj
         featsfinal = [8]
     elif feats[0] == 'NUM' or 'A-NUM': #NUM
-        featsfinal = [9]
+        featsfinal = [9, processcase(feats), processgender(feats), processanimacy(feats)]
     elif feats[0] == 'PART': #Part
-        featsfinal = [10]
+        featsfinal = [10, processmood(feats)]
     elif feats[0] == 'S-PRO': #Pron
-        featsfinal = [11, processnum(feats[1])]
+        featsfinal = [11, processnum(feats), processperson(feats), processcase(feats), processgender(feats), 
+                      processanimacy(feats)]
     elif feats[0] == 'PR': #Adp Preposition
         featsfinal = [12, 0]
+    else:
+        featsfinal = [13]
     return featsfinal
 
 #Process features methods are all going to take lists of strings

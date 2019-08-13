@@ -28,7 +28,7 @@ hidden_size = 154
 output_size = 35
 
 ##NN Stuff
-num_epochs = 2
+num_epochs = 10
 batch_size = 100
 learning_rate = 0.001
 
@@ -232,10 +232,15 @@ def processanimacy(word):
         return animacy[word['feats']['Animacy']]
     else:
         return 0
+
     
 #NN    
 net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size)
 net = net.float()
+#In case I want to load it up, 
+#net.load_state_dict(torch.load('torchnet.pkl'))
+#net.eval()
+
 criterion = nn.SmoothL1Loss()
 #criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
@@ -249,12 +254,24 @@ def train(examplelist):
             loss.backward()
             optimizer.step()
 #            print('Successful Step')
-            if (i+1) % 100 == 0:                              # Logging
+            if (i+1) % 200 == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
 
+def test(testlist):
+    correct = 0
+    total = 0
+    for question, answer in testlist:
+        output = net(question.float())
+        total += 1
+        if torch.eq(output, answer.float()).all():
+            correct += 1
+    print('Accuracy of the network on the test dataset: ', (100 * correct / total), '%')
             
-examples = processconllu(file2)
+examples = processconllu(file3)
+testexamples = processconllu(file2)
 train(examples)
+torch.save(net.state_dict(), 'torchnet.pkl')
+test(testexamples)
 
 
 
