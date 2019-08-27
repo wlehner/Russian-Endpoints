@@ -23,12 +23,12 @@ file2= 'ru_syntagrus-ud-test.conllu'
 file3= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
-input_size = 154
-hidden_size = 154
-output_size = 35
+input_size = 250 #154
+hidden_size = 250 #154
+output_size = 70
 
 ##NN Stuff
-num_epochs = 10
+num_epochs = 50
 batch_size = 100
 learning_rate = 0.001
 
@@ -254,7 +254,7 @@ def train(examplelist):
             loss.backward()
             optimizer.step()
 #            print('Successful Step')
-            if (i+1) % 200 == 0:                              # Logging
+            if (i+1) % 5000 == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
 
 def test(testlist):
