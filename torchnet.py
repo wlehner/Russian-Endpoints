@@ -28,7 +28,7 @@ hidden_size = 250 #154
 output_size = 70
 
 ##NN Stuff
-num_epochs = 50
+num_epochs = 10
 batch_size = 100
 learning_rate = 0.001
 
@@ -50,13 +50,17 @@ class Net(nn.Module):
     def __init__(self, inputs, hiddens, outputs):
         super(Net, self).__init__()
         self.fc1 = nn.Linear(inputs, hiddens)
-        self.relu = nn.ReLU()
-        self.fc2 = nn.Linear(hiddens, outputs)
-        
+        self.relu1 = nn.ReLU()
+        self.fc2 = nn.Linear(hiddens, hiddens)
+        self.relu2 = nn.ReLU()
+        self.fc3 = nn.Linear(hiddens, outputs)
+
     def forward(self, x):
         out = self.fc1(x)
-        out = self.relu(out)
+        out = self.relu1(out)
         out = self.fc2(out)
+        out = self.relu2(out)
+        out = self.fc3(out)
         return out
     
 
@@ -257,7 +261,7 @@ def train(examplelist):
             if (i+1) % 5000 == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
 
-def test(testlist):
+def test(testlist, listname):
     correct = 0
     total = 0
     for question, answer in testlist:
@@ -265,13 +269,14 @@ def test(testlist):
         total += 1
         if torch.eq(output, answer.float()).all():
             correct += 1
-    print('Accuracy of the network on the test dataset: ', (100 * correct / total), '%')
+    print('Accuracy of the network on the', listname, ' dataset: ', (100 * correct / total), '%')
             
 examples = processconllu(file3)
 testexamples = processconllu(file2)
 train(examples)
 torch.save(net.state_dict(), 'torchnet.pkl')
-test(testexamples)
+test(testexamples, 'Test')
+test(examples, 'Training')
 
 
 
