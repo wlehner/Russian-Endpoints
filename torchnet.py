@@ -18,9 +18,9 @@ from googletrans import Translator
 #Files
 corpus_root= 'sample_ar/TEXTS'
 fiction_root= 'sample_ar/TEXTS/Fiction/'
-file1= 'ru_syntagrus-ud-dev.conllu' #EMPTY???
-file2= 'ru_syntagrus-ud-test.conllu'
-file3= 'ru_syntagrus-ud-train.conllu'
+devfile= 'ru_syntagrus-ud-dev.conllu' #EMPTY???
+testfile= 'ru_syntagrus-ud-test.conllu'
+trainfile= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
 input_size = 250 #154
@@ -238,16 +238,17 @@ def processanimacy(word):
         return 0
 
     
-#NN    
+#Initialize NN    
 net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size)
 net = net.float()
-#In case I want to load it up, 
-#net.load_state_dict(torch.load('torchnet.pkl'))
-#net.eval()
 
 criterion = nn.SmoothL1Loss()
 #criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
+
+def netload(filename):
+    net.load_state_dict(torch.load(filename))
+    net.eval()
     
 def train(examplelist):
     for epoch in range(num_epochs):
@@ -260,6 +261,7 @@ def train(examplelist):
 #            print('Successful Step')
             if (i+1) % 5000 == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
+    torch.save(net.state_dict(), 'torchnet.pkl')
 
 def test(testlist, listname):
     correct = 0
@@ -270,14 +272,31 @@ def test(testlist, listname):
         if torch.eq(output, answer.float()).all():
             correct += 1
     print('Accuracy of the network on the', listname, ' dataset: ', (100 * correct / total), '%')
-            
-examples = processconllu(file3)
-testexamples = processconllu(file2)
-train(examples)
-torch.save(net.state_dict(), 'torchnet.pkl')
-test(testexamples, 'Test')
-test(examples, 'Training')
+    
+def devtrain(trainlist, testlist, testname):
+    train(trainlist)
+    test(testlist, testname)
 
+#Dev Tests    
+def annotatedtest(testlist, listname, limit):
+    testlist = testlist[:limit]
+    print("Testing Network's Accuracy in the", listname, " dataset:")
+    for question, answer in testlist:
+        output = net(question.float())
+        if torch.eq(output, answer.float()).all():
+            print("Test as True")
+        else:
+            print("Test as False")
+        print("Offical answer: ", answer)
+        print("Network's answer: ", output)
+            
+training_set = processconllu(trainfile)
+test_set = processconllu(testfile)
+netload("torchnet.pkl")
+annotatedtest(test_set, "Test", 10)
+
+#devtrain(training_set, test_set, 'Test')
+#test(training_set, 'Training')
 
 
 def teststuff(file):
