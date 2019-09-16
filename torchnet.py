@@ -23,12 +23,12 @@ testfile= 'ru_syntagrus-ud-test.conllu'
 trainfile= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
-input_size = 250 #154
-hidden_size = 250 #154
-output_size = 70
+input_size = 154 #154
+hidden_size = 154 #154
+output_size = 40
 
 ##NN Stuff
-num_epochs = 10
+num_epochs = 1
 batch_size = 100
 learning_rate = 0.001
 
@@ -37,6 +37,15 @@ prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
+
+
+
+def main_method():
+    training_set = processconllu(trainfile)
+    test_set = processconllu(testfile)
+#    netload("torchnet.pkl")
+#    annotatedtest(test_set, "Test", 10)
+    devtrain(training_set, test_set, 'Test')
 
 
 def ru_translate(sentence_ru):
@@ -63,6 +72,14 @@ class Net(nn.Module):
         out = self.fc3(out)
         return out
     
+#Initialize NN    
+net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size)
+net = net.float()
+
+#criterion = nn.SmoothL1Loss()
+criterion = nn.CrossEntropyLoss()
+# Produces error: Dimension out of range (expected to be in range of [-1, 0], but got 1)
+optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
 
 #Takes Conllu Format and Produces a list of examples
 def processconllu(file):
@@ -100,6 +117,13 @@ def makeanswer(tree, preposition):
         return answer
     else:
         return False
+    
+def makeanswer_1(tree, preposition):
+    node = searchtree(tree, preposition)
+    if node:
+        return node.token['id']
+    else:
+        return False
 
 def makequestion(sentence, preposition):
     question = []
@@ -126,7 +150,7 @@ def processconlsent(sentence, preplist):
     examples = []
     for preposition in preplist:
         question = makequestion(sentence, preposition)
-        answer = makeanswer(sentence.to_tree(), preposition)
+        answer = makeanswer_1(sentence.to_tree(), preposition)
         if question and answer:
 #            print('Question: ', question)
 #            print('Answer: ', answer, '\n')
@@ -237,15 +261,6 @@ def processanimacy(word):
     else:
         return 0
 
-    
-#Initialize NN    
-net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size)
-net = net.float()
-
-criterion = nn.SmoothL1Loss()
-#criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
-
 def netload(filename):
     net.load_state_dict(torch.load(filename))
     net.eval()
@@ -290,10 +305,7 @@ def annotatedtest(testlist, listname, limit):
         print("Offical answer: ", answer)
         print("Network's answer: ", output)
             
-training_set = processconllu(trainfile)
-test_set = processconllu(testfile)
-netload("torchnet.pkl")
-annotatedtest(test_set, "Test", 10)
+
 
 #devtrain(training_set, test_set, 'Test')
 #test(training_set, 'Training')
@@ -301,9 +313,9 @@ annotatedtest(test_set, "Test", 10)
 
 def teststuff(file):
     corpus = parse(open(file, 'r',encoding ="utf-8").read())
-    corpustree = parse_tree(open(file, 'r',encoding ="utf-8").read())
+#    corpustree = parse_tree(open(file, 'r',encoding ="utf-8").read())
     sentence = corpus[12]
-    sentencetree = corpustree[12]
+#    sentencetree = corpustree[12]
 #    sentencetree.print_tree()
 #    mod = searchtree(sentencetree,8)
 #    print(ru_translate(sentence))
@@ -318,8 +330,8 @@ def teststuff(file):
             print ('yes')
         else:
             print('no')
-    
-#teststuff(file1)
+            
+main_method()
 
 
 #List of Problems
