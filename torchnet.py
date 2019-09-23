@@ -8,7 +8,7 @@ Created on Wed Apr  3 14:17:13 2019
 from __future__ import print_function
 from conllu import parse
 from conllu import parse_tree
-import os, gensim, torch, conllu
+import os, gensim, torch, conllu, pickle
 from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 import numpy as np
@@ -25,7 +25,7 @@ trainfile= 'ru_syntagrus-ud-train.conllu'
 #Dimensions
 input_size = 154 #154
 hidden_size = 154 #154
-output_size = 40
+output_size = 40 #Output Size and sentence length need to be seperated
 
 ##NN Stuff
 num_epochs = 1
@@ -42,17 +42,18 @@ translator = Translator()
 
 def main_method():
     training_set = processconllu(trainfile)
-    test_set = processconllu(testfile)
+#    test_set = processconllu(testfile)
 #    netload("torchnet.pkl")
-#    annotatedtest(test_set, "Test", 10)
-    devtrain(training_set, test_set, 'Test')
+    annotatedtrain(training_set, 10)
+#    devtrain(training_set, test_set, 'Test')
 
 
 def ru_translate(sentence_ru):
     return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
 
 def totensor(list):
-    return torch.from_numpy(np.array(list))
+#    return torch.from_numpy(np.array(list))
+    return torch.tensor(list)
 
 #class model
 class Net(nn.Module):
@@ -79,6 +80,7 @@ net = net.float()
 #criterion = nn.SmoothL1Loss()
 criterion = nn.CrossEntropyLoss()
 # Produces error: Dimension out of range (expected to be in range of [-1, 0], but got 1)
+#https://visdap.blogspot.com/2018/12/pytorch-inputs-for-nncrossentropyloss.html
 optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
 
 #Takes Conllu Format and Produces a list of examples
@@ -150,7 +152,7 @@ def processconlsent(sentence, preplist):
     examples = []
     for preposition in preplist:
         question = makequestion(sentence, preposition)
-        answer = makeanswer_1(sentence.to_tree(), preposition)
+        answer = makeanswer(sentence.to_tree(), preposition) #Define's Ansswer Shape
         if question and answer:
 #            print('Question: ', question)
 #            print('Answer: ', answer, '\n')
@@ -297,13 +299,34 @@ def annotatedtest(testlist, listname, limit):
     testlist = testlist[:limit]
     print("Testing Network's Accuracy in the", listname, " dataset:")
     for question, answer in testlist:
-        output = net(question.float())
-        if torch.eq(output, answer.float()).all():
+        output = net(question.long())
+        if torch.eq(output, answer.long()).all():
             print("Test as True")
         else:
             print("Test as False")
         print("Offical answer: ", answer)
         print("Network's answer: ", output)
+        
+def annotatedtrain(examplelist, limit):
+    examplelist = examplelist[:limit]
+    for question, answer in examplelist:
+        optimizer.zero_grad()
+        output = net(question.float())
+        output.unsqueeze_(0)
+        print("Output Length: ", output.size())
+        print("Output: ", output)
+        answer.unsqueeze_(0)
+        print("Answer Length: ", answer.size())
+        print("Answer: ", answer)
+        loss = criterion(output, answer.float())
+        print("Successful Loss: ", loss)
+        
+#https://discuss.pytorch.org/t/runtimeerror-multi-target-not-supported-newbie/10216/3
+#https://mlpipes.com/adding-a-dimension-to-a-tensor-in-pytorch/
+#multi-target not supported at /Users/soumith/b101_2/2019_02_08/wheel_build_dirs/wheel_3.6/pytorch/aten/src/THNN/generic/ClassNLLCriterion.c:21
+#https://www.programcreek.com/python/example/107644/torch.nn.CrossEntropyLoss
+#https://github.com/asappresearch/sru/blob/master/classification/train_classifier.py
+            
             
 
 
