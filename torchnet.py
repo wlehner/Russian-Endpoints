@@ -312,13 +312,14 @@ def annotatedtrain(examplelist, limit):
     for question, answer in examplelist:
         optimizer.zero_grad()
         output = net(question.float())
-        output.unsqueeze_(0)
+        output.unsqueeze_(40)
         print("Output Length: ", output.size())
         print("Output: ", output)
-        answer.unsqueeze_(0)
+        #answer.unsqueeze_(0)
+        #answer = torch.max(answer, 1)[1]
         print("Answer Length: ", answer.size())
         print("Answer: ", answer)
-        loss = criterion(output, answer.float())
+        loss = criterion(output, answer)
         print("Successful Loss: ", loss)
         
 #https://discuss.pytorch.org/t/runtimeerror-multi-target-not-supported-newbie/10216/3
@@ -326,6 +327,7 @@ def annotatedtrain(examplelist, limit):
 #multi-target not supported at /Users/soumith/b101_2/2019_02_08/wheel_build_dirs/wheel_3.6/pytorch/aten/src/THNN/generic/ClassNLLCriterion.c:21
 #https://www.programcreek.com/python/example/107644/torch.nn.CrossEntropyLoss
 #https://github.com/asappresearch/sru/blob/master/classification/train_classifier.py
+#Formating Help: https://github.com/htfy96/future-price-predictor/blob/master/model/cnnBeta.py
             
             
 
