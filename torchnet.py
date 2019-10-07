@@ -26,6 +26,7 @@ trainfile= 'ru_syntagrus-ud-train.conllu'
 input_size = 154 #154
 hidden_size = 154 #154
 output_size = 40 #Output Size and sentence length need to be seperated
+class_num = 39
 
 ##NN Stuff
 num_epochs = 1
@@ -74,7 +75,7 @@ class Net(nn.Module):
         return out
     
 #Initialize NN    
-net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size)
+net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size) #
 net = net.float()
 
 #criterion = nn.SmoothL1Loss()
@@ -312,7 +313,8 @@ def annotatedtrain(examplelist, limit):
     for question, answer in examplelist:
         optimizer.zero_grad()
         output = net(question.float())
-        output.unsqueeze_(40)
+        output.unsqueeze_(1)
+        output.FloatTensor.abs_()
         print("Output Length: ", output.size())
         print("Output: ", output)
         #answer.unsqueeze_(0)
