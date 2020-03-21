@@ -13,6 +13,7 @@ from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 import numpy as np
 import torch.nn as nn
+import torch.nn.functional as F
 from googletrans import Translator
 
 #Files
@@ -26,11 +27,11 @@ trainfile= 'ru_syntagrus-ud-train.conllu'
 input_size = 154 #154
 hidden_size = 154 #154
 output_size = 40 #Output Size and sentence length need to be seperated
-class_num = 39
+class_num = output_size+1 #number of classes should be outputsize+1
 
 ##NN Stuff
 num_epochs = 1
-batch_size = 100
+batch_size = 32
 learning_rate = 0.001
 
 #Other
@@ -78,7 +79,8 @@ class Net(nn.Module):
 net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size) #
 net = net.float()
 
-#criterion = nn.SmoothL1Loss()
+
+#criterion = nn.SmoothL1Loss() 
 criterion = nn.CrossEntropyLoss()
 # Produces error: Dimension out of range (expected to be in range of [-1, 0], but got 1)
 #https://visdap.blogspot.com/2018/12/pytorch-inputs-for-nncrossentropyloss.html
@@ -286,8 +288,9 @@ def test(testlist, listname):
     total = 0
     for question, answer in testlist:
         output = net(question.float())
+        pred = output.data.max(1)[1] #Check out
         total += 1
-        if torch.eq(output, answer.float()).all():
+        if torch.eq(pred, answer.float()).all():
             correct += 1
     print('Accuracy of the network on the', listname, ' dataset: ', (100 * correct / total), '%')
     
@@ -314,15 +317,27 @@ def annotatedtrain(examplelist, limit):
         optimizer.zero_grad()
         output = net(question.float())
         output.unsqueeze_(1)
-        output.FloatTensor.abs_()
         print("Output Length: ", output.size())
         print("Output: ", output)
         #answer.unsqueeze_(0)
         #answer = torch.max(answer, 1)[1]
         print("Answer Length: ", answer.size())
         print("Answer: ", answer)
-        loss = criterion(output, answer)
+        loss = CrossEntropyLoss_2(output, answer)
+        #loss = criterion(output, answer)
         print("Successful Loss: ", loss)
+        
+def CrossEntropyLoss_1(outputs, labels):
+  batch_size = outputs.size()[0]            # batch_size
+  outputs = F.log_softmax(outputs, dim=1)   # compute the log of softmax values
+  outputs = outputs[range(batch_size), labels] # pick the values corresponding to the labels
+  return -torch.sum(outputs)#/num_examples
+
+def CrossEntropyLoss_2(x, y):
+    log_prob = -1.0 * F.log_softmax(x, 1)
+    loss = log_prob.gather(1, y)
+    loss = loss.mean()
+    return loss
         
 #https://discuss.pytorch.org/t/runtimeerror-multi-target-not-supported-newbie/10216/3
 #https://mlpipes.com/adding-a-dimension-to-a-tensor-in-pytorch/
