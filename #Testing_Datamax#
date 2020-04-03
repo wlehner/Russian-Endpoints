@@ -1,4 +1,4 @@
-Process started at:  2020-04-03 11:15:47.504462
+xcxProcess started at:  2020-04-03 11:15:47.504462
 Limited Annotated Training
 Output Length:  torch.Size([40, 1])
 Predicted Value:  tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -14,5 +14,3 @@ Predicted Value:  tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 Answer Length:  torch.Size([40])
 Answer:  tensor([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-Process started at:  2020-04-03 14:44:24.159410
-Limited Annotated Training

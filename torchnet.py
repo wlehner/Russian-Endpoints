@@ -1,4 +1,4 @@
-1;95;0c#!/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Wed Apr  3 14:17:13 2019
@@ -46,10 +46,11 @@ translator = Translator()
 def main_method():
     now = datetime.now()
     print('Process started at: ', now)
-    training_set = processconllu(trainfile)
+    dev_set = processconllu(devfile)
+#    training_set = processconllu(trainfile)
 #    test_set = processconllu(testfile)
 #    netload("torchnet.pkl")
-    annotatedtrain(training_set, 10)
+    annotatedtrain(dev_set, 10)
 #    devtrain(training_set, test_set, 'Test')
 
 
@@ -322,7 +323,7 @@ def annotatedtrain(examplelist, limit):
     for question, answer in examplelist:
         optimizer.zero_grad()
         output = net(question.float())
-        output.unsqueeze_(1)
+        #output.unsqueeze_(1)
         pred = output.data.max(1)[1]
         print("Output Length: ", output.size())
         print("Output: ", output)

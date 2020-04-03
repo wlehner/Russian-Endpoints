@@ -44,3 +44,11 @@ RuntimeError: Assertion `cur_target >= 0 && cur_target < n_classes' failed.  at 
     1;95;0c#!/usr/bin/env python3
           ^
 SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "torchnet.py", line 385, in <module>
+    main_method()
+  File "torchnet.py", line 53, in main_method
+    annotatedtrain(dev_set, 10)
+  File "torchnet.py", line 327, in annotatedtrain
+    pred = output.data.max(1)[1]
+IndexError: Dimension out of range (expected to be in range of [-1, 0], but got 1)
