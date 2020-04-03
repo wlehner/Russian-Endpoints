@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+1;95;0c#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Wed Apr  3 14:17:13 2019
@@ -14,6 +14,7 @@ from gensim.models import KeyedVectors
 import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
+from datetime import datetime
 from googletrans import Translator
 
 #Files
@@ -43,6 +44,8 @@ translator = Translator()
 
 
 def main_method():
+    now = datetime.now()
+    print('Process started at: ', now)
     training_set = processconllu(trainfile)
 #    test_set = processconllu(testfile)
 #    netload("torchnet.pkl")
@@ -271,6 +274,7 @@ def netload(filename):
     net.eval()
     
 def train(examplelist):
+    print('Training Full Set')
     for epoch in range(num_epochs):
         for i, (question, answer) in enumerate(examplelist):
             optimizer.zero_grad()
@@ -284,6 +288,7 @@ def train(examplelist):
     torch.save(net.state_dict(), 'torchnet.pkl')
 
 def test(testlist, listname):
+    print('Testing Full Set')
     correct = 0
     total = 0
     for question, answer in testlist:
@@ -312,19 +317,22 @@ def annotatedtest(testlist, listname, limit):
         print("Network's answer: ", output)
         
 def annotatedtrain(examplelist, limit):
+    print('Limited Annotated Training')
     examplelist = examplelist[:limit]
     for question, answer in examplelist:
         optimizer.zero_grad()
         output = net(question.float())
         output.unsqueeze_(1)
+        pred = output.data.max(1)[1]
         print("Output Length: ", output.size())
         print("Output: ", output)
+        print("Predicted Value: ", pred)
         #answer.unsqueeze_(0)
         #answer = torch.max(answer, 1)[1]
         print("Answer Length: ", answer.size())
         print("Answer: ", answer)
-        loss = CrossEntropyLoss_2(output, answer)
-        #loss = criterion(output, answer)
+        #loss = CrossEntropyLoss_2(output, answer)
+        loss = criterion(output, answer)
         print("Successful Loss: ", loss)
         
 def CrossEntropyLoss_1(outputs, labels):

@@ -1,0 +1,46 @@
+  File "torchnet.py", line 276
+    print('Training Full Set'))
+                              ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "torchnet.py", line 382, in <module>
+    main_method()
+  File "torchnet.py", line 47, in main_method
+    print('Process started at: ', datetime.now())
+AttributeError: module 'datetime' has no attribute 'now'
+Traceback (most recent call last):
+  File "torchnet.py", line 383, in <module>
+    main_method()
+  File "torchnet.py", line 52, in main_method
+    annotatedtrain(training_set, 10)
+  File "torchnet.py", line 334, in annotatedtrain
+    loss = criterion(output, answer)
+  File "/usr3/graduate/wlehner/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 547, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/usr3/graduate/wlehner/.local/lib/python3.6/site-packages/torch/nn/modules/loss.py", line 916, in forward
+    ignore_index=self.ignore_index, reduction=self.reduction)
+  File "/usr3/graduate/wlehner/.local/lib/python3.6/site-packages/torch/nn/functional.py", line 1995, in cross_entropy
+    return nll_loss(log_softmax(input, 1), target, weight, None, ignore_index, None, reduction)
+  File "/usr3/graduate/wlehner/.local/lib/python3.6/site-packages/torch/nn/functional.py", line 1824, in nll_loss
+    ret = torch._C._nn.nll_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index)
+RuntimeError: Assertion `cur_target >= 0 && cur_target < n_classes' failed.  at /pytorch/aten/src/THNN/generic/ClassNLLCriterion.c:94
+Traceback (most recent call last):
+  File "torchnet.py", line 383, in <module>
+    main_method()
+  File "torchnet.py", line 52, in main_method
+    annotatedtrain(training_set, 10)
+  File "torchnet.py", line 334, in annotatedtrain
+    loss = criterion(output, answer)
+  File "/usr3/graduate/wlehner/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 547, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/usr3/graduate/wlehner/.local/lib/python3.6/site-packages/torch/nn/modules/loss.py", line 916, in forward
+    ignore_index=self.ignore_index, reduction=self.reduction)
+  File "/usr3/graduate/wlehner/.local/lib/python3.6/site-packages/torch/nn/functional.py", line 1995, in cross_entropy
+    return nll_loss(log_softmax(input, 1), target, weight, None, ignore_index, None, reduction)
+  File "/usr3/graduate/wlehner/.local/lib/python3.6/site-packages/torch/nn/functional.py", line 1824, in nll_loss
+    ret = torch._C._nn.nll_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index)
+RuntimeError: Assertion `cur_target >= 0 && cur_target < n_classes' failed.  at /pytorch/aten/src/THNN/generic/ClassNLLCriterion.c:94
+  File "torchnet.py", line 1
+    1;95;0c#!/usr/bin/env python3
+          ^
+SyntaxError: invalid syntax

@@ -2,10 +2,10 @@
 
 module load python3
 
-#$ -P statnlp
+#$ -P lxcompl
 #$ -N training_prepnet
-#$ -o training_results
-#$ -e training_errors
+#$ -o Testing_Datamax
+#$ -e Test_Datamax_errors
 #$ -l h_rt=10:00:00
 #$ -m ea
 
