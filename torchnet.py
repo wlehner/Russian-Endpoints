@@ -13,7 +13,7 @@ from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 import numpy as np
 import torch.nn as nn
-import torch.nn.functional as F
+import torch.nn.functional as f
 from datetime import datetime
 from googletrans import Translator
 
@@ -159,7 +159,9 @@ def processconlsent(sentence, preplist):
     examples = []
     for preposition in preplist:
         question = makequestion(sentence, preposition)
-        answer = makeanswer(sentence.to_tree(), preposition) #Define's Ansswer Shape
+#Defines Answer Shape        
+        answer = makeanswer_1(sentence.to_tree(), preposition)
+        #answer = makeanswer(sentence.to_tree(), preposition)
         if question and answer:
 #            print('Question: ', question)
 #            print('Answer: ', answer, '\n')
@@ -323,27 +325,28 @@ def annotatedtrain(examplelist, limit):
     for question, answer in examplelist:
         optimizer.zero_grad()
         output = net(question.float())
-        #output.unsqueeze_(1)
-        pred = output.data.max(1)[1]
+        output.unsqueeze_(0)
+        pred = output.max(0)[1]
         print("Output Length: ", output.size())
         print("Output: ", output)
         print("Predicted Value: ", pred)
-        #answer.unsqueeze_(0)
+        answer.unsqueeze_(0)
         #answer = torch.max(answer, 1)[1]
         print("Answer Length: ", answer.size())
         print("Answer: ", answer)
         #loss = CrossEntropyLoss_2(output, answer)
         loss = criterion(output, answer)
+        #loss = f.cross_entropy(output, answer)
         print("Successful Loss: ", loss)
         
 def CrossEntropyLoss_1(outputs, labels):
   batch_size = outputs.size()[0]            # batch_size
-  outputs = F.log_softmax(outputs, dim=1)   # compute the log of softmax values
+  outputs = f.log_softmax(outputs, dim=1)   # compute the log of softmax values
   outputs = outputs[range(batch_size), labels] # pick the values corresponding to the labels
   return -torch.sum(outputs)#/num_examples
 
 def CrossEntropyLoss_2(x, y):
-    log_prob = -1.0 * F.log_softmax(x, 1)
+    log_prob = -1.0 * f.log_softmax(x, 1)
     loss = log_prob.gather(1, y)
     loss = loss.mean()
     return loss
