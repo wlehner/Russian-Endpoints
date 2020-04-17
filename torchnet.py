@@ -31,7 +31,7 @@ output_size = 40 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 
 ##NN Stuff
-num_epochs = 1
+num_epochs = 2
 batch_size = 32
 learning_rate = 0.001
 
@@ -47,10 +47,14 @@ def main_method():
     now = datetime.now()
     print('Process started at: ', now)
     dev_set = processconllu(devfile)
+    train(dev_set)
+    test(dev_set)
+    
+    
 #    training_set = processconllu(trainfile)
 #    test_set = processconllu(testfile)
 #    netload("torchnet.pkl")
-    annotatedtrain(dev_set, 10)
+#    annotatedtrain(dev_set, 10)
 #    devtrain(training_set, test_set, 'Test')
 
 
@@ -282,62 +286,65 @@ def train(examplelist):
         for i, (question, answer) in enumerate(examplelist):
             optimizer.zero_grad()
             output = net(question.float())
-            loss = criterion(output, answer.float())
+            output.unsqueeze_(0)
+            answer.unsqueeze_(0)
+            loss = criterion(output, answer)
             loss.backward()
             optimizer.step()
-#            print('Successful Step')
-            if (i+1) % 5000 == 0:                              # Logging
+            if (i+1) % 50 == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
     torch.save(net.state_dict(), 'torchnet.pkl')
 
-def test(testlist, listname):
-    print('Testing Full Set')
+def test(testlist):
+    print('Testing')
     correct = 0
     total = 0
     for question, answer in testlist:
         output = net(question.float())
-        pred = output.data.max(1)[1] #Check out
+        pred = output.max(0)[1] #Check out
         total += 1
-        if torch.eq(pred, answer.float()).all():
+        if torch.eq(pred, answer):
             correct += 1
-    print('Accuracy of the network on the', listname, ' dataset: ', (100 * correct / total), '%')
+    print('Accuracy of the network: ', (100 * correct / total), '%')
     
-def devtrain(trainlist, testlist, testname):
+def devtrain(trainlist, testlist):
     train(trainlist)
-    test(testlist, testname)
+    test(testlist)
 
 #Dev Tests    
-def annotatedtest(testlist, listname, limit):
+def annotatedtest(testlist,  limit):
     testlist = testlist[:limit]
-    print("Testing Network's Accuracy in the", listname, " dataset:")
+    correct = 0
+    total = 0
+    acc = False
+    print("Testing Network's Accuracy:")
     for question, answer in testlist:
-        output = net(question.long())
-        if torch.eq(output, answer.long()).all():
-            print("Test as True")
-        else:
-            print("Test as False")
-        print("Offical answer: ", answer)
-        print("Network's answer: ", output)
+        output = net(question.float())
+        pred = output.max(0)[1]
+        total += 1
+        acc = torch.eq(pred, answer)
+        if acc:
+            correct += 1
+        print("Answer: ", answer, " Output: ", pred, " Result: ", acc)
+    print("Final Accuracy: ", (100 * correct / total), "%")
         
 def annotatedtrain(examplelist, limit):
-    print('Limited Annotated Training')
+    print('Annotated Training')
     examplelist = examplelist[:limit]
-    for question, answer in examplelist:
-        optimizer.zero_grad()
-        output = net(question.float())
-        output.unsqueeze_(0)
-        pred = output.max(0)[1]
-        print("Output Length: ", output.size())
-        print("Output: ", output)
-        print("Predicted Value: ", pred)
-        answer.unsqueeze_(0)
-        #answer = torch.max(answer, 1)[1]
-        print("Answer Length: ", answer.size())
-        print("Answer: ", answer)
-        #loss = CrossEntropyLoss_2(output, answer)
-        loss = criterion(output, answer)
-        #loss = f.cross_entropy(output, answer)
-        print("Successful Loss: ", loss)
+    for epoch in range(num_epochs):
+        for i, (question, answer) in enumerate(examplelist):
+            optimizer.zero_grad()
+            output = net(question.float())
+            pred = output.max(0)[1]
+            output.unsqueeze_(0)
+            answer.unsqueeze_(0)
+            #loss = CrossEntropyLoss_2(output, answer)
+            loss = criterion(output, answer)
+            loss.backward()
+            optimizer.step()
+            if (i+1) % 100 == 0:
+                print("Predicted Value:", pred.item(), " Answer:", answer[0].item(), " Loss:", loss.item())
+        
         
 def CrossEntropyLoss_1(outputs, labels):
   batch_size = outputs.size()[0]            # batch_size

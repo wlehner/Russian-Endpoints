@@ -903,3 +903,5 @@ Epoch [10/10], Step [45000/54625], Loss: 0.0065
 Epoch [10/10], Step [50000/54625], Loss: 0.0068
 Accuracy of the network on the Test  dataset:  0.0 %
 Accuracy of the network on the Training  dataset:  0.0 %
+Process started at:  2020-04-17 07:22:50.914600
+Training Full Set
