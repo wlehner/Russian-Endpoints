@@ -3,9 +3,9 @@
 module load python3
 
 #$ -P lxcompl
-#$ -N testing_two_jobs
+#$ -N learning_rate_test
 #$ -j y
-#$ -o training_results1
+#$ -o training_results2
 #$ -l h_rt=10:00:00
 #$ -m ea
 

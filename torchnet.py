@@ -21,7 +21,7 @@ from googletrans import Translator
 corpus_root= 'sample_ar/TEXTS'
 fiction_root= 'sample_ar/TEXTS/Fiction/'
 development_set= 'ru_syntagrus-ud-dev.conllu'
-testfile= 'ru_syntagrus-ud-test.conllu'
+testing_set= 'ru_syntagrus-ud-test.conllu'
 training_set= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
@@ -31,10 +31,10 @@ output_size = 40 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 
 ##NN Stuff
-num_epochs = 2
+num_epochs = 1
 batch_size = 32
-learning_rate = 0.001
-filefortraining = training_set
+learning_rate = 0.02
+filefortraining = testing_set
 filefordev = development_set
 
 #Other
@@ -293,7 +293,7 @@ def train(examplelist):
             loss = criterion(output, answer)
             loss.backward()
             optimizer.step()
-            if (i+1) % 50 == 0:                              # Logging
+            if (i+1) % 200 == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
     torch.save(net.state_dict(), 'torchnet.pkl')
 
