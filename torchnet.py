@@ -20,9 +20,9 @@ from googletrans import Translator
 #Files
 corpus_root= 'sample_ar/TEXTS'
 fiction_root= 'sample_ar/TEXTS/Fiction/'
-devfile= 'ru_syntagrus-ud-dev.conllu' #EMPTY???
+development_set= 'ru_syntagrus-ud-dev.conllu'
 testfile= 'ru_syntagrus-ud-test.conllu'
-trainfile= 'ru_syntagrus-ud-train.conllu'
+training_set= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
 input_size = 154 #154
@@ -34,6 +34,8 @@ class_num = output_size+1 #number of classes should be outputsize+1
 num_epochs = 2
 batch_size = 32
 learning_rate = 0.001
+filefortraining = training_set
+filefordev = development_set
 
 #Other
 prepositions = ["в","на","за","к","из","с","от"]
@@ -45,13 +47,14 @@ translator = Translator()
 
 def main_method():
     now = datetime.now()
-    print('Process started at: ', now)
-    dev_set = processconllu(devfile)
-    train(dev_set)
+    print('HEADER: Date:', now, ' Learning Rate:', learning_rate, ' Epochs:', num_epochs)
+    print('     Training with:', filefortraining, ' and Testing with:', filefordev)
+    dev_set = processconllu(filefordev)
+    train_set = processconllu(filefortraining)
+    train(train_set)
+    print('CONCLUSION: Date:', now, ' Learning Rate', learning_rate, ' Epochs:', num_epochs)
     test(dev_set)
     
-    
-#    training_set = processconllu(trainfile)
 #    test_set = processconllu(testfile)
 #    netload("torchnet.pkl")
 #    annotatedtrain(dev_set, 10)
@@ -281,7 +284,6 @@ def netload(filename):
     net.eval()
     
 def train(examplelist):
-    print('Training Full Set')
     for epoch in range(num_epochs):
         for i, (question, answer) in enumerate(examplelist):
             optimizer.zero_grad()
@@ -325,7 +327,7 @@ def annotatedtest(testlist,  limit):
         acc = torch.eq(pred, answer)
         if acc:
             correct += 1
-        print("Answer: ", answer, " Output: ", pred, " Result: ", acc)
+        print("Answer: ", answer, " Output: ", pred, " Result: ", acc.item())
     print("Final Accuracy: ", (100 * correct / total), "%")
         
 def annotatedtrain(examplelist, limit):
