@@ -31,10 +31,10 @@ output_size = 40 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 
 ##NN Stuff
-num_epochs = 1
+num_epochs = 2
 batch_size = 32
-learning_rate = 0.02
-filefortraining = testing_set
+learning_rate = 0.001
+filefortraining = training_set
 filefordev = development_set
 
 #Other
@@ -42,6 +42,7 @@ prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
+log_freq = 500
 
 
 
@@ -289,11 +290,11 @@ def train(examplelist):
             optimizer.zero_grad()
             output = net(question.float())
             output.unsqueeze_(0)
-            answer.unsqueeze_(0)
-            loss = criterion(output, answer)
+            y = answer.unsqueeze(0)
+            loss = criterion(output, y)
             loss.backward()
             optimizer.step()
-            if (i+1) % 200 == 0:                              # Logging
+            if (i+1) % log_freq == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
     torch.save(net.state_dict(), 'torchnet.pkl')
 

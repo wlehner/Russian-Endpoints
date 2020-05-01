@@ -3,7 +3,7 @@
 module load python3
 
 #$ -P lxcompl
-#$ -N learning_rate_test
+#$ -N Script_Test2
 #$ -j y
 #$ -o training_results2
 #$ -l h_rt=10:00:00
