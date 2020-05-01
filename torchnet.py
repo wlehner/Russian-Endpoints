@@ -32,7 +32,7 @@ class_num = output_size+1 #number of classes should be outputsize+1
 
 ##NN Stuff
 num_epochs = 2
-batch_size = 32
+batch_size = 3
 learning_rate = 0.001
 filefortraining = training_set
 filefordev = development_set
