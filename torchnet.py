@@ -31,9 +31,9 @@ output_size = 40 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 
 ##NN Stuff
-num_epochs = 2
-batch_size = 32
-learning_rate = 0.001
+num_epochs = 200
+#batch_size = 32
+learning_rate = 0.002
 filefortraining = training_set
 filefordev = development_set
 
@@ -42,18 +42,22 @@ prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
-log_freq = 500
+log_freq = 10000
 
 
 
 def main_method():
     now = datetime.now()
-    print('HEADER: Date:', now, ' Learning Rate:', learning_rate, ' Epochs:', num_epochs)
+    print('TRAINING: Date:', now, ' Learning Rate:', learning_rate, ' Epochs:', num_epochs)
     print('     Training with:', filefortraining, ' and Testing with:', filefordev)
     dev_set = processconllu(filefordev)
     train_set = processconllu(filefortraining)
+#    netload('torchnet.pkl')
     train(train_set)
-    print('CONCLUSION: Date:', now, ' Learning Rate', learning_rate, ' Epochs:', num_epochs)
+    print('TESTING: Date:', now, ' Learning Rate', learning_rate, ' Epochs:', num_epochs)
+    print('1Testing on', filefortraining)
+    test(train_set)
+    print('2Testing on', filefordev)
     test(dev_set)
     
 #    test_set = processconllu(testfile)
@@ -286,6 +290,7 @@ def netload(filename):
     
 def train(examplelist):
     for epoch in range(num_epochs):
+        losstotal = 0
         for i, (question, answer) in enumerate(examplelist):
             optimizer.zero_grad()
             output = net(question.float())
@@ -294,12 +299,13 @@ def train(examplelist):
             loss = criterion(output, y)
             loss.backward()
             optimizer.step()
+            losstotal += loss
             if (i+1) % log_freq == 0:                              # Logging
-                print('Epoch [%d/%d], Step [%d/%d], Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), loss))
+                print('Epoch [%d/%d], Step [%d/%d], Avg Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), losstotal/log_freq))
+                losstotal = 0
     torch.save(net.state_dict(), 'torchnet.pkl')
 
 def test(testlist):
-    print('Testing')
     correct = 0
     total = 0
     for question, answer in testlist:
