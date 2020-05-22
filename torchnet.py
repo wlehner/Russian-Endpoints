@@ -26,7 +26,7 @@ training_set= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
 input_size = 154 #154
-hidden_size = 154 #154
+hidden_size = 300 #154
 output_size = 40 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 
@@ -42,17 +42,17 @@ prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
-log_freq = 10000
+log_freq = 20000
 
 
 
 def main_method():
     now = datetime.now()
-    print('TRAINING: Date:', now, ' Learning Rate:', learning_rate, ' Epochs:', num_epochs)
+    print('TRAINING: Date:', now, ' Learning Rate:', learning_rate, ' Epochs:', num_epochs, 'Hidden Layer Size:', hidden_size)
     print('     Training with:', filefortraining, ' and Testing with:', filefordev)
     dev_set = processconllu(filefordev)
     train_set = processconllu(filefortraining)
-#    netload('torchnet.pkl')
+    netload('torchnet.pkl')
     train(train_set)
     print('TESTING: Date:', now, ' Learning Rate', learning_rate, ' Epochs:', num_epochs)
     print('1Testing on', filefortraining)
