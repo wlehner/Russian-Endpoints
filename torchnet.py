@@ -8,7 +8,7 @@ Created on Wed Apr  3 14:17:13 2019
 from __future__ import print_function
 from conllu import parse
 from conllu import parse_tree
-import os, gensim, torch, conllu, pickle
+import os, gensim, torch, conllu, pickle, random
 from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 import numpy as np
@@ -26,14 +26,14 @@ training_set= 'ru_syntagrus-ud-train.conllu'
 
 #Dimensions
 input_size = 154 #154
-hidden_size = 300 #154
+hidden_size = 200 #154
 output_size = 40 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 
 ##NN Stuff
-num_epochs = 200
+num_epochs = 20
 #batch_size = 32
-learning_rate = 0.002
+learning_rate = 0.05
 filefortraining = training_set
 filefordev = development_set
 
@@ -42,7 +42,7 @@ prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
-log_freq = 20000
+log_freq = 1000
 
 
 
@@ -52,15 +52,18 @@ def main_method():
     print('     Training with:', filefortraining, ' and Testing with:', filefordev)
     dev_set = processconllu(filefordev)
     train_set = processconllu(filefortraining)
-    netload('torchnet.pkl')
+    #netload('torchnet.pkl')
+    #annotatedtrain(train_set, 50)
     train(train_set)
     print('TESTING: Date:', now, ' Learning Rate', learning_rate, ' Epochs:', num_epochs)
-    print('1Testing on', filefortraining)
+    print('Annotated Test on', filefordev)
+    annotatedtest(dev_set, 10)
+    print('Testing on', filefortraining)
     test(train_set)
-    print('2Testing on', filefordev)
+    print('Testing on', filefordev)
     test(dev_set)
     
-#    test_set = processconllu(testfile)
+
 #    netload("torchnet.pkl")
 #    annotatedtrain(dev_set, 10)
 #    devtrain(training_set, test_set, 'Test')
@@ -70,7 +73,6 @@ def ru_translate(sentence_ru):
     return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
 
 def totensor(list):
-#    return torch.from_numpy(np.array(list))
     return torch.tensor(list)
 
 #class model
@@ -291,6 +293,7 @@ def netload(filename):
 def train(examplelist):
     for epoch in range(num_epochs):
         losstotal = 0
+        random.shuffle(examplelist)
         for i, (question, answer) in enumerate(examplelist):
             optimizer.zero_grad()
             output = net(question.float())
@@ -326,7 +329,7 @@ def annotatedtest(testlist,  limit):
     correct = 0
     total = 0
     acc = False
-    print("Testing Network's Accuracy:")
+    #print("Annotated Test:")
     for question, answer in testlist:
         output = net(question.float())
         pred = output.max(0)[1]
@@ -335,7 +338,7 @@ def annotatedtest(testlist,  limit):
         if acc:
             correct += 1
         print("Answer: ", answer, " Output: ", pred, " Result: ", acc.item())
-    print("Final Accuracy: ", (100 * correct / total), "%")
+    print("Accuracy: ", (100 * correct / total), "%")
         
 def annotatedtrain(examplelist, limit):
     print('Annotated Training')
@@ -346,9 +349,9 @@ def annotatedtrain(examplelist, limit):
             output = net(question.float())
             pred = output.max(0)[1]
             output.unsqueeze_(0)
-            answer.unsqueeze_(0)
+            y = answer.unsqueeze(0)
             #loss = CrossEntropyLoss_2(output, answer)
-            loss = criterion(output, answer)
+            loss = criterion(output, y)
             loss.backward()
             optimizer.step()
             if (i+1) % 100 == 0:
@@ -373,12 +376,6 @@ def CrossEntropyLoss_2(x, y):
 #https://www.programcreek.com/python/example/107644/torch.nn.CrossEntropyLoss
 #https://github.com/asappresearch/sru/blob/master/classification/train_classifier.py
 #Formating Help: https://github.com/htfy96/future-price-predictor/blob/master/model/cnnBeta.py
-            
-            
-
-
-#devtrain(training_set, test_set, 'Test')
-#test(training_set, 'Training')
 
 
 def teststuff(file):
