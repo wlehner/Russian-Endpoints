@@ -1,0 +1,362 @@
+TRAINING:Started at: 2020-10-05 11:25:15.369482  Learning Rate: 0.0001  Epochs: 25 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 57
+Epoch [1/25], Step [5000/57303], Avg Loss: 2.8104
+Epoch [1/25], Step [10000/57303], Avg Loss: 2.2742
+Epoch [1/25], Step [15000/57303], Avg Loss: 2.1750
+Epoch [1/25], Step [20000/57303], Avg Loss: 2.0473
+Epoch [1/25], Step [25000/57303], Avg Loss: 2.0047
+Epoch [1/25], Step [30000/57303], Avg Loss: 1.9918
+Epoch [1/25], Step [35000/57303], Avg Loss: 2.0058
+Epoch [1/25], Step [40000/57303], Avg Loss: 1.9742
+Epoch [1/25], Step [45000/57303], Avg Loss: 1.9294
+Epoch [1/25], Step [50000/57303], Avg Loss: 1.9293
+Epoch [1/25], Step [55000/57303], Avg Loss: 1.9497
+Epoch [2/25], Step [5000/57303], Avg Loss: 1.8410
+Epoch [2/25], Step [10000/57303], Avg Loss: 1.8324
+Epoch [2/25], Step [15000/57303], Avg Loss: 1.8003
+Epoch [2/25], Step [20000/57303], Avg Loss: 1.8453
+Epoch [2/25], Step [25000/57303], Avg Loss: 1.7867
+Epoch [2/25], Step [30000/57303], Avg Loss: 1.7676
+Epoch [2/25], Step [35000/57303], Avg Loss: 1.7909
+Epoch [2/25], Step [40000/57303], Avg Loss: 1.7936
+Epoch [2/25], Step [45000/57303], Avg Loss: 1.7796
+Epoch [2/25], Step [50000/57303], Avg Loss: 1.7695
+Epoch [2/25], Step [55000/57303], Avg Loss: 1.7985
+Epoch [3/25], Step [5000/57303], Avg Loss: 1.6674
+Epoch [3/25], Step [10000/57303], Avg Loss: 1.7171
+Epoch [3/25], Step [15000/57303], Avg Loss: 1.6766
+Epoch [3/25], Step [20000/57303], Avg Loss: 1.6840
+Epoch [3/25], Step [25000/57303], Avg Loss: 1.6865
+Epoch [3/25], Step [30000/57303], Avg Loss: 1.6844
+Epoch [3/25], Step [35000/57303], Avg Loss: 1.6665
+Epoch [3/25], Step [40000/57303], Avg Loss: 1.6996
+Epoch [3/25], Step [45000/57303], Avg Loss: 1.7092
+Epoch [3/25], Step [50000/57303], Avg Loss: 1.6980
+Epoch [3/25], Step [55000/57303], Avg Loss: 1.6598
+Epoch [4/25], Step [5000/57303], Avg Loss: 1.5575
+Epoch [4/25], Step [10000/57303], Avg Loss: 1.5906
+Epoch [4/25], Step [15000/57303], Avg Loss: 1.5972
+Epoch [4/25], Step [20000/57303], Avg Loss: 1.5884
+Epoch [4/25], Step [25000/57303], Avg Loss: 1.5568
+Epoch [4/25], Step [30000/57303], Avg Loss: 1.6348
+Epoch [4/25], Step [35000/57303], Avg Loss: 1.5859
+Epoch [4/25], Step [40000/57303], Avg Loss: 1.5850
+Epoch [4/25], Step [45000/57303], Avg Loss: 1.6048
+Epoch [4/25], Step [50000/57303], Avg Loss: 1.6012
+Epoch [4/25], Step [55000/57303], Avg Loss: 1.6385
+Epoch [5/25], Step [5000/57303], Avg Loss: 1.4867
+Epoch [5/25], Step [10000/57303], Avg Loss: 1.4747
+Epoch [5/25], Step [15000/57303], Avg Loss: 1.4771
+Epoch [5/25], Step [20000/57303], Avg Loss: 1.5285
+Epoch [5/25], Step [25000/57303], Avg Loss: 1.5166
+Epoch [5/25], Step [30000/57303], Avg Loss: 1.5389
+Epoch [5/25], Step [35000/57303], Avg Loss: 1.5094
+Epoch [5/25], Step [40000/57303], Avg Loss: 1.5443
+Epoch [5/25], Step [45000/57303], Avg Loss: 1.5436
+Epoch [5/25], Step [50000/57303], Avg Loss: 1.5135
+Epoch [5/25], Step [55000/57303], Avg Loss: 1.5046
+Epoch [6/25], Step [5000/57303], Avg Loss: 1.4194
+Epoch [6/25], Step [10000/57303], Avg Loss: 1.4392
+Epoch [6/25], Step [15000/57303], Avg Loss: 1.4041
+Epoch [6/25], Step [20000/57303], Avg Loss: 1.4064
+Epoch [6/25], Step [25000/57303], Avg Loss: 1.4430
+Epoch [6/25], Step [30000/57303], Avg Loss: 1.4420
+Epoch [6/25], Step [35000/57303], Avg Loss: 1.4729
+Epoch [6/25], Step [40000/57303], Avg Loss: 1.4586
+Epoch [6/25], Step [45000/57303], Avg Loss: 1.4292
+Epoch [6/25], Step [50000/57303], Avg Loss: 1.4308
+Epoch [6/25], Step [55000/57303], Avg Loss: 1.4560
+Epoch [7/25], Step [5000/57303], Avg Loss: 1.3606
+Epoch [7/25], Step [10000/57303], Avg Loss: 1.3433
+Epoch [7/25], Step [15000/57303], Avg Loss: 1.3678
+Epoch [7/25], Step [20000/57303], Avg Loss: 1.3578
+Epoch [7/25], Step [25000/57303], Avg Loss: 1.3727
+Epoch [7/25], Step [30000/57303], Avg Loss: 1.3554
+Epoch [7/25], Step [35000/57303], Avg Loss: 1.3818
+Epoch [7/25], Step [40000/57303], Avg Loss: 1.3208
+Epoch [7/25], Step [45000/57303], Avg Loss: 1.3900
+Epoch [7/25], Step [50000/57303], Avg Loss: 1.3728
+Epoch [7/25], Step [55000/57303], Avg Loss: 1.4104
+Epoch [8/25], Step [5000/57303], Avg Loss: 1.2494
+Epoch [8/25], Step [10000/57303], Avg Loss: 1.2657
+Epoch [8/25], Step [15000/57303], Avg Loss: 1.2742
+Epoch [8/25], Step [20000/57303], Avg Loss: 1.2750
+Epoch [8/25], Step [25000/57303], Avg Loss: 1.3364
+Epoch [8/25], Step [30000/57303], Avg Loss: 1.2849
+Epoch [8/25], Step [35000/57303], Avg Loss: 1.3121
+Epoch [8/25], Step [40000/57303], Avg Loss: 1.3561
+Epoch [8/25], Step [45000/57303], Avg Loss: 1.3453
+Epoch [8/25], Step [50000/57303], Avg Loss: 1.3135
+Epoch [8/25], Step [55000/57303], Avg Loss: 1.3379
+Epoch [9/25], Step [5000/57303], Avg Loss: 1.1504
+Epoch [9/25], Step [10000/57303], Avg Loss: 1.2263
+Epoch [9/25], Step [15000/57303], Avg Loss: 1.2002
+Epoch [9/25], Step [20000/57303], Avg Loss: 1.2789
+Epoch [9/25], Step [25000/57303], Avg Loss: 1.2643
+Epoch [9/25], Step [30000/57303], Avg Loss: 1.2337
+Epoch [9/25], Step [35000/57303], Avg Loss: 1.2535
+Epoch [9/25], Step [40000/57303], Avg Loss: 1.3107
+Epoch [9/25], Step [45000/57303], Avg Loss: 1.2694
+Epoch [9/25], Step [50000/57303], Avg Loss: 1.2717
+Epoch [9/25], Step [55000/57303], Avg Loss: 1.2888
+Epoch [10/25], Step [5000/57303], Avg Loss: 1.1192
+Epoch [10/25], Step [10000/57303], Avg Loss: 1.1507
+Epoch [10/25], Step [15000/57303], Avg Loss: 1.1565
+Epoch [10/25], Step [20000/57303], Avg Loss: 1.2220
+Epoch [10/25], Step [25000/57303], Avg Loss: 1.1789
+Epoch [10/25], Step [30000/57303], Avg Loss: 1.2131
+Epoch [10/25], Step [35000/57303], Avg Loss: 1.2389
+Epoch [10/25], Step [40000/57303], Avg Loss: 1.2127
+Epoch [10/25], Step [45000/57303], Avg Loss: 1.2447
+Epoch [10/25], Step [50000/57303], Avg Loss: 1.2232
+Epoch [10/25], Step [55000/57303], Avg Loss: 1.2487
+Epoch [11/25], Step [5000/57303], Avg Loss: 1.1231
+Epoch [11/25], Step [10000/57303], Avg Loss: 1.0919
+Epoch [11/25], Step [15000/57303], Avg Loss: 1.1027
+Epoch [11/25], Step [20000/57303], Avg Loss: 1.1616
+Epoch [11/25], Step [25000/57303], Avg Loss: 1.1511
+Epoch [11/25], Step [30000/57303], Avg Loss: 1.1434
+Epoch [11/25], Step [35000/57303], Avg Loss: 1.1833
+Epoch [11/25], Step [40000/57303], Avg Loss: 1.1889
+Epoch [11/25], Step [45000/57303], Avg Loss: 1.1635
+Epoch [11/25], Step [50000/57303], Avg Loss: 1.1764
+Epoch [11/25], Step [55000/57303], Avg Loss: 1.2018
+Epoch [12/25], Step [5000/57303], Avg Loss: 1.0588
+Epoch [12/25], Step [10000/57303], Avg Loss: 1.0518
+Epoch [12/25], Step [15000/57303], Avg Loss: 1.1291
+Epoch [12/25], Step [20000/57303], Avg Loss: 1.0586
+Epoch [12/25], Step [25000/57303], Avg Loss: 1.1091
+Epoch [12/25], Step [30000/57303], Avg Loss: 1.1053
+Epoch [12/25], Step [35000/57303], Avg Loss: 1.1387
+Epoch [12/25], Step [40000/57303], Avg Loss: 1.1341
+Epoch [12/25], Step [45000/57303], Avg Loss: 1.1429
+Epoch [12/25], Step [50000/57303], Avg Loss: 1.1660
+Epoch [12/25], Step [55000/57303], Avg Loss: 1.1687
+Epoch [13/25], Step [5000/57303], Avg Loss: 0.9822
+Epoch [13/25], Step [10000/57303], Avg Loss: 1.0618
+Epoch [13/25], Step [15000/57303], Avg Loss: 1.0506
+Epoch [13/25], Step [20000/57303], Avg Loss: 1.0580
+Epoch [13/25], Step [25000/57303], Avg Loss: 1.0343
+Epoch [13/25], Step [30000/57303], Avg Loss: 1.0872
+Epoch [13/25], Step [35000/57303], Avg Loss: 1.1068
+Epoch [13/25], Step [40000/57303], Avg Loss: 1.0964
+Epoch [13/25], Step [45000/57303], Avg Loss: 1.1408
+Epoch [13/25], Step [50000/57303], Avg Loss: 1.1260
+Epoch [13/25], Step [55000/57303], Avg Loss: 1.1153
+Epoch [14/25], Step [5000/57303], Avg Loss: 0.9786
+Epoch [14/25], Step [10000/57303], Avg Loss: 0.9871
+Epoch [14/25], Step [15000/57303], Avg Loss: 1.0126
+Epoch [14/25], Step [20000/57303], Avg Loss: 1.0581
+Epoch [14/25], Step [25000/57303], Avg Loss: 1.0422
+Epoch [14/25], Step [30000/57303], Avg Loss: 1.0455
+Epoch [14/25], Step [35000/57303], Avg Loss: 1.0375
+Epoch [14/25], Step [40000/57303], Avg Loss: 1.0499
+Epoch [14/25], Step [45000/57303], Avg Loss: 1.0777
+Epoch [14/25], Step [50000/57303], Avg Loss: 1.1103
+Epoch [14/25], Step [55000/57303], Avg Loss: 1.1014
+Epoch [15/25], Step [5000/57303], Avg Loss: 0.9181
+Epoch [15/25], Step [10000/57303], Avg Loss: 0.9445
+Epoch [15/25], Step [15000/57303], Avg Loss: 0.9654
+Epoch [15/25], Step [20000/57303], Avg Loss: 1.0177
+Epoch [15/25], Step [25000/57303], Avg Loss: 1.0230
+Epoch [15/25], Step [30000/57303], Avg Loss: 1.0034
+Epoch [15/25], Step [35000/57303], Avg Loss: 1.0384
+Epoch [15/25], Step [40000/57303], Avg Loss: 1.0224
+Epoch [15/25], Step [45000/57303], Avg Loss: 1.0627
+Epoch [15/25], Step [50000/57303], Avg Loss: 1.0371
+Epoch [15/25], Step [55000/57303], Avg Loss: 1.0693
+Epoch [16/25], Step [5000/57303], Avg Loss: 0.8646
+Epoch [16/25], Step [10000/57303], Avg Loss: 0.9317
+Epoch [16/25], Step [15000/57303], Avg Loss: 0.9446
+Epoch [16/25], Step [20000/57303], Avg Loss: 0.9741
+Epoch [16/25], Step [25000/57303], Avg Loss: 0.9799
+Epoch [16/25], Step [30000/57303], Avg Loss: 1.0022
+Epoch [16/25], Step [35000/57303], Avg Loss: 1.0243
+Epoch [16/25], Step [40000/57303], Avg Loss: 0.9805
+Epoch [16/25], Step [45000/57303], Avg Loss: 1.0530
+Epoch [16/25], Step [50000/57303], Avg Loss: 1.0289
+Epoch [16/25], Step [55000/57303], Avg Loss: 1.0676
+Epoch [17/25], Step [5000/57303], Avg Loss: 0.8764
+Epoch [17/25], Step [10000/57303], Avg Loss: 0.8971
+Epoch [17/25], Step [15000/57303], Avg Loss: 0.9207
+Epoch [17/25], Step [20000/57303], Avg Loss: 0.9274
+Epoch [17/25], Step [25000/57303], Avg Loss: 0.9635
+Epoch [17/25], Step [30000/57303], Avg Loss: 0.9369
+Epoch [17/25], Step [35000/57303], Avg Loss: 0.9485
+Epoch [17/25], Step [40000/57303], Avg Loss: 0.9807
+Epoch [17/25], Step [45000/57303], Avg Loss: 0.9941
+Epoch [17/25], Step [50000/57303], Avg Loss: 1.0532
+Epoch [17/25], Step [55000/57303], Avg Loss: 1.0244
+Epoch [18/25], Step [5000/57303], Avg Loss: 0.8340
+Epoch [18/25], Step [10000/57303], Avg Loss: 0.8944
+Epoch [18/25], Step [15000/57303], Avg Loss: 0.9127
+Epoch [18/25], Step [20000/57303], Avg Loss: 0.9430
+Epoch [18/25], Step [25000/57303], Avg Loss: 0.9182
+Epoch [18/25], Step [30000/57303], Avg Loss: 0.9453
+Epoch [18/25], Step [35000/57303], Avg Loss: 0.9350
+Epoch [18/25], Step [40000/57303], Avg Loss: 0.9520
+Epoch [18/25], Step [45000/57303], Avg Loss: 0.9835
+Epoch [18/25], Step [50000/57303], Avg Loss: 0.9701
+Epoch [18/25], Step [55000/57303], Avg Loss: 1.0170
+Epoch [19/25], Step [5000/57303], Avg Loss: 0.8390
+Epoch [19/25], Step [10000/57303], Avg Loss: 0.8666
+Epoch [19/25], Step [15000/57303], Avg Loss: 0.8828
+Epoch [19/25], Step [20000/57303], Avg Loss: 0.8853
+Epoch [19/25], Step [25000/57303], Avg Loss: 0.9043
+Epoch [19/25], Step [30000/57303], Avg Loss: 0.8921
+Epoch [19/25], Step [35000/57303], Avg Loss: 0.9344
+Epoch [19/25], Step [40000/57303], Avg Loss: 0.9249
+Epoch [19/25], Step [45000/57303], Avg Loss: 0.9448
+Epoch [19/25], Step [50000/57303], Avg Loss: 0.9706
+Epoch [19/25], Step [55000/57303], Avg Loss: 0.9458
+Epoch [20/25], Step [5000/57303], Avg Loss: 0.7595
+Epoch [20/25], Step [10000/57303], Avg Loss: 0.8352
+Epoch [20/25], Step [15000/57303], Avg Loss: 0.8384
+Epoch [20/25], Step [20000/57303], Avg Loss: 0.8626
+Epoch [20/25], Step [25000/57303], Avg Loss: 0.8878
+Epoch [20/25], Step [30000/57303], Avg Loss: 0.8902
+Epoch [20/25], Step [35000/57303], Avg Loss: 0.9036
+Epoch [20/25], Step [40000/57303], Avg Loss: 0.9205
+Epoch [20/25], Step [45000/57303], Avg Loss: 0.9418
+Epoch [20/25], Step [50000/57303], Avg Loss: 0.9315
+Epoch [20/25], Step [55000/57303], Avg Loss: 0.9645
+Epoch [21/25], Step [5000/57303], Avg Loss: 0.7735
+Epoch [21/25], Step [10000/57303], Avg Loss: 0.7527
+Epoch [21/25], Step [15000/57303], Avg Loss: 0.8559
+Epoch [21/25], Step [20000/57303], Avg Loss: 0.8335
+Epoch [21/25], Step [25000/57303], Avg Loss: 0.8460
+Epoch [21/25], Step [30000/57303], Avg Loss: 0.8733
+Epoch [21/25], Step [35000/57303], Avg Loss: 0.8914
+Epoch [21/25], Step [40000/57303], Avg Loss: 0.9136
+Epoch [21/25], Step [45000/57303], Avg Loss: 0.9115
+Epoch [21/25], Step [50000/57303], Avg Loss: 0.9362
+Epoch [21/25], Step [55000/57303], Avg Loss: 0.9561
+Epoch [22/25], Step [5000/57303], Avg Loss: 0.7478
+Epoch [22/25], Step [10000/57303], Avg Loss: 0.8009
+Epoch [22/25], Step [15000/57303], Avg Loss: 0.8134
+Epoch [22/25], Step [20000/57303], Avg Loss: 0.8118
+Epoch [22/25], Step [25000/57303], Avg Loss: 0.8732
+Epoch [22/25], Step [30000/57303], Avg Loss: 0.8416
+Epoch [22/25], Step [35000/57303], Avg Loss: 0.8748
+Epoch [22/25], Step [40000/57303], Avg Loss: 0.8612
+Epoch [22/25], Step [45000/57303], Avg Loss: 0.8804
+Epoch [22/25], Step [50000/57303], Avg Loss: 0.8693
+Epoch [22/25], Step [55000/57303], Avg Loss: 0.9584
+Epoch [23/25], Step [5000/57303], Avg Loss: 0.7500
+Epoch [23/25], Step [10000/57303], Avg Loss: 0.7731
+Epoch [23/25], Step [15000/57303], Avg Loss: 0.7572
+Epoch [23/25], Step [20000/57303], Avg Loss: 0.8001
+Epoch [23/25], Step [25000/57303], Avg Loss: 0.8487
+Epoch [23/25], Step [30000/57303], Avg Loss: 0.7830
+Epoch [23/25], Step [35000/57303], Avg Loss: 0.8112
+Epoch [23/25], Step [40000/57303], Avg Loss: 0.8835
+Epoch [23/25], Step [45000/57303], Avg Loss: 0.8794
+Epoch [23/25], Step [50000/57303], Avg Loss: 0.8959
+Epoch [23/25], Step [55000/57303], Avg Loss: 0.9044
+Epoch [24/25], Step [5000/57303], Avg Loss: 0.6949
+Epoch [24/25], Step [10000/57303], Avg Loss: 0.7504
+Epoch [24/25], Step [15000/57303], Avg Loss: 0.7737
+Epoch [24/25], Step [20000/57303], Avg Loss: 0.8127
+Epoch [24/25], Step [25000/57303], Avg Loss: 0.8057
+Epoch [24/25], Step [30000/57303], Avg Loss: 0.8337
+Epoch [24/25], Step [35000/57303], Avg Loss: 0.8132
+Epoch [24/25], Step [40000/57303], Avg Loss: 0.8603
+Epoch [24/25], Step [45000/57303], Avg Loss: 0.8526
+Epoch [24/25], Step [50000/57303], Avg Loss: 0.8542
+Epoch [24/25], Step [55000/57303], Avg Loss: 0.8886
+Epoch [25/25], Step [5000/57303], Avg Loss: 0.7039
+Epoch [25/25], Step [10000/57303], Avg Loss: 0.7173
+Epoch [25/25], Step [15000/57303], Avg Loss: 0.7535
+Epoch [25/25], Step [20000/57303], Avg Loss: 0.7412
+Epoch [25/25], Step [25000/57303], Avg Loss: 0.7708
+Epoch [25/25], Step [30000/57303], Avg Loss: 0.7966
+Epoch [25/25], Step [35000/57303], Avg Loss: 0.8317
+Epoch [25/25], Step [40000/57303], Avg Loss: 0.8682
+Epoch [25/25], Step [45000/57303], Avg Loss: 0.8623
+Epoch [25/25], Step [50000/57303], Avg Loss: 0.8078
+Epoch [25/25], Step [55000/57303], Avg Loss: 0.8616
+Annotated Test on ru_syntagrus-ud-test.conllu
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  советский :  Soviet
+Output:  советский :  Soviet  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  False
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  Армении :  Armenia
+Output:  Армении :  Armenia  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  период :  period
+Output:  период :  period  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  тысяч :  thousand
+Output:  тысяч :  thousand  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output:   :  about  Result:  False
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  десяти :  ten
+Output:  десяти :  ten  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  десяти :  ten
+Output:  десяти :  ten  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  специалистов :  specialists
+Output:  специалистов :  specialists  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  Армении :  Armenia
+Output:  Армении :  Armenia  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  False
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  Армении :  Armenia
+Output:  Армении :  Armenia  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  десяти :  ten
+Output:  десяти :  -  Result:  False
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  ИТ :  IT
+Output:  ИТ :  IT  Result:  True
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  77.94705338289444 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  52.97976273551989 %
+Completed at: 2020-10-05 15:37:32.334147

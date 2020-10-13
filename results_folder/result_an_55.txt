@@ -1,0 +1,24 @@
+TRAINING:Started at: 2020-10-05 08:15:13.625482  Learning Rate: 0.0001  Epochs: 1 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 55
+Epoch [1/1], Step [5000/57303], Avg Loss: 2.8447
+Epoch [1/1], Step [10000/57303], Avg Loss: 2.2987
+Epoch [1/1], Step [15000/57303], Avg Loss: 2.1571
+Epoch [1/1], Step [20000/57303], Avg Loss: 2.0901
+Epoch [1/1], Step [25000/57303], Avg Loss: 2.0070
+Epoch [1/1], Step [30000/57303], Avg Loss: 2.0164
+Epoch [1/1], Step [35000/57303], Avg Loss: 1.9700
+Epoch [1/1], Step [40000/57303], Avg Loss: 1.9313
+Epoch [1/1], Step [45000/57303], Avg Loss: 1.9569
+Epoch [1/1], Step [50000/57303], Avg Loss: 1.9352
+Epoch [1/1], Step [55000/57303], Avg Loss: 1.9167
+Annotated Test on ru_syntagrus-ud-test.conllu
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+Traceback (most recent call last):
+  File "torchnet.py", line 470, in <module>
+    main_method()
+  File "torchnet.py", line 74, in main_method
+    annotatedtest(dev_set, test_map, 10)
+  File "torchnet.py", line 398, in annotatedtest
+    print('English: ', ru_translate(ru_sent))
+  File "torchnet.py", line 95, in ru_translate
+    return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
+AttributeError: 'str' object has no attribute 'metadata'

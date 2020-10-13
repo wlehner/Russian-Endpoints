@@ -1,0 +1,19 @@
+/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+TRAINING:Started at: 2020-09-21 14:08:35.722522  Learning Rate: 0.0001  Epochs: 1 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu Loss Data in: pointstoplot54
+Epoch [1/1], Step [5000/57303], Avg Loss: 2.8100
+Epoch [1/1], Step [10000/57303], Avg Loss: 2.2957
+Epoch [1/1], Step [15000/57303], Avg Loss: 2.1650
+Epoch [1/1], Step [20000/57303], Avg Loss: 2.0697
+Epoch [1/1], Step [25000/57303], Avg Loss: 2.0401
+Epoch [1/1], Step [30000/57303], Avg Loss: 2.0048
+Epoch [1/1], Step [35000/57303], Avg Loss: 1.9701
+Epoch [1/1], Step [40000/57303], Avg Loss: 1.9411
+Epoch [1/1], Step [45000/57303], Avg Loss: 1.9458
+Epoch [1/1], Step [50000/57303], Avg Loss: 1.8877
+Epoch [1/1], Step [55000/57303], Avg Loss: 1.9224
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  44.02910842364274 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  42.7076064200977 %
+Completed at: 2020-09-21 14:22:37.073884

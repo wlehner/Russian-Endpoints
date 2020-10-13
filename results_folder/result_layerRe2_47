@@ -1,0 +1,15 @@
+TRAINING:Started at: 2020-08-30 22:07:32.891010  Learning Rate: 0.0001  Epochs: 60 Hidden Layer Size: 300 Number of Hidden Layers: 3 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu Loss Data in: pointstoplot48
+Traceback (most recent call last):
+  File "torchnet.py", line 447, in <module>
+    main_method()
+  File "torchnet.py", line 65, in main_method
+    train(train_set)
+  File "torchnet.py", line 346, in train
+    output = net(question.float())
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "torchnet.py", line 108, in forward
+    out = self.relu2(out)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 594, in __getattr__
+    type(self).__name__, name))
+AttributeError: 'Net' object has no attribute 'relu2'

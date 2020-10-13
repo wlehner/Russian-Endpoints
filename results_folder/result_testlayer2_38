@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "torchnet.py", line 446, in <module>
+    main_method()
+  File "torchnet.py", line 59, in main_method
+    'Training with:', filefortraining, 'Loss Data in:', out1)
+NameError: name 'out1' is not defined

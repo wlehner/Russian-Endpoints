@@ -23,86 +23,125 @@ fiction_root= 'sample_ar/TEXTS/Fiction/'
 development_set= 'ru_syntagrus-ud-dev.conllu'
 testing_set= 'ru_syntagrus-ud-test.conllu'
 training_set= 'ru_syntagrus-ud-train.conllu'
+output_number = '63'
+graphlossout  = 'pointstoplot' + output_number
+sentencemap = 'sentmap' + output_number #just for test
+testexamples = 'testexam' + output_number
+graph_bool = False
+test_bool = True 
 
 #Dimensions
-input_size = 154 #154
-hidden_size = 200 #154
-output_size = 40 #Output Size and sentence length need to be seperated
+input_size = 450 #154
+hidden_size = 200  #154
+output_size = 50 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
+hidden_layers = 1
+offset = 4000
 
 ##NN Stuff
 num_epochs = 20
 #batch_size = 32
-learning_rate = 0.05
+learning_rate = 0.0001 #Default 1E-3
+weight_decay = 0.00001 #Less than lr?
+#betas = (0.0, 0.9) #Default 0.9,0.999
+
+
 filefortraining = training_set
 filefordev = development_set
+filefortesting = testing_set
 
 #Other
 prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
-log_freq = 1000
-
+log_freq = 10000
+shuffle = True
+test_index = []
 
 
 def main_method():
-    now = datetime.now()
-    print('TRAINING: Date:', now, ' Learning Rate:', learning_rate, ' Epochs:', num_epochs, 'Hidden Layer Size:', hidden_size)
-    print('     Training with:', filefortraining, ' and Testing with:', filefordev)
+    print('TRAINING:Started at:', datetime.now(), ' Learning Rate:', learning_rate, ' Epochs:', num_epochs, 
+          'Hidden Layer Size:', hidden_size, 'Number of Hidden Layers:', hidden_layers, 'Weight Decay:', weight_decay, 
+          'Training with:', filefortraining, 'and' , filefordev, 'Data ID:', output_number)
     dev_set = processconllu(filefordev)
     train_set = processconllu(filefortraining)
+    test_set, test_map  = processconllu_save(filefortesting)
+    #train_set2, test_set2 = divide_set(train_set)
+    train_set = train_set + dev_set
     #netload('torchnet.pkl')
-    #annotatedtrain(train_set, 50)
     train(train_set)
-    print('TESTING: Date:', now, ' Learning Rate', learning_rate, ' Epochs:', num_epochs)
-    print('Annotated Test on', filefordev)
-    annotatedtest(dev_set, 10)
+    print('Annotated Test on', filefortesting)
+    annotatedtest(dev_set, test_map, 20, offset)
     print('Testing on', filefortraining)
     test(train_set)
-    print('Testing on', filefordev)
-    test(dev_set)
-    
+    print('Testing on', filefortesting)
+    test(test_set)
+    print('Completed at:', datetime.now())
 
-#    netload("torchnet.pkl")
-#    annotatedtrain(dev_set, 10)
-#    devtrain(training_set, test_set, 'Test')
-
+def divide_set(set):
+    tenth_size = round(len(set)/10)
+    small_set = []
+    big_set = []
+    for i, (question1, answer1) in enumerate(set):
+        if i < tenth_size:
+            small_set.append((question1, answer1))
+        else:
+            big_set.append((question1, answer1))
+        i += 1
+    return small_set, big_set
 
 def ru_translate(sentence_ru):
+    return translator.translate(sentence_ru, src="ru", dest= "en").text
+
+def ru_trans_conllu(sentence_ru):
     return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
+
+def find_sent(sentid, corpus):
+    for sentence in corpus:
+        if sentence.metadata['sent_id']==sentid:
+            return sentence
+    return False
 
 def totensor(list):
     return torch.tensor(list)
 
 #class model
 class Net(nn.Module):
-    def __init__(self, inputs, hiddens, outputs):
+    def __init__(self, inputs, hiddens, hidden_layers2, outputs):
         super(Net, self).__init__()
+        self.layers = nn.ModuleList()
+        #self.layers.append(nn.Linear(inputs, hiddens))
         self.fc1 = nn.Linear(inputs, hiddens)
+        #self.layers.append(nn.ReLU())
         self.relu1 = nn.ReLU()
-        self.fc2 = nn.Linear(hiddens, hiddens)
-        self.relu2 = nn.ReLU()
+        for l in range(hidden_layers2):
+            self.layers.append(nn.Linear(hiddens, hiddens))
+            self.layers.append(nn.ReLU())
+        #self.fc2 = nn.Linear(hiddens, hiddens)
+        #self.layers.append(nn.ReLU())
+        #self.relu2 = nn.ReLU()
+        #self.layers.append(nn.Linear(hiddens, outputs))
         self.fc3 = nn.Linear(hiddens, outputs)
 
     def forward(self, x):
+        #out = x
         out = self.fc1(x)
         out = self.relu1(out)
-        out = self.fc2(out)
-        out = self.relu2(out)
+        for layer in self.layers:
+            out = layer(out)
+        #out = self.fc2(out)
+        #out = self.relu2(out)
         out = self.fc3(out)
         return out
     
 #Initialize NN    
-net = Net(inputs= input_size, hiddens= hidden_size, outputs= output_size) #
+net = Net(inputs= input_size, hiddens= hidden_size, hidden_layers2= hidden_layers, outputs= output_size) #
 net = net.float()
-
 
 #criterion = nn.SmoothL1Loss() 
 criterion = nn.CrossEntropyLoss()
-# Produces error: Dimension out of range (expected to be in range of [-1, 0], but got 1)
-#https://visdap.blogspot.com/2018/12/pytorch-inputs-for-nncrossentropyloss.html
-optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate)
+optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate, weight_decay= weight_decay)
 
 #Takes Conllu Format and Produces a list of examples
 def processconllu(file):
@@ -119,6 +158,27 @@ def processconllu(file):
                 if sentexamples:
                     examples += sentexamples
     return examples
+
+def processconllu_save(file):
+    corpus = parse(open(file, 'r',encoding ="utf-8").read())
+    examples = []
+    map_dic  = []
+    for sentence in corpus:
+        if len(sentence)< output_size:
+            sentprep = []
+            for word in sentence:
+                if word['lemma'] in prepositions:
+                    sentprep.append(word['id'])
+            if sentprep:
+                sentexamples, preps = processconlsent_save(sentence, sentprep)
+                if sentexamples:
+                    examples += sentexamples
+                    for prep in preps:
+                        map_dic.append((sentence.metadata['sent_id'], prep))
+    if test_bool:
+        pickle.dump(examples, open(testexamples, "wb"))
+        pickle.dump(map_dic, open(sentencemap, "wb"))
+    return examples, map_dic
 
 def searchtree(tree, preposition):
     if tree.children:
@@ -147,6 +207,25 @@ def makeanswer_1(tree, preposition):
         return node.token['id']
     else:
         return False
+    
+def makequestion_1(sentence, preposition):
+    question = []
+    for word in sentence:
+        if word['lemma'] in word_vectors:
+            question.append(word_vectors[word['lemma']][0])
+        else:
+            question.append(0)
+        featlist = processword(word)
+        if word['id'] == preposition:
+            featlist[1] = 1
+        if (len(question)+ len(featlist))< input_size:          
+            for feature in featlist:
+                question.append(feature)
+        else:
+            return False
+    question.extend([0]*input_size)
+    question = question[:input_size]
+    return question
 
 def makequestion(sentence, preposition):
     question = []
@@ -167,54 +246,38 @@ def makequestion(sentence, preposition):
     question = question[:input_size]
     return question
 
-
-           
 def processconlsent(sentence, preplist):
     examples = []
     for preposition in preplist:
-        question = makequestion(sentence, preposition)
-#Defines Answer Shape        
+        question = makequestion_1(sentence, preposition)  #THIS IS WHERE THE SWITCH BETWEEN STYLES IS
         answer = makeanswer_1(sentence.to_tree(), preposition)
-        #answer = makeanswer(sentence.to_tree(), preposition)
         if question and answer:
-#            print('Question: ', question)
-#            print('Answer: ', answer, '\n')
             examples.append((totensor(question), totensor(answer)))
     return examples
 
-#FEATURES: (lemma), POS, number, person, verbform, aspect, tense, voice, mood, case, gender, animacy,
-def processpos(word):
-#    print(word['lemma'])
-    feats = []
-    if word['upostag']== ('VERB' or 'AUX'): #Aux doesn't have animacy, should be okay
-        feats = [1, processnum(word), processperson(word), processverbform(word), processaspect(word), 
-                 processtense(word), processvoice(word), processmood(word), processcase(word), 
-                 processgender(word), processanimacy(word)]
-    elif word['upostag']== ('NOUN' or 'PROPN'):
-        feats = [2, processnum(word), processcase(word), processgender(word), processanimacy(word)]
-    elif word['upostag']== 'ADJ':
-        feats = [3, processnum(word), processcase(word), processgender(word), processanimacy(word)]
-    elif word['upostag']== 'ADV':
-        feats = [4]
-    elif word['upostag']== ('CCONJ' or 'SCONJ'):
-        feats = [6]
-    elif word['upostag']== 'DET':
-        feats = [7, processnum(word), processcase(word), processgender(word), processanimacy(word)]
-    elif word['upostag']== 'INTJ':
-        feats = [8]
-    elif word['upostag']== 'NUM':
-        feats = [9, processcase(word), processgender(word), processanimacy(word)]
-    elif word['upostag']== 'PART':
-        feats = [10, processmood(word)]
-    elif word['upostag']== 'PRON':
-        feats = [11, processnum(word), processperson(word), processcase(word), processgender(word), 
-                 processanimacy(word)]
-    elif word['upostag']== 'ADP':
-        feats = [12, 0]
-    else: # 'PUNCT' 'SYM' 'X'
-        feats = [13]
+def processconlsent_save(sentence, preplist):
+    examples = []
+    prep_fin = []
+    for preposition in preplist:
+        question = makequestion_1(sentence, preposition) 
+        answer = makeanswer_1(sentence.to_tree(), preposition)
+        if question and answer:
+            examples.append((totensor(question), totensor(answer)))
+            prep_fin.append(preposition)
+    return examples, prep_fin
 
-    return feats
+def processword(word):
+# POS, NUM, Person, Case, verbform, aspect, tense, animacy, voice, mood, 
+    return [processpartsos(word), processnum(word), processperson(word), processcase(word), processverbform(word), 
+                 processaspect(word), processtense(word), processanimacy(word), processvoice(word), processmood(word),]
+
+def processpartsos(word):
+    partsos = {'VERB':1, 'AUX':1, 'NOUN':2, 'PROPN':2, 'ADJ':4, 'ADV':5, 'CCONJ':6, 'SCONJ':6, 'DET':7, 
+               'INTJ':8, 'NUM':9, 'PART':10, 'PRON':3, 'ADP':11}
+    if word['upostag'] != None and word['upostag']  in partsos:
+        return partsos[word['upostag']]
+    else:
+        return 12
 
 def processnum(word):
     number = {'Sing':1, 'Plur':2}
@@ -291,9 +354,12 @@ def netload(filename):
     net.eval()
     
 def train(examplelist):
+    count_x = 1
+    losscount_list = []
     for epoch in range(num_epochs):
         losstotal = 0
-        random.shuffle(examplelist)
+        if shuffle == True:
+            random.shuffle(examplelist)
         for i, (question, answer) in enumerate(examplelist):
             optimizer.zero_grad()
             output = net(question.float())
@@ -302,11 +368,14 @@ def train(examplelist):
             loss = criterion(output, y)
             loss.backward()
             optimizer.step()
+            losscount_list.append(torch.IntTensor.item(loss))
             losstotal += loss
             if (i+1) % log_freq == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Avg Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), losstotal/log_freq))
                 losstotal = 0
     torch.save(net.state_dict(), 'torchnet.pkl')
+    if graph_bool:
+        pickle.dump(losscount_list, open(graphlossout, "wb"))#Loss Data is Saved
 
 def test(testlist):
     correct = 0
@@ -319,26 +388,52 @@ def test(testlist):
             correct += 1
     print('Accuracy of the network: ', (100 * correct / total), '%')
     
-def devtrain(trainlist, testlist):
-    train(trainlist)
-    test(testlist)
 
 #Dev Tests    
-def annotatedtest(testlist,  limit):
-    testlist = testlist[:limit]
+def annotatedtest(testlist, testmap,  limit, off_set):
+    corpus = parse(open(filefortesting, 'r',encoding ="utf-8").read())
+    testlist = testlist[(0+off_set):(limit+off_set)]
     correct = 0
     total = 0
     acc = False
     #print("Annotated Test:")
-    for question, answer in testlist:
+    for i, (question, answer) in enumerate(testlist):
         output = net(question.float())
         pred = output.max(0)[1]
         total += 1
         acc = torch.eq(pred, answer)
         if acc:
-            correct += 1
-        print("Answer: ", answer, " Output: ", pred, " Result: ", acc.item())
-    print("Accuracy: ", (100 * correct / total), "%")
+            correct += 1#NEED PREPOSITION STUFF AROUND HERE
+        sentence_id, preposition = testmap[i+offset]
+        sentence = find_sent(sentence_id, corpus)
+        firstq = question[0].item()
+        firsts = word_vectors[sentence[0]['lemma']][0]
+        if firstq == firsts:
+            print('Correct Sentence: Same first word')
+        else:
+            print('May not be the right sentence')
+        ru_sent = sentence.metadata['text']
+        ru_answer = ''
+        ru_pred = ''
+        print('Russian: ', ru_sent)
+        print('English: ', ru_translate(ru_sent))
+        print('Preposition: ', preposition)
+        if (answer < len(sentence)):
+            ru_answer= sentence[answer]['form']
+            print('Answer: ', ru_answer, ': ', ru_translate(ru_answer))
+        else:
+            print('Answer: Index outside sentence. Interesting....')
+        if (pred < len(sentence)):
+            ru_pred = sentence[pred]['form']
+            print('Output: ', ru_answer,': ', ru_translate(ru_pred), ' Result: ', acc.item())
+        else:
+            print('Output: Index outside of sentence', 'Result: ', acc.item())
+
+def findprep(question):
+    for i in range(0, input_size, 11):
+        if question([(i + 1)] == 11 and question[(i + 2)] == 1):
+            return i
+    
         
 def annotatedtrain(examplelist, limit):
     print('Annotated Training')
@@ -354,8 +449,8 @@ def annotatedtrain(examplelist, limit):
             loss = criterion(output, y)
             loss.backward()
             optimizer.step()
-            if (i+1) % 100 == 0:
-                print("Predicted Value:", pred.item(), " Answer:", answer[0].item(), " Loss:", loss.item())
+            if (i+1) % 1 == 0:
+                print("Predicted Value:", pred.item(), " Answer:", answer, " Loss:", loss.item())
         
         
 def CrossEntropyLoss_1(outputs, labels):

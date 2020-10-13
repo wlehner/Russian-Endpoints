@@ -1,0 +1,7 @@
+TRAINING:Started at: 2020-09-07 14:10:47.507159  Learning Rate: 0.0001  Epochs: 1000 Hidden Layer Size: 600 Number of Hidden Layers: 4 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu Loss Data in: pointstoplot51
+Traceback (most recent call last):
+  File "torchnet.py", line 462, in <module>
+    main_method()
+  File "torchnet.py", line 67, in main_method
+    train(train_set2)
+NameError: name 'train_set2' is not defined

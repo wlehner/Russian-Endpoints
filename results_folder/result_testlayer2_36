@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "torchnet.py", line 113, in <module>
+    net = Net(inputs= input_size, hiddens= hidden_size, hidden_layers2= hidden_layers, outputs= output_size) #
+  File "torchnet.py", line 90, in __init__
+    self.layers.append(nn.ReLu())
+AttributeError: module 'torch.nn' has no attribute 'ReLu'

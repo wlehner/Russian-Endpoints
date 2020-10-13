@@ -1,0 +1,58 @@
+TRAINING:Started at: 2020-10-05 10:53:55.196487  Learning Rate: 0.0001  Epochs: 1 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 56
+Epoch [1/1], Step [5000/57303], Avg Loss: 2.8009
+Epoch [1/1], Step [10000/57303], Avg Loss: 2.3010
+Epoch [1/1], Step [15000/57303], Avg Loss: 2.1530
+Epoch [1/1], Step [20000/57303], Avg Loss: 2.0872
+Epoch [1/1], Step [25000/57303], Avg Loss: 2.0386
+Epoch [1/1], Step [30000/57303], Avg Loss: 2.0146
+Epoch [1/1], Step [35000/57303], Avg Loss: 1.9925
+Epoch [1/1], Step [40000/57303], Avg Loss: 1.9456
+Epoch [1/1], Step [45000/57303], Avg Loss: 1.9467
+Epoch [1/1], Step [50000/57303], Avg Loss: 1.9032
+Epoch [1/1], Step [55000/57303], Avg Loss: 1.8986
+Annotated Test on ru_syntagrus-ud-test.conllu
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  советский :  Soviet
+Output: Index outside of sentence Result:  False
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  False
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  Армении :  Armenia
+Output:  Армении :  Armenia  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  период :  period
+Output:  период :  ten  Result:  False
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer:  тысяч :  thousand
+Output:  тысяч :  thousand  Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  False
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Answer: Index outside sentence. Interesting....
+Output:   :  Armenia  Result:  False
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  43.676596338760625 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  42.2470341939986 %
+Completed at: 2020-10-05 11:01:46.624281
