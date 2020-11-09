@@ -1,0 +1,801 @@
+TRAINING:Started at: 2020-11-02 08:51:48.268844  Learning Rate: 0.0001  Epochs: 20 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 79 Annotations are offset by 5200
+Annotated Test on ru_syntagrus-ud-test.conllu
+Example: 5200
+Russian:  В 1919 году Ростислав вместе с матерью покинул Россию и уехал сначала в Румынию, а потом во Францию, где закончил Высшую школу дипломатических и коммерческих наук и в 1931 году поступил на службу в Алжирский банк.
+English:  In 1919, Rostislav, and his mother left Russia and left first in Romania, and then to France, where he graduated from the Higher School of Diplomatic and Commercial Sciences and in 1931 he entered the service in Algerian bank.
+Preposition:  36 - в - in
+Answer:  поступил :  entered
+Output:  уехал :  Lea  Result:  False
+
+Example: 5201
+Russian:  В 1939 году Ростислав Александрович был мобилизован во французскую армию, воевал на бельгийской границе и в 1940 году был взят в плен немцами, после войны он вернулся в Париж.
+English:  In 1939, Rostislav Alexandrovich was mobilized to the French army, fought in the Belgian border and in 1940 he was captured by the Germans, after the war he returned to Paris.
+Preposition:  1 - В - IN
+Answer:  мобилизован :  Mobilized
+Output:  мобилизован :  Mobilized  Result:  True
+
+Example: 5202
+Russian:  В 1939 году Ростислав Александрович был мобилизован во французскую армию, воевал на бельгийской границе и в 1940 году был взят в плен немцами, после войны он вернулся в Париж.
+English:  In 1939, Rostislav Alexandrovich was mobilized to the French army, fought in the Belgian border and in 1940 he was captured by the Germans, after the war he returned to Paris.
+Preposition:  8 - во - in
+Answer:  мобилизован :  Mobilized
+Output:  мобилизован :  Mobilized  Result:  True
+
+Example: 5203
+Russian:  В 1939 году Ростислав Александрович был мобилизован во французскую армию, воевал на бельгийской границе и в 1940 году был взят в плен немцами, после войны он вернулся в Париж.
+English:  In 1939, Rostislav Alexandrovich was mobilized to the French army, fought in the Belgian border and in 1940 he was captured by the Germans, after the war he returned to Paris.
+Preposition:  13 - на - on
+Answer:  воевал :  fought
+Output:  мобилизован :  Mobilized  Result:  False
+
+Example: 5204
+Russian:  В 1939 году Ростислав Александрович был мобилизован во французскую армию, воевал на бельгийской границе и в 1940 году был взят в плен немцами, после войны он вернулся в Париж.
+English:  In 1939, Rostislav Alexandrovich was mobilized to the French army, fought in the Belgian border and in 1940 he was captured by the Germans, after the war he returned to Paris.
+Preposition:  17 - в - in
+Answer:  взят :  take
+Output:  взят :  take  Result:  True
+
+Example: 5205
+Russian:  В 1939 году Ростислав Александрович был мобилизован во французскую армию, воевал на бельгийской границе и в 1940 году был взят в плен немцами, после войны он вернулся в Париж.
+English:  In 1939, Rostislav Alexandrovich was mobilized to the French army, fought in the Belgian border and in 1940 he was captured by the Germans, after the war he returned to Paris.
+Preposition:  22 - в - in
+Answer:  взят :  take
+Output:  взят :  take  Result:  True
+
+Example: 5206
+Russian:  В 1939 году Ростислав Александрович был мобилизован во французскую армию, воевал на бельгийской границе и в 1940 году был взят в плен немцами, после войны он вернулся в Париж.
+English:  In 1939, Rostislav Alexandrovich was mobilized to the French army, fought in the Belgian border and in 1940 he was captured by the Germans, after the war he returned to Paris.
+Preposition:  30 - в - in
+Answer:  вернулся :  returned
+Output:  мобилизован :  Mobilized  Result:  False
+
+Example: 5207
+Russian:  Слабый здоровьем, он умер 28 июня 1965 года и был похоронен рядом с матерью на русском кладбище в Сент-Женевьев-де-Буа, где позже была захоронена и его жена.
+English:  Weak health, he died on June 28, 1965 and was buried next to his mother in the Russian cemetery in St. Geneva-de-Bois, where his wife was also buried later.
+Preposition:  14 - с - from
+Answer:  рядом :  nearby
+Output:  захоронена :  Zahoronen  Result:  False
+
+Example: 5208
+Russian:  Слабый здоровьем, он умер 28 июня 1965 года и был похоронен рядом с матерью на русском кладбище в Сент-Женевьев-де-Буа, где позже была захоронена и его жена.
+English:  Weak health, he died on June 28, 1965 and was buried next to his mother in the Russian cemetery in St. Geneva-de-Bois, where his wife was also buried later.
+Preposition:  16 - на - on
+Answer:  похоронен :  BUONTER
+Output:  захоронена :  Zahoronen  Result:  False
+
+Example: 5209
+Russian:  Слабый здоровьем, он умер 28 июня 1965 года и был похоронен рядом с матерью на русском кладбище в Сент-Женевьев-де-Буа, где позже была захоронена и его жена.
+English:  Weak health, he died on June 28, 1965 and was buried next to his mother in the Russian cemetery in St. Geneva-de-Bois, where his wife was also buried later.
+Preposition:  19 - в - in
+Answer:  кладбище :  cemetery
+Output:  захоронена :  Zahoronen  Result:  False
+
+Example: 5210
+Russian:  Их сын Александр Ростиславович (родился в 1933 году) сейчас живёт в Париже.
+English:  Their son Alexander Rostislavovich (born in 1933) now lives in Paris.
+Preposition:  7 - в - in
+Answer:  родился :  Born
+Output:  родился :  Born  Result:  True
+
+Example: 5211
+Russian:  Их сын Александр Ростиславович (родился в 1933 году) сейчас живёт в Париже.
+English:  Their son Alexander Rostislavovich (born in 1933) now lives in Paris.
+Preposition:  13 - в - in
+Answer:  живёт :  Lives
+Output:  живёт :  Lives  Result:  True
+
+Example: 5212
+Russian:  Формализм в работе с людьми, пространные инструкции не заменяют живого дела.
+English:  Formalism in working with people, extensive instructions do not replace the living case.
+Preposition:  2 - в - in
+Answer:  Формализм :  Formalism
+Output:  Формализм :  Formalism  Result:  True
+
+Example: 5213
+Russian:  Формализм в работе с людьми, пространные инструкции не заменяют живого дела.
+English:  Formalism in working with people, extensive instructions do not replace the living case.
+Preposition:  4 - с - from
+Answer:  работе :  work
+Output:  Формализм :  Formalism  Result:  False
+
+Example: 5214
+Russian:  И чтобы в нем участвовали целые коллективы.
+English:  And so that entire teams participate in it.
+Preposition:  3 - в - in
+Answer:  участвовали :  Participated
+Output:  участвовали :  Participated  Result:  True
+
+Example: 5215
+Russian:  Чего стоили, например, "липовые" ударники коммунистического труда в московском электродепо "Красная Пресня", где более половины их оказались нарушителями дисциплины.
+English:  What was worth it, for example, "linden" drummers of communist labor in the Moscow Electroeepo "Red Presnya", where more than half of them were violators of discipline.
+Preposition:  12 - в - in
+Answer:  ударники :  shocks
+Output:  оказались :  Proved  Result:  False
+
+Example: 5216
+Russian:  Многие из них уволены за прогулы.
+English:  Many of them are dismissed for absenteeism.
+Preposition:  2 - из - of
+Answer:  Многие :  Many
+Output:  уволены :  dismissed  Result:  False
+
+Example: 5217
+Russian:  Многие из них уволены за прогулы.
+English:  Many of them are dismissed for absenteeism.
+Preposition:  5 - за - behind
+Answer:  уволены :  dismissed
+Output:  уволены :  dismissed  Result:  True
+
+Example: 5218
+Russian:  Таков был итог формализма в воспитательной работе в депо, "оптового приема" в ударники всех и всякого.
+English:  This was the result of formalism in educational work in the depot, "wholesale reception" in the drummers of all and all.
+Preposition:  5 - в - in
+Answer:  формализма :  formalism
+Output:  формализма :  formalism  Result:  True
+
+Example: 5219
+Russian:  Таков был итог формализма в воспитательной работе в депо, "оптового приема" в ударники всех и всякого.
+English:  This was the result of formalism in educational work in the depot, "wholesale reception" in the drummers of all and all.
+Preposition:  8 - в - in
+Answer:  работе :  work
+Output:  работе :  work  Result:  True
+
+Example: 5220
+Russian:  Таков был итог формализма в воспитательной работе в депо, "оптового приема" в ударники всех и всякого.
+English:  This was the result of formalism in educational work in the depot, "wholesale reception" in the drummers of all and all.
+Preposition:  15 - в - in
+Answer:  приема :  reception
+Output:  приема :  reception  Result:  True
+
+Example: 5221
+Russian:  Вот почему и в письмах читателей, и в постановлении красной нитью проходит мысль развивая движение за коллективную гарантию, не допускать администрирования, нарушения принципа добровольности.
+English:  That is why in the letters of readers, and in the ruling of the Red Thread, the thought of developing a movement for a collective guarantee, prevent administration, violations of the principle of voluntariness.
+Preposition:  4 - в - in
+Answer:  проходит :  passes
+Output:  читателей :  Readers  Result:  False
+
+Example: 5222
+Russian:  Вот почему и в письмах читателей, и в постановлении красной нитью проходит мысль развивая движение за коллективную гарантию, не допускать администрирования, нарушения принципа добровольности.
+English:  That is why in the letters of readers, and in the ruling of the Red Thread, the thought of developing a movement for a collective guarantee, prevent administration, violations of the principle of voluntariness.
+Preposition:  9 - в - in
+Answer:  письмах :  letters
+Output:  развивая :  Developing  Result:  False
+
+Example: 5223
+Russian:  Вот почему и в письмах читателей, и в постановлении красной нитью проходит мысль развивая движение за коллективную гарантию, не допускать администрирования, нарушения принципа добровольности.
+English:  That is why in the letters of readers, and in the ruling of the Red Thread, the thought of developing a movement for a collective guarantee, prevent administration, violations of the principle of voluntariness.
+Preposition:  17 - за - behind
+Answer:  движение :  motion
+Output:  движение :  motion  Result:  True
+
+Example: 5224
+Russian:  Проводить эту работу следует в тесной связи с мерами по внедрению полного хозрасчета, самофинансирования, коллективных форм организации и оплаты труда.
+English:  It follows this work in close connection with measures to introduce complete beneficiaries, self-financing, collective forms of organization and remuneration.
+Preposition:  5 - в - in
+Answer:  следует :  follow
+Output:  следует :  follow  Result:  True
+
+Example: 5225
+Russian:  Проводить эту работу следует в тесной связи с мерами по внедрению полного хозрасчета, самофинансирования, коллективных форм организации и оплаты труда.
+English:  It follows this work in close connection with measures to introduce complete beneficiaries, self-financing, collective forms of organization and remuneration.
+Preposition:  8 - с - from
+Answer:  связи :  Communication
+Output:  связи :  Communication  Result:  True
+
+Example: 5226
+Russian:  Партийным, советским и профсоюзным органам надо полнее использовать возможности движения для воспитания каждого его участника в духе коллективизма, высокой ответственности за порученное дело, сознательной дисциплины, нетерпимого отношения к бесхозяйственности и расточительству.
+English:  Party, Soviet and trade union bodies need to be more fuller to use the possibility of motion to raise each participant in the spirit of collectivism, high responsibility for the entrusted business, conscious discipline, intolerable attitude towards mismanagement and waste.
+Preposition:  17 - в - in
+Answer:  воспитания :  Education
+Output:  участника :  Participant  Result:  False
+
+Example: 5227
+Russian:  Партийным, советским и профсоюзным органам надо полнее использовать возможности движения для воспитания каждого его участника в духе коллективизма, высокой ответственности за порученное дело, сознательной дисциплины, нетерпимого отношения к бесхозяйственности и расточительству.
+English:  Party, Soviet and trade union bodies need to be more fuller to use the possibility of motion to raise each participant in the spirit of collectivism, high responsibility for the entrusted business, conscious discipline, intolerable attitude towards mismanagement and waste.
+Preposition:  23 - за - behind
+Answer:  ответственности :  Responsibility
+Output:  коллективизма :  Collectivism  Result:  False
+
+Example: 5228
+Russian:  Партийным, советским и профсоюзным органам надо полнее использовать возможности движения для воспитания каждого его участника в духе коллективизма, высокой ответственности за порученное дело, сознательной дисциплины, нетерпимого отношения к бесхозяйственности и расточительству.
+English:  Party, Soviet and trade union bodies need to be more fuller to use the possibility of motion to raise each participant in the spirit of collectivism, high responsibility for the entrusted business, conscious discipline, intolerable attitude towards mismanagement and waste.
+Preposition:  32 - к - to
+Answer:  нетерпимого :  Intertly
+Output:  коллективизма :  Collectivism  Result:  False
+
+Example: 5229
+Russian:  Разве это порядок, считают Н. Белкова, Л. Воробьева, О. Смирнова и другие работницы Костромского объединения "X Октябрь", когда за брак в сумме 15 тысяч рублей с виновных цеха удержано было лишь 30 рублей?
+English:  Is it an order, according to N. Belkova, L. Vorobyeva, O. Smirnova and other workers in the Kostroma association "X October", when for marriage in the amount of 15 thousand rubles with the guilty shop was kept only 30 rubles?
+Preposition:  25 - за - behind
+Answer:  удержано :  Hold
+Output:  лишь :  only  Result:  False
+
+Example: 5230
+Russian:  Разве это порядок, считают Н. Белкова, Л. Воробьева, О. Смирнова и другие работницы Костромского объединения "X Октябрь", когда за брак в сумме 15 тысяч рублей с виновных цеха удержано было лишь 30 рублей?
+English:  Is it an order, according to N. Belkova, L. Vorobyeva, O. Smirnova and other workers in the Kostroma association "X October", when for marriage in the amount of 15 thousand rubles with the guilty shop was kept only 30 rubles?
+Preposition:  27 - в - in
+Answer:  брак :  marriage
+Output:  лишь :  only  Result:  False
+
+Example: 5231
+Russian:  Разве это порядок, считают Н. Белкова, Л. Воробьева, О. Смирнова и другие работницы Костромского объединения "X Октябрь", когда за брак в сумме 15 тысяч рублей с виновных цеха удержано было лишь 30 рублей?
+English:  Is it an order, according to N. Belkova, L. Vorobyeva, O. Smirnova and other workers in the Kostroma association "X October", when for marriage in the amount of 15 thousand rubles with the guilty shop was kept only 30 rubles?
+Preposition:  32 - с - from
+Answer:  удержано :  Hold
+Output:  лишь :  only  Result:  False
+
+Example: 5232
+Russian:  Коллективная гарантия, бесспорно, поможет прибавить гласности и ответственности за результаты своего труда.
+English:  The collective guarantee, undoubtedly, will help add publicity and responsibility for the results of their work.
+Preposition:  11 - за - behind
+Answer:  ответственности :  Responsibility
+Output:  прибавить :  add  Result:  False
+
+Example: 5233
+Russian:  Следует всемерно поддерживать инициативу передовых бригад, включающих в свой состав молодежь и других работников, впервые пришедших на производство.
+English:  It is necessary to fully support the initiative of advanced brigades, including young people and other workers who first come to production.
+Preposition:  9 - в - in
+Answer:  включающих :  Including
+Output:  молодежь :  the youth  Result:  False
+
+Example: 5234
+Russian:  Следует всемерно поддерживать инициативу передовых бригад, включающих в свой состав молодежь и других работников, впервые пришедших на производство.
+English:  It is necessary to fully support the initiative of advanced brigades, including young people and other workers who first come to production.
+Preposition:  19 - на - on
+Answer:  пришедших :  Seven
+Output:  пришедших :  Seven  Result:  True
+
+Example: 5235
+Russian:  Поэтому, широко используя в своей бригаде коллективную гарантию дисциплины и высокого качества труда, мы охотно берем к себе выпускников профтехучилищ, отслуживших в армии бывших воинов".
+English:  Therefore, widely using the collective guarantee of discipline and high quality of labor in its brigade, we willingly take graduates of Profdechili, who served in the army of the former warriors. "
+Preposition:  5 - в - in
+Answer:  используя :  Using
+Output:  отслуживших :  served  Result:  False
+
+Example: 5236
+Russian:  Поэтому, широко используя в своей бригаде коллективную гарантию дисциплины и высокого качества труда, мы охотно берем к себе выпускников профтехучилищ, отслуживших в армии бывших воинов".
+English:  Therefore, widely using the collective guarantee of discipline and high quality of labor in its brigade, we willingly take graduates of Profdechili, who served in the army of the former warriors. "
+Preposition:  19 - к - to
+Answer:  берем :  Take
+Output:  берем :  Take  Result:  True
+
+Example: 5237
+Russian:  Поэтому, широко используя в своей бригаде коллективную гарантию дисциплины и высокого качества труда, мы охотно берем к себе выпускников профтехучилищ, отслуживших в армии бывших воинов".
+English:  Therefore, widely using the collective guarantee of discipline and high quality of labor in its brigade, we willingly take graduates of Profdechili, who served in the army of the former warriors. "
+Preposition:  25 - в - in
+Answer:  отслуживших :  served
+Output:  отслуживших :  served  Result:  True
+
+Example: 5238
+Russian:  Большая роль в этом принадлежит заводскому комсомолу, который от "опеки" молодых рабочих активнее переходит к воспитанию их боевитости, конкретной ответственности за свои дела и поступки.
+English:  A large role in this belongs to the factory Komsomol, who from the "guardianship" of young workers is more actively moving towards the education of their militia, specific responsibility for their affairs and actions.
+Preposition:  3 - в - in
+Answer:  роль :  role
+Output:  который :  which the  Result:  False
+
+Example: 5239
+Russian:  Большая роль в этом принадлежит заводскому комсомолу, который от "опеки" молодых рабочих активнее переходит к воспитанию их боевитости, конкретной ответственности за свои дела и поступки.
+English:  A large role in this belongs to the factory Komsomol, who from the "guardianship" of young workers is more actively moving towards the education of their militia, specific responsibility for their affairs and actions.
+Preposition:  10 - от - from
+Answer:  переходит :  transfers
+Output:  который :  which the  Result:  False
+
+Example: 5240
+Russian:  Большая роль в этом принадлежит заводскому комсомолу, который от "опеки" молодых рабочих активнее переходит к воспитанию их боевитости, конкретной ответственности за свои дела и поступки.
+English:  A large role in this belongs to the factory Komsomol, who from the "guardianship" of young workers is more actively moving towards the education of their militia, specific responsibility for their affairs and actions.
+Preposition:  18 - к - to
+Answer:  переходит :  transfers
+Output:  переходит :  transfers  Result:  True
+
+Example: 5241
+Russian:  Большая роль в этом принадлежит заводскому комсомолу, который от "опеки" молодых рабочих активнее переходит к воспитанию их боевитости, конкретной ответственности за свои дела и поступки.
+English:  A large role in this belongs to the factory Komsomol, who from the "guardianship" of young workers is more actively moving towards the education of their militia, specific responsibility for their affairs and actions.
+Preposition:  25 - за - behind
+Answer:  ответственности :  Responsibility
+Output:  который :  which the  Result:  False
+
+Example: 5242
+Russian:  Важно движение за коллективную гарантию дисциплины тесно связать с организацией социалистического соревнования, дополнить созданием наилучших условий труда, быта и отдыха коллективов.
+English:  It is important for the movement for a collective warranty of discipline to be closely associated with the organization of socialist competition, supplement the best working conditions, life and recreation teams.
+Preposition:  3 - за - behind
+Answer:  движение :  motion
+Output:  движение :  motion  Result:  True
+
+Example: 5243
+Russian:  Важно движение за коллективную гарантию дисциплины тесно связать с организацией социалистического соревнования, дополнить созданием наилучших условий труда, быта и отдыха коллективов.
+English:  It is important for the movement for a collective warranty of discipline to be closely associated with the organization of socialist competition, supplement the best working conditions, life and recreation teams.
+Preposition:  9 - с - from
+Answer:  связать :  to tie
+Output:  связать :  to tie  Result:  True
+
+Example: 5244
+Russian:  Необходимо в то же время создать понятную и простую систему экономической ответственности и коллектива, и каждого его члена за результаты, качество своего труда.
+English:  It is necessary at the same time to create a clear and simple system of economic responsibility and a team, and each of its member for the results, the quality of their work.
+Preposition:  2 - в - in
+Answer:  создать :  Create
+Output:  создать :  Create  Result:  True
+
+Example: 5245
+Russian:  Необходимо в то же время создать понятную и простую систему экономической ответственности и коллектива, и каждого его члена за результаты, качество своего труда.
+English:  It is necessary at the same time to create a clear and simple system of economic responsibility and a team, and each of its member for the results, the quality of their work.
+Preposition:  20 - за - behind
+Answer:  ответственности :  Responsibility
+Output:  члена :  Member  Result:  False
+
+Example: 5246
+Russian:  В нынешнем году мы должны взять более высокие рубежи в экономике, осуществить переход предприятий на новые методы хозяйствования, решительно улучшить качество продукции, поднять дисциплину.
+English:  This year, we must take higher frontiers in the economy, carry out the transition of enterprises to new management methods, decisively improve product quality, raise discipline.
+Preposition:  1 - В - IN
+Answer:  должны :  must
+Output:  взять :  take  Result:  False
+
+Example: 5247
+Russian:  В нынешнем году мы должны взять более высокие рубежи в экономике, осуществить переход предприятий на новые методы хозяйствования, решительно улучшить качество продукции, поднять дисциплину.
+English:  This year, we must take higher frontiers in the economy, carry out the transition of enterprises to new management methods, decisively improve product quality, raise discipline.
+Preposition:  10 - в - in
+Answer:  рубежи :  referee
+Output:  взять :  take  Result:  False
+
+Example: 5248
+Russian:  В нынешнем году мы должны взять более высокие рубежи в экономике, осуществить переход предприятий на новые методы хозяйствования, решительно улучшить качество продукции, поднять дисциплину.
+English:  This year, we must take higher frontiers in the economy, carry out the transition of enterprises to new management methods, decisively improve product quality, raise discipline.
+Preposition:  16 - на - on
+Answer:  переход :  transition
+Output:  осуществить :  implement  Result:  False
+
+Example: 5249
+Russian:  Это тем более важно, что многие предприятия в первом квартале года снизили темпы роста производства.
+English:  It is even more important that many enterprises in the first quarter reduced production growth rates.
+Preposition:  9 - в - in
+Answer:  снизили :  Reduced
+Output:  предприятия :  Enterprises  Result:  False
+
+Example: 5250
+Russian:  И теперь никто за нас ничего не сделает, не решит проблем.
+English:  And now no one will do anything for us, will not solve problems.
+Preposition:  4 - за - behind
+Answer:  сделает :  will do
+Output:  сделает :  will do  Result:  True
+
+Example: 5251
+Russian:  А это значит: все мы должны делать сами, каждый из нас должен прибавить в работе, достойными трудовыми подарками ознаменовать 70-летие Великого Октября.
+English:  And this means: we all have to do themselves, each of us must add in work worthy of labor gifts to mark the 70th anniversary of the Great October.
+Preposition:  12 - из - of
+Answer:  каждый :  each
+Output:  мы :  we  Result:  False
+
+Example: 5252
+Russian:  А это значит: все мы должны делать сами, каждый из нас должен прибавить в работе, достойными трудовыми подарками ознаменовать 70-летие Великого Октября.
+English:  And this means: we all have to do themselves, each of us must add in work worthy of labor gifts to mark the 70th anniversary of the Great October.
+Preposition:  16 - в - in
+Answer:  прибавить :  add
+Output:  прибавить :  add  Result:  True
+
+Example: 5253
+Russian:  В связи с требованием XIX Всесоюзной партконференции - решительно изменить стиль и методы деятельности партийных комитетов - хотелось бы высказать мнение по поводу современной организации работы райкома партии и его аппарата.
+English:  Due to the requirement of the XIX All-Union Part conference - to resolutely change the style and methods of the activities of the party committees - I would like to express an opinion on the modern organization of the work of the district party and its apparatus.
+Preposition:  1 - В - IN
+Answer:  хотелось :  I wanted
+Output:  хотелось :  I wanted  Result:  True
+
+Example: 5254
+Russian:  В связи с требованием XIX Всесоюзной партконференции - решительно изменить стиль и методы деятельности партийных комитетов - хотелось бы высказать мнение по поводу современной организации работы райкома партии и его аппарата.
+English:  Due to the requirement of the XIX All-Union Part conference - to resolutely change the style and methods of the activities of the party committees - I would like to express an opinion on the modern organization of the work of the district party and its apparatus.
+Preposition:  3 - с - from
+Answer:  требованием :  requirement
+Output:  хотелось :  I wanted  Result:  False
+
+Example: 5255
+Russian:  На мой взгляд, для начала нужно решить три серьезные проблемы.
+English:  In my opinion, for a start, you need to solve three serious problems.
+Preposition:  1 - На - On
+Answer:  нужно :  need
+Output:  начала :  Start  Result:  False
+
+Example: 5256
+Russian:  Первая - активизировать работу членов выборных органов, обеспечить их приоритет в подготовке и принятии решений.
+English:  The first is to intensify the work of the members of elected bodies, to ensure their priority in the preparation and decision-making.
+Preposition:  12 - в - in
+Answer:  приоритет :  a priority
+Output:  приоритет :  a priority  Result:  True
+
+Example: 5257
+Russian:  Об этом достаточно подробно говорилось на конференции, поступившие предложения закреплены в ее резолюции.
+English:  This was spoken in detail in a conference, received proposals enshrined in its resolution.
+Preposition:  6 - на - on
+Answer:  говорилось :  said
+Output:  поступившие :  Enrolled  Result:  False
+
+Example: 5258
+Russian:  Об этом достаточно подробно говорилось на конференции, поступившие предложения закреплены в ее резолюции.
+English:  This was spoken in detail in a conference, received proposals enshrined in its resolution.
+Preposition:  12 - в - in
+Answer:  закреплены :  Enchant
+Output:  закреплены :  Enchant  Result:  True
+
+Example: 5259
+Russian:  Вторая проблема - избавиться от слепого копирования форм и методов работы вышестоящих партийных органов.
+English:  The second problem is to get rid of the blind copying of the forms and methods of the work of higher party bodies.
+Preposition:  5 - от - from
+Answer:  избавиться :  get rid of
+Output:  работы :  Work  Result:  False
+
+Example: 5260
+Russian:  Ведь до сих пор на любой пришедший оттуда документ составляется собственный, зачастую полностью его дублирующий.
+English:  After all, so far, any document is drawn up on any document, it is often completely duplicating.
+Preposition:  5 - на - on
+Answer:  составляется :  Compiled
+Output:  составляется :  Compiled  Result:  True
+
+Example: 5261
+Russian:  И если второй пленум (в конце 1986 года) проводился по собственной инициативе ввиду явной "пробуксовки" реформы, то третий был рекомендован сверху.
+English:  And if the second plenum (at the end of 1986) was held on his own initiative due to the explicit "slip" of reform, the third was recommended from above.
+Preposition:  6 - в - in
+Answer:  пленум :  Plenum
+Output:  проводился :  conducted  Result:  False
+
+Example: 5262
+Russian:  Думаю, что сегодня райкому партии крайне важно и даже необходимо, отказавшись от директивного стиля, сместить акценты в сторону пропагандистской и организаторской деятельности, углубления работы с кадрами и проверки исполнения.
+English:  I think that today the district party is extremely important and even necessary, refusing a directive style, to move accents towards propaganda and organizational activities, deepening work with personnel and verification of execution.
+Preposition:  14 - от - from
+Answer:  отказавшись :  Refucing
+Output:  отказавшись :  Refucing  Result:  True
+
+Example: 5263
+Russian:  Думаю, что сегодня райкому партии крайне важно и даже необходимо, отказавшись от директивного стиля, сместить акценты в сторону пропагандистской и организаторской деятельности, углубления работы с кадрами и проверки исполнения.
+English:  I think that today the district party is extremely important and even necessary, refusing a directive style, to move accents towards propaganda and organizational activities, deepening work with personnel and verification of execution.
+Preposition:  20 - в - in
+Answer:  сместить :  Short
+Output:  акценты :  accents  Result:  False
+
+Example: 5264
+Russian:  Думаю, что сегодня райкому партии крайне важно и даже необходимо, отказавшись от директивного стиля, сместить акценты в сторону пропагандистской и организаторской деятельности, углубления работы с кадрами и проверки исполнения.
+English:  I think that today the district party is extremely important and even necessary, refusing a directive style, to move accents towards propaganda and organizational activities, deepening work with personnel and verification of execution.
+Preposition:  29 - с - from
+Answer:  работы :  Work
+Output:  сместить :  Short  Result:  False
+
+Example: 5265
+Russian:  В связи с этим уместно вспомнить речь В. И. Ленина на заседании коммунистической фракции Всероссийского съезда металлистов 6 марта 1922 года.
+English:  In this regard, it is appropriate to recall V. I. Lenin at a meeting of the communist faction of the All-Russian Metal Congress on March 6, 1922.
+Preposition:  1 - В - IN
+Answer:  уместно :  appropriate
+Output:  вспомнить :  remember  Result:  False
+
+Example: 5266
+Russian:  В связи с этим уместно вспомнить речь В. И. Ленина на заседании коммунистической фракции Всероссийского съезда металлистов 6 марта 1922 года.
+English:  In this regard, it is appropriate to recall V. I. Lenin at a meeting of the communist faction of the All-Russian Metal Congress on March 6, 1922.
+Preposition:  3 - с - from
+Answer:  этим :  that
+Output:  вспомнить :  remember  Result:  False
+
+Example: 5267
+Russian:  В связи с этим уместно вспомнить речь В. И. Ленина на заседании коммунистической фракции Всероссийского съезда металлистов 6 марта 1922 года.
+English:  In this regard, it is appropriate to recall V. I. Lenin at a meeting of the communist faction of the All-Russian Metal Congress on March 6, 1922.
+Preposition:  11 - на - on
+Answer:  речь :  speech
+Output:  Ленина :  Lenina  Result:  False
+
+Example: 5268
+Russian:  Следующая чистка пойдет на коммунистов, мнящих себя администраторами.
+English:  The next cleaning will go to the Communists who blame themselves by administrators.
+Preposition:  4 - на - on
+Answer:  пойдет :  Will go
+Output:  пойдет :  Will go  Result:  True
+
+Example: 5269
+Russian:  Теперь о третьей проблеме, которая органически связана со второй.
+English:  Now about the third problem, which is organically connected with the second.
+Preposition:  9 - со - SO
+Answer:  связана :  connected
+Output:  связана :  connected  Result:  True
+
+Example: 5270
+Russian:  Практически не уменьшается объем документов, направляемых городским комитетом в районный.
+English:  Practically does not decrease the volume of documents sent by the city committee to the district.
+Preposition:  10 - в - in
+Answer:  направляемых :  Directions
+Output:  городским :  urban  Result:  False
+
+Example: 5271
+Russian:  Диктуемая жизнью необходимость чаще бывать в первичных парторганизациях, больше работать с людьми часто остается нереализованной.
+English:  The need to live in life more likely to be in primary party organizations, to work more with people often remains unrealized.
+Preposition:  6 - в - in
+Answer:  бывать :  be
+Output:  бывать :  be  Result:  True
+
+Example: 5272
+Russian:  Диктуемая жизнью необходимость чаще бывать в первичных парторганизациях, больше работать с людьми часто остается нереализованной.
+English:  The need to live in life more likely to be in primary party organizations, to work more with people often remains unrealized.
+Preposition:  12 - с - from
+Answer:  работать :  work
+Output:  работать :  work  Result:  True
+
+Example: 5273
+Russian:  Все это порождает хроническое переутомление, нервозность, неудовлетворенность и спады в работе.
+English:  All this generates chronic overwork, nervousness, dissatisfaction and decline in work.
+Preposition:  12 - в - in
+Answer:  спады :  Spada
+Output:  спады :  Spada  Result:  True
+
+Example: 5274
+Russian:  Главное же - отрываешься от партийной массы.
+English:  The main thing is to run away from the party mass.
+Preposition:  5 - от - from
+Answer:  отрываешься :  Open
+Output:  отрываешься :  Open  Result:  True
+
+Example: 5275
+Russian:  Чтобы вырваться из замкнутого круга, думается, надо прежде всего кардинально изменить структуру аппарата.
+English:  To break out of a closed circle, it seems, you must first of all radically change the structure of the device.
+Preposition:  3 - из - of
+Answer:  вырваться :  break out
+Output:  вырваться :  break out  Result:  True
+
+Example: 5276
+Russian:  Главная функция линейного отдела - оказывать помощь партийному активу непосредственно на местах.
+English:  The main function of the linear department is to assist the party asset directly on the ground.
+Preposition:  11 - на - on
+Answer:  оказывать :  render
+Output:  активу :  asset  Result:  False
+
+Example: 5277
+Russian:  С другой стороны, этот отдел - важное звено обратной связи, живой канал достоверной информации, так необходимой для принятия верных решений.
+English:  On the other hand, this department is an important feedback link, a lively channel of reliable information, so necessary for the adoption of the right solutions.
+Preposition:  1 - С - FROM
+Answer:  звено :  link
+Output:  другой :  other  Result:  False
+
+Example: 5278
+Russian:  Построение аппарата по принципу двух отделов, на мой взгляд, снимает эту проблему.
+English:  Building a device on the principle of two departments, in my opinion, removes this problem.
+Preposition:  8 - на - on
+Answer:  снимает :  Remove
+Output:  снимает :  Remove  Result:  True
+
+Example: 5279
+Russian:  С другой стороны, объединение инструкторов различных отделов положит конец отраслевой "ведомственности", искусственному разделению функций в партийной работе именно в главном звене - первичной партийной организации, где эти функции естественно сливаются.
+English:  On the other hand, the association of instructors of various departments will put an end to industry "departmentalities", an artificial separation of functions in party work in the main link - the primary party organization, where these functions naturally merge.
+Preposition:  1 - С - FROM
+Answer:  положит :  Put
+Output:  инструкторов :  Instructors  Result:  False
+
+Example: 5280
+Russian:  С другой стороны, объединение инструкторов различных отделов положит конец отраслевой "ведомственности", искусственному разделению функций в партийной работе именно в главном звене - первичной партийной организации, где эти функции естественно сливаются.
+English:  On the other hand, the association of instructors of various departments will put an end to industry "departmentalities", an artificial separation of functions in party work in the main link - the primary party organization, where these functions naturally merge.
+Preposition:  19 - в - in
+Answer:  функций :  Functions
+Output:  разделению :  Separation  Result:  False
+
+Example: 5281
+Russian:  С другой стороны, объединение инструкторов различных отделов положит конец отраслевой "ведомственности", искусственному разделению функций в партийной работе именно в главном звене - первичной партийной организации, где эти функции естественно сливаются.
+English:  On the other hand, the association of instructors of various departments will put an end to industry "departmentalities", an artificial separation of functions in party work in the main link - the primary party organization, where these functions naturally merge.
+Preposition:  23 - в - in
+Answer:  работе :  work
+Output:  звене :  link  Result:  False
+
+Example: 5282
+Russian:  В ряду других вопросов аппаратной работы хотелось бы выделить необходимость большей самостоятельности райкомов, оснащение их современной оргтехникой и - обязательно - преодоление уравниловки в оплате труда.
+English:  In a number of other issues of hardware, I would like to distinguish the need for greater independence of the district schools, equipping them with modern office equipment and is obligatory - overcoming the equalization in pay for labor.
+Preposition:  1 - В - IN
+Answer:  хотелось :  I wanted
+Output:  хотелось :  I wanted  Result:  True
+
+Example: 5283
+Russian:  В ряду других вопросов аппаратной работы хотелось бы выделить необходимость большей самостоятельности райкомов, оснащение их современной оргтехникой и - обязательно - преодоление уравниловки в оплате труда.
+English:  In a number of other issues of hardware, I would like to distinguish the need for greater independence of the district schools, equipping them with modern office equipment and is obligatory - overcoming the equalization in pay for labor.
+Preposition:  25 - в - in
+Answer:  уравниловки :  Salimiloviki
+Output:  оснащение :  equipment  Result:  False
+
+Example: 5284
+Russian:  Взять, к примеру, бюджет райкома.
+English:  Take, for example, the budget of the district committee.
+Preposition:  3 - к - to
+Answer:  Взять :  Take
+Output:  Взять :  Take  Result:  True
+
+Example: 5285
+Russian:  Он формируется в аппарате городского комитета и спускается сверху без всякого учета местных потребностей как директивный документ.
+English:  It is formed in the apparatus of the city committee and descends from above without any accounting of local needs as a directive document.
+Preposition:  3 - в - in
+Answer:  формируется :  Forming
+Output:  формируется :  Forming  Result:  True
+
+Example: 5286
+Russian:  Любой маневр в рамках статей расходов совершенно недопустим.
+English:  Any maneuver in the framework of the costs of expenses is completely unacceptable.
+Preposition:  3 - в - in
+Answer:  маневр :  maneuver
+Output:  маневр :  maneuver  Result:  True
+
+Example: 5287
+Russian:  В 1987 году наша районная парторганизация перечислила в партийную кассу 1350 тысяч рублей и получила бюджет на 1988 год в сумме 281 тысячи рублей.
+English:  In 1987, our regional partnerganization listed 1350 thousand rubles to the party office and received a budget for 1988 in the amount of 281 thousand rubles.
+Preposition:  1 - В - IN
+Answer:  перечислила :  listed
+Output:  перечислила :  listed  Result:  True
+
+Example: 5288
+Russian:  В 1987 году наша районная парторганизация перечислила в партийную кассу 1350 тысяч рублей и получила бюджет на 1988 год в сумме 281 тысячи рублей.
+English:  In 1987, our regional partnerganization listed 1350 thousand rubles to the party office and received a budget for 1988 in the amount of 281 thousand rubles.
+Preposition:  8 - в - in
+Answer:  перечислила :  listed
+Output:  перечислила :  listed  Result:  True
+
+Example: 5289
+Russian:  В 1987 году наша районная парторганизация перечислила в партийную кассу 1350 тысяч рублей и получила бюджет на 1988 год в сумме 281 тысячи рублей.
+English:  In 1987, our regional partnerganization listed 1350 thousand rubles to the party office and received a budget for 1988 in the amount of 281 thousand rubles.
+Preposition:  17 - на - on
+Answer:  бюджет :  budget
+Output:  бюджет :  budget  Result:  True
+
+Example: 5290
+Russian:  В 1987 году наша районная парторганизация перечислила в партийную кассу 1350 тысяч рублей и получила бюджет на 1988 год в сумме 281 тысячи рублей.
+English:  In 1987, our regional partnerganization listed 1350 thousand rubles to the party office and received a budget for 1988 in the amount of 281 thousand rubles.
+Preposition:  20 - в - in
+Answer:  бюджет :  budget
+Output:  бюджет :  budget  Result:  True
+
+Example: 5291
+Russian:  Вроде бы и немало, но вот, скажем, одна из статей - "приобретение и ремонт инвентаря" - позволяет в течение года израсходовать… 200 рублей.
+English:  It seems to be a lot, but here, say, one of the articles is "acquiring and repairing inventory" - allows you to spend it during the year ... 200 rubles.
+Preposition:  12 - из - of
+Answer:  одна :  one
+Output:  скажем :  Say  Result:  False
+
+Example: 5292
+Russian:  Вроде бы и немало, но вот, скажем, одна из статей - "приобретение и ремонт инвентаря" - позволяет в течение года израсходовать… 200 рублей.
+English:  It seems to be a lot, but here, say, one of the articles is "acquiring and repairing inventory" - allows you to spend it during the year ... 200 rubles.
+Preposition:  23 - в - in
+Answer:  позволяет :  Allows
+Output:  позволяет :  Allows  Result:  True
+
+Example: 5293
+Russian:  За них разве что можно купить один современный кнопочный телефонный аппарат.
+English:  For them, unless you can buy one modern push-button telephone.
+Preposition:  1 - За - Behind
+Answer:  купить :  buy
+Output:  купить :  buy  Result:  True
+
+Example: 5294
+Russian:  Чтобы приобрести мебель, нужно направлять специальное отношение в горком и получить оттуда соответствующее разрешение.
+English:  To purchase furniture, you need to direct a special attitude in the hill and get the corresponding permission from there.
+Preposition:  9 - в - in
+Answer:  направлять :  guide
+Output:  отношение :  Attitude  Result:  False
+
+Example: 5295
+Russian:  Прошло восемь месяцев с момента вступления в силу Закона об индивидуальной трудовой деятельности.
+English:  Eight months have passed since the entry into force of the Law on Individual Labor Activities.
+Preposition:  4 - с - from
+Answer:  Прошло :  Passed
+Output:  Прошло :  Passed  Result:  True
+
+Example: 5296
+Russian:  Прошло восемь месяцев с момента вступления в силу Закона об индивидуальной трудовой деятельности.
+English:  Eight months have passed since the entry into force of the Law on Individual Labor Activities.
+Preposition:  7 - в - in
+Answer:  вступления :  Entry
+Output:  вступления :  Entry  Result:  True
+
+Example: 5297
+Russian:  Его принятие было шагом неординарным, породившим как наивные ожидания товарного изобилия на рынке, так и испуг перед засильем новых нэпманов.
+English:  His adoption was a step in an extraordinary, giving rise to both the naive expectations of commodity abundance in the market and fright before the dominance of new NEPMANs.
+Preposition:  13 - на - on
+Answer:  изобилия :  abundance
+Output:  изобилия :  abundance  Result:  True
+
+Example: 5298
+Russian:  Товарное изобилие рынка пока не более, чем мираж, порожденный надеждой изнуренного извечным дефицитом населения на любое экономическое чудо.
+English:  The commodity abundance of the market is not more than the mirage, generated by the hope of a population extended by the eternal deficit on any economic miracle.
+Preposition:  17 - на - on
+Answer:  надеждой :  Hope
+Output:  населения :  Population  Result:  False
+
+Example: 5299
+Russian:  Каковы на сегодняшний день реалии?
+English:  What are the realities today?
+Preposition:  2 - на - on
+Answer:  Каковы :  What are
+Output:  реалии :  Realities  Result:  False
+
+Example: 5300
+Russian:  Как обстоят в действительности дела с индивидуальной и кооперативной трудовой деятельностью?
+English:  How are it in reality of individual and cooperative work?
+Preposition:  3 - в - in
+Answer:  обстоят :  Caught
+Output:  обстоят :  Caught  Result:  True
+
+Example: 5301
+Russian:  Как обстоят в действительности дела с индивидуальной и кооперативной трудовой деятельностью?
+English:  How are it in reality of individual and cooperative work?
+Preposition:  6 - с - from
+Answer:  дела :  Cause
+Output:  дела :  Cause  Result:  True
+
+Example: 5302
+Russian:  Стремясь к объективности в отображении фактов и тенденций, мы попытаемся опереться на результаты социологического исследования, проведенного в десяти регионах страны (от Ленинграда до Владивостока и Ашхабада) и учитывающего мнение более двух тысяч человек.
+English:  In an effort to objectivity in mapping facts and trends, we will try to rely on the results of a sociological study conducted in the ten regions of the country (from Leningrad to Vladivostok and Ashgabat) and taking into account the opinion of more than two thousand people.
+Preposition:  2 - к - to
+Answer:  Стремясь :  Striking
+Output:  Ашхабада :  Ashgabat  Result:  False
+
+Example: 5303
+Russian:  Стремясь к объективности в отображении фактов и тенденций, мы попытаемся опереться на результаты социологического исследования, проведенного в десяти регионах страны (от Ленинграда до Владивостока и Ашхабада) и учитывающего мнение более двух тысяч человек.
+English:  In an effort to objectivity in mapping facts and trends, we will try to rely on the results of a sociological study conducted in the ten regions of the country (from Leningrad to Vladivostok and Ashgabat) and taking into account the opinion of more than two thousand people.
+Preposition:  4 - в - in
+Answer:  объективности :  Objectivity
+Output:  Стремясь :  Striking  Result:  False
+
+Example: 5304
+Russian:  Стремясь к объективности в отображении фактов и тенденций, мы попытаемся опереться на результаты социологического исследования, проведенного в десяти регионах страны (от Ленинграда до Владивостока и Ашхабада) и учитывающего мнение более двух тысяч человек.
+English:  In an effort to objectivity in mapping facts and trends, we will try to rely on the results of a sociological study conducted in the ten regions of the country (from Leningrad to Vladivostok and Ashgabat) and taking into account the opinion of more than two thousand people.
+Preposition:  13 - на - on
+Answer:  опереться :  reverse
+Output:  опереться :  reverse  Result:  True
+
+Example: 5305
+Russian:  Стремясь к объективности в отображении фактов и тенденций, мы попытаемся опереться на результаты социологического исследования, проведенного в десяти регионах страны (от Ленинграда до Владивостока и Ашхабада) и учитывающего мнение более двух тысяч человек.
+English:  In an effort to objectivity in mapping facts and trends, we will try to rely on the results of a sociological study conducted in the ten regions of the country (from Leningrad to Vladivostok and Ashgabat) and taking into account the opinion of more than two thousand people.
+Preposition:  19 - в - in
+Answer:  проведенного :  Conducted
+Output:  проведенного :  Conducted  Result:  True
+
+Example: 5306
+Russian:  Стремясь к объективности в отображении фактов и тенденций, мы попытаемся опереться на результаты социологического исследования, проведенного в десяти регионах страны (от Ленинграда до Владивостока и Ашхабада) и учитывающего мнение более двух тысяч человек.
+English:  In an effort to objectivity in mapping facts and trends, we will try to rely on the results of a sociological study conducted in the ten regions of the country (from Leningrad to Vladivostok and Ashgabat) and taking into account the opinion of more than two thousand people.
+Preposition:  24 - от - from
+Answer:  регионах :  Regions
+Output:  Ашхабада :  Ashgabat  Result:  False
+
+Example: 5307
+Russian:  Итак, если не вдаваться в крайности и не возвеличивать относительно немногочисленные письма граждан, озабоченных моральным обликом общества, до уровня "гласа народа", вывод будет таков.
+English:  So, if you do not go to extremes and not to exalt relatively few letters of citizens concerned about the moral appearance of society, to the level of "the part of the people", the conclusion will be.
+Preposition:  6 - в - in
+Answer:  вдаваться :  go into
+Output:  вдаваться :  go into  Result:  True
+
+Example: 5308
+Russian:  Принятие нового закона в общественном сознании фурора не произвело.
+English:  The adoption of the new law in the public consciousness of Furora did not produce.
+Preposition:  4 - в - in
+Answer:  произвело :  produced
+Output:  закона :  law  Result:  False
+
+Example: 5309
+Russian:  Да и важен был для населения только сам факт принятия закона и осознание того, что в структуре экономики страны появляется новый массовый производитель дефицитного товара.
+English:  Yes, and the fact of the adoption of the law was important for the population and the realization of the fact that a new mass producer of scarce goods appears in the structure of the country's economy.
+Preposition:  17 - в - in
+Answer:  появляется :  Appears
+Output:  появляется :  Appears  Result:  True
+
+Example: 5310
+Russian:  Поэтому стоит ли удивляться, что с содержанием закона ознакомилось менее четверти населения (24 %) и еще 40 % ознакомились лишь с основными его положениями.
+English:  Therefore, less than a quarter of the population (24%) have become familiar with the content of the law and another 40% got acquainted with its main provisions.
+Preposition:  7 - с - from
+Answer:  ознакомилось :  got acquainted
+Traceback (most recent call last):
+  File "torchnet.py", line 507, in <module>
+    main_method()
+  File "torchnet.py", line 77, in main_method
+    annotatedtest(test_set, test_map, annotation, offset)
+  File "torchnet.py", line 438, in annotatedtest
+    print('Output: ', ru_pred,': ', ru_translate(ru_pred), ' Result: ', acc.item())
+  File "torchnet.py", line 98, in ru_translate
+    return translator.translate(sentence_ru, src="ru", dest= "en").text
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 172, in translate
+    data = self._translate(text, dest, src)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 81, in _translate
+    data = utils.format_json(r.text)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/utils.py", line 62, in format_json
+    converted = legacy_format_json(original)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/utils.py", line 54, in legacy_format_json
+    converted = json.loads(text)
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

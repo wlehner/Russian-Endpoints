@@ -1,0 +1,150 @@
+/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+TRAINING:Started at: 2020-10-26 11:07:48.677175  Learning Rate: 0.0001  Epochs: 10 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 70 Annotations are offset by 50
+Annotated Test on ru_syntagrus-ud-test.conllu
+Correct Sentence: Same first word
+Russian:  В Армении сегодня издается около 250 газет и пятидесяти журналов.
+English:  In Armenia, published today, about 250 newspapers and magazines and fifty.
+Preposition:  1 - В - AT
+Answer:  издается :  published
+Output:  издается :  published  Result:  True
+
+Correct Sentence: Same first word
+Russian:  "Республика Армения", государственная газета президента Армении, правительства и парламента, выходит на русском и армянском языках.
+English:  "The Republic of Armenia," the state newspaper of the Armenian President, the Government and Parliament, published in Russian and Armenian languages.
+Preposition:  16 - на - on
+Answer:  выходит :  comes
+Output:  выходит :  comes  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Дайджест армянской прессы можно найти в интернет по адресу: www.armeninews.com.
+English:  Armenian press digest can be found on the Internet at the following address: www.armeninews.com.
+Preposition:  6 - в - at
+Answer:  найти :  to find
+Output:  найти :  to find  Result:  True
+
+Correct Sentence: Same first word
+Russian:  В Армении действует несколько государственных и частных информационных агентств.
+English:  In Armenia, there are several public and private news agencies.
+Preposition:  1 - В - AT
+Answer:  действует :  acts
+Output:  действует :  acts  Result:  True
+
+Correct Sentence: Same first word
+Russian:  В 1926 году в Ереване начались первые радиопередачи, а в 1956 году начал работать ереванский телецентр.
+English:  In 1926, in Yerevan started the first broadcast, and in 1956 started to work in Yerevan television center.
+Preposition:  1 - В - AT
+Answer:  начались :  started
+Output:  начались :  started  Result:  True
+
+Correct Sentence: Same first word
+Russian:  В 1926 году в Ереване начались первые радиопередачи, а в 1956 году начал работать ереванский телецентр.
+English:  In 1926, in Yerevan started the first broadcast, and in 1956 started to work in Yerevan television center.
+Preposition:  4 - в - at
+Answer:  начались :  started
+Output:  начались :  started  Result:  True
+
+Correct Sentence: Same first word
+Russian:  В 1926 году в Ереване начались первые радиопередачи, а в 1956 году начал работать ереванский телецентр.
+English:  In 1926, in Yerevan started the first broadcast, and in 1956 started to work in Yerevan television center.
+Preposition:  11 - в - at
+Answer:  начал :  started
+Output:  начал :  started  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Сегодня Национальный комитет по телевидению и радиовещанию занимается вопросами развития радио и телевидения в Армении.
+English:  Today, the National Committee on Television and Radio is engaged in development of radio and television in Armenia.
+Preposition:  14 - в - at
+Answer:  развития :  development
+Output:  развития :  TV  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Программы армянского и российского телевидения по спутниковому телевидению (Intelsat) доступны на всей территории страны.
+English:  Program of the Armenian and Russian television by satellite (Intelsat) are available throughout the country.
+Preposition:  13 - на - on
+Answer:  доступны :  available
+Output:  доступны :  Intelsat  Result:  False
+
+Correct Sentence: Same first word
+Russian:  В Армении действуют 12 крупных телекомпаний.
+English:  In Armenia there are 12 major broadcasters.
+Preposition:  1 - В - AT
+Answer:  действуют :  act
+Output:  действуют :  act  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Одной из крупнейших в республике частных радиокомпаний является "Hai FM".
+English:  One of the biggest national private radio stations is "Hai FM".
+Preposition:  2 - из - of
+Answer:  Одной :  one
+Output:  Одной :  one  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Одной из крупнейших в республике частных радиокомпаний является "Hai FM".
+English:  One of the biggest national private radio stations is "Hai FM".
+Preposition:  4 - в - at
+Answer:  крупнейших :  largest
+Output:  крупнейших :  is an  Result:  False
+
+Correct Sentence: Same first word
+Russian:  На русском языке вещает канал "National TV and Radio of Armenia".
+English:  In Russian broadcasting channel "National TV and Radio of Armenia".
+Preposition:  1 - На - On
+Answer:  вещает :  broadcasts
+Output:  вещает :  broadcasts  Result:  True
+
+Correct Sentence: Same first word
+Russian:  К 2003 году в Армении насчитывалось 98 тысяч абонентов радиосети, из которых 43 тысяч проживало в столице республики.
+English:  By 2003, in Armenia, there were 98 000 subscribers of the radio network, of which 43 million live in the capital of the republic.
+Preposition:  1 - К - TO
+Answer:  насчитывалось :  there
+Output:  насчитывалось :  there  Result:  True
+
+Correct Sentence: Same first word
+Russian:  К 2003 году в Армении насчитывалось 98 тысяч абонентов радиосети, из которых 43 тысяч проживало в столице республики.
+English:  By 2003, in Armenia, there were 98 000 subscribers of the radio network, of which 43 million live in the capital of the republic.
+Preposition:  4 - в - at
+Answer:  насчитывалось :  there
+Output:  насчитывалось :  year  Result:  False
+
+Correct Sentence: Same first word
+Russian:  К 2003 году в Армении насчитывалось 98 тысяч абонентов радиосети, из которых 43 тысяч проживало в столице республики.
+English:  By 2003, in Armenia, there were 98 000 subscribers of the radio network, of which 43 million live in the capital of the republic.
+Preposition:  12 - из - of
+Answer:  проживало :  lived
+Output:  проживало :  lived  Result:  True
+
+Correct Sentence: Same first word
+Russian:  К 2003 году в Армении насчитывалось 98 тысяч абонентов радиосети, из которых 43 тысяч проживало в столице республики.
+English:  By 2003, in Armenia, there were 98 000 subscribers of the radio network, of which 43 million live in the capital of the republic.
+Preposition:  17 - в - at
+Answer:  проживало :  lived
+Output:  проживало :  lived  Result:  True
+
+Correct Sentence: Same first word
+Russian:  История регионального телевидения Армении началась в конце 80-х годов.
+English:  History of Regional Television of Armenia started in the late 80s.
+Preposition:  6 - в - at
+Answer:  началась :  started
+Output:  началась :  started  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Вначале это были в большинстве своем кабельные студии, специализирующиеся на развлекательной продукции.
+English:  At first they were mostly cable studio specializing in entertainment products.
+Preposition:  4 - в - at
+Answer:  студии :  studio
+Output:  студии :  It was  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Вначале это были в большинстве своем кабельные студии, специализирующиеся на развлекательной продукции.
+English:  At first they were mostly cable studio specializing in entertainment products.
+Preposition:  11 - на - on
+Answer:  специализирующиеся :  specialize
+Output:  специализирующиеся :  specialize  Result:  True
+
+
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  65.84472017171876 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  52.4354501046755 %
+Completed at: 2020-10-26 14:02:26.197347

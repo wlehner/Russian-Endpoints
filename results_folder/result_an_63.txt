@@ -1,0 +1,229 @@
+/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+TRAINING:Started at: 2020-10-13 10:17:14.336992  Learning Rate: 0.0001  Epochs: 20 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 63
+Epoch [1/20], Step [10000/57303], Avg Loss: 2.5334
+Epoch [1/20], Step [20000/57303], Avg Loss: 2.1312
+Epoch [1/20], Step [30000/57303], Avg Loss: 2.0261
+Epoch [1/20], Step [40000/57303], Avg Loss: 1.9641
+Epoch [1/20], Step [50000/57303], Avg Loss: 1.9188
+Epoch [2/20], Step [10000/57303], Avg Loss: 1.8044
+Epoch [2/20], Step [20000/57303], Avg Loss: 1.7959
+Epoch [2/20], Step [30000/57303], Avg Loss: 1.8067
+Epoch [2/20], Step [40000/57303], Avg Loss: 1.7887
+Epoch [2/20], Step [50000/57303], Avg Loss: 1.8080
+Epoch [3/20], Step [10000/57303], Avg Loss: 1.7004
+Epoch [3/20], Step [20000/57303], Avg Loss: 1.6896
+Epoch [3/20], Step [30000/57303], Avg Loss: 1.6751
+Epoch [3/20], Step [40000/57303], Avg Loss: 1.7018
+Epoch [3/20], Step [50000/57303], Avg Loss: 1.6906
+Epoch [4/20], Step [10000/57303], Avg Loss: 1.5703
+Epoch [4/20], Step [20000/57303], Avg Loss: 1.5822
+Epoch [4/20], Step [30000/57303], Avg Loss: 1.6084
+Epoch [4/20], Step [40000/57303], Avg Loss: 1.5925
+Epoch [4/20], Step [50000/57303], Avg Loss: 1.6137
+Epoch [5/20], Step [10000/57303], Avg Loss: 1.4710
+Epoch [5/20], Step [20000/57303], Avg Loss: 1.5105
+Epoch [5/20], Step [30000/57303], Avg Loss: 1.5036
+Epoch [5/20], Step [40000/57303], Avg Loss: 1.5197
+Epoch [5/20], Step [50000/57303], Avg Loss: 1.5398
+Epoch [6/20], Step [10000/57303], Avg Loss: 1.4041
+Epoch [6/20], Step [20000/57303], Avg Loss: 1.4388
+Epoch [6/20], Step [30000/57303], Avg Loss: 1.4444
+Epoch [6/20], Step [40000/57303], Avg Loss: 1.4272
+Epoch [6/20], Step [50000/57303], Avg Loss: 1.4549
+Epoch [7/20], Step [10000/57303], Avg Loss: 1.3368
+Epoch [7/20], Step [20000/57303], Avg Loss: 1.3403
+Epoch [7/20], Step [30000/57303], Avg Loss: 1.3792
+Epoch [7/20], Step [40000/57303], Avg Loss: 1.4017
+Epoch [7/20], Step [50000/57303], Avg Loss: 1.3497
+Epoch [8/20], Step [10000/57303], Avg Loss: 1.2550
+Epoch [8/20], Step [20000/57303], Avg Loss: 1.2944
+Epoch [8/20], Step [30000/57303], Avg Loss: 1.3241
+Epoch [8/20], Step [40000/57303], Avg Loss: 1.3263
+Epoch [8/20], Step [50000/57303], Avg Loss: 1.3063
+Epoch [9/20], Step [10000/57303], Avg Loss: 1.1957
+Epoch [9/20], Step [20000/57303], Avg Loss: 1.2118
+Epoch [9/20], Step [30000/57303], Avg Loss: 1.2522
+Epoch [9/20], Step [40000/57303], Avg Loss: 1.2621
+Epoch [9/20], Step [50000/57303], Avg Loss: 1.2939
+Epoch [10/20], Step [10000/57303], Avg Loss: 1.1566
+Epoch [10/20], Step [20000/57303], Avg Loss: 1.1532
+Epoch [10/20], Step [30000/57303], Avg Loss: 1.2208
+Epoch [10/20], Step [40000/57303], Avg Loss: 1.2017
+Epoch [10/20], Step [50000/57303], Avg Loss: 1.2466
+Epoch [11/20], Step [10000/57303], Avg Loss: 1.0605
+Epoch [11/20], Step [20000/57303], Avg Loss: 1.1358
+Epoch [11/20], Step [30000/57303], Avg Loss: 1.1466
+Epoch [11/20], Step [40000/57303], Avg Loss: 1.1824
+Epoch [11/20], Step [50000/57303], Avg Loss: 1.2031
+Epoch [12/20], Step [10000/57303], Avg Loss: 1.0364
+Epoch [12/20], Step [20000/57303], Avg Loss: 1.0860
+Epoch [12/20], Step [30000/57303], Avg Loss: 1.1176
+Epoch [12/20], Step [40000/57303], Avg Loss: 1.1082
+Epoch [12/20], Step [50000/57303], Avg Loss: 1.1633
+Epoch [13/20], Step [10000/57303], Avg Loss: 1.0108
+Epoch [13/20], Step [20000/57303], Avg Loss: 1.0294
+Epoch [13/20], Step [30000/57303], Avg Loss: 1.0714
+Epoch [13/20], Step [40000/57303], Avg Loss: 1.0940
+Epoch [13/20], Step [50000/57303], Avg Loss: 1.1232
+Epoch [14/20], Step [10000/57303], Avg Loss: 0.9868
+Epoch [14/20], Step [20000/57303], Avg Loss: 1.0125
+Epoch [14/20], Step [30000/57303], Avg Loss: 1.0456
+Epoch [14/20], Step [40000/57303], Avg Loss: 1.0296
+Epoch [14/20], Step [50000/57303], Avg Loss: 1.0690
+Epoch [15/20], Step [10000/57303], Avg Loss: 0.9276
+Epoch [15/20], Step [20000/57303], Avg Loss: 0.9685
+Epoch [15/20], Step [30000/57303], Avg Loss: 0.9977
+Epoch [15/20], Step [40000/57303], Avg Loss: 1.0402
+Epoch [15/20], Step [50000/57303], Avg Loss: 1.0553
+Epoch [16/20], Step [10000/57303], Avg Loss: 0.8930
+Epoch [16/20], Step [20000/57303], Avg Loss: 0.9451
+Epoch [16/20], Step [30000/57303], Avg Loss: 0.9678
+Epoch [16/20], Step [40000/57303], Avg Loss: 1.0008
+Epoch [16/20], Step [50000/57303], Avg Loss: 1.0291
+Epoch [17/20], Step [10000/57303], Avg Loss: 0.8811
+Epoch [17/20], Step [20000/57303], Avg Loss: 0.9200
+Epoch [17/20], Step [30000/57303], Avg Loss: 0.9362
+Epoch [17/20], Step [40000/57303], Avg Loss: 0.9819
+Epoch [17/20], Step [50000/57303], Avg Loss: 0.9890
+Epoch [18/20], Step [10000/57303], Avg Loss: 0.8538
+Epoch [18/20], Step [20000/57303], Avg Loss: 0.8728
+Epoch [18/20], Step [30000/57303], Avg Loss: 0.9576
+Epoch [18/20], Step [40000/57303], Avg Loss: 0.9126
+Epoch [18/20], Step [50000/57303], Avg Loss: 0.9849
+Epoch [19/20], Step [10000/57303], Avg Loss: 0.8177
+Epoch [19/20], Step [20000/57303], Avg Loss: 0.8537
+Epoch [19/20], Step [30000/57303], Avg Loss: 0.9155
+Epoch [19/20], Step [40000/57303], Avg Loss: 0.9175
+Epoch [19/20], Step [50000/57303], Avg Loss: 0.9474
+Epoch [20/20], Step [10000/57303], Avg Loss: 0.7991
+Epoch [20/20], Step [20000/57303], Avg Loss: 0.8398
+Epoch [20/20], Step [30000/57303], Avg Loss: 0.8775
+Epoch [20/20], Step [40000/57303], Avg Loss: 0.8956
+Epoch [20/20], Step [50000/57303], Avg Loss: 0.9380
+Annotated Test on ru_syntagrus-ud-test.conllu
+May not be the right sentence
+Russian:  В реакторе рождаются нейтроны.
+English:  In the reactor, neutrons are born.
+Preposition:  1
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+May not be the right sentence
+Russian:  Затем формируется пучок нейтронов с нужной энергией.
+English:  Then, the neutron beam is formed with the desired energy.
+Preposition:  5
+Answer:  нейтронов :  neutrons
+Output:  нейтронов :  neutrons  Result:  True
+May not be the right sentence
+Russian:  - Будто нейтронный скальпель вонзается в материал?
+English:  - As if the neutron scalpel pierces the material?
+Preposition:  6
+Answer:  нейтронный :  neutron
+Output: Index outside of sentence Result:  False
+May not be the right sentence
+Russian:  К примеру, можно наблюдать, как движутся полимерные цепочки, как перестраиваются биологические молекулы и так далее.
+English:  For example, one can observe how the polymer chains move as biological molecules are rearranged, and so forth.
+Preposition:  1
+Answer:  , :  .
+Output:  , :  .  Result:  True
+May not be the right sentence
+Russian:  Кстати, подобные эксперименты осуществлялись не только у нас, но и в Гренобле, в других ядерных научных центрах.
+English:  By the way, similar experiments were carried out not only in our country but also in Grenoble, in other nuclear research centers.
+Preposition:  13
+Answer:  , :  .
+Output:  , :  .  Result:  True
+May not be the right sentence
+Russian:  Кстати, подобные эксперименты осуществлялись не только у нас, но и в Гренобле, в других ядерных научных центрах.
+English:  By the way, similar experiments were carried out not only in our country but also in Grenoble, in other nuclear research centers.
+Preposition:  16
+Answer:  Гренобле :  Grenoble
+Output:  Гренобле :  Grenoble  Result:  True
+May not be the right sentence
+Russian:  Нейтронные исследования доказали свое преимущество, так как они дают возможность "подстраиваться" под тончайшие биологические процессы и наблюдать за их развитием.
+English:  Neutron studies have proven their advantage, as they provide an opportunity to "adjust" under the finest biological processes and monitor their development.
+Preposition:  21
+Answer:  за :  per
+Output:  за :  per  Result:  True
+May not be the right sentence
+Russian:  Другой пример - геологические исследования, с помощью которых удается лучше понять, что происходит в глубинах Земли.
+English:  Another example - geological research, with the help of which one can better understand what is happening in the depths of the Earth.
+Preposition:  7
+Answer:  лучше :  better
+Output:  лучше :  better  Result:  True
+May not be the right sentence
+Russian:  Другой пример - геологические исследования, с помощью которых удается лучше понять, что происходит в глубинах Земли.
+English:  Another example - geological research, with the help of which one can better understand what is happening in the depths of the Earth.
+Preposition:  16
+Answer:  глубинах :  depths
+Output:  глубинах :  depths  Result:  True
+May not be the right sentence
+Russian:  Реактор, дающий нейтроны, - это универсальный физический прибор, и его возможности поистине безграничны - от фундаментальных исследований до сугубо прикладных.
+English:  The reactor, which gives neutrons - is a universal physical instrument and its possibilities are endless - from basic research to applied strictly.
+Preposition:  18
+Answer:  нейтроны :  neutrons
+Output:  нейтроны :  neutrons  Result:  True
+May not be the right sentence
+Russian:  Когда вы привлекаете людей "со стороны", они приносят новые методики, свои ноу-хау, свои технологии.
+English:  When you attract people "from outside", they bring new methods, know-how and their technology.
+Preposition:  6
+Answer:  людей :  people
+Output:  людей :  with  Result:  False
+May not be the right sentence
+Russian:  - А на каком уровне нейтронные исследования в других странах?
+English:  - And at what level of neutron research in other countries?
+Preposition:  8
+Answer:  ? :  ?
+Output:  ? :  ?  Result:  True
+May not be the right sentence
+Russian:  - В 60-80-х годах прошлого века европейцы значительно опережали в этой области американцев и японцев благодаря Греноблю, Резерфордовской лаборатории и нашему ИБР-2.
+English:  - In the 60-80-ies of the last century, Europeans have much ahead in this area thanks to the Americans and Japanese Grenoble, Rutherford Laboratory and our IBR-2.
+Preposition:  2
+Answer:  80-х :  80
+Output:  80-х :  80  Result:  True
+May not be the right sentence
+Russian:  - В 60-80-х годах прошлого века европейцы значительно опережали в этой области американцев и японцев благодаря Греноблю, Резерфордовской лаборатории и нашему ИБР-2.
+English:  - In the 60-80-ies of the last century, Europeans have much ahead in this area thanks to the Americans and Japanese Grenoble, Rutherford Laboratory and our IBR-2.
+Preposition:  12
+Answer:  области :  the
+Output:  области :  the  Result:  True
+May not be the right sentence
+Russian:  К сожалению, в последнее десятилетие ситуация изменилась.
+English:  Unfortunately, in the last decade, the situation has changed.
+Preposition:  1
+Answer:  ситуация :  situation
+Output:  ситуация :  situation  Result:  True
+May not be the right sentence
+Russian:  К сожалению, в последнее десятилетие ситуация изменилась.
+English:  Unfortunately, in the last decade, the situation has changed.
+Preposition:  4
+Answer:  . :  .
+Output: Index outside of sentence Result:  False
+May not be the right sentence
+Russian:  Сейчас в Японии и США расширяются существующие и строятся новые центры, по сути дела - международные.
+English:  Now in Japan and the US are expanding existing and building new centers, in fact - international.
+Preposition:  2
+Answer:  и :  and
+Output:  и :  existing  Result:  False
+May not be the right sentence
+Russian:  Мы, к сожалению, теперь не имеем таких возможностей, а потому постепенно уступаем лидерство.
+English:  We, unfortunately, now do not have such opportunities, and therefore gradually giving way to the lead.
+Preposition:  3
+Answer:  теперь :  Now
+Output:  теперь :  Now  Result:  True
+May not be the right sentence
+Russian:  Мы стали в каком-то смысле походить на Гренобль.
+English:  We have become in some ways resemble the Grenoble.
+Preposition:  3
+Answer:  походить :  resemble
+Output:  походить :  resemble  Result:  True
+May not be the right sentence
+Russian:  Мы стали в каком-то смысле походить на Гренобль.
+English:  We have become in some ways resemble the Grenoble.
+Preposition:  7
+Answer:  каком-то :  some
+Output:  каком-то :  some  Result:  True
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  74.94372022407204 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  53.03558967201675 %
+Completed at: 2020-10-13 13:21:38.813086

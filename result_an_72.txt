@@ -1,0 +1,24 @@
+/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+TRAINING:Started at: 2020-10-26 12:07:53.615031  Learning Rate: 0.0001  Epochs: 40 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 72 Annotations are offset by 1000
+Annotated Test on ru_syntagrus-ud-test.conllu
+Correct Sentence: Same first word
+Russian:  "Та" сохранилась теперь только в воспоминаниях и частично в музее, который по крупицам собирали сами сотрудники.
+Traceback (most recent call last):
+  File "torchnet.py", line 507, in <module>
+    main_method()
+  File "torchnet.py", line 76, in main_method
+    print('Annotated Test on', filefortesting)
+  File "torchnet.py", line 425, in annotatedtest
+    print('English: ', ru_translate(ru_sent))
+  File "torchnet.py", line 97, in ru_translate
+    def ru_translate(sentence_ru):
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 172, in translate
+    data = self._translate(text, dest, src)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 75, in _translate
+    token = self.token_acquirer.do(text)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/gtoken.py", line 200, in do
+    self._update()
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/gtoken.py", line 65, in _update
+    code = unicode(self.RE_TKK.search(r.text).group(1)).replace('var ', '')
+AttributeError: 'NoneType' object has no attribute 'group'

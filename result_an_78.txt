@@ -1,0 +1,763 @@
+TRAINING:Started at: 2020-11-02 01:40:32.542613  Learning Rate: 0.0001  Epochs: 50 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 78 Annotations are offset by 4200
+Annotated Test on ru_syntagrus-ud-test.conllu
+Example: 4200
+Russian:  Первые шаги интерактивный метод сделал в стенах Бостонского детского музея.
+English:  The first steps of the interactive method did in the walls of the Boston Child Museum.
+Preposition:  6 - в - in
+Answer:  сделал :  done
+Output:  сделал :  done  Result:  True
+
+Example: 4201
+Russian:  Его директор впервые предложил детям экспозиции, где правило "руками не трогать" было заменено на "пожалуйста, трогайте".
+English:  His director first suggested the exposition to children, where the rule "hands does not touch" was replaced by "Please touch".
+Preposition:  17 - на - on
+Answer:  заменено :  Replaced
+Output:  заменено :  Replaced  Result:  True
+
+Example: 4202
+Russian:  Обычные бытовые приборы были представлены в разрезе, чтобы можно было увидеть, как они устроены и как функционируют.
+English:  Ordinary household appliances were presented in the context, so that you can see how they are arranged and how they function.
+Preposition:  6 - в - in
+Answer:  представлены :  represented
+Output:  представлены :  represented  Result:  True
+
+Example: 4203
+Russian:  Затем последовали выставки, которые помогали детям определить свое место в мире, понять, что чувствуют и как живут другие люди.
+English:  Then the exhibitions were followed, which helped children to determine their place in the world, to understand what other people feel and how they live.
+Preposition:  11 - в - in
+Answer:  место :  a place
+Output:  место :  a place  Result:  True
+
+Example: 4204
+Russian:  Например, одна из них позволяла прожить несколько минут жизнью инвалида.
+English:  For example, one of them allowed to live a few minutes with the life of a disabled person.
+Preposition:  4 - из - of
+Answer:  одна :  one
+Output:  прожить :  live  Result:  False
+
+Example: 4205
+Russian:  Можно попробовать передвигаться по специально выстроенным городским улицам при помощи инвалидного кресла или с завязанными глазами и с тростью.
+English:  You can try to move along specially built urban streets with a wheelchair or blindfolded and with a cane.
+Preposition:  14 - с - from
+Answer:  кресла :  Chairs
+Output:  завязанными :  tied  Result:  False
+
+Example: 4206
+Russian:  Можно попробовать передвигаться по специально выстроенным городским улицам при помощи инвалидного кресла или с завязанными глазами и с тростью.
+English:  You can try to move along specially built urban streets with a wheelchair or blindfolded and with a cane.
+Preposition:  18 - с - from
+Answer:  кресла :  Chairs
+Output:  завязанными :  tied  Result:  False
+
+Example: 4207
+Russian:  "Выставку - мастерскую" или "выставку - лабораторию" тоже придумали в детских музеях.
+English:  "The exhibition - the workshop" or "exhibition - the laboratory" was also invented in children's museums.
+Preposition:  14 - в - in
+Answer:  придумали :  invented
+Output:  придумали :  invented  Result:  True
+
+Example: 4208
+Russian:  В России об этом остается только мечтать.
+English:  In Russia, this remains only to dream.
+Preposition:  1 - В - IN
+Answer:  остается :  remains
+Output:  остается :  remains  Result:  True
+
+Example: 4209
+Russian:  Попытки создать какие-либо интерактивные экспозиции не приводили к ощутимым результатам.
+English:  Attempts to create any interactive expositions did not lead to tangible results.
+Preposition:  8 - к - to
+Answer:  приводили :  Led
+Output:  создать :  Create  Result:  False
+
+Example: 4210
+Russian:  В Петербурге еще в 2000 г. собирались открывать детский интерактивный музей, но с тех пор об этом так ничего и не слышно.
+English:  In St. Petersburg, in 2000, a children's interactive museum was collected in 2000, but since then nothing is heard about it.
+Preposition:  1 - В - IN
+Answer:  собирались :  Collected
+Output:  музей :  Museum  Result:  False
+
+Example: 4211
+Russian:  В Петербурге еще в 2000 г. собирались открывать детский интерактивный музей, но с тех пор об этом так ничего и не слышно.
+English:  In St. Petersburg, in 2000, a children's interactive museum was collected in 2000, but since then nothing is heard about it.
+Preposition:  4 - в - in
+Answer:  собирались :  Collected
+Output:  собирались :  Collected  Result:  True
+
+Example: 4212
+Russian:  В Петербурге еще в 2000 г. собирались открывать детский интерактивный музей, но с тех пор об этом так ничего и не слышно.
+English:  In St. Petersburg, in 2000, a children's interactive museum was collected in 2000, but since then nothing is heard about it.
+Preposition:  15 - с - from
+Answer:  собирались :  Collected
+Output:  музей :  Museum  Result:  False
+
+Example: 4213
+Russian:  Небольшой детский интерактивный музей появился в Находке - в основном, по частной инициативе, и планов на будущее в нем больше, чем нынешних достижений.
+English:  A small children's interactive museum appeared in Nakhodka - mainly on a private initiative, and plans for the future in it more than the current achievements.
+Preposition:  6 - в - in
+Answer:  появился :  appeared
+Output:  появился :  appeared  Result:  True
+
+Example: 4214
+Russian:  Небольшой детский интерактивный музей появился в Находке - в основном, по частной инициативе, и планов на будущее в нем больше, чем нынешних достижений.
+English:  A small children's interactive museum appeared in Nakhodka - mainly on a private initiative, and plans for the future in it more than the current achievements.
+Preposition:  9 - в - in
+Answer:  инициативе :  initiative
+Output:  появился :  appeared  Result:  False
+
+Example: 4215
+Russian:  Небольшой детский интерактивный музей появился в Находке - в основном, по частной инициативе, и планов на будущее в нем больше, чем нынешних достижений.
+English:  A small children's interactive museum appeared in Nakhodka - mainly on a private initiative, and plans for the future in it more than the current achievements.
+Preposition:  18 - на - on
+Answer:  планов :  Plans
+Output:  появился :  appeared  Result:  False
+
+Example: 4216
+Russian:  Небольшой детский интерактивный музей появился в Находке - в основном, по частной инициативе, и планов на будущее в нем больше, чем нынешних достижений.
+English:  A small children's interactive museum appeared in Nakhodka - mainly on a private initiative, and plans for the future in it more than the current achievements.
+Preposition:  20 - в - in
+Answer:  больше :  more
+Output:  чем :  than  Result:  False
+
+Example: 4217
+Russian:  А интерактивный "Центр живой истории" на базе археологического музея-заповедника "Танаис" так и вовсе был закрыт по непонятным причинам…
+English:  A interactive "Center for Living History" on the basis of the Archaeological Museum-Reserve "Tanais" was also closed for incomprehensible reasons ...
+Preposition:  8 - на - on
+Answer:  закрыт :  closed
+Output:  закрыт :  closed  Result:  True
+
+Example: 4218
+Russian:  "Престиж научных специальностей среди молодежи падает во всем мире.
+English:  "The prestige of scientific specialties among young people falls around the world.
+Preposition:  8 - во - in
+Answer:  падает :  Fall
+Output:  падает :  Fall  Result:  True
+
+Example: 4219
+Russian:  Это вызывает озабоченность и на Западе, и в России.
+English:  It causes concern and in the West, and in Russia.
+Preposition:  5 - на - on
+Answer:  вызывает :  causes
+Output:  и :  and  Result:  False
+
+Example: 4220
+Russian:  Это вызывает озабоченность и на Западе, и в России.
+English:  It causes concern and in the West, and in Russia.
+Preposition:  9 - в - in
+Answer:  Западе :  West
+Output:  Западе :  West  Result:  True
+
+Example: 4221
+Russian:  В Великобритании одно из направлений работы по популяризации науки направлено на создание интерактивных музеев, главная задача которых сделать науку понятной и интересной для детей и молодежи.
+English:  In the UK, one of the areas of work on the promotion of science is aimed at creating interactive museums, the main task of which to make science is understandable and interesting for children and young people.
+Preposition:  1 - В - IN
+Answer:  направлено :  directed
+Output:  направлено :  directed  Result:  True
+
+Example: 4222
+Russian:  В Великобритании одно из направлений работы по популяризации науки направлено на создание интерактивных музеев, главная задача которых сделать науку понятной и интересной для детей и молодежи.
+English:  In the UK, one of the areas of work on the promotion of science is aimed at creating interactive museums, the main task of which to make science is understandable and interesting for children and young people.
+Preposition:  4 - из - of
+Answer:  одно :  one
+Output:  Великобритании :  Great Britain  Result:  False
+
+Example: 4223
+Russian:  В Великобритании одно из направлений работы по популяризации науки направлено на создание интерактивных музеев, главная задача которых сделать науку понятной и интересной для детей и молодежи.
+English:  In the UK, one of the areas of work on the promotion of science is aimed at creating interactive museums, the main task of which to make science is understandable and interesting for children and young people.
+Preposition:  11 - на - on
+Answer:  направлено :  directed
+Output:  направлено :  directed  Result:  True
+
+Example: 4224
+Russian:  Мы покажем в Петербурге, как такие музеи работают в Великобритании.
+English:  We will show in St. Petersburg, as such museums work in the UK.
+Preposition:  3 - в - in
+Answer:  покажем :  Show
+Output:  покажем :  Show  Result:  True
+
+Example: 4225
+Russian:  Мы покажем в Петербурге, как такие музеи работают в Великобритании.
+English:  We will show in St. Petersburg, as such museums work in the UK.
+Preposition:  10 - в - in
+Answer:  работают :  Work
+Output:  работают :  Work  Result:  True
+
+Example: 4226
+Russian:  С другой стороны, мы хотели бы инициировать процесс создания таких музеев в России, вызвать интерес российских разработчиков и производителей к этой идее".
+English:  On the other hand, we would like to initiate the process of creating such museums in Russia, to cause the interest of Russian developers and manufacturers to this idea. "
+Preposition:  1 - С - FROM
+Answer:  хотели :  Want
+Output:  хотели :  Want  Result:  True
+
+Example: 4227
+Russian:  С другой стороны, мы хотели бы инициировать процесс создания таких музеев в России, вызвать интерес российских разработчиков и производителей к этой идее".
+English:  On the other hand, we would like to initiate the process of creating such museums in Russia, to cause the interest of Russian developers and manufacturers to this idea. "
+Preposition:  13 - в - in
+Answer:  создания :  Create
+Output:  хотели :  Want  Result:  False
+
+Example: 4228
+Russian:  С другой стороны, мы хотели бы инициировать процесс создания таких музеев в России, вызвать интерес российских разработчиков и производителей к этой идее".
+English:  On the other hand, we would like to initiate the process of creating such museums in Russia, to cause the interest of Russian developers and manufacturers to this idea. "
+Preposition:  22 - к - to
+Answer:  интерес :  interest
+Output:  производителей :  Manufacturers  Result:  False
+
+Example: 4229
+Russian:  В рамках "Недели британской науки", Британский Совет открыл выставку научных занимательных моделей и игрушек "Чудеса науки".
+English:  As part of the "Week of British Science", the British Council opened the exhibition of scientific entertaining models and toys "Wonders of Science".
+Preposition:  1 - В - IN
+Answer:  открыл :  Opened
+Output:  занимательных :  Entertaining  Result:  False
+
+Example: 4230
+Russian:  Модели выставки познакомят посетителей с различными научными явлениями (физическими, математическими, биологическими и т. д.) ярким и динамичным образом.
+English:  The exhibition models will introduce visitors with various scientific phenomena (physical, mathematical, biological, etc.) bright and dynamically.
+Preposition:  5 - с - from
+Answer:  познакомят :  introduce to know
+Output:  выставки :  Exhibitions  Result:  False
+
+Example: 4231
+Russian:  В выставке участвуют экспонаты ведущего британского интерактивного научного выставочного центра Techniquest и лучшие российские экспонаты, которые были отобраны на конкурсной основе.
+English:  The exhibition involves the exhibits of the leading British Interactive Scientific Exhibition Center Techniquest and the best Russian exhibits that were selected on a competitive basis.
+Preposition:  1 - В - IN
+Answer:  участвуют :  Participate
+Output:  участвуют :  Participate  Result:  True
+
+Example: 4232
+Russian:  В выставке участвуют экспонаты ведущего британского интерактивного научного выставочного центра Techniquest и лучшие российские экспонаты, которые были отобраны на конкурсной основе.
+English:  The exhibition involves the exhibits of the leading British Interactive Scientific Exhibition Center Techniquest and the best Russian exhibits that were selected on a competitive basis.
+Preposition:  20 - на - on
+Answer:  отобраны :  Selected
+Output:  отобраны :  Selected  Result:  True
+
+Example: 4233
+Russian:  Инициатива организации выставки принадлежит Британскому Совету в России.
+English:  The initiative of the organization of the exhibition belongs to the British Council in Russia.
+Preposition:  7 - в - in
+Answer:  Совету :  Council
+Output:  Совету :  Council  Result:  True
+
+Example: 4234
+Russian:  Экспозиция выставки научных занимательных моделей и игрушек "Чудеса науки" выдержана в идеологии "я играю, я учусь".
+English:  Exposition of the exhibition of scientific entertaining models and toys "Wonders of Science" is withstanding in ideology "I play, I study."
+Preposition:  13 - в - in
+Answer:  выдержана :  Supressed
+Output:  выдержана :  Supressed  Result:  True
+
+Example: 4235
+Russian:  С одной стороны, она объясняет серьезные научные законы; с другой объясняет их в игровой форме.
+English:  On the one hand, she explains serious scientific laws; On the other, explains them in a game form.
+Preposition:  1 - С - FROM
+Answer:  объясняет :  Explains
+Output:  объясняет :  Explains  Result:  True
+
+Example: 4236
+Russian:  С одной стороны, она объясняет серьезные научные законы; с другой объясняет их в игровой форме.
+English:  On the one hand, she explains serious scientific laws; On the other, explains them in a game form.
+Preposition:  11 - с - from
+Answer:  объясняет :  Explains
+Output:  объясняет :  Explains  Result:  True
+
+Example: 4237
+Russian:  С одной стороны, она объясняет серьезные научные законы; с другой объясняет их в игровой форме.
+English:  On the one hand, she explains serious scientific laws; On the other, explains them in a game form.
+Preposition:  15 - в - in
+Answer:  объясняет :  Explains
+Output:  объясняет :  Explains  Result:  True
+
+Example: 4238
+Russian:  В целом экспонаты ориентированы на детей и школьников до 12 - 14 лет, но будут интересны и взрослым, подзабывшим школьный курс физики или биологии.
+English:  In general, exhibits are focused on children and schoolchildren up to 12 - 14 years old, but will be interesting and adults who have forgotten the school course of physics or biology.
+Preposition:  1 - В - IN
+Answer:  ориентированы :  Oriented
+Output:  будут :  will be  Result:  False
+
+Example: 4239
+Russian:  В целом экспонаты ориентированы на детей и школьников до 12 - 14 лет, но будут интересны и взрослым, подзабывшим школьный курс физики или биологии.
+English:  In general, exhibits are focused on children and schoolchildren up to 12 - 14 years old, but will be interesting and adults who have forgotten the school course of physics or biology.
+Preposition:  5 - на - on
+Answer:  ориентированы :  Oriented
+Output:  будут :  will be  Result:  False
+
+Example: 4240
+Russian:  Выставка открыта до 2 июля в помещении петербургского "Водоканала".
+English:  The exhibition is open until July 2 in the premises of the St. Petersburg "Vodokanal".
+Preposition:  6 - в - in
+Answer:  открыта :  Open
+Output:  открыта :  Open  Result:  True
+
+Example: 4241
+Russian:  В выходные дни и в понедельник красноярцы нашли в почтовых ящиках газету "Гражданин либерал; за Прохорова", выпущенную еще 1 февраля.
+English:  On weekends and on Monday, the Krasnoyarsa found in the mailboxes a newspaper "Citizen Liberal; for Prokhorov", released on February 1.
+Preposition:  1 - В - IN
+Answer:  нашли :  Found
+Output:  нашли :  Found  Result:  True
+
+Example: 4242
+Russian:  В выходные дни и в понедельник красноярцы нашли в почтовых ящиках газету "Гражданин либерал; за Прохорова", выпущенную еще 1 февраля.
+English:  On weekends and on Monday, the Krasnoyarsa found in the mailboxes a newspaper "Citizen Liberal; for Prokhorov", released on February 1.
+Preposition:  5 - в - in
+Answer:  дни :  days
+Output:  нашли :  Found  Result:  False
+
+Example: 4243
+Russian:  В выходные дни и в понедельник красноярцы нашли в почтовых ящиках газету "Гражданин либерал; за Прохорова", выпущенную еще 1 февраля.
+English:  On weekends and on Monday, the Krasnoyarsa found in the mailboxes a newspaper "Citizen Liberal; for Prokhorov", released on February 1.
+Preposition:  9 - в - in
+Answer:  нашли :  Found
+Output:  нашли :  Found  Result:  True
+
+Example: 4244
+Russian:  В выходные дни и в понедельник красноярцы нашли в почтовых ящиках газету "Гражданин либерал; за Прохорова", выпущенную еще 1 февраля.
+English:  On weekends and on Monday, the Krasnoyarsa found in the mailboxes a newspaper "Citizen Liberal; for Prokhorov", released on February 1.
+Preposition:  17 - за - behind
+Answer:  Гражданин :  Citizen
+Output:  нашли :  Found  Result:  False
+
+Example: 4245
+Russian:  Газета распространялась, если верить выходным данным, тиражом 200 тыс. экземпляров и оплачена из избирательного фонда кандидата в президенты Михаила Прохорова.
+English:  The newspaper was distributed if you believe weekend, edition of 200 thousand copies and was paid from the electoral fund of the presidential candidate Mikhail Prokhorov.
+Preposition:  15 - из - of
+Answer:  оплачена :  Paid
+Output:  оплачена :  Paid  Result:  True
+
+Example: 4246
+Russian:  Газета распространялась, если верить выходным данным, тиражом 200 тыс. экземпляров и оплачена из избирательного фонда кандидата в президенты Михаила Прохорова.
+English:  The newspaper was distributed if you believe weekend, edition of 200 thousand copies and was paid from the electoral fund of the presidential candidate Mikhail Prokhorov.
+Preposition:  19 - в - in
+Answer:  кандидата :  Candidate
+Output:  оплачена :  Paid  Result:  False
+
+Example: 4247
+Russian:  Верить, однако, этим выходным данным нет оснований, поскольку в реальности газета дискредитирует Прохорова, как и, впрочем, всех остальных кандидатов в президенты.
+English:  To believe, however, this weekend there are no foundations, because in the reality of the newspaper discredits Prokhorov, as well as, all other presidential candidates.
+Preposition:  12 - в - in
+Answer:  дискредитирует :  Discredits
+Output:  нет :  no  Result:  False
+
+Example: 4248
+Russian:  Верить, однако, этим выходным данным нет оснований, поскольку в реальности газета дискредитирует Прохорова, как и, впрочем, всех остальных кандидатов в президенты.
+English:  To believe, however, this weekend there are no foundations, because in the reality of the newspaper discredits Prokhorov, as well as, all other presidential candidates.
+Preposition:  26 - в - in
+Answer:  кандидатов :  Candidates
+Output:  впрочем :  however  Result:  False
+
+Example: 4249
+Russian:  Подметная газета "за Прохорова" агитирует за него, предоставляя слово трем российским "аллергенам" - Ксении Собчак, Эдуарду Лимонову и Анатолию Чубайсу.
+English:  The attention newspaper "For Prokhorov" agitates for it, providing the word to three Russian "allergens" - Ksenia Sobchak, Eduard Limonov and Anatoly Chubais.
+Preposition:  4 - за - behind
+Answer:  газета :  Newspaper
+Output:  газета :  newspaper  Result:  True
+
+Example: 4250
+Russian:  Подметная газета "за Прохорова" агитирует за него, предоставляя слово трем российским "аллергенам" - Ксении Собчак, Эдуарду Лимонову и Анатолию Чубайсу.
+English:  The attention newspaper "For Prokhorov" agitates for it, providing the word to three Russian "allergens" - Ksenia Sobchak, Eduard Limonov and Anatoly Chubais.
+Preposition:  8 - за - behind
+Answer:  агитирует :  Agicts
+Output:  агитирует :  Agicts  Result:  True
+
+Example: 4251
+Russian:  Замысел прост и понятен, как солдатский сапог: похвала из их уст для львиной доли избирателей убедительнее любого поношения.
+English:  The idea is simple and understandable as the soldier's boot: praise from their mouths for the lion's share of the voters to be convincing any one.
+Preposition:  11 - из - of
+Answer:  похвала :  praise
+Output:  похвала :  praise  Result:  True
+
+Example: 4252
+Russian:  "…Российские олигархи могли бы намотать на ус, - пишет агитационное издание.
+English:  "... Russian oligarchs could be wounded on the Us," writes a campaign edition.
+Preposition:  8 - на - on
+Answer:  намотать :  hur over
+Output:  намотать :  hur over  Result:  True
+
+Example: 4253
+Russian:  - В то время как многие только говорят о социальной ответственности бизнеса, Прохоров эту ответственность демонстрирует".
+English:  - While many only talk about the social responsibility of business, Prokhorov demonstrates this responsibility. "
+Preposition:  2 - В - IN
+Answer:  демонстрирует :  Demonstrates
+Output:  демонстрирует :  Demonstrates  Result:  True
+
+Example: 4254
+Russian:  Якобы из программы Прохорова выделены следующие моменты.
+English:  Allegedly, the following points are allocated from the Prokhorov program.
+Preposition:  2 - из - of
+Answer:  выделены :  Allocated
+Output:  выделены :  Allocated  Result:  True
+
+Example: 4255
+Russian:  Резко поднять акцизы на алкоголь и табак, привлечь иностранный капитал в оборонную промышленность.
+English:  Radically raise excise taxes on alcohol and tobacco, attract foreign capital to the defense industry.
+Preposition:  4 - на - on
+Answer:  акцизы :  excise
+Output:  акцизы :  excise  Result:  True
+
+Example: 4256
+Russian:  Резко поднять акцизы на алкоголь и табак, привлечь иностранный капитал в оборонную промышленность.
+English:  Radically raise excise taxes on alcohol and tobacco, attract foreign capital to the defense industry.
+Preposition:  12 - в - in
+Answer:  привлечь :  attract
+Output:  иностранный :  foreign  Result:  False
+
+Example: 4257
+Russian:  Отменить трудовые книжки и принудить всех работников к заключению срочных трудовых договоров.
+English:  Cancel labor books and force all employees to conclude urgent employment contracts.
+Preposition:  8 - к - to
+Answer:  принудить :  forcibly
+Output:  принудить :  forcibly  Result:  True
+
+Example: 4258
+Russian:  Ускорить введение налога на недвижимость в размере 1% от рыночной стоимости жилья.
+English:  Accelerate the introduction of real estate tax in the amount of 1% of the market value of housing.
+Preposition:  4 - на - on
+Answer:  налога :  tax
+Output:  введение :  Introduction  Result:  False
+
+Example: 4259
+Russian:  Ускорить введение налога на недвижимость в размере 1% от рыночной стоимости жилья.
+English:  Accelerate the introduction of real estate tax in the amount of 1% of the market value of housing.
+Preposition:  6 - в - in
+Answer:  налога :  tax
+Output:  недвижимость :  the property  Result:  False
+
+Example: 4260
+Russian:  Ускорить введение налога на недвижимость в размере 1% от рыночной стоимости жилья.
+English:  Accelerate the introduction of real estate tax in the amount of 1% of the market value of housing.
+Preposition:  10 - от - from
+Answer:  % :  %
+Output:  недвижимость :  the property  Result:  False
+
+Example: 4261
+Russian:  Переложить бремя оплаты полисов добровольного медстрахования с плеч работодателя на плечи работника.
+English:  Shipping the burden of payment of the policing policies from the shoulders of the employer on the employee's shoulders.
+Preposition:  7 - с - from
+Answer:  Переложить :  Shift
+Output:  медстрахования :  Medustration  Result:  False
+
+Example: 4262
+Russian:  Переложить бремя оплаты полисов добровольного медстрахования с плеч работодателя на плечи работника.
+English:  Shipping the burden of payment of the policing policies from the shoulders of the employer on the employee's shoulders.
+Preposition:  10 - на - on
+Answer:  Переложить :  Shift
+Output:  работодателя :  Employer  Result:  False
+
+Example: 4263
+Russian:  Обеспечить зависимость пенсии от зарплаты работника: больше зарплата - больше пенсия.
+English:  To ensure the dependence of the pension from the employee's salary: more salary is more pension.
+Preposition:  4 - от - from
+Answer:  зависимость :  dependence
+Output:  пенсии :  Pensions  Result:  False
+
+Example: 4264
+Russian:  В общем, вся газета составлена по такой нехитрой методике с расчетом на то, что быдло схавает.
+English:  In general, the entire newspaper is compiled by such a simple technique with the calculation of the fact that the cattle is sitting.
+Preposition:  1 - В - IN
+Answer:  составлена :  Compiled
+Output:  составлена :  Compiled  Result:  True
+
+Example: 4265
+Russian:  В общем, вся газета составлена по такой нехитрой методике с расчетом на то, что быдло схавает.
+English:  In general, the entire newspaper is compiled by such a simple technique with the calculation of the fact that the cattle is sitting.
+Preposition:  11 - с - from
+Answer:  составлена :  Compiled
+Output:  методике :  Methodology  Result:  False
+
+Example: 4266
+Russian:  В общем, вся газета составлена по такой нехитрой методике с расчетом на то, что быдло схавает.
+English:  In general, the entire newspaper is compiled by such a simple technique with the calculation of the fact that the cattle is sitting.
+Preposition:  13 - на - on
+Answer:  расчетом :  Calculation
+Output:  схавает :  Whipping  Result:  False
+
+Example: 4267
+Russian:  И как черт от ладана побежит от Прохорова к Путину.
+English:  And how devils from Ladan will run from Prokhorov to Putin.
+Preposition:  4 - _ - _
+Answer:  черт :  heck
+Output:  побежит :  Run  Result:  False
+
+Example: 4268
+Russian:  И как черт от ладана побежит от Прохорова к Путину.
+English:  And how devils from Ladan will run from Prokhorov to Putin.
+Preposition:  7 - побежит - Run
+Answer:  ладана :  Ladan
+Output:  побежит :  Run  Result:  False
+
+Example: 4269
+Russian:  И как черт от ладана побежит от Прохорова к Путину.
+English:  And how devils from Ladan will run from Prokhorov to Putin.
+Preposition:  9 - Прохорова - Prokhorov
+Answer:  ладана :  Ladan
+Output:  Прохорова :  Prokhorov  Result:  False
+
+Example: 4270
+Russian:  Потому что остальные кандидаты в этой газете тоже размазываются в придорожную грязь.
+English:  Because the rest of the candidates in this newspaper also smear into roadside dirt.
+Preposition:  5 - в - in
+Answer:  размазываются :  smear
+Output:  размазываются :  smear  Result:  True
+
+Example: 4271
+Russian:  Потому что остальные кандидаты в этой газете тоже размазываются в придорожную грязь.
+English:  Because the rest of the candidates in this newspaper also smear into roadside dirt.
+Preposition:  10 - в - in
+Answer:  размазываются :  smear
+Output:  размазываются :  smear  Result:  True
+
+Example: 4272
+Russian:  Это еще одно доказательство того, что газета "Гражданин либерал; за Прохорова" выпущена в интересах Путина.
+English:  This is another proof that the newspaper "Citizen Liberal; for Prokhorov" was issued in the interests of Putin.
+Preposition:  13 - за - behind
+Answer:  Гражданин :  Citizen
+Output:  выпущена :  Released  Result:  False
+
+Example: 4273
+Russian:  Это еще одно доказательство того, что газета "Гражданин либерал; за Прохорова" выпущена в интересах Путина.
+English:  This is another proof that the newspaper "Citizen Liberal; for Prokhorov" was issued in the interests of Putin.
+Preposition:  17 - в - in
+Answer:  выпущена :  Released
+Output:  выпущена :  Released  Result:  True
+
+Example: 4274
+Russian:  (Кстати, нигде в выходных данных выпуска "КП" о том, что он оплачен из избирательного фонда Путина, не сказано).
+English:  (By the way, nowhere in the weekend of the production of "KP" that he is paid from the Putin's electoral fund).
+Preposition:  5 - в - in
+Answer:  сказано :  Said
+Output:  нигде :  NIGHT  Result:  False
+
+Example: 4275
+Russian:  (Кстати, нигде в выходных данных выпуска "КП" о том, что он оплачен из избирательного фонда Путина, не сказано).
+English:  (By the way, nowhere in the weekend of the production of "KP" that he is paid from the Putin's electoral fund).
+Preposition:  18 - из - of
+Answer:  оплачен :  paid
+Output:  оплачен :  paid  Result:  True
+
+Example: 4276
+Russian:  Прием обычный и привычный, взятый на вооружение еще в середине 90-х.
+English:  The reception is ordinary and familiar, taken into service in the mid-90s.
+Preposition:  7 - на - on
+Answer:  взятый :  taken
+Output:  взятый :  taken  Result:  True
+
+Example: 4277
+Russian:  Прием обычный и привычный, взятый на вооружение еще в середине 90-х.
+English:  The reception is ordinary and familiar, taken into service in the mid-90s.
+Preposition:  10 - в - in
+Answer:  взятый :  taken
+Output:  еще :  more  Result:  False
+
+Example: 4278
+Russian:  В деревнях темные личности проведут от имени Зюганова или Прохорова перепись скота, поясняя хозяевам, что их начальник, одержав победу, экспроприирует излишки.
+English:  In the villages, dark personalities will spend on behalf of Zyuganov or Prokhorov Cattle census, explaining the owners that their boss who won, expropriates the surplus.
+Preposition:  1 - В - IN
+Answer:  проведут :  Cut
+Output:  проведут :  Cut  Result:  True
+
+Example: 4279
+Russian:  В деревнях темные личности проведут от имени Зюганова или Прохорова перепись скота, поясняя хозяевам, что их начальник, одержав победу, экспроприирует излишки.
+English:  In the villages, dark personalities will spend on behalf of Zyuganov or Prokhorov Cattle census, explaining the owners that their boss who won, expropriates the surplus.
+Preposition:  6 - от - from
+Answer:  проведут :  Cut
+Output:  проведут :  Cut  Result:  True
+
+Example: 4280
+Russian:  Любопытно, что пока никаких движений ни избиркома, ни правоохранителей с тем, чтобы пресечь распространение и выпуск фальшивок, не видно.
+English:  It is curious that so far no movements are neither elegant, nor law enforcement officers in order to stop the distribution and the release of fakes, not visible.
+Preposition:  12 - с - from
+Answer:  движений :  movements
+Output:  движений :  movements  Result:  True
+
+Example: 4281
+Russian:  В общественной приемной Прохорова в Красноярске подтвердили, что они не имеют отношения к "Гражданину либералу" и будут обращаться в избирком с заявлением.
+English:  In the public reception, Prokhorov in Krasnoyarsk confirmed that they are not related to the "citizen of Liberal" and will apply to the election committee.
+Preposition:  1 - В - IN
+Answer:  подтвердили :  confirmed
+Output:  подтвердили :  confirmed  Result:  True
+
+Example: 4282
+Russian:  В общественной приемной Прохорова в Красноярске подтвердили, что они не имеют отношения к "Гражданину либералу" и будут обращаться в избирком с заявлением.
+English:  In the public reception, Prokhorov in Krasnoyarsk confirmed that they are not related to the "citizen of Liberal" and will apply to the election committee.
+Preposition:  5 - в - in
+Answer:  приемной :  Reception
+Output:  Прохорова :  Prokhorov  Result:  False
+
+Example: 4283
+Russian:  В общественной приемной Прохорова в Красноярске подтвердили, что они не имеют отношения к "Гражданину либералу" и будут обращаться в избирком с заявлением.
+English:  In the public reception, Prokhorov in Krasnoyarsk confirmed that they are not related to the "citizen of Liberal" and will apply to the election committee.
+Preposition:  14 - к - to
+Answer:  имеют :  have
+Output:  подтвердили :  confirmed  Result:  False
+
+Example: 4284
+Russian:  В общественной приемной Прохорова в Красноярске подтвердили, что они не имеют отношения к "Гражданину либералу" и будут обращаться в избирком с заявлением.
+English:  In the public reception, Prokhorov in Krasnoyarsk confirmed that they are not related to the "citizen of Liberal" and will apply to the election committee.
+Preposition:  22 - в - in
+Answer:  обращаться :  contact
+Output:  обращаться :  contact  Result:  True
+
+Example: 4285
+Russian:  В общественной приемной Прохорова в Красноярске подтвердили, что они не имеют отношения к "Гражданину либералу" и будут обращаться в избирком с заявлением.
+English:  In the public reception, Prokhorov in Krasnoyarsk confirmed that they are not related to the "citizen of Liberal" and will apply to the election committee.
+Preposition:  24 - с - from
+Answer:  обращаться :  contact
+Output:  избирком :  Beggar  Result:  False
+
+Example: 4286
+Russian:  Выходные данные фальшивой газеты, видимо, намеренно напечатаны с грамматическими ошибками.
+English:  The output of the fake newspaper, apparently intentionally printed with grammatical errors.
+Preposition:  10 - с - from
+Answer:  напечатаны :  Printed
+Output:  напечатаны :  Printed  Result:  True
+
+Example: 4287
+Russian:  Итак, газету "за Прохорова" его избирательный фонд не оплачивал.
+English:  So, the newspaper "For Prokhorov" his electoral fund was not paid.
+Preposition:  5 - за - behind
+Answer:  газету :  newspaper
+Output:  газету :  newspaper  Result:  True
+
+Example: 4288
+Russian:  Путина, в чью пользу агитирует газета "за Прохорова"?
+English:  Putin, in whose benefits agitates the newspaper "For Prokhorov"?
+Preposition:  3 - в - in
+Answer:  агитирует :  Agicts
+Output:  агитирует :  Agicts  Result:  True
+
+Example: 4289
+Russian:  Путина, в чью пользу агитирует газета "за Прохорова"?
+English:  Putin, in whose benefits agitates the newspaper "For Prokhorov"?
+Preposition:  9 - за - behind
+Answer:  газета :  newspaper
+Output:  агитирует :  Agicts  Result:  False
+
+Example: 4290
+Russian:  Законодательство запрещает использовать в предвыборной кампании деньги, взятые не из избирательного фонда кандидата в президенты.
+English:  Legislation prohibits money from the election campaign, taken not from the electoral fund of the presidential candidate.
+Preposition:  4 - в - in
+Answer:  использовать :  use
+Output:  использовать :  use  Result:  True
+
+Example: 4291
+Russian:  Законодательство запрещает использовать в предвыборной кампании деньги, взятые не из избирательного фонда кандидата в президенты.
+English:  Legislation prohibits money from the election campaign, taken not from the electoral fund of the presidential candidate.
+Preposition:  11 - из - of
+Answer:  взятые :  taken
+Output:  взятые :  taken  Result:  True
+
+Example: 4292
+Russian:  Законодательство запрещает использовать в предвыборной кампании деньги, взятые не из избирательного фонда кандидата в президенты.
+English:  Legislation prohibits money from the election campaign, taken not from the electoral fund of the presidential candidate.
+Preposition:  15 - в - in
+Answer:  кандидата :  Candidate
+Output:  кандидата :  Candidate  Result:  True
+
+Example: 4293
+Russian:  "Новая" в прошлом номере писала о запросе в ЦИК РФ депутата горсовета Красноярска Андрея Селезнева.
+English:  "New" in the past room wrote about the request to the CEC of the Russian Federation Deputy City Council Krasnoyarsk Andrei Seleznev.
+Preposition:  4 - в - in
+Answer:  писала :  Pisal
+Output:  писала :  Pisal  Result:  True
+
+Example: 4294
+Russian:  "Новая" в прошлом номере писала о запросе в ЦИК РФ депутата горсовета Красноярска Андрея Селезнева.
+English:  "New" in the past room wrote about the request to the CEC of the Russian Federation Deputy City Council Krasnoyarsk Andrei Seleznev.
+Preposition:  10 - в - in
+Answer:  запросе :  Request
+Output:  запросе :  Request  Result:  True
+
+Example: 4295
+Russian:  Он потребовал отстранить Путина от выборов и привлечь к административной ответственности за организацию митинга-концерта 4 февраля.
+English:  He demanded to remove Putin from the elections and attract an administrative responsibility for organizing a meeting of the concert on February 4.
+Preposition:  5 - от - from
+Answer:  отстранить :  remove
+Output:  Путина :  Putin  Result:  False
+
+Example: 4296
+Russian:  Он потребовал отстранить Путина от выборов и привлечь к административной ответственности за организацию митинга-концерта 4 февраля.
+English:  He demanded to remove Putin from the elections and attract an administrative responsibility for organizing a meeting of the concert on February 4.
+Preposition:  9 - к - to
+Answer:  привлечь :  attract
+Output:  привлечь :  attract  Result:  True
+
+Example: 4297
+Russian:  Он потребовал отстранить Путина от выборов и привлечь к административной ответственности за организацию митинга-концерта 4 февраля.
+English:  He demanded to remove Putin from the elections and attract an administrative responsibility for organizing a meeting of the concert on February 4.
+Preposition:  12 - за - behind
+Answer:  ответственности :  Responsibility
+Output:  ответственности :  Responsibility  Result:  True
+
+Example: 4298
+Russian:  Митинг сторонников Путина состоялся в красноярском Дворце спорта и завершился концертом Владимира Кузьмина.
+English:  The rally of Putin's supporters took place in the Krasnoyarsk Palace of Sports and ended with the concert of Vladimir Kuzmin.
+Preposition:  5 - в - in
+Answer:  состоялся :  took place
+Output:  состоялся :  took place  Result:  True
+
+Example: 4299
+Russian:  Селезнев, умножив количество мест во Дворце спорта на среднюю сумму билета, полагает, что организация концерта обошлась в сумму около 9 млн рублей.
+English:  Seleznev, multiplying the number of places in the Palace of Sports on the average amount of the ticket, believes that the organization of the concert costs about 9 million rubles.
+Preposition:  6 - во - in
+Answer:  мест :  places
+Output:  умножив :  Multimily  Result:  False
+
+Example: 4300
+Russian:  Селезнев, умножив количество мест во Дворце спорта на среднюю сумму билета, полагает, что организация концерта обошлась в сумму около 9 млн рублей.
+English:  Seleznev, multiplying the number of places in the Palace of Sports on the average amount of the ticket, believes that the organization of the concert costs about 9 million rubles.
+Preposition:  9 - на - on
+Answer:  умножив :  Multimily
+Output:  обошлась :  cost  Result:  False
+
+Example: 4301
+Russian:  Селезнев, умножив количество мест во Дворце спорта на среднюю сумму билета, полагает, что организация концерта обошлась в сумму около 9 млн рублей.
+English:  Seleznev, multiplying the number of places in the Palace of Sports on the average amount of the ticket, believes that the organization of the concert costs about 9 million rubles.
+Preposition:  20 - в - in
+Answer:  обошлась :  cost
+Output:  обошлась :  cost  Result:  True
+
+Example: 4302
+Russian:  Депутат настаивает на том, что такой концерт в поддержку Путина является подкупом избирателей, средства тратятся не из избирательного фонда.
+English:  The deputy insists that such a concert in support of Putin is bribing voters, funds are spent not from the electoral fund.
+Preposition:  3 - на - on
+Answer:  настаивает :  insists
+Output:  настаивает :  insists  Result:  True
+
+Example: 4303
+Russian:  Депутат настаивает на том, что такой концерт в поддержку Путина является подкупом избирателей, средства тратятся не из избирательного фонда.
+English:  The deputy insists that such a concert in support of Putin is bribing voters, funds are spent not from the electoral fund.
+Preposition:  9 - в - in
+Answer:  концерт :  concert
+Output:  концерт :  concert  Result:  True
+
+Example: 4304
+Russian:  Депутат настаивает на том, что такой концерт в поддержку Путина является подкупом избирателей, средства тратятся не из избирательного фонда.
+English:  The deputy insists that such a concert in support of Putin is bribing voters, funds are spent not from the electoral fund.
+Preposition:  19 - из - of
+Answer:  тратятся :  spend
+Output:  тратятся :  spend  Result:  True
+
+Example: 4305
+Russian:  Между тем в региональном отделении ОНФ считают претензии необоснованными, утверждая, что и сам митинг, и выступление Кузьмина не имеют никакого отношения ни к агитации, ни к Путину.
+Traceback (most recent call last):
+  File "torchnet.py", line 507, in <module>
+    main_method()
+  File "torchnet.py", line 77, in main_method
+    annotatedtest(test_set, test_map, annotation, offset)
+  File "torchnet.py", line 425, in annotatedtest
+    print('English: ', ru_translate(ru_sent))
+  File "torchnet.py", line 98, in ru_translate
+    return translator.translate(sentence_ru, src="ru", dest= "en").text
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 172, in translate
+    data = self._translate(text, dest, src)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 81, in _translate
+    data = utils.format_json(r.text)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/utils.py", line 62, in format_json
+    converted = legacy_format_json(original)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/utils.py", line 54, in legacy_format_json
+    converted = json.loads(text)
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

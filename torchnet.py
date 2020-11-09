@@ -23,12 +23,12 @@ fiction_root= 'sample_ar/TEXTS/Fiction/'
 development_set= 'ru_syntagrus-ud-dev.conllu'
 testing_set= 'ru_syntagrus-ud-test.conllu'
 training_set= 'ru_syntagrus-ud-train.conllu'
-output_number = '63'
+output_number = '79'
 graphlossout  = 'pointstoplot' + output_number
-sentencemap = 'sentmap' + output_number #just for test
+sentencemap = 'sentmap' + output_number 
 testexamples = 'testexam' + output_number
 graph_bool = False
-test_bool = True 
+test_bool = False 
 
 #Dimensions
 input_size = 450 #154
@@ -36,7 +36,8 @@ hidden_size = 200  #154
 output_size = 50 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 hidden_layers = 1
-offset = 4000
+offset = 5200
+annotation = 200
 
 ##NN Stuff
 num_epochs = 20
@@ -55,7 +56,7 @@ prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
-log_freq = 10000
+log_freq = 100000
 shuffle = True
 test_index = []
 
@@ -63,7 +64,8 @@ test_index = []
 def main_method():
     print('TRAINING:Started at:', datetime.now(), ' Learning Rate:', learning_rate, ' Epochs:', num_epochs, 
           'Hidden Layer Size:', hidden_size, 'Number of Hidden Layers:', hidden_layers, 'Weight Decay:', weight_decay, 
-          'Training with:', filefortraining, 'and' , filefordev, 'Data ID:', output_number)
+          'Training with:', filefortraining, 'and' , filefordev, 'Data ID:', output_number, 
+          'Annotations are offset by', offset)
     dev_set = processconllu(filefordev)
     train_set = processconllu(filefortraining)
     test_set, test_map  = processconllu_save(filefortesting)
@@ -72,7 +74,8 @@ def main_method():
     #netload('torchnet.pkl')
     train(train_set)
     print('Annotated Test on', filefortesting)
-    annotatedtest(dev_set, test_map, 20, offset)
+    annotatedtest(test_set, test_map, annotation, offset)
+    print()
     print('Testing on', filefortraining)
     test(train_set)
     print('Testing on', filefortesting)
@@ -398,36 +401,44 @@ def annotatedtest(testlist, testmap,  limit, off_set):
     acc = False
     #print("Annotated Test:")
     for i, (question, answer) in enumerate(testlist):
+        print('Example:', (i+off_set))
         output = net(question.float())
         pred = output.max(0)[1]
         total += 1
         acc = torch.eq(pred, answer)
         if acc:
-            correct += 1#NEED PREPOSITION STUFF AROUND HERE
-        sentence_id, preposition = testmap[i+offset]
+            correct += 1
+        sentence_id, preposition = testmap[i+off_set]
         sentence = find_sent(sentence_id, corpus)
         firstq = question[0].item()
         firsts = word_vectors[sentence[0]['lemma']][0]
-        if firstq == firsts:
-            print('Correct Sentence: Same first word')
-        else:
-            print('May not be the right sentence')
+        if not np.isclose(firstq, firsts, rtol= 1e-05, atol=1e-08, equal_nan=False):
+            print('Error: Different first words.',firstq, 'versus', firsts)
         ru_sent = sentence.metadata['text']
         ru_answer = ''
         ru_pred = ''
+        ru_prep = ''
+        out_index = pred-1
+        prep_index = preposition-1
+        answer_index = answer-1
         print('Russian: ', ru_sent)
         print('English: ', ru_translate(ru_sent))
-        print('Preposition: ', preposition)
-        if (answer < len(sentence)):
-            ru_answer= sentence[answer]['form']
+        if (prep_index < len(sentence)):
+            ru_prep = sentence[prep_index]['form']
+            print('Preposition: ', preposition, '-', ru_prep, '-', ru_translate(ru_prep))
+        else:
+            print('Preposition out of bounds: ', preposition)
+        if (answer_index < len(sentence)):
+            ru_answer= sentence[answer_index]['form']
             print('Answer: ', ru_answer, ': ', ru_translate(ru_answer))
         else:
             print('Answer: Index outside sentence. Interesting....')
-        if (pred < len(sentence)):
-            ru_pred = sentence[pred]['form']
-            print('Output: ', ru_answer,': ', ru_translate(ru_pred), ' Result: ', acc.item())
+        if (out_index < len(sentence)):
+            ru_pred = sentence[out_index]['form']
+            print('Output: ', ru_pred,': ', ru_translate(ru_pred), ' Result: ', acc.item())
         else:
             print('Output: Index outside of sentence', 'Result: ', acc.item())
+        print()
 
 def findprep(question):
     for i in range(0, input_size, 11):

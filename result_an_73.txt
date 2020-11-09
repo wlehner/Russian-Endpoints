@@ -1,0 +1,288 @@
+TRAINING:Started at: 2020-10-26 12:44:42.532866  Learning Rate: 0.0001  Epochs: 10 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 73 Annotations are offset by 2000
+Annotated Test on ru_syntagrus-ud-test.conllu
+Correct Sentence: Same first word
+Russian:  Банк кредитует студентов под стопроцентную гарантию компании "Крэйн", которая выступает поручителем по кредиту, и именно за счет ее средств, размещенных в банке на депозите, "Союз" и кредитует студентов.
+English:  Bank loans to students under a hundred percent guarantee, "Crane" company, which acts as a guarantor on the loan, and it is at the expense of its funds deposited with the Bank on deposit, "Union" and credits the students.
+Preposition:  26 - в - at
+Answer:  размещенных :  placed
+Output:  размещенных :  deposit  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Банк кредитует студентов под стопроцентную гарантию компании "Крэйн", которая выступает поручителем по кредиту, и именно за счет ее средств, размещенных в банке на депозите, "Союз" и кредитует студентов.
+English:  Bank loans to students under a hundred percent guarantee, "Crane" company, which acts as a guarantor on the loan, and it is at the expense of its funds deposited with the Bank on deposit, "Union" and credits the students.
+Preposition:  28 - на - on
+Answer:  размещенных :  placed
+Output:  размещенных :  deposit  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Компания "Крэйн" сотрудничает с 21 вузом, среди которых почти все ведущие российские вузы: МГУ, МГИМО, ВШЭ, Плехановская академия и др.
+English:  Company "Crane" collaborates with 21 university, among them almost all the leading Russian universities: Moscow State University, MGIMO, Higher School of Economics, Plekhanov Academy, and others.
+Preposition:  6 - с - from
+Answer:  сотрудничает :  cooperating
+Output:  сотрудничает :  cooperating  Result:  True
+
+Correct Sentence: Same first word
+Russian:  "Крэйн" выдает кредиты в долларах под 10% годовых на срок до 16 лет.
+English:  "Crane" provides loans in dollars at 10% per annum for up to 16 years.
+Preposition:  6 - в - at
+Answer:  кредиты :  credits
+Output:  кредиты :  issues  Result:  False
+
+Correct Sentence: Same first word
+Russian:  "Крэйн" выдает кредиты в долларах под 10% годовых на срок до 16 лет.
+English:  "Crane" provides loans in dollars at 10% per annum for up to 16 years.
+Preposition:  12 - на - on
+Answer:  выдает :  issues
+Output:  выдает :  per annum  Result:  False
+
+Correct Sentence: Same first word
+Russian:  При этом во время обучения в вузе студент освобождается не только от погашения задолженности по кредиту, но и от выплаты процентов по нему.
+English:  At the same time during training in high school the student is released not only from the repayment of the loan, but to pay interest on it.
+Preposition:  6 - в - at
+Answer:  обучения :  learning
+Output:  обучения :  freed up  Result:  False
+
+Correct Sentence: Same first word
+Russian:  При этом во время обучения в вузе студент освобождается не только от погашения задолженности по кредиту, но и от выплаты процентов по нему.
+English:  At the same time during training in high school the student is released not only from the repayment of the loan, but to pay interest on it.
+Preposition:  12 - от - from
+Answer:  освобождается :  freed up
+Output:  освобождается :  only  Result:  False
+
+Correct Sentence: Same first word
+Russian:  При этом во время обучения в вузе студент освобождается не только от погашения задолженности по кредиту, но и от выплаты процентов по нему.
+English:  At the same time during training in high school the student is released not only from the repayment of the loan, but to pay interest on it.
+Preposition:  20 - от - from
+Answer:  погашения :  maturity
+Output:  погашения :  freed up  Result:  False
+
+Correct Sentence: Same first word
+Russian:  При этом выплаты по самому кредиту растягиваются даже не на пять, как в эксперименте Минобразования, а на десять лет.
+English:  In this case, the payment of the loan to stretch even five, as the Ministry of Education in the experiment, and for ten years.
+Preposition:  10 - на - on
+Answer:  растягиваются :  stretched
+Output:  растягиваются :  stretched  Result:  True
+
+Correct Sentence: Same first word
+Russian:  При этом выплаты по самому кредиту растягиваются даже не на пять, как в эксперименте Минобразования, а на десять лет.
+English:  In this case, the payment of the loan to stretch even five, as the Ministry of Education in the experiment, and for ten years.
+Preposition:  14 - в - at
+Answer:  пять :  five
+Output:  пять :  as  Result:  False
+
+Correct Sentence: Same first word
+Russian:  При этом выплаты по самому кредиту растягиваются даже не на пять, как в эксперименте Минобразования, а на десять лет.
+English:  In this case, the payment of the loan to stretch even five, as the Ministry of Education in the experiment, and for ten years.
+Preposition:  19 - на - on
+Answer:  пять :  five
+Output:  пять :  years  Result:  False
+
+Correct Sentence: Same first word
+Russian:  В итоге ежемесячные платежи по кредиту получаются сравнительно небольшими.
+English:  As a result of monthly payments on the loan is comparatively small.
+Preposition:  1 - В - AT
+Answer:  получаются :  obtained
+Output:  получаются :  obtained  Result:  True
+
+Correct Sentence: Same first word
+Russian:  С 2004 года компания выдала около 3,5 тыс. кредитов.
+English:  Since 2004 the company has issued about 3.5 thousand. Loans.
+Preposition:  1 - С - FROM
+Answer:  выдала :  issued
+Output:  выдала :  issued  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Причем уже 150 заемщиков погасили свою задолженность, в то время как 131 выпускник задерживает выплаты по кредиту.
+English:  And already 150 borrowers to repay their debts, while 131 graduate delay payments on the loan.
+Preposition:  9 - в - at
+Answer:  погасили :  extinguished
+Output:  погасили :  delays  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Чтобы хоть как-то обезопасить себя от рисков невозвратов кредитов, в компании "Крэйн" разработали программу карьерного сопровождения заемщиков.
+English:  In order to somehow protect themselves from the risk of default loans in the company, "Crane" developed a program of career support borrowers.
+Preposition:  6 - от - from
+Answer:  обезопасить :  secure
+Output:  обезопасить :  himself  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Чтобы хоть как-то обезопасить себя от рисков невозвратов кредитов, в компании "Крэйн" разработали программу карьерного сопровождения заемщиков.
+English:  In order to somehow protect themselves from the risk of default loans in the company, "Crane" developed a program of career support borrowers.
+Preposition:  11 - в - at
+Answer:  разработали :  developed
+Output:  разработали :  defaults  Result:  False
+
+Correct Sentence: Same first word
+Russian:  "Эта программа помогает заинтересованным студентам по окончании обучения стать более привлекательными для работодателя специалистами - с адекватным представлением о рынке труда, ценными практическими навыками и профессиональным опытом, полученными на стажировках и временной работе,-
+English:  "This program helps interested students after graduation to become a more attractive employer for professionals - with an adequate representation of the labor market, with valuable practical skills and professional experience gained in internships and temporary work -
+Preposition:  17 - с - from
+Answer:  специалистами :  experts
+Output:  специалистами :  experts  Result:  True
+
+Correct Sentence: Same first word
+Russian:  "Эта программа помогает заинтересованным студентам по окончании обучения стать более привлекательными для работодателя специалистами - с адекватным представлением о рынке труда, ценными практическими навыками и профессиональным опытом, полученными на стажировках и временной работе,-
+English:  "This program helps interested students after graduation to become a more attractive employer for professionals - with an adequate representation of the labor market, with valuable practical skills and professional experience gained in internships and temporary work -
+Preposition:  32 - на - on
+Answer:  полученными :  obtained
+Output:  полученными :  experience  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Предложения остальных коммерческих банков заметно уступают по привлекательности продукту банка "Союз" и компании "Крэйн", а также льготным кредитам в рамках образовательного эксперимента.
+English:  Offers of commercial banks remaining significantly inferior to the attractiveness of the products of the bank "Union" and the company "Crane", as well as soft loans under the educational experiment.
+Preposition:  24 - в - at
+Answer:  кредитам :  loans
+Output:  кредитам :  inferior  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Некоторые банки предлагают студентам кредиты с так называемым льготным периодом погашения.
+English:  Some banks offer student loans with so-called grace period of repayment.
+Preposition:  6 - с - from
+Answer:  кредиты :  credits
+Output:  кредиты :  offer  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Правда, в отличие от продукта "Крэйн", заемщик указанных банков, не погашая какое-то время "тело" кредита, все равно обязан платить проценты по нему.
+English:  However, in contrast to the product "Crane", the borrower of these banks are not paying off for some time, "body" of the loan, it is still obliged to pay interest on it.
+Preposition:  3 - в - at
+Answer:  обязан :  must
+Output:  обязан :  paying off  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Правда, в отличие от продукта "Крэйн", заемщик указанных банков, не погашая какое-то время "тело" кредита, все равно обязан платить проценты по нему.
+English:  However, in contrast to the product "Crane", the borrower of these banks are not paying off for some time, "body" of the loan, it is still obliged to pay interest on it.
+Preposition:  5 - от - from
+Answer:  продукта :  product
+Output:  продукта :  these  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Кроме того, в некоторых банках за возможность воспользоваться льготным периодом погашения кредита заемщику придется дополнительно заплатить несколько процентов годовых.
+English:  In addition, some banks, for the opportunity to take advantage of a grace period of repayment of the loan the borrower will have to pay extra few per cent per annum.
+Preposition:  4 - в - at
+Answer:  придется :  have to
+Output:  придется :  pay  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Кроме того, в некоторых банках за возможность воспользоваться льготным периодом погашения кредита заемщику придется дополнительно заплатить несколько процентов годовых.
+English:  In addition, some banks, for the opportunity to take advantage of a grace period of repayment of the loan the borrower will have to pay extra few per cent per annum.
+Preposition:  7 - за - per
+Answer:  заплатить :  pay
+Output:  заплатить :  pay  Result:  True
+
+Correct Sentence: Same first word
+Russian:  В Уралпромбанке ставка по образовательному кредиту с отсрочкой платежа составит 13-16% годовых в рублях (без отсрочки - 11-14%).
+English:  In UralPromBank rate on educational loans with deferred payment will be 13-16% per annum in rubles (without delay - 11-14%).
+Preposition:  1 - В - AT
+Answer:  ставка :  rate
+Output:  ставка :  make  Result:  False
+
+Correct Sentence: Same first word
+Russian:  В Уралпромбанке ставка по образовательному кредиту с отсрочкой платежа составит 13-16% годовых в рублях (без отсрочки - 11-14%).
+English:  In UralPromBank rate on educational loans with deferred payment will be 13-16% per annum in rubles (without delay - 11-14%).
+Preposition:  7 - с - from
+Answer:  кредиту :  loan
+Output:  кредиту :  loan  Result:  True
+
+Correct Sentence: Same first word
+Russian:  В Уралпромбанке ставка по образовательному кредиту с отсрочкой платежа составит 13-16% годовых в рублях (без отсрочки - 11-14%).
+English:  In UralPromBank rate on educational loans with deferred payment will be 13-16% per annum in rubles (without delay - 11-14%).
+Preposition:  16 - в - at
+Answer:  годовых :  per annum
+Output:  годовых :  make  Result:  False
+
+Correct Sentence: Same first word
+Russian:  У банка "Возрождение" процентная ставка по кредиту не меняется, но комиссия за выдачу кредита почти удваивается: с 1% до 1,9% от суммы кредита.
+English:  The bank "Revival" the interest rate does not change, but for the issuance of credit Commission almost doubled: from 1% to 1.9% of the loan amount.
+Preposition:  15 - за - per
+Answer:  комиссия :  commission
+Output:  комиссия :  change  Result:  False
+
+Correct Sentence: Same first word
+Russian:  У банка "Возрождение" процентная ставка по кредиту не меняется, но комиссия за выдачу кредита почти удваивается: с 1% до 1,9% от суммы кредита.
+English:  The bank "Revival" the interest rate does not change, but for the issuance of credit Commission almost doubled: from 1% to 1.9% of the loan amount.
+Preposition:  21 - с - from
+Answer:  удваивается :  doubles
+Output:  удваивается :  change  Result:  False
+
+Correct Sentence: Same first word
+Russian:  У банка "Возрождение" процентная ставка по кредиту не меняется, но комиссия за выдачу кредита почти удваивается: с 1% до 1,9% от суммы кредита.
+English:  The bank "Revival" the interest rate does not change, but for the issuance of credit Commission almost doubled: from 1% to 1.9% of the loan amount.
+Preposition:  27 - от - from
+Answer:  % :  %
+Output:  % :  change  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Поэтому и образовательные кредиты, хоть и рассчитаны на студентов, далеко не в каждом банке дешевы.
+English:  Therefore, educational loans, though designed for students, not every bank is cheap.
+Preposition:  9 - на - on
+Answer:  рассчитаны :  calculated
+Output:  рассчитаны :  calculated  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Поэтому и образовательные кредиты, хоть и рассчитаны на студентов, далеко не в каждом банке дешевы.
+English:  Therefore, educational loans, though designed for students, not every bank is cheap.
+Preposition:  14 - в - at
+Answer:  дешевы :  cheap
+Output:  дешевы :  bank  Result:  False
+
+Correct Sentence: Same first word
+Russian:  В Балтийском банке, Меткомбанке, банках "Ак Барс" и "Стройкредит" ставки достигают 19% годовых в рублях.
+English:  In the Baltic bank Metcombank, banks "Ak Bars" and "Stroycredit" rates reach 19% per annum in rubles.
+Preposition:  1 - В - AT
+Answer:  достигают :  reach
+Output:  достигают :  reach  Result:  True
+
+Correct Sentence: Same first word
+Russian:  В Балтийском банке, Меткомбанке, банках "Ак Барс" и "Стройкредит" ставки достигают 19% годовых в рублях.
+English:  In the Baltic bank Metcombank, banks "Ak Bars" and "Stroycredit" rates reach 19% per annum in rubles.
+Preposition:  21 - в - at
+Answer:  годовых :  per annum
+Output:  годовых :  per annum  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Правда, стоит отметить, что для обычного потребительского кредита наличными в рублях ставка 19% сегодня уже среднерыночная.
+English:  However, it is worth noting that for the ordinary consumer credit in cash in rubles rate of 19% of the average market today.
+Preposition:  12 - в - at
+Answer:  наличными :  in cash
+Output:  наличными :  in cash  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Низкие ставки по кредитам сегодня предлагает БСЖВ: 12% для кредитов в долларах, 13% - в евро, 14% - в рублях.
+English:  Low loan rates today BSGV offers: 12% for loans in dollars, 13% - in euros, 14% - in rubles.
+Preposition:  13 - в - at
+Answer:  кредитов :  credits
+Output:  кредитов :  credits  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Низкие ставки по кредитам сегодня предлагает БСЖВ: 12% для кредитов в долларах, 13% - в евро, 14% - в рублях.
+English:  Low loan rates today BSGV offers: 12% for loans in dollars, 13% - in euros, 14% - in rubles.
+Preposition:  19 - _ - _
+Answer:  % :  %
+Output:  % :  Euro  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Низкие ставки по кредитам сегодня предлагает БСЖВ: 12% для кредитов в долларах, 13% - в евро, 14% - в рублях.
+English:  Low loan rates today BSGV offers: 12% for loans in dollars, 13% - in euros, 14% - in rubles.
+Preposition:  25 - - - -
+Answer:  14 :  fourteen
+Output:  14 :  Euro  Result:  False
+
+Correct Sentence: Same first word
+Russian:  При этом для вузов-партнеров действует пониженная льготная ставка - всего 11% в любой валюте.
+English:  In this case, for the partner institutions acts reduced preferential rate - only 11% in any currency.
+Preposition:  15 - в - at
+Answer:  % :  %
+Output:  % :  reduced  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Банк "Образование" кредитует всего под 11,5% годовых в рублях, но только на срок до двух лет.
+English:  Bank "Education" credits just under 11.5% per annum in rubles, but only for up to two years.
+Preposition:  11 - в - at
+Answer:  годовых :  per annum
+Output:  годовых :  per annum  Result:  True
+
+
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  65.05593075406175 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  51.946964410327986 %
+Completed at: 2020-10-26 15:43:46.103770

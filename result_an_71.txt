@@ -1,0 +1,150 @@
+/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+TRAINING:Started at: 2020-10-26 11:25:54.081718  Learning Rate: 0.0001  Epochs: 30 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 71 Annotations are offset by 500
+Annotated Test on ru_syntagrus-ud-test.conllu
+Correct Sentence: Same first word
+Russian:  Он был там, сидел, как паук в своем закутке, составляя ведомость на зарплату.
+English:  He was there, sitting like a spider in his cubbyhole, accounting for payroll processing.
+Preposition:  9 - в - at
+Answer:  сидел :  sat
+Output:  сидел :  spider  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Он был там, сидел, как паук в своем закутке, составляя ведомость на зарплату.
+English:  He was there, sitting like a spider in his cubbyhole, accounting for payroll processing.
+Preposition:  15 - на - on
+Answer:  ведомость :  sheet
+Output:  ведомость :  sheet  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Возможно, только такой человек и мог справиться с анархичной оравой всех этих студентов и лоботрясов, и одному богу ведомо, как он все-таки ухитрялся вовремя выпихивать их на сцену.
+English:  Perhaps only such a person can cope with all these anarchic horde of students and loafers, and God only knows how he still managed to push out their time on stage.
+Preposition:  9 - с - from
+Answer:  справиться :  deal
+Output:  справиться :  deal  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Возможно, только такой человек и мог справиться с анархичной оравой всех этих студентов и лоботрясов, и одному богу ведомо, как он все-таки ухитрялся вовремя выпихивать их на сцену.
+English:  Perhaps only such a person can cope with all these anarchic horde of students and loafers, and God only knows how he still managed to push out their time on stage.
+Preposition:  30 - на - on
+Answer:  выпихивать :  push out
+Output:  выпихивать :  deal  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Безгранично почитая дирекцию, ловя на лету каждое указание, сгибаясь, подхалимничая и юля, Чижик, однако, с теми, кто был ему подчинен, превращался в льва рыкающего.
+English:  Infinitely honoring Directorate, catching on the fly every indication, bending, podhalimnichaya and bustling, finch, however, with those who were subordinate to him, turned to the roaring lion.
+Preposition:  6 - на - on
+Answer:  ловя :  catching
+Output:  ловя :  catching  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Безгранично почитая дирекцию, ловя на лету каждое указание, сгибаясь, подхалимничая и юля, Чижик, однако, с теми, кто был ему подчинен, превращался в льва рыкающего.
+English:  Infinitely honoring Directorate, catching on the fly every indication, bending, podhalimnichaya and bustling, finch, however, with those who were subordinate to him, turned to the roaring lion.
+Preposition:  21 - с - from
+Answer:  превращался :  turned
+Output:  превращался :  catching  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Безгранично почитая дирекцию, ловя на лету каждое указание, сгибаясь, подхалимничая и юля, Чижик, однако, с теми, кто был ему подчинен, превращался в льва рыкающего.
+English:  Infinitely honoring Directorate, catching on the fly every indication, bending, podhalimnichaya and bustling, finch, however, with those who were subordinate to him, turned to the roaring lion.
+Preposition:  30 - в - at
+Answer:  превращался :  turned
+Output:  превращался :  catching  Result:  False
+
+Correct Sentence: Same first word
+Russian:  - Почему мне, не разобравшись, вынесли выговор? - волнуясь, но держа себя в руках, спросил Илья Ильич.
+English:  - Why am I not understood, carried reprimanded? - worrying, but keeping himself in hand, I asked Ilya Ilich.
+Preposition:  17 - в - at
+Answer:  держа :  holding
+Output:  держа :  I asked  Result:  False
+
+Correct Sentence: Same first word
+Russian:  - Ведь я всегда стою во второй кулисе.
+English:  - Because I always stand in the second stage.
+Preposition:  6 - во - in
+Answer:  стою :  standing
+Output:  стою :  standing  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Борзых, вместо того чтобы уходить в пятую
+English:  Greyhounds, instead go to the fifth
+Preposition:  7 - в - at
+Answer:  уходить :  leave
+Output:  уходить :  leave  Result:  True
+
+Correct Sentence: Same first word
+Russian:  - Какое мне дело? - закричал Чижик, вдруг привычно рассвирепев, так как имел дело с подчиненным, - Ведущий потребовал докладную, я подал.
+English:  - What do I care? - Siskin shouted, suddenly enraged familiar, as was dealing with subordinates - Leading demanded memo, I applied.
+Preposition:  18 - с - from
+Answer:  имел :  I was
+Output:  имел :  business  Result:  False
+
+Correct Sentence: Same first word
+Russian:  - Я столько лет работаю в театре… без… пятнышка.
+English:  - I have so many years of working in the theater ... ... without blemish.
+Preposition:  6 - в - at
+Answer:  работаю :  working
+Output:  работаю :  working  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Чижик с интересом посмотрел на него, склонив голову.
+English:  Finch with interest looked at him, his head bowed.
+Preposition:  2 - с - from
+Answer:  посмотрел :  I looked
+Output:  посмотрел :  Siskin  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Чижик с интересом посмотрел на него, склонив голову.
+English:  Finch with interest looked at him, his head bowed.
+Preposition:  5 - на - on
+Answer:  посмотрел :  I looked
+Output:  посмотрел :  I looked  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Там был ведущий, идите к нему и объясняйтесь.
+English:  There has been a leading, go to him and explain.
+Preposition:  6 - к - to
+Answer:  идите :  go
+Output:  идите :  explain  Result:  False
+
+Correct Sentence: Same first word
+Russian:  На мне их сто.
+English:  Me their best.
+Preposition:  1 - На - On
+Answer:  сто :  one hundred
+Output:  сто :  them  Result:  False
+
+Correct Sentence: Same first word
+Russian:  После долгих блужданий по лабиринтам театра ему удалось обнаружить ведущего в нотной библиотеке.
+English:  After a long walk through the maze of the theater he had found the lead in the musical library.
+Preposition:  11 - в - at
+Answer:  обнаружить :  detect
+Output:  обнаружить :  detect  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Ведущий был человек еще молодой, из неудавшихся певцов.
+English:  Lead was still a young man, from the failed singers.
+Preposition:  7 - из - of
+Answer:  человек :  man
+Output:  человек :  young  Result:  False
+
+Correct Sentence: Same first word
+Russian:  Он долго и нудно околачивался сперва в музучилище, потом в оперном хоре, но имел успех больше по общественной, чем по вокальной части.
+English:  He rambled a long and tedious at first in musical college, then in the opera chorus, but it was a success more in public than in the vocal part.
+Preposition:  7 - в - at
+Answer:  околачивался :  hang around
+Output:  околачивался :  hang around  Result:  True
+
+Correct Sentence: Same first word
+Russian:  Он долго и нудно околачивался сперва в музучилище, потом в оперном хоре, но имел успех больше по общественной, чем по вокальной части.
+English:  He rambled a long and tedious at first in musical college, then in the opera chorus, but it was a success more in public than in the vocal part.
+Preposition:  11 - в - at
+Answer:  музучилище :  Music College
+Output:  музучилище :  hang around  Result:  False
+
+
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  80.51236409961083 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  51.835310537334266 %
+Completed at: 2020-10-26 15:50:08.575289

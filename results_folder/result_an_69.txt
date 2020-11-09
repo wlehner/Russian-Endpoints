@@ -1,0 +1,169 @@
+/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+TRAINING:Started at: 2020-10-26 10:05:20.432206  Learning Rate: 0.0001  Epochs: 1 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 69
+Annotated Test on ru_syntagrus-ud-test.conllu
+Error: Different first words. 3.1248276233673096 versus 5.01363
+Example 0
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Preposition:  1 - В - AT
+Answer:  В :  AT
+Output:  В :  .  Result:  False
+
+Error: Different first words. 3.1248276233673096 versus 5.01363
+Example 1
+Russian:  В советский период времени число ИТ- специалистов в Армении составляло около десяти тысяч.
+English:  During the Soviet period the number of IT specialists in Armenia is about ten thousand.
+Preposition:  9 - в - at
+Answer: Index outside sentence. Interesting....
+Output:   :  .  Result:  False
+
+Error: Different first words. 5.013629913330078 versus 2.0322497
+Example 2
+Russian:  Доставшийся в наследство от советского периода времени промышленный и интеллектуальный потенциал оказался благом и горем страны.
+English:  Inherited from the Soviet period industrial and intellectual potential was good and the grief of the country.
+Preposition:  2 - в - at
+Answer:  и :  and
+Output:  и :  and  Result:  True
+
+Error: Different first words. 5.013629913330078 versus 2.0322497
+Example 3
+Russian:  Доставшийся в наследство от советского периода времени промышленный и интеллектуальный потенциал оказался благом и горем страны.
+English:  Inherited from the Soviet period industrial and intellectual potential was good and the grief of the country.
+Preposition:  4 - от - from
+Answer: Index outside sentence. Interesting....
+Output:   :  and  Result:  False
+
+Error: Different first words. 4.851283550262451 versus 5.1198807
+Example 4
+Russian:  С одной стороны, квалифицированные кадры и развитая производственная инфраструктура резко отличали Армению от других регионов СССР, где доминировали добывающие отрасли, а экономика строилась на поставке сырьевых ресурсов.
+English:  On the one hand, the expertise and the development of industrial infrastructure differs sharply from Armenia to other regions of the USSR, which was dominated by the extractive industries, and the economy was based on the supply of raw materials.
+Preposition:  1 - С - FROM
+Answer:  одной :  one
+Output:  одной :  one  Result:  True
+
+Error: Different first words. 4.851283550262451 versus 5.1198807
+Example 5
+Russian:  С одной стороны, квалифицированные кадры и развитая производственная инфраструктура резко отличали Армению от других регионов СССР, где доминировали добывающие отрасли, а экономика строилась на поставке сырьевых ресурсов.
+English:  On the one hand, the expertise and the development of industrial infrastructure differs sharply from Armenia to other regions of the USSR, which was dominated by the extractive industries, and the economy was based on the supply of raw materials.
+Preposition:  14 - от - from
+Answer:  Армению :  Armenia
+Output:  Армению :  one  Result:  False
+
+Error: Different first words. 4.757412910461426 versus 5.1198807
+Example 6
+Russian:  С одной стороны, квалифицированные кадры и развитая производственная инфраструктура резко отличали Армению от других регионов СССР, где доминировали добывающие отрасли, а экономика строилась на поставке сырьевых ресурсов.
+English:  On the one hand, the expertise and the development of industrial infrastructure differs sharply from Armenia to other regions of the USSR, which was dominated by the extractive industries, and the economy was based on the supply of raw materials.
+Preposition:  27 - на - on
+Answer:  СССР :  the USSR
+Output:  СССР :  the USSR  Result:  True
+
+Error: Different first words. 3.6205103397369385 versus 5.1198807
+Example 7
+Russian:  С другой, оставшись без сырья для промышленных предприятий, энергоресурсов и рынков сбыта продукции, конкурентоспособной только на постсоветском пространстве, Армения быстро потеряла темпы своего экономического развития.
+English:  On the other, left without raw materials for industry, energy and commodity markets, competitive only in the former Soviet Union, Armenia is rapidly lost its pace of economic development.
+Preposition:  1 - С - FROM
+Answer:  , :  .
+Output:  , :  .  Result:  True
+
+Error: Different first words. 3.6205103397369385 versus 5.1198807
+Example 8
+Russian:  С другой, оставшись без сырья для промышленных предприятий, энергоресурсов и рынков сбыта продукции, конкурентоспособной только на постсоветском пространстве, Армения быстро потеряла темпы своего экономического развития.
+English:  On the other, left without raw materials for industry, energy and commodity markets, competitive only in the former Soviet Union, Armenia is rapidly lost its pace of economic development.
+Preposition:  19 - на - on
+Answer:  на :  on
+Output:  на :  of raw materials  Result:  False
+
+Error: Different first words. 4.810140132904053 versus 3.469824
+Example 9
+Russian:  Запад во главе с США регулярно выделяет значительные суммы для улучшения экономического положения в стране.
+English:  West led by the United States regularly allocates significant sums to improve the economic situation in the country.
+Preposition:  4 - с - from
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+
+Error: Different first words. 4.810140132904053 versus 3.469824
+Example 10
+Russian:  Запад во главе с США регулярно выделяет значительные суммы для улучшения экономического положения в стране.
+English:  West led by the United States regularly allocates significant sums to improve the economic situation in the country.
+Preposition:  14 - в - at
+Answer:  экономического :  economic
+Output:  экономического :  at  Result:  False
+
+Error: Different first words. 4.810140132904053 versus 4.999019
+Example 11
+Russian:  Не последнее место в "выбивании" кредитов для Армении играет армянская диаспора в США и других развитых странах.
+English:  Not last place in "knocking out" of credit for Armenia plays Armenian diaspora in the United States and other developed countries.
+Preposition:  4 - в - at
+Answer:  армянская :  Armenian
+Output:  армянская :  at  Result:  False
+
+Error: Different first words. 4.810140132904053 versus 4.999019
+Example 12
+Russian:  Не последнее место в "выбивании" кредитов для Армении играет армянская диаспора в США и других развитых странах.
+English:  Not last place in "knocking out" of credit for Armenia plays Armenian diaspora in the United States and other developed countries.
+Preposition:  14 - в - at
+Answer:  " :  "
+Output:  " :  USA  Result:  False
+
+Error: Different first words. 4.810140132904053 versus 3.570133
+Example 13
+Russian:  Судьба Восточной Армении со второй половины XIX века находилась в русле единых судеб народов Российской империи.
+English:  The fate of Eastern Armenia in the second half of the XIX century was in line with the common destinies of the peoples of the Russian Empire.
+Preposition:  4 - со - with
+Answer:  Российской :  Russian
+Output:  Российской :  Russian  Result:  True
+
+Error: Different first words. 5.0303144454956055 versus 3.570133
+Example 14
+Russian:  Судьба Восточной Армении со второй половины XIX века находилась в русле единых судеб народов Российской империи.
+English:  The fate of Eastern Armenia in the second half of the XIX century was in line with the common destinies of the peoples of the Russian Empire.
+Preposition:  10 - в - at
+Answer:  находилась :  was
+Output:  находилась :  was  Result:  True
+
+Error: Different first words. 5.23798131942749 versus 5.01363
+Example 15
+Russian:  В Ереванской губернии росло число жителей и по данным переписи 1897 года здесь проживало 830 тысяч человек.
+English:  In Yerevan province increased the number of inhabitants and in 1897 there lived 830 thousand people according to the census.
+Preposition:  1 - В - AT
+Answer:  830 :  830
+Output: Index outside of sentence Result:  False
+
+Error: Different first words. 5.23798131942749 versus 5.01363
+Example 16
+Russian:  В городах открывались школы, появлялись промышленные предприятия.
+English:  In the cities, opened schools, there were industrial enterprises.
+Preposition:  1 - В - AT
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+
+Error: Different first words. 5.013629913330078 versus 5.1967325
+Example 17
+Russian:  После окончания строительства железной дороги Баку - Тбилиси - Батуми уже в 1896 году было начато строительство линии Тбилиси - Ереван, проходящей через Алаверды и Александрополь (бывший Ленинакан, современное наименование Гумри).
+English:  After the construction of the Baku - Tbilisi - Batumi already in 1896 it began construction of the line of Tbilisi - Yerevan passing through Alaverdi and Alexandroupoli (former Leninakan, modern name of Gumri).
+Preposition:  12 - в - at
+Answer:  - :  -
+Output:  - :  -  Result:  True
+
+Correct Sentence: Same first word
+Example 18
+Russian:  В составе СССР, в конце 30-х годов прошлого века Армения стала страной сплошной грамотности, а в 1940 году было введено обязательное всеобщее семилетнее обучение, а спустя 19 лет всеобщее восьмилетнее обучение.
+English:  In the USSR in the late 30-ies of the last century, Armenia became a country of universal literacy and universal compulsory seven-year education, and after 19 years, eight years of universal education was introduced in 1940.
+Preposition:  1 - В - AT
+Answer:  стала :  became
+Output:  стала :  the USSR  Result:  False
+
+Error: Different first words. 5.119880676269531 versus 5.01363
+Example 19
+Russian:  В составе СССР, в конце 30-х годов прошлого века Армения стала страной сплошной грамотности, а в 1940 году было введено обязательное всеобщее семилетнее обучение, а спустя 19 лет всеобщее восьмилетнее обучение.
+English:  In the USSR in the late 30-ies of the last century, Armenia became a country of universal literacy and universal compulsory seven-year education, and after 19 years, eight years of universal education was introduced in 1940.
+Preposition:  5 - в - at
+Answer:  в :  at
+Output:  в :  at  Result:  True
+
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  44.050049735615936 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  43.48918353105373 %
+Completed at: 2020-10-26 10:12:29.159486

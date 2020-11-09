@@ -1,0 +1,134 @@
+/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+TRAINING:Started at: 2020-10-13 13:43:21.224524  Learning Rate: 0.0001  Epochs: 1 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 64
+Epoch [1/1], Step [10000/57303], Avg Loss: 2.4992
+Epoch [1/1], Step [20000/57303], Avg Loss: 2.1276
+Epoch [1/1], Step [30000/57303], Avg Loss: 2.0355
+Epoch [1/1], Step [40000/57303], Avg Loss: 1.9984
+Epoch [1/1], Step [50000/57303], Avg Loss: 1.9066
+Annotated Test on ru_syntagrus-ud-test.conllu
+Error: Different first words. 1.7035388946533203 versus 5.01363
+Russian:  В реакторе рождаются нейтроны.
+English:  In the reactor, neutrons are born.
+Preposition:  1
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Error: Different first words. 1.7035388946533203 versus 5.091032
+Russian:  Затем формируется пучок нейтронов с нужной энергией.
+English:  Then, the neutron beam is formed with the desired energy.
+Preposition:  5
+Answer:  нейтронов :  neutrons
+Output: Index outside of sentence Result:  False
+Error: Different first words. 1.7035388946533203 versus 5.0866194
+Russian:  - Будто нейтронный скальпель вонзается в материал?
+English:  - As if the neutron scalpel pierces the material?
+Preposition:  6
+Answer:  нейтронный :  neutron
+Output: Index outside of sentence Result:  False
+Error: Different first words. 5.114305019378662 versus 5.1029863
+Russian:  К примеру, можно наблюдать, как движутся полимерные цепочки, как перестраиваются биологические молекулы и так далее.
+English:  For example, one can observe how the polymer chains move as biological molecules are rearranged, and so forth.
+Preposition:  1
+Answer:  , :  .
+Output:  , :  .  Result:  False
+Error: Different first words. 2.365360736846924 versus 3.5117471
+Russian:  Кстати, подобные эксперименты осуществлялись не только у нас, но и в Гренобле, в других ядерных научных центрах.
+English:  By the way, similar experiments were carried out not only in our country but also in Grenoble, in other nuclear research centers.
+Preposition:  13
+Answer:  , :  .
+Output:  , :  Grenoble  Result:  False
+Error: Different first words. 2.365360736846924 versus 3.5117471
+Russian:  Кстати, подобные эксперименты осуществлялись не только у нас, но и в Гренобле, в других ядерных научных центрах.
+English:  By the way, similar experiments were carried out not only in our country but also in Grenoble, in other nuclear research centers.
+Preposition:  16
+Answer:  Гренобле :  Grenoble
+Output:  Гренобле :  Grenoble  Result:  True
+Error: Different first words. 2.365360736846924 versus 0.96542525
+Russian:  Нейтронные исследования доказали свое преимущество, так как они дают возможность "подстраиваться" под тончайшие биологические процессы и наблюдать за их развитием.
+English:  Neutron studies have proven their advantage, as they provide an opportunity to "adjust" under the finest biological processes and monitor their development.
+Preposition:  21
+Answer:  за :  per
+Output:  за :  per  Result:  True
+Error: Different first words. 4.839437007904053 versus 4.754099
+Russian:  Другой пример - геологические исследования, с помощью которых удается лучше понять, что происходит в глубинах Земли.
+English:  Another example - geological research, with the help of which one can better understand what is happening in the depths of the Earth.
+Preposition:  7
+Answer:  лучше :  better
+Output:  лучше :  better  Result:  True
+Error: Different first words. 4.839437007904053 versus 4.754099
+Russian:  Другой пример - геологические исследования, с помощью которых удается лучше понять, что происходит в глубинах Земли.
+English:  Another example - geological research, with the help of which one can better understand what is happening in the depths of the Earth.
+Preposition:  16
+Answer:  глубинах :  depths
+Output:  глубинах :  from  Result:  False
+Error: Different first words. 5.086087226867676 versus 0.9996912
+Russian:  Реактор, дающий нейтроны, - это универсальный физический прибор, и его возможности поистине безграничны - от фундаментальных исследований до сугубо прикладных.
+English:  The reactor, which gives neutrons - is a universal physical instrument and its possibilities are endless - from basic research to applied strictly.
+Preposition:  18
+Answer:  нейтроны :  neutrons
+Output:  нейтроны :  neutrons  Result:  True
+Error: Different first words. 5.086087226867676 versus 5.1048284
+Russian:  Когда вы привлекаете людей "со стороны", они приносят новые методики, свои ноу-хау, свои технологии.
+English:  When you attract people "from outside", they bring new methods, know-how and their technology.
+Preposition:  6
+Answer:  людей :  people
+Output:  людей :  people  Result:  True
+Error: Different first words. 5.086087226867676 versus 5.0866194
+Russian:  - А на каком уровне нейтронные исследования в других странах?
+English:  - And at what level of neutron research in other countries?
+Preposition:  8
+Answer:  ? :  ?
+Output:  ? :  ?  Result:  True
+Error: Different first words. 5.104063510894775 versus 5.0866194
+Russian:  - В 60-80-х годах прошлого века европейцы значительно опережали в этой области американцев и японцев благодаря Греноблю, Резерфордовской лаборатории и нашему ИБР-2.
+English:  - In the 60-80-ies of the last century, Europeans have much ahead in this area thanks to the Americans and Japanese Grenoble, Rutherford Laboratory and our IBR-2.
+Preposition:  2
+Answer:  80-х :  80
+Output:  80-х :  of the past  Result:  False
+Error: Different first words. 0.5346831679344177 versus 5.0866194
+Russian:  - В 60-80-х годах прошлого века европейцы значительно опережали в этой области американцев и японцев благодаря Греноблю, Резерфордовской лаборатории и нашему ИБР-2.
+English:  - In the 60-80-ies of the last century, Europeans have much ahead in this area thanks to the Americans and Japanese Grenoble, Rutherford Laboratory and our IBR-2.
+Preposition:  12
+Answer:  области :  the
+Output:  области :  the  Result:  True
+Error: Different first words. 0.6359236836433411 versus 5.1029863
+Russian:  К сожалению, в последнее десятилетие ситуация изменилась.
+English:  Unfortunately, in the last decade, the situation has changed.
+Preposition:  1
+Answer:  ситуация :  situation
+Output:  ситуация :  situation  Result:  True
+Error: Different first words. 4.737641334533691 versus 5.1029863
+Russian:  К сожалению, в последнее десятилетие ситуация изменилась.
+English:  Unfortunately, in the last decade, the situation has changed.
+Preposition:  4
+Answer:  . :  .
+Output: Index outside of sentence Result:  False
+Error: Different first words. 5.004447937011719 versus 5.0297747
+Russian:  Сейчас в Японии и США расширяются существующие и строятся новые центры, по сути дела - международные.
+English:  Now in Japan and the US are expanding existing and building new centers, in fact - international.
+Preposition:  2
+Answer:  и :  and
+Output:  и :  USA  Result:  False
+Error: Different first words. 5.119880676269531 versus 4.8626633
+Russian:  Мы, к сожалению, теперь не имеем таких возможностей, а потому постепенно уступаем лидерство.
+English:  We, unfortunately, now do not have such opportunities, and therefore gradually giving way to the lead.
+Preposition:  3
+Answer:  теперь :  Now
+Output:  теперь :  Now  Result:  True
+Error: Different first words. 5.119880676269531 versus 4.8626633
+Russian:  Мы стали в каком-то смысле походить на Гренобль.
+English:  We have become in some ways resemble the Grenoble.
+Preposition:  3
+Answer:  походить :  resemble
+Output:  походить :  resemble  Result:  True
+Error: Different first words. 5.1106696128845215 versus 4.8626633
+Russian:  Мы стали в каком-то смысле походить на Гренобль.
+English:  We have become in some ways resemble the Grenoble.
+Preposition:  7
+Answer:  каком-то :  some
+Output:  каком-то :  resemble  Result:  False
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  44.00118667434515 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  42.65177948360084 %
+Completed at: 2020-10-13 13:51:12.934327

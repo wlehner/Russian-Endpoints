@@ -1,0 +1,813 @@
+TRAINING:Started at: 2020-11-02 01:38:26.661436  Learning Rate: 0.0001  Epochs: 75 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 77 Annotations are offset by 3800
+Annotated Test on ru_syntagrus-ud-test.conllu
+Example: 3800
+Russian:  О вине, которое пьют, чтоб согреться, но которое на самом деле обжигает холодом горло, от чего твой радостный крик наполняется льдом?
+English:  About the fault that they drink to keep warm, but which actually burns the throat, from which your joyful cry is filled with ice?
+Preposition:  19 - от - from
+Answer:  наполняется :  Fill
+Output:  горло :  throat  Result:  False
+
+Example: 3801
+Russian:  Разве ее мама видела когда-нибудь эти старые скворечники, в которых нам выпадало останавливаться, с одеялами и пледами?
+English:  Did you ever see her old birdhouses someday, in which we had to stop, with blankets and rolls?
+Preposition:  10 - в - in
+Answer:  выпадало :  dropped out
+Output:  эти :  these  Result:  False
+
+Example: 3802
+Russian:  Разве ее мама видела когда-нибудь эти старые скворечники, в которых нам выпадало останавливаться, с одеялами и пледами?
+English:  Did you ever see her old birdhouses someday, in which we had to stop, with blankets and rolls?
+Preposition:  16 - с - from
+Answer:  скворечники :  Bedrooms
+Output:  выпадало :  dropped out  Result:  False
+
+Example: 3803
+Russian:  С другой стороны, о чем же ей еще рассказывать, как не о себе?
+English:  On the other hand, what else should she tell how not about himself?
+Preposition:  1 - С - FROM
+Answer:  рассказывать :  narrate
+Output:  рассказывать :  narrate  Result:  True
+
+Example: 3804
+Russian:  Все события ее жизни укладываются в короткие нехитрые истории с двойным дном.
+English:  All the events of her life are stacked in short non-good stories with a double bottom.
+Preposition:  6 - в - in
+Answer:  укладываются :  Stay
+Output:  укладываются :  Stay  Result:  True
+
+Example: 3805
+Russian:  Все события ее жизни укладываются в короткие нехитрые истории с двойным дном.
+English:  All the events of her life are stacked in short non-good stories with a double bottom.
+Preposition:  10 - с - from
+Answer:  истории :  stories
+Output:  истории :  stories  Result:  True
+
+Example: 3806
+Russian:  Ведь за рассказами об учебе и влюбленности, о потере подруг и приобретении опыта, о путешествиях, бегствах и постоянных изменах стоит язык взросления и роста.
+English:  After all, behind the stories about studying and love, about the loss of girlfriends and the acquisition of experience, traveling, flights and constant treks are the language of mature and growth.
+Preposition:  2 - за - behind
+Answer:  стоит :  worth it
+Output:  Ведь :  After all  Result:  False
+
+Example: 3807
+Russian:  Это словно прогнозы погоды, которая никогда не меняется, гороскопы предательства и обмана, телеграммы с рождественскими поздравлениями, которые постоянно теряются на почте.
+English:  This is as if the weather forecasts that never change, the horoscopes of betrayal and deception, telegrams with Christmas greetings that are constantly lost in the mail.
+Preposition:  17 - с - from
+Answer:  телеграммы :  Telegrams
+Output:  телеграммы :  Telegrams  Result:  True
+
+Example: 3808
+Russian:  Это словно прогнозы погоды, которая никогда не меняется, гороскопы предательства и обмана, телеграммы с рождественскими поздравлениями, которые постоянно теряются на почте.
+English:  This is as if the weather forecasts that never change, the horoscopes of betrayal and deception, telegrams with Christmas greetings that are constantly lost in the mail.
+Preposition:  24 - на - on
+Answer:  теряются :  Lose
+Output:  теряются :  Lose  Result:  True
+
+Example: 3809
+Russian:  Каждый из нас оставляет после себя эти буквы и знаки, дневниковые записи, бесконечную сумбурную переписку, с помощью которой мы пытаемся объясниться.
+English:  Each of us leaves behind these letters and signs, diary records, an infinite messaging correspondence, with which we are trying to explain.
+Preposition:  2 - из - of
+Answer:  Каждый :  Each
+Output:  оставляет :  leaves  Result:  False
+
+Example: 3810
+Russian:  Каждый из нас оставляет после себя эти буквы и знаки, дневниковые записи, бесконечную сумбурную переписку, с помощью которой мы пытаемся объясниться.
+English:  Each of us leaves behind these letters and signs, diary records, an infinite messaging correspondence, with which we are trying to explain.
+Preposition:  19 - с - from
+Answer:  пытаемся :  Trying
+Output:  оставляет :  leaves  Result:  False
+
+Example: 3811
+Russian:  Такой к стенке прижмет - мало не покажется.
+English:  Such a wall will not seem to appear.
+Preposition:  2 - к - to
+Answer:  прижмет :  Prž.
+Output:  покажется :  See why  Result:  False
+
+Example: 3812
+Russian:  Так рассуждал я, стоя у слоновника в зоопарке.
+English:  So I reasoned, standing at the elephant in the zoo.
+Preposition:  8 - в - in
+Answer:  стоя :  standing
+Output:  слоновника :  Elephantian  Result:  False
+
+Example: 3813
+Russian:  Управиться со слонами, как выяснилось, действительно непросто.
+English:  Help with elephants, as it turned out, is really not easy.
+Preposition:  2 - со - SO
+Answer:  Управиться :  Manage
+Output:  Управиться :  Manage  Result:  True
+
+Example: 3814
+Russian:  Сотрудники, обслуживающие заведение, входят в категорию риска.
+English:  Employees serving the establishment are included in the risk category.
+Preposition:  7 - в - in
+Answer:  входят :  Enter
+Output:  входят :  Enter  Result:  True
+
+Example: 3815
+Russian:  За последнюю четверть века случайно погибли двое рабочих зоопарка и один дрессировщик "Уголка Дурова".
+English:  For the last quarter of a century, two workers of the zoo and one trainer "Corner of Durov" were accidentally killed.
+Preposition:  1 - За - Behind
+Answer:  погибли :  Died
+Output:  погибли :  Died  Result:  True
+
+Example: 3816
+Russian:  Кроме того, говорят, что теснота не способствует личной жизни животных: за последние пятьдесят лет в Москве родился лишь один слоненок, ныне проживающий в городе Ереване.
+English:  In addition, it is said that the tesnota does not contribute to the personal life of animals: over the past fifty years, only one elephant was born in Moscow, now living in the city of Yerevan.
+Preposition:  14 - за - behind
+Answer:  родился :  Born
+Output:  родился :  Born  Result:  True
+
+Example: 3817
+Russian:  Кроме того, говорят, что теснота не способствует личной жизни животных: за последние пятьдесят лет в Москве родился лишь один слоненок, ныне проживающий в городе Ереване.
+English:  In addition, it is said that the tesnota does not contribute to the personal life of animals: over the past fifty years, only one elephant was born in Moscow, now living in the city of Yerevan.
+Preposition:  18 - в - in
+Answer:  родился :  Born
+Output:  родился :  Born  Result:  True
+
+Example: 3818
+Russian:  Кроме того, говорят, что теснота не способствует личной жизни животных: за последние пятьдесят лет в Москве родился лишь один слоненок, ныне проживающий в городе Ереване.
+English:  In addition, it is said that the tesnota does not contribute to the personal life of animals: over the past fifty years, only one elephant was born in Moscow, now living in the city of Yerevan.
+Preposition:  27 - в - in
+Answer:  проживающий :  Residential
+Output:  родился :  Born  Result:  False
+
+Example: 3819
+Russian:  Следуя этим соображениям, и был наконец возведен в столице обширный и благоустроенный вольер для слонов, который откроется в начале осени.
+English:  Following these reasons, and was finally erected in the capital extensive and comfortable aviary for elephants, which will open at the beginning of autumn.
+Preposition:  9 - в - in
+Answer:  возведен :  Erected
+Output:  возведен :  Erected  Result:  True
+
+Example: 3820
+Russian:  Следуя этим соображениям, и был наконец возведен в столице обширный и благоустроенный вольер для слонов, который откроется в начале осени.
+English:  Following these reasons, and was finally erected in the capital extensive and comfortable aviary for elephants, which will open at the beginning of autumn.
+Preposition:  20 - в - in
+Answer:  откроется :  opens
+Output:  откроется :  opens  Result:  True
+
+Example: 3821
+Russian:  Он будет располагаться на своем историческом месте, на старой территории зоопарка, рядом с ластоногими.
+English:  It will be located in his historic place, on the old territory of the zoo, next to the lastonogy.
+Preposition:  4 - на - on
+Answer:  располагаться :  Place
+Output:  располагаться :  Place  Result:  True
+
+Example: 3822
+Russian:  Он будет располагаться на своем историческом месте, на старой территории зоопарка, рядом с ластоногими.
+English:  It will be located in his historic place, on the old territory of the zoo, next to the lastonogy.
+Preposition:  9 - на - on
+Answer:  месте :  place
+Output:  располагаться :  Place  Result:  False
+
+Example: 3823
+Russian:  Он будет располагаться на своем историческом месте, на старой территории зоопарка, рядом с ластоногими.
+English:  It will be located in his historic place, on the old territory of the zoo, next to the lastonogy.
+Preposition:  15 - с - from
+Answer:  рядом :  nearby
+Output:  ластоногими :  Listonogi  Result:  False
+
+Example: 3824
+Russian:  В связи с этим примечательным событием краеведам следует обратиться к истории московского слоновьего дела.
+English:  In this regard, the remarkable event, the Liures should refer to the history of the Moscow elephant case.
+Preposition:  1 - В - IN
+Answer:  следует :  follow
+Output:  обратиться :  Contact  Result:  False
+
+Example: 3825
+Russian:  В связи с этим примечательным событием краеведам следует обратиться к истории московского слоновьего дела.
+English:  In this regard, the remarkable event, the Liures should refer to the history of the Moscow elephant case.
+Preposition:  3 - с - from
+Answer:  событием :  Event
+Output:  связи :  Communication  Result:  False
+
+Example: 3826
+Russian:  В связи с этим примечательным событием краеведам следует обратиться к истории московского слоновьего дела.
+English:  In this regard, the remarkable event, the Liures should refer to the history of the Moscow elephant case.
+Preposition:  10 - к - to
+Answer:  обратиться :  Contact
+Output:  обратиться :  Contact  Result:  True
+
+Example: 3827
+Russian:  Дальние предки нынешних слонов, мамонты, бороздили московские просторы еще в годы поздней плейстоценовой эпохи.
+English:  Far ancestors of the current elephants, Mammoths, Morozdili Moscow spaces back during the late Pleistocene era.
+Preposition:  12 - в - in
+Answer:  бороздили :  Borozdili
+Output:  бороздили :  Borozdili  Result:  True
+
+Example: 3828
+Russian:  Потом что-то там у них не задалось, они ушли на север и больше не возвращались.
+English:  Then something they did not ask them there, they left north and no longer returned.
+Preposition:  11 - на - on
+Answer:  ушли :  Gone
+Output:  ушли :  Gone  Result:  True
+
+Example: 3829
+Russian:  Останки ископаемых млекопитающих представлены в нескольких наших музеях, но ходят упорные слухи, что сейчас обсуждается создание в Москве персонального музея мамонта.
+English:  The remains of fossil mammals are presented in several of our museums, but stubborn rumors are going on, which is now being discussed by the creation of a personal Mammoth Museum in Moscow.
+Preposition:  5 - в - in
+Answer:  представлены :  represented
+Output:  представлены :  represented  Result:  True
+
+Example: 3830
+Russian:  Останки ископаемых млекопитающих представлены в нескольких наших музеях, но ходят упорные слухи, что сейчас обсуждается создание в Москве персонального музея мамонта.
+English:  The remains of fossil mammals are presented in several of our museums, but stubborn rumors are going on, which is now being discussed by the creation of a personal Mammoth Museum in Moscow.
+Preposition:  19 - в - in
+Answer:  создание :  creature
+Output:  обсуждается :  Discussed  Result:  False
+
+Example: 3831
+Russian:  Давно пора, поскольку ледниковый период - важная и незаслуженно забытая веха в истории нашего края.
+English:  It's time for a long time, since the glacial period is an important and undeservedly forgotten milestone in the history of our region.
+Preposition:  13 - в - in
+Answer:  веха :  milestone
+Output:  веха :  milestone  Result:  True
+
+Example: 3832
+Russian:  Первый же настоящий слон, Elephas Maximus Linnaeus, появился на наших холмах без малого полтыщи лет тому назад.
+English:  The first real elephant, Elephas Maximus Linnaeus, appeared on our hills without a small half-year ago.
+Preposition:  11 - на - on
+Answer:  появился :  appeared
+Output:  появился :  appeared  Result:  True
+
+Example: 3833
+Russian:  Биография этого зверя драматична и благородна - несомненно заслуживает того, чтобы вечно жить в памяти москвичей.
+English:  The biography of this beast is dramatic and noble - undoubtedly deserves to live forever in the memory of Muscovites.
+Preposition:  15 - в - in
+Answer:  жить :  live
+Output:  жить :  live  Result:  True
+
+Example: 3834
+Russian:  В середине XVI века в Москву прибыло посольство аравийского царя с богатыми дарами, которые были поднесены государю Иоанну Васильевичу в залог будущей крепкой российско-аравийской дружбы.
+English:  In the middle of the XVI century, the Embassy of the Arabian king with rich gifts arrived in Moscow, who were brought by the sovereign of John Vasilyevich in the key to the future strong Russian-Arabian friendship.
+Preposition:  1 - В - IN
+Answer:  прибыло :  Profit
+Output:  прибыло :  Profit  Result:  True
+
+Example: 3835
+Russian:  В середине XVI века в Москву прибыло посольство аравийского царя с богатыми дарами, которые были поднесены государю Иоанну Васильевичу в залог будущей крепкой российско-аравийской дружбы.
+English:  In the middle of the XVI century, the Embassy of the Arabian king with rich gifts arrived in Moscow, who were brought by the sovereign of John Vasilyevich in the key to the future strong Russian-Arabian friendship.
+Preposition:  5 - в - in
+Answer:  прибыло :  Profit
+Output:  прибыло :  Profit  Result:  True
+
+Example: 3836
+Russian:  В середине XVI века в Москву прибыло посольство аравийского царя с богатыми дарами, которые были поднесены государю Иоанну Васильевичу в залог будущей крепкой российско-аравийской дружбы.
+English:  In the middle of the XVI century, the Embassy of the Arabian king with rich gifts arrived in Moscow, who were brought by the sovereign of John Vasilyevich in the key to the future strong Russian-Arabian friendship.
+Preposition:  11 - с - from
+Answer:  посольство :  embassy
+Output:  поднесены :  Brought out  Result:  False
+
+Example: 3837
+Russian:  В середине XVI века в Москву прибыло посольство аравийского царя с богатыми дарами, которые были поднесены государю Иоанну Васильевичу в залог будущей крепкой российско-аравийской дружбы.
+English:  In the middle of the XVI century, the Embassy of the Arabian king with rich gifts arrived in Moscow, who were brought by the sovereign of John Vasilyevich in the key to the future strong Russian-Arabian friendship.
+Preposition:  21 - в - in
+Answer:  поднесены :  Brought out
+Output:  поднесены :  Brought out  Result:  True
+
+Example: 3838
+Russian:  Самым удивительным среди подарков оказался пришедший с обозом слон - "животное преогромадное и предиковинное", горожанами никогда прежде не виданное.
+English:  The most awesome among the gifts was the Elephant who came with the Oboz - "Animal Promotomy and Prepictions", the citizens had never been visited.
+Preposition:  7 - с - from
+Answer:  пришедший :  Few
+Output:  пришедший :  Few  Result:  True
+
+Example: 3839
+Russian:  В Москве в ту пору, конечно, уже существовал дворцовый зверинец.
+English:  In Moscow, at that time, of course, there was already a palace nurse.
+Preposition:  1 - В - IN
+Answer:  существовал :  existed
+Output:  существовал :  existed  Result:  True
+
+Example: 3840
+Russian:  В Москве в ту пору, конечно, уже существовал дворцовый зверинец.
+English:  In Moscow, at that time, of course, there was already a palace nurse.
+Preposition:  3 - в - in
+Answer:  существовал :  existed
+Output:  существовал :  existed  Result:  True
+
+Example: 3841
+Russian:  Это означает, что в те горячие годы перемен существовала система, тождественная современной: пока зверь заперт в одной части вольера, служитель убирает в другой, затем они меняются местами.
+English:  This means that in those hot years there was a system identical to modern: while the beast is locked in one part of the enclosure, the servant removes to another, then they change places.
+Preposition:  5 - в - in
+Answer:  существовала :  existed
+Output:  меняются :  Change  Result:  False
+
+Example: 3842
+Russian:  Это означает, что в те горячие годы перемен существовала система, тождественная современной: пока зверь заперт в одной части вольера, служитель убирает в другой, затем они меняются местами.
+English:  This means that in those hot years there was a system identical to modern: while the beast is locked in one part of the enclosure, the servant removes to another, then they change places.
+Preposition:  19 - в - in
+Answer:  заперт :  locked
+Output:  заперт :  locked  Result:  True
+
+Example: 3843
+Russian:  Это означает, что в те горячие годы перемен существовала система, тождественная современной: пока зверь заперт в одной части вольера, служитель убирает в другой, затем они меняются местами.
+English:  This means that in those hot years there was a system identical to modern: while the beast is locked in one part of the enclosure, the servant removes to another, then they change places.
+Preposition:  26 - в - in
+Answer:  убирает :  Removes
+Output:  меняются :  Change  Result:  False
+
+Example: 3844
+Russian:  В зверинце помимо отечественных животных - медведей, причем даже белых, рысей, волков и прочих - находились животные заморские, в основном крупные хищники.
+English:  In Zveztsy, in addition to domestic animals - bears, and even white, tricks, wolves and others - were animals overseas, mostly large predators.
+Preposition:  1 - В - IN
+Answer:  находились :  were located
+Output:  рысей :  Rysy  Result:  False
+
+Example: 3845
+Russian:  В зверинце помимо отечественных животных - медведей, причем даже белых, рысей, волков и прочих - находились животные заморские, в основном крупные хищники.
+English:  In Zveztsy, in addition to domestic animals - bears, and even white, tricks, wolves and others - were animals overseas, mostly large predators.
+Preposition:  23 - в - in
+Answer:  хищники :  Predators
+Output:  заморские :  Overseas  Result:  False
+
+Example: 3846
+Russian:  Но наш же слон в гораздый двор, очевидно, не вписался и был поэтому размещен вне Кремля, на территории нынешней Красной площади.
+English:  But our elephant in a much yard, obviously, did not fit and was therefore placed outside the Kremlin, on the territory of the current Red Square.
+Preposition:  5 - в - in
+Answer:  вписался :  fits
+Output:  слон :  elephant  Result:  False
+
+Example: 3847
+Russian:  Но наш же слон в гораздый двор, очевидно, не вписался и был поэтому размещен вне Кремля, на территории нынешней Красной площади.
+English:  But our elephant in a much yard, obviously, did not fit and was therefore placed outside the Kremlin, on the territory of the current Red Square.
+Preposition:  20 - на - on
+Answer:  Кремля :  Kremlin
+Output:  размещен :  Placed  Result:  False
+
+Example: 3848
+Russian:  Здесь он оказался в компании львов, которых прислала в дар Иоанну IV английская королева (царь, как известно, помышлял на ней жениться, но, заполучив четвероногую часть приданого, передумал).
+English:  Here he was in the company of Lviv, who was sent to John the IV English Queen as a gift (the king, as you know, thought to marry her, but, having changed the four-way part of the dowry, changed his mind).
+Preposition:  4 - в - in
+Answer:  оказался :  It turned out
+Output:  оказался :  It turned out  Result:  True
+
+Example: 3849
+Russian:  Здесь он оказался в компании львов, которых прислала в дар Иоанну IV английская королева (царь, как известно, помышлял на ней жениться, но, заполучив четвероногую часть приданого, передумал).
+English:  Here he was in the company of Lviv, who was sent to John the IV English Queen as a gift (the king, as you know, thought to marry her, but, having changed the four-way part of the dowry, changed his mind).
+Preposition:  10 - в - in
+Answer:  прислала :  Sent
+Output:  прислала :  Sent  Result:  True
+
+Example: 3850
+Russian:  Здесь он оказался в компании львов, которых прислала в дар Иоанну IV английская королева (царь, как известно, помышлял на ней жениться, но, заполучив четвероногую часть приданого, передумал).
+English:  Here he was in the company of Lviv, who was sent to John the IV English Queen as a gift (the king, as you know, thought to marry her, but, having changed the four-way part of the dowry, changed his mind).
+Preposition:  23 - на - on
+Answer:  жениться :  marry
+Output:  прислала :  Sent  Result:  False
+
+Example: 3851
+Russian:  Рядом с львиным двором помещается слоновый двор, окруженный крепким тыном".
+English:  Next to the lion yard is placed an ivory courtyard, surrounded by a strong tone. "
+Preposition:  2 - с - from
+Answer:  Рядом :  Nearby
+Output:  помещается :  placed  Result:  False
+
+Example: 3852
+Russian:  Здесь, в особом сарае, царь Иван и поместил ученого слона, обученного становиться перед самодержцем на колени.
+English:  Here, in a special barn, King Ivan and placed a scientist Elephant, trained to become before the dealer of his knees.
+Preposition:  3 - в - in
+Answer:  Здесь :  Here
+Output:  Здесь :  Here  Result:  True
+
+Example: 3853
+Russian:  Здесь, в особом сарае, царь Иван и поместил ученого слона, обученного становиться перед самодержцем на колени.
+English:  Here, in a special barn, King Ivan and placed a scientist Elephant, trained to become before the dealer of his knees.
+Preposition:  18 - на - on
+Answer:  становиться :  become
+Output:  становиться :  become  Result:  True
+
+Example: 3854
+Russian:  Злые языки, правда, утверждают, что слон исполнял этот трюк в надежде на стакан водки, однако не стоит считать эту информацию исторически доказанной.
+English:  Evil languages, however, argue that the elephant performed this trick in the hope of a glass of vodka, but should not be considered this information historically proven.
+Preposition:  13 - в - in
+Answer:  исполнял :  performed
+Output:  трюк :  trick  Result:  False
+
+Example: 3855
+Russian:  Злые языки, правда, утверждают, что слон исполнял этот трюк в надежде на стакан водки, однако не стоит считать эту информацию исторически доказанной.
+English:  Evil languages, however, argue that the elephant performed this trick in the hope of a glass of vodka, but should not be considered this information historically proven.
+Preposition:  15 - на - on
+Answer:  надежде :  Hope
+Output:  исполнял :  performed  Result:  False
+
+Example: 3856
+Russian:  Одно из немногих сохранившихся изображений огромного, в 30 метров шириной, рва, ставшего в некотором смысле прародиной нынешней популяции московских слонов, можно видеть на акварели Ф. Алексеева 1802 года.
+English:  One of the few preserved images of a huge, 30 meters wide, the RVA, who became a pranodine of the current population of the Moscow elephants in a certain sense, can be seen on Watercolors F. Alekseev 1802 years.
+Preposition:  2 - из - of
+Answer:  Одно :  One
+Output:  Одно :  One  Result:  True
+
+Example: 3857
+Russian:  Одно из немногих сохранившихся изображений огромного, в 30 метров шириной, рва, ставшего в некотором смысле прародиной нынешней популяции московских слонов, можно видеть на акварели Ф. Алексеева 1802 года.
+English:  One of the few preserved images of a huge, 30 meters wide, the RVA, who became a pranodine of the current population of the Moscow elephants in a certain sense, can be seen on Watercolors F. Alekseev 1802 years.
+Preposition:  8 - в - in
+Answer:  шириной :  width
+Output:  огромного :  Huge  Result:  False
+
+Example: 3858
+Russian:  Одно из немногих сохранившихся изображений огромного, в 30 метров шириной, рва, ставшего в некотором смысле прародиной нынешней популяции московских слонов, можно видеть на акварели Ф. Алексеева 1802 года.
+English:  One of the few preserved images of a huge, 30 meters wide, the RVA, who became a pranodine of the current population of the Moscow elephants in a certain sense, can be seen on Watercolors F. Alekseev 1802 years.
+Preposition:  16 - в - in
+Answer:  ставшего :  has become
+Output:  Алексеева :  Alekseeva  Result:  False
+
+Example: 3859
+Russian:  Одно из немногих сохранившихся изображений огромного, в 30 метров шириной, рва, ставшего в некотором смысле прародиной нынешней популяции московских слонов, можно видеть на акварели Ф. Алексеева 1802 года.
+English:  One of the few preserved images of a huge, 30 meters wide, the RVA, who became a pranodine of the current population of the Moscow elephants in a certain sense, can be seen on Watercolors F. Alekseev 1802 years.
+Preposition:  27 - на - on
+Answer:  видеть :  see
+Output:  Алексеева :  Alekseeva  Result:  False
+
+Example: 3860
+Russian:  Ров находился с восточной, а вовсе, кстати, не с южной стороны Кремля, как сообщают иностранные дипломаты (они, как и все смертные, склонны к плутаниям и неверному определению сторон света).
+English:  Ditch was located with east, and at all, by the way, not from the southern side of the Kremlin, as reported by foreign diplomats (they, like all mortals, are prone to plots and incorrect definition of the Parties to the Light).
+Preposition:  3 - с - from
+Answer:  находился :  There was
+Output:  плутаниям :  Plutations  Result:  False
+
+Example: 3861
+Russian:  Ров находился с восточной, а вовсе, кстати, не с южной стороны Кремля, как сообщают иностранные дипломаты (они, как и все смертные, склонны к плутаниям и неверному определению сторон света).
+English:  Ditch was located with east, and at all, by the way, not from the southern side of the Kremlin, as reported by foreign diplomats (they, like all mortals, are prone to plots and incorrect definition of the Parties to the Light).
+Preposition:  12 - с - from
+Answer:  восточной :  Eastern
+Output:  смертные :  Mortals  Result:  False
+
+Example: 3862
+Russian:  Ров находился с восточной, а вовсе, кстати, не с южной стороны Кремля, как сообщают иностранные дипломаты (они, как и все смертные, склонны к плутаниям и неверному определению сторон света).
+English:  Ditch was located with east, and at all, by the way, not from the southern side of the Kremlin, as reported by foreign diplomats (they, like all mortals, are prone to plots and incorrect definition of the Parties to the Light).
+Preposition:  30 - к - to
+Answer:  склонны :  Tell me
+Output:  смертные :  Mortals  Result:  False
+
+Example: 3863
+Russian:  Устроил его еще в 1508 году знаменитый итальянский архитектор и инженер Алевиз Фрязин.
+English:  Arranged him in 1508, the famous Italian architect and engineer Aleviz Fryazin.
+Preposition:  4 - в - in
+Answer:  Устроил :  Arranged
+Output:  еще :  more  Result:  False
+
+Example: 3864
+Russian:  Ров был не просто каналом, соединявшим Неглинку с Москвой-рекой, а сложной системой шлюзов и наполнялся подземными водами, так как поднять речную воду на площадь, находящуюся на значительном возвышении, было весьма затруднительно.
+English:  I was not just a channel connected to the uncle with a Moscow-river, but a complex gateway system and was filled with underground waters, as it was very difficult to raise the river water on the area located on a significant elevation.
+Preposition:  9 - с - from
+Answer:  соединявшим :  Connecting
+Output:  Неглинку :  Negling  Result:  False
+
+Example: 3865
+Russian:  Ров был не просто каналом, соединявшим Неглинку с Москвой-рекой, а сложной системой шлюзов и наполнялся подземными водами, так как поднять речную воду на площадь, находящуюся на значительном возвышении, было весьма затруднительно.
+English:  I was not just a channel connected to the uncle with a Moscow-river, but a complex gateway system and was filled with underground waters, as it was very difficult to raise the river water on the area located on a significant elevation.
+Preposition:  28 - на - on
+Answer:  поднять :  raise
+Output:  наполнялся :  Filled  Result:  False
+
+Example: 3866
+Russian:  Ров был не просто каналом, соединявшим Неглинку с Москвой-рекой, а сложной системой шлюзов и наполнялся подземными водами, так как поднять речную воду на площадь, находящуюся на значительном возвышении, было весьма затруднительно.
+English:  I was not just a channel connected to the uncle with a Moscow-river, but a complex gateway system and was filled with underground waters, as it was very difficult to raise the river water on the area located on a significant elevation.
+Preposition:  32 - на - on
+Answer:  находящуюся :  located
+Output:  наполнялся :  Filled  Result:  False
+
+Example: 3867
+Russian:  С помощью шлюзов в мирное время воду изо рва спускали, и в южной его части разводил свой огород Аптекарский приказ - мумие, морква да подорожник.
+English:  With the help of gateways in peacetime, the water from the rudy descended, and in the southern part of it, the pharmacy order was bred - Mumiya, Morkava and Plainnik.
+Preposition:  1 - С - FROM
+Answer:  спускали :  descended
+Output:  разводил :  Divorced  Result:  False
+
+Example: 3868
+Russian:  С помощью шлюзов в мирное время воду изо рва спускали, и в южной его части разводил свой огород Аптекарский приказ - мумие, морква да подорожник.
+English:  With the help of gateways in peacetime, the water from the rudy descended, and in the southern part of it, the pharmacy order was bred - Mumiya, Morkava and Plainnik.
+Preposition:  4 - в - in
+Answer:  спускали :  descended
+Output:  разводил :  Divorced  Result:  False
+
+Example: 3869
+Russian:  С помощью шлюзов в мирное время воду изо рва спускали, и в южной его части разводил свой огород Аптекарский приказ - мумие, морква да подорожник.
+English:  With the help of gateways in peacetime, the water from the rudy descended, and in the southern part of it, the pharmacy order was bred - Mumiya, Morkava and Plainnik.
+Preposition:  8 - изо - IO
+Answer:  воду :  Water
+Output:  разводил :  Divorced  Result:  False
+
+Example: 3870
+Russian:  С помощью шлюзов в мирное время воду изо рва спускали, и в южной его части разводил свой огород Аптекарский приказ - мумие, морква да подорожник.
+English:  With the help of gateways in peacetime, the water from the rudy descended, and in the southern part of it, the pharmacy order was bred - Mumiya, Morkava and Plainnik.
+Preposition:  13 - в - in
+Answer:  разводил :  Divorced
+Output:  спускали :  descended  Result:  False
+
+Example: 3871
+Russian:  Спустившись вниз на 23 ступеньки, мы оказываемся среди белоснежных кафельных стен и сверкающих писсуаров, на глубине четырех с половиной метров ниже уровня земли.
+English:  Going down on 23 steps, we turn out to be among the snow-white tiled walls and sparkling urinates, at a depth of four and a half meters below the ground level.
+Preposition:  3 - на - on
+Answer:  Спустившись :  Lost
+Output:  Спустившись :  Lost  Result:  True
+
+Example: 3872
+Russian:  Спустившись вниз на 23 ступеньки, мы оказываемся среди белоснежных кафельных стен и сверкающих писсуаров, на глубине четырех с половиной метров ниже уровня земли.
+English:  Going down on 23 steps, we turn out to be among the snow-white tiled walls and sparkling urinates, at a depth of four and a half meters below the ground level.
+Preposition:  17 - на - on
+Answer:  стен :  Wall
+Output:  и :  and  Result:  False
+
+Example: 3873
+Russian:  Спустившись вниз на 23 ступеньки, мы оказываемся среди белоснежных кафельных стен и сверкающих писсуаров, на глубине четырех с половиной метров ниже уровня земли.
+English:  Going down on 23 steps, we turn out to be among the snow-white tiled walls and sparkling urinates, at a depth of four and a half meters below the ground level.
+Preposition:  20 - с - from
+Answer:  четырех :  four
+Output:  оказываемся :  Observe  Result:  False
+
+Example: 3874
+Russian:  Простое арифметическое действие - 8 минус 4,5 - дает нам довольно точное местоположение первого московского слона: три с половиной метра ниже современного уровня пола туалета.
+English:  Simple arithmetic action - 8 minus 4.5 - gives us a fairly accurate location of the first Moscow elephant: three and a half meters below the modern toilet floor level.
+Preposition:  19 - с - from
+Answer:  три :  three
+Output:  местоположение :  Location  Result:  False
+
+Example: 3875
+Russian:  Эта цифра как раз приближается к среднему росту взрослой особи.
+English:  This figure is just approaching the average growth of an adult individual.
+Preposition:  6 - к - to
+Answer:  приближается :  approaching
+Output:  приближается :  approaching  Result:  True
+
+Example: 3876
+Russian:  Стало быть, ботинки москвича или гостя столицы, посещающего мужское заведение, находятся на том же уровне, что и макушка древнего зверя, служившего потехой царскому режиму.
+English:  Therefore, the Muscovite boots or guests of the capital attending the male establishment are at the same level as the top of the ancient beast that served the fun to the royal regime.
+Preposition:  15 - на - on
+Answer:  находятся :  are located
+Output:  находятся :  are located  Result:  True
+
+Example: 3877
+Russian:  Вышедшая в Европе в 1551 году "Общая книга о животных" Геснера сообщает: "Слоны невероятно любят свою родину, и, если их увозят в чужую страну, они никогда не забывают родных мест".
+English:  In Europe in 1551, the "general book about animals" Geesner reports: "Elephants incredibly love their homeland, and if they are taken into an alien country, they never forget their relatives."
+Preposition:  2 - в - in
+Answer:  Вышедшая :  Naughty
+Output:  Вышедшая :  Naughty  Result:  True
+
+Example: 3878
+Russian:  Вышедшая в Европе в 1551 году "Общая книга о животных" Геснера сообщает: "Слоны невероятно любят свою родину, и, если их увозят в чужую страну, они никогда не забывают родных мест".
+English:  In Europe in 1551, the "general book about animals" Geesner reports: "Elephants incredibly love their homeland, and if they are taken into an alien country, they never forget their relatives."
+Preposition:  4 - в - in
+Answer:  Вышедшая :  Naughty
+Output:  Вышедшая :  Naughty  Result:  True
+
+Example: 3879
+Russian:  Вышедшая в Европе в 1551 году "Общая книга о животных" Геснера сообщает: "Слоны невероятно любят свою родину, и, если их увозят в чужую страну, они никогда не забывают родных мест".
+English:  In Europe in 1551, the "general book about animals" Geesner reports: "Elephants incredibly love their homeland, and if they are taken into an alien country, they never forget their relatives."
+Preposition:  28 - в - in
+Answer:  увозят :  Consider
+Output:  чужую :  Alien  Result:  False
+
+Example: 3880
+Russian:  От холода слона можно спасти, если дать ему напиться густого красного вина.
+English:  From the cold elephant, you can save if you give it to get drunk a thick red wine.
+Preposition:  1 - От - From
+Answer:  спасти :  to rescue
+Output:  напиться :  get drunk  Result:  False
+
+Example: 3881
+Russian:  К людям врожденную любовь слон испытывает, особенно к красивым женщинам, но еще большую - к маленьким детям".
+English:  To people, innate love elephant is experiencing, especially for beautiful women, but even greater - to small children. "
+Preposition:  1 - К - TO
+Answer:  любовь :  love
+Output:  испытывает :  Tested  Result:  False
+
+Example: 3882
+Russian:  К людям врожденную любовь слон испытывает, особенно к красивым женщинам, но еще большую - к маленьким детям".
+English:  To people, innate love elephant is experiencing, especially for beautiful women, but even greater - to small children. "
+Preposition:  9 - _ - _
+Answer:  испытывает :  Tested
+Output: Index outside of sentence Result:  False
+
+Example: 3883
+Russian:  К людям врожденную любовь слон испытывает, особенно к красивым женщинам, но еще большую - к маленьким детям".
+English:  To people, innate love elephant is experiencing, especially for beautiful women, but even greater - to small children. "
+Preposition:  17 - большую - greasy
+Answer:  но :  but
+Output: Index outside of sentence Result:  False
+
+Example: 3884
+Russian:  Представить себе, на какие серьезные чувства способно это крупнейшее из наземных млекопитающих, можно, осмотрев сушеное слоновье сердце, экспонируемое ныне в витрине Зоологического музея.
+English:  To imagine what serious feelings are the largest of land mammals, you can, having examined the dried elephant Heart exposed now in the showcase of the Zoological Museum.
+Preposition:  4 - на - on
+Answer:  способно :  able to
+Output:  , :  .  Result:  False
+
+Example: 3885
+Russian:  Представить себе, на какие серьезные чувства способно это крупнейшее из наземных млекопитающих, можно, осмотрев сушеное слоновье сердце, экспонируемое ныне в витрине Зоологического музея.
+English:  To imagine what serious feelings are the largest of land mammals, you can, having examined the dried elephant Heart exposed now in the showcase of the Zoological Museum.
+Preposition:  11 - из - of
+Answer:  крупнейшее :  The largest
+Output:  Представить :  Imagine  Result:  False
+
+Example: 3886
+Russian:  Представить себе, на какие серьезные чувства способно это крупнейшее из наземных млекопитающих, можно, осмотрев сушеное слоновье сердце, экспонируемое ныне в витрине Зоологического музея.
+English:  To imagine what serious feelings are the largest of land mammals, you can, having examined the dried elephant Heart exposed now in the showcase of the Zoological Museum.
+Preposition:  24 - в - in
+Answer:  экспонируемое :  Exhibited
+Output:  , :  .  Result:  False
+
+Example: 3887
+Russian:  Несмотря на естественную усадку, оно и теперь достигает размеров крупной дыни.
+English:  Despite the natural shrinkage, it now reaches the size of a large melon.
+Preposition:  2 - на - on
+Answer:  усадку :  Shrink
+Output:  Несмотря :  Despite  Result:  False
+
+Example: 3888
+Russian:  Но с женщинами и детьми во рву, надо полагать, было туго.
+English:  But with women and children in Rives, it is necessary to believe, it was tight.
+Preposition:  2 - с - from
+Answer:  туго :  tight
+Output:  Но :  But  Result:  False
+
+Example: 3889
+Russian:  Но с женщинами и детьми во рву, надо полагать, было туго.
+English:  But with women and children in Rives, it is necessary to believe, it was tight.
+Preposition:  6 - во - in
+Answer:  туго :  tight
+Output:  детьми :  Children  Result:  False
+
+Example: 3890
+Russian:  Поэтому единственной отрадой и родной душой нашего первого слона был араб, который прибыл вместе с животным и за ним ухаживал.
+English:  Therefore, the only rude and native soul of our first elephant was Arab, who arrived with the animal and cared for him.
+Preposition:  16 - с - from
+Answer:  вместе :  together
+Output:  прибыл :  Profit  Result:  False
+
+Example: 3891
+Russian:  Поэтому единственной отрадой и родной душой нашего первого слона был араб, который прибыл вместе с животным и за ним ухаживал.
+English:  Therefore, the only rude and native soul of our first elephant was Arab, who arrived with the animal and cared for him.
+Preposition:  19 - за - behind
+Answer:  ухаживал :  Caring
+Output:  прибыл :  Profit  Result:  False
+
+Example: 3892
+Russian:  О нем сообщает в своих записках наемный опричник Генрих Штаден: "Араб получал в Москве большое жалованье.
+English:  In his notes, the hired officer Henry Stadan informs about it: "Arab received a great salary in Moscow.
+Preposition:  4 - в - in
+Answer:  сообщает :  reports
+Output:  сообщает :  reports  Result:  True
+
+Example: 3893
+Russian:  О нем сообщает в своих записках наемный опричник Генрих Штаден: "Араб получал в Москве большое жалованье.
+English:  In his notes, the hired officer Henry Stadan informs about it: "Arab received a great salary in Moscow.
+Preposition:  15 - в - in
+Answer:  получал :  was getting
+Output:  получал :  was getting  Result:  True
+
+Example: 3894
+Russian:  Это подметили русские бражники, то есть беспутные люди, пропойцы, которые в корчмах пьют.
+English:  It was noticed by Russian brahniks, that is, disturbing people, Raidets, who drink in Corts.
+Preposition:  14 - в - in
+Answer:  пьют :  dry
+Output:  пропойцы :  Greeting  Result:  False
+
+Example: 3895
+Russian:  Вот этот-то араб был оклеветан и оговорен русскими вместе со своим слоном, что будто бы чума произошла от него и его слона.
+English:  This Arab was slander and stipulated by the Russians along with her elephant, which would have happened from him and his elephant.
+Preposition:  12 - со - SO
+Answer:  вместе :  together
+Output:  что :  what  Result:  False
+
+Example: 3896
+Russian:  Вот этот-то араб был оклеветан и оговорен русскими вместе со своим слоном, что будто бы чума произошла от него и его слона.
+English:  This Arab was slander and stipulated by the Russians along with her elephant, which would have happened from him and his elephant.
+Preposition:  21 - от - from
+Answer:  произошла :  occurred
+Output:  произошла :  occurred  Result:  True
+
+Example: 3897
+Russian:  Тогда араба и его слона сослали в опале в посад Городецкой.
+English:  Then Araba and his elephant exiled in the opal in Posad Gorodetsky.
+Preposition:  7 - в - in
+Answer:  сослали :  Splani
+Output:  сослали :  Splani  Result:  True
+
+Example: 3898
+Russian:  Тогда араба и его слона сослали в опале в посад Городецкой.
+English:  Then Araba and his elephant exiled in the opal in Posad Gorodetsky.
+Preposition:  9 - в - in
+Answer:  сослали :  Splani
+Output:  опале :  opales  Result:  False
+
+Example: 3899
+Russian:  Араб умер там, и великий князь послал дворянина с наказом умертвить слона.
+English:  Arab died there, and the Grand Duke sent a nobleman with the punishment to kill an elephant.
+Preposition:  10 - с - from
+Answer:  послал :  Messlo
+Output:  послал :  Messlo  Result:  True
+
+Example: 3900
+Russian:  Слон стоял обычно в сарае, а кругом сарая был тын.
+English:  The elephant was usually stood in the barn, and the shed was a tyn.
+Preposition:  4 - в - in
+Answer:  стоял :  stood
+Output:  Слон :  Elephant  Result:  False
+
+Example: 3901
+Russian:  Неподалеку от него схоронили араба.
+English:  Not far from Him Soroni Arab.
+Preposition:  2 - от - from
+Answer:  Неподалеку :  Nearby
+Output:  Неподалеку :  Nearby  Result:  True
+
+Example: 3902
+Russian:  Тогда слон проломил тын и улегся на могиле.
+English:  Then the elephant broke the tyne and lay down on the grave.
+Preposition:  7 - на - on
+Answer:  улегся :  Fall
+Output:  улегся :  Fall  Result:  True
+
+Example: 3903
+Russian:  Там его и добили, выбили у него клыки и доставили великому князю в доказательство того, что слон действительно околел".
+English:  There, he finished him, knocked his fangs and delivered a great prince in proof that the elephant was really incomplete. "
+Preposition:  14 - в - in
+Answer:  доставили :  delivered
+Output:  доставили :  delivered  Result:  True
+
+Example: 3904
+Russian:  Страшная, нелепая и позорная история: наш первый слон и первый слоновод пали жертвами царской тирании, пострадали за грехи запойных шаромыжек.
+English:  Scary, ridiculous and shameful story: Our first elephant and the first elephant movement fell victims of royal tyranny, suffered for the sins of the siny charming.
+Preposition:  20 - за - behind
+Answer:  пострадали :  suffered
+Output:  пострадали :  suffered  Result:  True
+
+Example: 3905
+Russian:  Однако, словно бы во искупление вины, в последующие времена москвичи относились к своим слонам в большинстве случаев с любовью и заботой.
+English:  However, as if in the redemption of guilt, at the next time, Muscovites treated their elephants in most cases with love and care.
+Preposition:  5 - во - in
+Answer:  относились :  treated
+Output:  бы :  would be  Result:  False
+
+Example: 3906
+Russian:  Однако, словно бы во искупление вины, в последующие времена москвичи относились к своим слонам в большинстве случаев с любовью и заботой.
+English:  However, as if in the redemption of guilt, at the next time, Muscovites treated their elephants in most cases with love and care.
+Preposition:  9 - в - in
+Answer:  относились :  treated
+Output:  относились :  treated  Result:  True
+
+Example: 3907
+Russian:  Однако, словно бы во искупление вины, в последующие времена москвичи относились к своим слонам в большинстве случаев с любовью и заботой.
+English:  However, as if in the redemption of guilt, at the next time, Muscovites treated their elephants in most cases with love and care.
+Preposition:  14 - к - to
+Answer:  относились :  treated
+Output:  относились :  treated  Result:  True
+
+Example: 3908
+Russian:  Однако, словно бы во искупление вины, в последующие времена москвичи относились к своим слонам в большинстве случаев с любовью и заботой.
+English:  However, as if in the redemption of guilt, at the next time, Muscovites treated their elephants in most cases with love and care.
+Preposition:  17 - в - in
+Answer:  относились :  treated
+Output:  относились :  treated  Result:  True
+
+Example: 3909
+Russian:  Однако, словно бы во искупление вины, в последующие времена москвичи относились к своим слонам в большинстве случаев с любовью и заботой.
+English:  However, as if in the redemption of guilt, at the next time, Muscovites treated their elephants in most cases with love and care.
+Preposition:  20 - с - from
+Answer:  относились :  treated
+Output:  относились :  treated  Result:  True
+
+Example: 3910
+Russian:  В 1703 году, например, "индийский царь в дар нашему государю императору преподнес слона и много иного".
+English:  In 1703, for example, "the Indian king as a gift to our sovereign to the emperor presented an elephant and a lot of others."
+Preposition:  1 - В - IN
+Answer:  преподнес :  presented
+Output:  преподнес :  presented  Result:  True
+
+Example: 3911
+Russian:  В 1703 году, например, "индийский царь в дар нашему государю императору преподнес слона и много иного".
+English:  In 1703, for example, "the Indian king as a gift to our sovereign to the emperor presented an elephant and a lot of others."
+Preposition:  10 - в - in
+Answer:  преподнес :  presented
+Output:  царь :  king  Result:  False
+
+Example: 3912
+Russian:  Содержали и показывали слонов в зверинцах, наиболее популярны были заведения, стоявшие на месте нынешнего Политехнического музея.
+English:  They contained and showed elephants in the beasts, the most popular were the establishments that were standing on the site of the current Polytechnic Museum.
+Traceback (most recent call last):
+  File "torchnet.py", line 507, in <module>
+    main_method()
+  File "torchnet.py", line 77, in main_method
+    annotatedtest(test_set, test_map, annotation, offset)
+  File "torchnet.py", line 428, in annotatedtest
+    print('Preposition: ', preposition, '-', ru_prep, '-', ru_translate(ru_prep))
+  File "torchnet.py", line 98, in ru_translate
+    return translator.translate(sentence_ru, src="ru", dest= "en").text
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 172, in translate
+    data = self._translate(text, dest, src)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 81, in _translate
+    data = utils.format_json(r.text)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/utils.py", line 62, in format_json
+    converted = legacy_format_json(original)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/utils.py", line 54, in legacy_format_json
+    converted = json.loads(text)
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

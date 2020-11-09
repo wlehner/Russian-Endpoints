@@ -1,0 +1,857 @@
+TRAINING:Started at: 2020-11-02 01:36:27.630109  Learning Rate: 0.0001  Epochs: 75 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 76 Annotations are offset by 2800
+Annotated Test on ru_syntagrus-ud-test.conllu
+Example: 2800
+Russian:  В течение сезона за одну команду могут выступать, набирая для себя и для нее очки, до 4 пилотов.
+English:  During the season, one team can act, gaining glasses for themselves and for her, up to 4 pilots.
+Preposition:  1 - В - IN
+Answer:  могут :  maybe
+Output:  выступать :  protrude  Result:  False
+
+Example: 2801
+Russian:  В течение сезона за одну команду могут выступать, набирая для себя и для нее очки, до 4 пилотов.
+English:  During the season, one team can act, gaining glasses for themselves and for her, up to 4 pilots.
+Preposition:  4 - за - behind
+Answer:  выступать :  protrude
+Output:  выступать :  protrude  Result:  True
+
+Example: 2802
+Russian:  Чтобы участвовать в Гран-при, пилот обязан получить суперлицензию Международной федерации автоспорта.
+English:  To participate in the Grand Prix, the pilot is obliged to receive the superlice of the International Motorsport Federation.
+Preposition:  3 - в - in
+Answer:  участвовать :  participate
+Output:  участвовать :  participate  Result:  True
+
+Example: 2803
+Russian:  Свободные заезды проводятся в течение трех сессий.
+English:  Free arrivals are held within three sessions.
+Preposition:  4 - в - in
+Answer:  проводятся :  are held
+Output:  проводятся :  are held  Result:  True
+
+Example: 2804
+Russian:  Как правило, две сессии продолжительностью по 1,5 часа проводятся в пятницу, одна продолжительностью в 1 час - в субботу, перед квалификацией.
+English:  As a rule, two sessions lasting 1.5 hours are held on Friday, one duration of 1 hour is on Saturday, before qualification.
+Preposition:  11 - в - in
+Answer:  проводятся :  are held
+Output:  проводятся :  are held  Result:  True
+
+Example: 2805
+Russian:  Как правило, две сессии продолжительностью по 1,5 часа проводятся в пятницу, одна продолжительностью в 1 час - в субботу, перед квалификацией.
+English:  As a rule, two sessions lasting 1.5 hours are held on Friday, one duration of 1 hour is on Saturday, before qualification.
+Preposition:  16 - продолжительностью - duration
+Answer:  _ :  _
+Output:  , :  .  Result:  False
+
+Example: 2806
+Russian:  Как правило, две сессии продолжительностью по 1,5 часа проводятся в пятницу, одна продолжительностью в 1 час - в субботу, перед квалификацией.
+English:  As a rule, two sessions lasting 1.5 hours are held on Friday, one duration of 1 hour is on Saturday, before qualification.
+Preposition:  20 - - - -
+Answer:  _ :  _
+Output:  , :  .  Result:  False
+
+Example: 2807
+Russian:  На Гран-при Монако первые 2 сессии проходят в четверг, а последняя так же, как обычно, - в субботу.
+English:  At the Monaco Grand Prix, the first 2 sessions are held on Thursday, and the latter as usual - on Saturday.
+Preposition:  1 - На - On
+Answer:  проходят :  pass
+Output:  сессии :  Session  Result:  False
+
+Example: 2808
+Russian:  На Гран-при Монако первые 2 сессии проходят в четверг, а последняя так же, как обычно, - в субботу.
+English:  At the Monaco Grand Prix, the first 2 sessions are held on Thursday, and the latter as usual - on Saturday.
+Preposition:  8 - в - in
+Answer:  проходят :  pass
+Output:  сессии :  Session  Result:  False
+
+Example: 2809
+Russian:  На Гран-при Монако первые 2 сессии проходят в четверг, а последняя так же, как обычно, - в субботу.
+English:  At the Monaco Grand Prix, the first 2 sessions are held on Thursday, and the latter as usual - on Saturday.
+Preposition:  20 - - - -
+Answer:  _ :  _
+Output:  - :  -  Result:  False
+
+Example: 2810
+Russian:  В течение свободных заездов гонщики проезжают трассу в свободном, комфортном для них режиме, чтобы ознакомиться с трассой и настроить болид.
+English:  During free races, the racers pass the track in free, comfortable for them to familiarize themselves with the track and configure the car.
+Preposition:  1 - В - IN
+Answer:  проезжают :  pass
+Output:  проезжают :  pass  Result:  True
+
+Example: 2811
+Russian:  В течение свободных заездов гонщики проезжают трассу в свободном, комфортном для них режиме, чтобы ознакомиться с трассой и настроить болид.
+English:  During free races, the racers pass the track in free, comfortable for them to familiarize themselves with the track and configure the car.
+Preposition:  8 - в - in
+Answer:  проезжают :  pass
+Output:  трассу :  Highway  Result:  False
+
+Example: 2812
+Russian:  В течение свободных заездов гонщики проезжают трассу в свободном, комфортном для них режиме, чтобы ознакомиться с трассой и настроить болид.
+English:  During free races, the racers pass the track in free, comfortable for them to familiarize themselves with the track and configure the car.
+Preposition:  18 - с - from
+Answer:  ознакомиться :  familiarize
+Output:  ознакомиться :  familiarize  Result:  True
+
+Example: 2813
+Russian:  Чтобы участвовать в гонке, пилот обязан участвовать (то есть как минимум проехать 1 круг) по крайней мере в одной сессии свободных заездов.
+English:  To participate in the race, the pilot is obliged to participate (that is, at least drive 1 circle) at least in one session of free races.
+Preposition:  3 - в - in
+Answer:  участвовать :  participate
+Output:  гонке :  Race  Result:  False
+
+Example: 2814
+Russian:  Чтобы участвовать в гонке, пилот обязан участвовать (то есть как минимум проехать 1 круг) по крайней мере в одной сессии свободных заездов.
+English:  To participate in the race, the pilot is obliged to participate (that is, at least drive 1 circle) at least in one session of free races.
+Preposition:  21 - в - in
+Answer:  участвовать :  participate
+Output:  сессии :  Session  Result:  False
+
+Example: 2815
+Russian:  За многолетнюю историю Формулы-1 формат квалификации изменялся несколько раз.
+English:  For the long-term history of Formula 1, the qualifications format changed several times.
+Preposition:  1 - За - Behind
+Answer:  изменялся :  changed
+Output:  изменялся :  changed  Result:  True
+
+Example: 2816
+Russian:  Квалификация проводится в субботу и состоит из сессий.
+English:  Qualification is carried out on Saturday and consists of sessions.
+Preposition:  3 - в - in
+Answer:  проводится :  held
+Output:  проводится :  held  Result:  True
+
+Example: 2817
+Russian:  Квалификация проводится в субботу и состоит из сессий.
+English:  Qualification is carried out on Saturday and consists of sessions.
+Preposition:  7 - из - of
+Answer:  состоит :  consists
+Output:  состоит :  consists  Result:  True
+
+Example: 2818
+Russian:  В зачет пойдет круг с наименьшим временем.
+English:  In the offset will go a circle with the smallest time.
+Preposition:  1 - В - IN
+Answer:  пойдет :  Will go
+Output:  пойдет :  Will go  Result:  True
+
+Example: 2819
+Russian:  В зачет пойдет круг с наименьшим временем.
+English:  In the offset will go a circle with the smallest time.
+Preposition:  5 - с - from
+Answer:  круг :  a circle
+Output:  круг :  a circle  Result:  True
+
+Example: 2820
+Russian:  В первой сессии участвуют все пилоты.
+English:  All pilots participate in the first session.
+Preposition:  1 - В - IN
+Answer:  участвуют :  Participate
+Output:  участвуют :  Participate  Result:  True
+
+Example: 2821
+Russian:  Для каждого пилота выбирается лучшее время прохождения круга, и последние 7 пилотов выбывают из борьбы за стартовую позицию, занимая места с 18-го по 24-е.
+English:  For each pilot, the best time of the circle is selected, and the last 7 pilots are dropped out of the struggle for the starting position, occupying places from the 18th to the 24th.
+Preposition:  15 - из - of
+Answer:  выбывают :  dropped out
+Output:  выбывают :  dropped out  Result:  True
+
+Example: 2822
+Russian:  Для каждого пилота выбирается лучшее время прохождения круга, и последние 7 пилотов выбывают из борьбы за стартовую позицию, занимая места с 18-го по 24-е.
+English:  For each pilot, the best time of the circle is selected, and the last 7 pilots are dropped out of the struggle for the starting position, occupying places from the 18th to the 24th.
+Preposition:  17 - за - behind
+Answer:  борьбы :  struggle
+Output:  борьбы :  struggle  Result:  True
+
+Example: 2823
+Russian:  Для каждого пилота выбирается лучшее время прохождения круга, и последние 7 пилотов выбывают из борьбы за стартовую позицию, занимая места с 18-го по 24-е.
+English:  For each pilot, the best time of the circle is selected, and the last 7 pilots are dropped out of the struggle for the starting position, occupying places from the 18th to the 24th.
+Preposition:  23 - с - from
+Answer:  места :  Places
+Output:  позицию :  Position  Result:  False
+
+Example: 2824
+Russian:  Во второй сессии принимают участие оставшиеся 17 пилотов, снова проезжающих круги в произвольном режиме.
+English:  In the second session, the remaining 17 pilots take part, again passing circles in arbitrary mode.
+Preposition:  1 - Во - In
+Answer:  принимают :  Accept
+Output:  оставшиеся :  the remaining  Result:  False
+
+Example: 2825
+Russian:  Во второй сессии принимают участие оставшиеся 17 пилотов, снова проезжающих круги в произвольном режиме.
+English:  In the second session, the remaining 17 pilots take part, again passing circles in arbitrary mode.
+Preposition:  13 - в - in
+Answer:  проезжающих :  Passing
+Output:  проезжающих :  Passing  Result:  True
+
+Example: 2826
+Russian:  Они занимают места с 11-го по 17-е.
+English:  They occupy places from the 11th to the 17th.
+Preposition:  4 - с - from
+Answer:  места :  Places
+Output:  занимают :  occupy  Result:  False
+
+Example: 2827
+Russian:  В третьей сессии принимают участие 10 пилотов, показавших лучшее время прохождения круга во второй сессии.
+English:  In the third session, 10 pilots participate, which showed the best time in the passage of the circle in the second session.
+Preposition:  1 - В - IN
+Answer:  принимают :  Accept
+Output:  принимают :  Accept  Result:  True
+
+Example: 2828
+Russian:  В третьей сессии принимают участие 10 пилотов, показавших лучшее время прохождения круга во второй сессии.
+English:  In the third session, 10 pilots participate, which showed the best time in the passage of the circle in the second session.
+Preposition:  14 - во - in
+Answer:  время :  time
+Output:  пилотов :  pilots  Result:  False
+
+Example: 2829
+Russian:  Они соревнуются между собой на тех же условиях, что и ранее.
+English:  They compete with each other under the same conditions as before.
+Preposition:  5 - на - on
+Answer:  соревнуются :  Compete
+Output:  соревнуются :  Compete  Result:  True
+
+Example: 2830
+Russian:  Снова сравнивается лучшее время прохождения круга, определяя пилотов, занимающих первые 10 мест на старте гонки.
+English:  The best time of passing the circle is compared again, determining the pilots that occupy the first 10 seats at the start of the race.
+Preposition:  15 - на - on
+Answer:  мест :  places
+Output:  мест :  places  Result:  True
+
+Example: 2831
+Russian:  Эта процедура применима в случае участия 24 машин; если участвуют 22 машины, тогда после первой и второй сессии исключаются по шесть участников.
+English:  This procedure is applicable in the case of 24 cars; If 22 cars are involved, then after the first and second session, six participants are excluded.
+Preposition:  4 - в - in
+Answer:  применима :  Applicable
+Output:  сессии :  Session  Result:  False
+
+Example: 2832
+Russian:  Первая десятка должна стартовать на тех же шинах, которые были установлены на болиде в тот момент, когда было показано лучшее время.
+English:  The first ten must start on the same tires that were installed on the bar at the moment when the best time was shown.
+Preposition:  5 - на - on
+Answer:  стартовать :  start
+Output:  были :  were  Result:  False
+
+Example: 2833
+Russian:  Первая десятка должна стартовать на тех же шинах, которые были установлены на болиде в тот момент, когда было показано лучшее время.
+English:  The first ten must start on the same tires that were installed on the bar at the moment when the best time was shown.
+Preposition:  13 - на - on
+Answer:  установлены :  Installed
+Output:  установлены :  Installed  Result:  True
+
+Example: 2834
+Russian:  Первая десятка должна стартовать на тех же шинах, которые были установлены на болиде в тот момент, когда было показано лучшее время.
+English:  The first ten must start on the same tires that were installed on the bar at the moment when the best time was shown.
+Preposition:  15 - в - in
+Answer:  установлены :  Installed
+Output:  установлены :  Installed  Result:  True
+
+Example: 2835
+Russian:  В исключительном случае комплект шин может быть заменен на аналогичный в случае если шины были повреждены, по согласованию с техническим делегатом FIA.
+English:  In an exceptional case, the tire kit can be replaced by a similar in case the tires were damaged, in agreement with the FIA ​​technical delegate.
+Preposition:  1 - В - IN
+Answer:  может :  can
+Output:  заменен :  Replaced  Result:  False
+
+Example: 2836
+Russian:  В исключительном случае комплект шин может быть заменен на аналогичный в случае если шины были повреждены, по согласованию с техническим делегатом FIA.
+English:  In an exceptional case, the tire kit can be replaced by a similar in case the tires were damaged, in agreement with the FIA ​​technical delegate.
+Preposition:  9 - на - on
+Answer:  заменен :  Replaced
+Output:  заменен :  Replaced  Result:  True
+
+Example: 2837
+Russian:  В исключительном случае комплект шин может быть заменен на аналогичный в случае если шины были повреждены, по согласованию с техническим делегатом FIA.
+English:  In an exceptional case, the tire kit can be replaced by a similar in case the tires were damaged, in agreement with the FIA ​​technical delegate.
+Preposition:  11 - в - in
+Answer:  может :  can
+Output:  заменен :  Replaced  Result:  False
+
+Example: 2838
+Russian:  В исключительном случае комплект шин может быть заменен на аналогичный в случае если шины были повреждены, по согласованию с техническим делегатом FIA.
+English:  In an exceptional case, the tire kit can be replaced by a similar in case the tires were damaged, in agreement with the FIA ​​technical delegate.
+Preposition:  20 - с - from
+Answer:  согласованию :  Coordination
+Output:  заменен :  Replaced  Result:  False
+
+Example: 2839
+Russian:  В случае наложения стюардами на пилотов или команду штрафов в виде лишения нескольких мест на старте, эти штрафы применяются непосредственно перед стартом гонки, то есть квалификация проходит без их учета.
+English:  If you are overlapping with stewards on pilots or team of fines in the form of a deprivation of several places at the start, these fines are applied immediately before the start of the race, that is, the qualification passes without their accounting.
+Preposition:  1 - В - IN
+Answer:  применяются :  Applied
+Output:  применяются :  Applied  Result:  True
+
+Example: 2840
+Russian:  В случае наложения стюардами на пилотов или команду штрафов в виде лишения нескольких мест на старте, эти штрафы применяются непосредственно перед стартом гонки, то есть квалификация проходит без их учета.
+English:  If you are overlapping with stewards on pilots or team of fines in the form of a deprivation of several places at the start, these fines are applied immediately before the start of the race, that is, the qualification passes without their accounting.
+Preposition:  5 - на - on
+Answer:  наложения :  overlay
+Output:  применяются :  Applied  Result:  False
+
+Example: 2841
+Russian:  В случае наложения стюардами на пилотов или команду штрафов в виде лишения нескольких мест на старте, эти штрафы применяются непосредственно перед стартом гонки, то есть квалификация проходит без их учета.
+English:  If you are overlapping with stewards on pilots or team of fines in the form of a deprivation of several places at the start, these fines are applied immediately before the start of the race, that is, the qualification passes without their accounting.
+Preposition:  10 - в - in
+Answer:  штрафов :  Penalties
+Output:  применяются :  Applied  Result:  False
+
+Example: 2842
+Russian:  В случае наложения стюардами на пилотов или команду штрафов в виде лишения нескольких мест на старте, эти штрафы применяются непосредственно перед стартом гонки, то есть квалификация проходит без их учета.
+English:  If you are overlapping with stewards on pilots or team of fines in the form of a deprivation of several places at the start, these fines are applied immediately before the start of the race, that is, the qualification passes without their accounting.
+Preposition:  15 - на - on
+Answer:  мест :  places
+Output:  применяются :  Applied  Result:  False
+
+Example: 2843
+Russian:  Чаще всего штрафы получают за блокировку гонщика на быстром круге и за замену двигателя или коробки передач.
+English:  Most often, the fines are obtained for blocking a racer on a quick circle and for replacing the engine or gearbox.
+Preposition:  5 - за - behind
+Answer:  получают :  Receive
+Output:  получают :  Receive  Result:  True
+
+Example: 2844
+Russian:  Чаще всего штрафы получают за блокировку гонщика на быстром круге и за замену двигателя или коробки передач.
+English:  Most often, the fines are obtained for blocking a racer on a quick circle and for replacing the engine or gearbox.
+Preposition:  8 - на - on
+Answer:  блокировку :  Blocking
+Output:  гонщика :  Rider  Result:  False
+
+Example: 2845
+Russian:  Чаще всего штрафы получают за блокировку гонщика на быстром круге и за замену двигателя или коробки передач.
+English:  Most often, the fines are obtained for blocking a racer on a quick circle and for replacing the engine or gearbox.
+Preposition:  12 - за - behind
+Answer:  блокировку :  Blocking
+Output:  и :  and  Result:  False
+
+Example: 2846
+Russian:  Гонка проводится в воскресенье, с 14:00 по местному времени в европейских странах и в более позднее время в азиатских странах и Австралии, чтобы трансляция в Европе не пришлась на слишком раннее утро.
+English:  The race is held on Sunday, from 14:00 local time in European countries and at a later time in Asian countries and Australia so that the broadcast in Europe does not occur at the same morning.
+Preposition:  3 - в - in
+Answer:  проводится :  held
+Output:  слишком :  too  Result:  False
+
+Example: 2847
+Russian:  Гонка проводится в воскресенье, с 14:00 по местному времени в европейских странах и в более позднее время в азиатских странах и Австралии, чтобы трансляция в Европе не пришлась на слишком раннее утро.
+English:  The race is held on Sunday, from 14:00 local time in European countries and at a later time in Asian countries and Australia so that the broadcast in Europe does not occur at the same morning.
+Preposition:  6 - с - from
+Answer:  проводится :  held
+Output:  пришлась :  Even  Result:  False
+
+Example: 2848
+Russian:  Гонка проводится в воскресенье, с 14:00 по местному времени в европейских странах и в более позднее время в азиатских странах и Австралии, чтобы трансляция в Европе не пришлась на слишком раннее утро.
+English:  The race is held on Sunday, from 14:00 local time in European countries and at a later time in Asian countries and Australia so that the broadcast in Europe does not occur at the same morning.
+Preposition:  11 - в - in
+Answer:  проводится :  held
+Output:  времени :  of time  Result:  False
+
+Example: 2849
+Russian:  Гонка проводится в воскресенье, с 14:00 по местному времени в европейских странах и в более позднее время в азиатских странах и Австралии, чтобы трансляция в Европе не пришлась на слишком раннее утро.
+English:  The race is held on Sunday, from 14:00 local time in European countries and at a later time in Asian countries and Australia so that the broadcast in Europe does not occur at the same morning.
+Preposition:  15 - _ - _
+Answer:  азиатских :  Asian
+Output:  слишком :  too  Result:  False
+
+Example: 2850
+Russian:  Гонка проводится в воскресенье, с 14:00 по местному времени в европейских странах и в более позднее время в азиатских странах и Австралии, чтобы трансляция в Европе не пришлась на слишком раннее утро.
+English:  The race is held on Sunday, from 14:00 local time in European countries and at a later time in Asian countries and Australia so that the broadcast in Europe does not occur at the same morning.
+Preposition:  19 - время - time
+Answer:  проводится :  held
+Output:  слишком :  too  Result:  False
+
+Example: 2851
+Russian:  Гонка проводится в воскресенье, с 14:00 по местному времени в европейских странах и в более позднее время в азиатских странах и Австралии, чтобы трансляция в Европе не пришлась на слишком раннее утро.
+English:  The race is held on Sunday, from 14:00 local time in European countries and at a later time in Asian countries and Australia so that the broadcast in Europe does not occur at the same morning.
+Preposition:  27 - трансляция - broadcast
+Answer:  чтобы :  to
+Output:  пришлась :  Even  Result:  False
+
+Example: 2852
+Russian:  Гонка проводится в воскресенье, с 14:00 по местному времени в европейских странах и в более позднее время в азиатских странах и Австралии, чтобы трансляция в Европе не пришлась на слишком раннее утро.
+English:  The race is held on Sunday, from 14:00 local time in European countries and at a later time in Asian countries and Australia so that the broadcast in Europe does not occur at the same morning.
+Preposition:  31 - пришлась - Even
+Answer:  не :  not
+Output:  пришлась :  Even  Result:  False
+
+Example: 2853
+Russian:  За гонку пилоты должны проехать количество кругов, которое заранее определяется исходя из длины круга автодрома.
+English:  For the pilot race, the number of circles should be driving, which is determined in advance based on the length of the circle of the autodoma.
+Preposition:  1 - За - Behind
+Answer:  проехать :  pass
+Output:  проехать :  pass  Result:  True
+
+Example: 2854
+Russian:  За гонку пилоты должны проехать количество кругов, которое заранее определяется исходя из длины круга автодрома.
+English:  For the pilot race, the number of circles should be driving, which is determined in advance based on the length of the circle of the autodoma.
+Preposition:  13 - из - of
+Answer:  исходя :  Outside
+Output:  проехать :  pass  Result:  False
+
+Example: 2855
+Russian:  Количество кругов подбирается так, чтобы общая дистанция гонки была равна или минимально превосходила 305 км (исключение - 260 км на Гран-при Монако).
+English:  The number of circles is selected so that the common race distance is equal or minimally exceeded 305 km (exception - 260 km at the Monaco Grand Prix).
+Preposition:  22 - на - on
+Answer:  км :  KM
+Output:  км :  KM  Result:  True
+
+Example: 2856
+Russian:  Это означает, что если за 2 часа лидер не преодолеет всю дистанцию гонки, то по истечении 2 часов круг, на котором в данный момент будут находиться гонщики, будет объявлен последним.
+English:  This means that if in 2 hours the leader does not overcome the entire distance of the race, then after 2 hours the circle, where the riders will be at the moment, will be declared the last.
+Preposition:  6 - за - behind
+Answer:  преодолеет :  overcome
+Output:  будет :  will be  Result:  False
+
+Example: 2857
+Russian:  Это означает, что если за 2 часа лидер не преодолеет всю дистанцию гонки, то по истечении 2 часов круг, на котором в данный момент будут находиться гонщики, будет объявлен последним.
+English:  This means that if in 2 hours the leader does not overcome the entire distance of the race, then after 2 hours the circle, where the riders will be at the moment, will be declared the last.
+Preposition:  23 - на - on
+Answer:  находиться :  be
+Output:  котором :  which  Result:  False
+
+Example: 2858
+Russian:  Это означает, что если за 2 часа лидер не преодолеет всю дистанцию гонки, то по истечении 2 часов круг, на котором в данный момент будут находиться гонщики, будет объявлен последним.
+English:  This means that if in 2 hours the leader does not overcome the entire distance of the race, then after 2 hours the circle, where the riders will be at the moment, will be declared the last.
+Preposition:  25 - в - in
+Answer:  находиться :  be
+Output:  котором :  which  Result:  False
+
+Example: 2859
+Russian:  За 15 минут до прогревочного круга гонки болиды должны покинуть пит-лейн и занять свои места на стартовой решетке согласно результатам квалификации.
+English:  15 minutes before the warm circle of the race, the bollies must leave Pit Lane and take their places on the starting grille according to the qualification results.
+Preposition:  1 - За - Behind
+Answer:  должны :  must
+Output:  занять :  take  Result:  False
+
+Example: 2860
+Russian:  За 15 минут до прогревочного круга гонки болиды должны покинуть пит-лейн и занять свои места на стартовой решетке согласно результатам квалификации.
+English:  15 minutes before the warm circle of the race, the bollies must leave Pit Lane and take their places on the starting grille according to the qualification results.
+Preposition:  16 - на - on
+Answer:  места :  Places
+Output:  занять :  take  Result:  False
+
+Example: 2861
+Russian:  На стартовой решетке болиды могут обслуживаться персоналом команд, но за 15 секунд до прогревочного круга гонки все, кроме пилотов, сидящих в болидах, должны покинуть стартовое поле.
+English:  On the starting lattice, the barges can be serviced by team staff, but in 15 seconds before the warm circle of the race, everything, in addition to pilots sitting in the car, should leave the starting field.
+Preposition:  1 - На - On
+Answer:  могут :  maybe
+Output:  могут :  maybe  Result:  True
+
+Example: 2862
+Russian:  На стартовой решетке болиды могут обслуживаться персоналом команд, но за 15 секунд до прогревочного круга гонки все, кроме пилотов, сидящих в болидах, должны покинуть стартовое поле.
+English:  On the starting lattice, the barges can be serviced by team staff, but in 15 seconds before the warm circle of the race, everything, in addition to pilots sitting in the car, should leave the starting field.
+Preposition:  11 - за - behind
+Answer:  должны :  must
+Output:  но :  but  Result:  False
+
+Example: 2863
+Russian:  На стартовой решетке болиды могут обслуживаться персоналом команд, но за 15 секунд до прогревочного круга гонки все, кроме пилотов, сидящих в болидах, должны покинуть стартовое поле.
+English:  On the starting lattice, the barges can be serviced by team staff, but in 15 seconds before the warm circle of the race, everything, in addition to pilots sitting in the car, should leave the starting field.
+Preposition:  24 - в - in
+Answer:  сидящих :  Sitting
+Output:  сидящих :  Sitting  Result:  True
+
+Example: 2864
+Russian:  Прогревочный круг используется, в основном, для того, чтобы прогреть резину, улучшив таким образом ее гоночные характеристики.
+English:  The warm circle is used mainly in order to warm up the rubber, thus improving its racing characteristics.
+Preposition:  5 - в - in
+Answer:  используется :  Used
+Output:  используется :  Used  Result:  True
+
+Example: 2865
+Russian:  По окончании прогревочного круга болиды снова выстраиваются на стартовой решетке и после сигнала светофора начинают гонку в соревновательном режиме.
+English:  Upon completion of the warm circle, the champions are built again on the starting grid and after the traffic signal begins the race in competitive mode.
+Preposition:  8 - на - on
+Answer:  выстраиваются :  Lathe
+Output:  выстраиваются :  Lathe  Result:  True
+
+Example: 2866
+Russian:  По окончании прогревочного круга болиды снова выстраиваются на стартовой решетке и после сигнала светофора начинают гонку в соревновательном режиме.
+English:  Upon completion of the warm circle, the champions are built again on the starting grid and after the traffic signal begins the race in competitive mode.
+Preposition:  17 - в - in
+Answer:  начинают :  start
+Output:  начинают :  start  Result:  True
+
+Example: 2867
+Russian:  В течение гонки команда может провести произвольное число пит-стопов для смены резины и/или проведения необходимого ремонта и обслуживания болида.
+English:  During the race, the team can carry out an arbitrary number of pit stops for changing rubber and / or carrying out the necessary repair and maintenance of the car.
+Preposition:  1 - В - IN
+Answer:  может :  can
+Output:  может :  can  Result:  True
+
+Example: 2868
+Russian:  С 2010 года дозаправка болидов в течение всей гонки запрещена, таким образом в болидах был увеличен топливный бак, что существенно сказалось на весе болида и его управляемости.
+English:  Since 2010, the refueling of the barges throughout the race is prohibited, so the fuel tank was increased in the car, which significantly affected the weight of the car and its manageability.
+Preposition:  1 - С - FROM
+Answer:  запрещена :  Forbidden
+Output:  сказалось :  Those said  Result:  False
+
+Example: 2869
+Russian:  С 2010 года дозаправка болидов в течение всей гонки запрещена, таким образом в болидах был увеличен топливный бак, что существенно сказалось на весе болида и его управляемости.
+English:  Since 2010, the refueling of the barges throughout the race is prohibited, so the fuel tank was increased in the car, which significantly affected the weight of the car and its manageability.
+Preposition:  6 - в - in
+Answer:  запрещена :  Forbidden
+Output:  сказалось :  Those said  Result:  False
+
+Example: 2870
+Russian:  С 2010 года дозаправка болидов в течение всей гонки запрещена, таким образом в болидах был увеличен топливный бак, что существенно сказалось на весе болида и его управляемости.
+English:  Since 2010, the refueling of the barges throughout the race is prohibited, so the fuel tank was increased in the car, which significantly affected the weight of the car and its manageability.
+Preposition:  14 - в - in
+Answer:  увеличен :  Increased
+Output:  сказалось :  Those said  Result:  False
+
+Example: 2871
+Russian:  С 2010 года дозаправка болидов в течение всей гонки запрещена, таким образом в болидах был увеличен топливный бак, что существенно сказалось на весе болида и его управляемости.
+English:  Since 2010, the refueling of the barges throughout the race is prohibited, so the fuel tank was increased in the car, which significantly affected the weight of the car and its manageability.
+Preposition:  24 - на - on
+Answer:  сказалось :  Those said
+Output:  сказалось :  Those said  Result:  True
+
+Example: 2872
+Russian:  Часто хорошая стратегия может привести к превосходству более слабой машины над более сильной.
+English:  Often a good strategy can lead to a superiority of a weaker machine over stronger.
+Preposition:  6 - к - to
+Answer:  привести :  lead
+Output:  привести :  lead  Result:  True
+
+Example: 2873
+Russian:  Чаще всего команды проводят от 1 до 3 пит-стопов для каждой машины, в зависимости от трассы и выбранной стратегии.
+English:  Most often, the commands spend from 1 to 3 pit stops for each machine, depending on the route and the selected strategy.
+Preposition:  5 - от - from
+Answer:  проводят :  spend
+Output:  выбранной :  Selected  Result:  False
+
+Example: 2874
+Russian:  Чаще всего команды проводят от 1 до 3 пит-стопов для каждой машины, в зависимости от трассы и выбранной стратегии.
+English:  Most often, the commands spend from 1 to 3 pit stops for each machine, depending on the route and the selected strategy.
+Preposition:  14 - в - in
+Answer:  проводят :  spend
+Output:  выбранной :  Selected  Result:  False
+
+Example: 2875
+Russian:  Чаще всего команды проводят от 1 до 3 пит-стопов для каждой машины, в зависимости от трассы и выбранной стратегии.
+English:  Most often, the commands spend from 1 to 3 pit stops for each machine, depending on the route and the selected strategy.
+Preposition:  16 - от - from
+Answer:  зависимости :  Dependencies
+Output:  выбранной :  Selected  Result:  False
+
+Example: 2876
+Russian:  Но в непредвиденных ситуациях количество пит-стопов может увеличиваться.
+English:  But in unforeseen situations, the number of pit stops may increase.
+Preposition:  2 - в - in
+Answer:  может :  can
+Output:  увеличиваться :  increase  Result:  False
+
+Example: 2877
+Russian:  Это может быть связано с неисправностью или повреждением болида, либо с внезапно изменившимися погодными условиями.
+English:  This may be associated with malfunction or damage to the car, or with suddenly changed weather conditions.
+Preposition:  5 - с - from
+Answer:  связано :  connected
+Output:  связано :  connected  Result:  True
+
+Example: 2878
+Russian:  Это может быть связано с неисправностью или повреждением болида, либо с внезапно изменившимися погодными условиями.
+English:  This may be associated with malfunction or damage to the car, or with suddenly changed weather conditions.
+Preposition:  12 - с - from
+Answer:  неисправностью :  malfunction
+Output:  изменившимися :  changed  Result:  False
+
+Example: 2879
+Russian:  В последнем случае на машине нередко не только меняется резина, но и регулируются углы атаки антикрыльев.
+English:  In the latter case, the car often not only changes the tires, but also adjusts the angles of anti-pot attack.
+Preposition:  1 - В - IN
+Answer:  меняется :  Changes
+Output:  меняется :  Changes  Result:  True
+
+Example: 2880
+Russian:  В последнем случае на машине нередко не только меняется резина, но и регулируются углы атаки антикрыльев.
+English:  In the latter case, the car often not only changes the tires, but also adjusts the angles of anti-pot attack.
+Preposition:  4 - на - on
+Answer:  меняется :  Changes
+Output:  меняется :  Changes  Result:  True
+
+Example: 2881
+Russian:  В случае повреждения машины на пит-стопе могут быть заменены некоторые ее части, такие как передний обтекатель с антикрылом, руль и т. п.
+English:  In the event of damage to the machine on the pit stop, some parts can be replaced, such as the front fairing with an anti-car, steering wheel, etc.
+Preposition:  1 - В - IN
+Answer:  могут :  maybe
+Output:  могут :  maybe  Result:  True
+
+Example: 2882
+Russian:  В случае повреждения машины на пит-стопе могут быть заменены некоторые ее части, такие как передний обтекатель с антикрылом, руль и т. п.
+English:  In the event of damage to the machine on the pit stop, some parts can be replaced, such as the front fairing with an anti-car, steering wheel, etc.
+Preposition:  5 - на - on
+Answer:  могут :  maybe
+Output:  могут :  maybe  Result:  True
+
+Example: 2883
+Russian:  В случае повреждения машины на пит-стопе могут быть заменены некоторые ее части, такие как передний обтекатель с антикрылом, руль и т. п.
+English:  In the event of damage to the machine on the pit stop, some parts can be replaced, such as the front fairing with an anti-car, steering wheel, etc.
+Preposition:  18 - с - from
+Answer:  обтекатель :  cowl
+Output:  обтекатель :  cowl  Result:  True
+
+Example: 2884
+Russian:  На каждую гонку выбираются два подходящих характеристикам трассы типа резины, одинаковые для всех команд.
+English:  For each race, two suitable challenges of the rubber type track are selected, the same for all commands.
+Preposition:  1 - На - On
+Answer:  выбираются :  Select
+Output:  выбираются :  Select  Result:  True
+
+Example: 2885
+Russian:  Если гонка не объявлена дождевой, каждый гонщик обязан использовать оба типа, что автоматически приводит к одному обязательному пит-стопу.
+English:  If the race is not declared rain, each racer is obliged to use both types, which automatically leads to one mandatory pit stop.
+Preposition:  17 - к - to
+Answer:  приводит :  leads
+Output:  приводит :  leads  Result:  True
+
+Example: 2886
+Russian:  Заезжая на пит-лейн, гонщик обязан снизить скорость до 100 км/ч (на свободных заездах до 60 км/ч).
+English:  Having visited on Pete Lane, the racer is obliged to reduce the speed of up to 100 km / h (on free races up to 60 km / h).
+Preposition:  2 - на - on
+Answer:  Заезжая :  Baking
+Output:  Заезжая :  Baking  Result:  True
+
+Example: 2887
+Russian:  Заезжая на пит-лейн, гонщик обязан снизить скорость до 100 км/ч (на свободных заездах до 60 км/ч).
+English:  Having visited on Pete Lane, the racer is obliged to reduce the speed of up to 100 km / h (on free races up to 60 km / h).
+Preposition:  13 - на - on
+Answer:  60 :  60.
+Output:  км/ч :  KM / C.  Result:  False
+
+Example: 2888
+Russian:  Исключение составляет гонка в Монако, где скорость проезда по пит-лейн ограничена отметкой в 80 км/ч.
+English:  The exception is the race in Monaco, where the speed of travel on Pit Lane is limited to 80 km / h.
+Preposition:  4 - в - in
+Answer:  гонка :  race
+Output:  составляет :  make up  Result:  False
+
+Example: 2889
+Russian:  Исключение составляет гонка в Монако, где скорость проезда по пит-лейн ограничена отметкой в 80 км/ч.
+English:  The exception is the race in Monaco, where the speed of travel on Pit Lane is limited to 80 km / h.
+Preposition:  14 - в - in
+Answer:  отметкой :  Mark
+Output:  отметкой :  Mark  Result:  True
+
+Example: 2890
+Russian:  Нарушивший это правило получает штраф в виде проезда по пит-лейн.
+English:  Violated this rule gets a fine in the form of travel on Pete Lane.
+Preposition:  6 - в - in
+Answer:  штраф :  fine
+Output:  штраф :  fine  Result:  True
+
+Example: 2891
+Russian:  На пит-стоп пилот останавливается напротив боксов своей команды.
+English:  On Pete Stop, the pilot stops opposite the boxes of his team.
+Preposition:  1 - На - On
+Answer:  останавливается :  stops
+Output:  останавливается :  stops  Result:  True
+
+Example: 2892
+Russian:  В этот момент механики меняют резину, проверяют состояние болида, меняют поврежденные элементы и проводят другие необходимые модификации.
+English:  At this point, the mechanics change rubber, check the condition of the car, change damaged elements and conduct other necessary modifications.
+Preposition:  1 - В - IN
+Answer:  меняют :  Change
+Output:  меняют :  Change  Result:  True
+
+Example: 2893
+Russian:  В момент пит-стопа особенно заметна командная работа в Формуле-1: механики действуют быстро и слаженно, обычно пит-стоп занимает менее 5 секунд.
+English:  At the time of Pit Stop, teamwork in Formula 1 is especially noticeable: mechanics act quickly and more simultaneously, usually pit stop takes less than 5 seconds.
+Preposition:  1 - В - IN
+Answer:  заметна :  Noted
+Output:  действуют :  act  Result:  False
+
+Example: 2894
+Russian:  В момент пит-стопа особенно заметна командная работа в Формуле-1: механики действуют быстро и слаженно, обычно пит-стоп занимает менее 5 секунд.
+English:  At the time of Pit Stop, teamwork in Formula 1 is especially noticeable: mechanics act quickly and more simultaneously, usually pit stop takes less than 5 seconds.
+Preposition:  8 - в - in
+Answer:  работа :  Work
+Output:  действуют :  act  Result:  False
+
+Example: 2895
+Russian:  Пилоты, занявшие первое, второе и третье места, поднимаются на подиум и получают кубки.
+English:  Pilots that took the first, second and third places rise to the podium and receive Cups.
+Preposition:  12 - на - on
+Answer:  поднимаются :  rise
+Output:  поднимаются :  rise  Result:  True
+
+Example: 2896
+Russian:  В честь победителя звучит гимн его страны, а затем - гимн страны, за которую выступает команда победителя.
+English:  In honor of the winner, the anthem of his country sounds, and then the anthem of the country for which the winner team speaks.
+Preposition:  1 - В - IN
+Answer:  звучит :  Sounds
+Output:  звучит :  Sounds  Result:  True
+
+Example: 2897
+Russian:  В честь победителя звучит гимн его страны, а затем - гимн страны, за которую выступает команда победителя.
+English:  In honor of the winner, the anthem of his country sounds, and then the anthem of the country for which the winner team speaks.
+Preposition:  15 - , - .
+Answer:  которую :  which
+Output:  выступает :  Speaker  Result:  False
+
+Example: 2898
+Russian:  Затем следует традиционный душ из шампанского: пилоты обливают друг друга шампанским, поздравляя с успешно проведенным Гран-при.
+English:  Then the traditional shower of champagne follows: the pilots pour each other with champagne, congratulating the successfully spent Grand Prix.
+Preposition:  5 - из - of
+Answer:  душ :  shower
+Output:  душ :  shower  Result:  True
+
+Example: 2899
+Russian:  Затем следует традиционный душ из шампанского: пилоты обливают друг друга шампанским, поздравляя с успешно проведенным Гран-при.
+English:  Then the traditional shower of champagne follows: the pilots pour each other with champagne, congratulating the successfully spent Grand Prix.
+Preposition:  15 - с - from
+Answer:  поздравляя :  congratulations
+Output:  поздравляя :  congratulations  Result:  True
+
+Example: 2900
+Russian:  В Бахрейне вместо шампанского используется безалкогольный газированный напиток, из-за исламских ограничений.
+English:  In Bahrain, instead of champagne uses a non-alcoholic carbonated drink, due to Islamic restrictions.
+Preposition:  1 - В - IN
+Answer:  используется :  Used
+Output:  используется :  Used  Result:  True
+
+Example: 2901
+Russian:  В исключительных случаях, когда продолжение соревнования угрожает жизни или здоровью пилотов, гонка может быть остановлена досрочно.
+English:  In exceptional cases, when the continuation of the competition threatens the life or health of the pilots, the race can be stopped early.
+Preposition:  1 - В - IN
+Answer:  может :  can
+Output:  угрожает :  Threatens  Result:  False
+
+Example: 2902
+Russian:  При этом на трассе вывешивается красный флаг.
+English:  At the same time, a red flag is hung on the track.
+Preposition:  3 - на - on
+Answer:  вывешивается :  hangs out
+Output:  вывешивается :  hangs out  Result:  True
+
+Example: 2903
+Russian:  Вопрос о возобновлении гонки в этом случае решается дирекцией Гран-при.
+English:  The question of renewing the race in this case is solved by the Directorate of the Grand Prix.
+Preposition:  5 - в - in
+Answer:  решается :  decides
+Output:  решается :  decides  Result:  True
+
+Example: 2904
+Russian:  Если же к моменту остановки гонки гонщики не прошли 75% дистанции, и гонка не возобновляется, то гонщики получают половину от положенных им очков.
+English:  If, by the time of stopping the race, the riders did not pass 75% of the distance, and the race is not renewed, then the riders receive half of the points they put.
+Preposition:  3 - к - to
+Answer:  прошли :  Passed
+Output:  получают :  Receive  Result:  False
+
+Example: 2905
+Russian:  Если же к моменту остановки гонки гонщики не прошли 75% дистанции, и гонка не возобновляется, то гонщики получают половину от положенных им очков.
+English:  If, by the time of stopping the race, the riders did not pass 75% of the distance, and the race is not renewed, then the riders receive half of the points they put.
+Preposition:  23 - от - from
+Answer:  половину :  Half
+Output:  половину :  Half  Result:  True
+
+Example: 2906
+Russian:  Каждый сезон Формулы-1 является соревнованием пилотов за чемпионат мира, а конструкторов - за Кубок конструкторов.
+English:  Each season of Formula 1 is the pilot competition for the World Cup, and designers for the Cup of Designers.
+Preposition:  9 - за - behind
+Answer:  соревнованием :  Competition
+Output:  пилотов :  pilots  Result:  False
+
+Example: 2907
+Russian:  Каждый сезон Формулы-1 является соревнованием пилотов за чемпионат мира, а конструкторов - за Кубок конструкторов.
+English:  Each season of Formula 1 is the pilot competition for the World Cup, and designers for the Cup of Designers.
+Preposition:  16 - - - -
+Answer:  _ :  _
+Output:  - :  -  Result:  False
+
+Example: 2908
+Russian:  На протяжении сезона очки, набранные пилотом на Гран-при, складываются с очками, которые уже есть на его счету.
+English:  Throughout the season, the glasses scored by the pilot on the Grand Prix are folded with glasses that already exist on his account.
+Preposition:  1 - На - On
+Answer:  складываются :  folded
+Output:  складываются :  folded  Result:  True
+
+Example: 2909
+Russian:  На протяжении сезона очки, набранные пилотом на Гран-при, складываются с очками, которые уже есть на его счету.
+English:  Throughout the season, the glasses scored by the pilot on the Grand Prix are folded with glasses that already exist on his account.
+Preposition:  8 - на - on
+Answer:  набранные :  Scored
+Output:  складываются :  folded  Result:  False
+
+Example: 2910
+Russian:  На протяжении сезона очки, набранные пилотом на Гран-при, складываются с очками, которые уже есть на его счету.
+English:  Throughout the season, the glasses scored by the pilot on the Grand Prix are folded with glasses that already exist on his account.
+Preposition:  12 - с - from
+Answer:  складываются :  folded
+Output:  складываются :  folded  Result:  True
+
+Example: 2911
+Russian:  На протяжении сезона очки, набранные пилотом на Гран-при, складываются с очками, которые уже есть на его счету.
+English:  Throughout the season, the glasses scored by the pilot on the Grand Prix are folded with glasses that already exist on his account.
+Preposition:  18 - на - on
+Answer:  очками :  glasses
+Output:  счету :  account  Result:  False
+
+Example: 2912
+Russian:  Конструктор получает за каждую гонку все очки, набранные обоими пилотами. команды.
+English:  The designer receives all the glasses scored with both pilots for each race. Teams.
+Preposition:  3 - за - behind
+Answer:  получает :  Gets
+Output:  получает :  Gets  Result:  True
+
+Example: 2913
+Russian:  В конце сезона производится подсчет очков и выявляются победители в обеих номинациях.
+English:  At the end of the season, points are calculated and winners are detected in both nominations.
+Preposition:  1 - В - IN
+Answer:  производится :  produced
+Output:  производится :  produced  Result:  True
+
+Example: 2914
+Russian:  В конце сезона производится подсчет очков и выявляются победители в обеих номинациях.
+English:  At the end of the season, points are calculated and winners are detected in both nominations.
+Preposition:  10 - в - in
+Answer:  победители :  Winners
+Output:  выявляются :  Receive  Result:  False
+
+Example: 2915
+Russian:  Спортивная рабочая группа Формулы-1 приняла новую систему начисления очков на 2010 год.
+English:  The Formula 1 sports team adopted a new scrutinization system for 2010.
+Preposition:  12 - на - on
+Answer:  систему :  System
+Output:  очков :  Points  Result:  False
+
+Example: 2916
+Russian:  Согласно этой системе, очки получают первые 10 гонщиков, за победу начисляется 25 очков.
+English:  According to this system, the first 10 riders receive glasses, 25 points are accrued for victory.
+Preposition:  11 - за - behind
+Answer:  начисляется :  Accrued
+Output:  начисляется :  Accrued  Result:  True
+
+Example: 2917
+Russian:  Принятие новой системы вызвано увеличением числа машин на стартовом поле с 20 до 24, а также желанием увеличить разницу между первым и вторым местом.
+English:  The adoption of a new system is caused by an increase in the number of cars on the starting field from 20 to 24, as well as the desire to increase the difference between the first and second place.
+Preposition:  8 - на - on
+Answer:  машин :  machines
+Output:  числа :  numbers  Result:  False
+
+Example: 2918
+Russian:  Принятие новой системы вызвано увеличением числа машин на стартовом поле с 20 до 24, а также желанием увеличить разницу между первым и вторым местом.
+English:  The adoption of a new system is caused by an increase in the number of cars on the starting field from 20 to 24, as well as the desire to increase the difference between the first and second place.
+Preposition:  11 - с - from
+Answer:  увеличением :  Increase
+Traceback (most recent call last):
+  File "torchnet.py", line 507, in <module>
+    main_method()
+  File "torchnet.py", line 77, in main_method
+    annotatedtest(test_set, test_map, annotation, offset)
+  File "torchnet.py", line 438, in annotatedtest
+    print('Output: ', ru_pred,': ', ru_translate(ru_pred), ' Result: ', acc.item())
+  File "torchnet.py", line 98, in ru_translate
+    return translator.translate(sentence_ru, src="ru", dest= "en").text
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 172, in translate
+    data = self._translate(text, dest, src)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 81, in _translate
+    data = utils.format_json(r.text)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/utils.py", line 62, in format_json
+    converted = legacy_format_json(original)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/utils.py", line 54, in legacy_format_json
+    converted = json.loads(text)
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/share/pkg.7/python3/3.7.7/install/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

@@ -1,0 +1,129 @@
+/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+TRAINING:Started at: 2020-10-26 00:10:10.767250  Learning Rate: 0.0001  Epochs: 75 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 67
+Annotated Test on ru_syntagrus-ud-test.conllu
+Error: Different first words. 4.757862091064453 versus 5.01363
+Russian:  В отличие от дорожных автомобилей, шины для болидов Формулы-1 не рассчитаны на долговечность (один комплект рассчитан не более чем на 200 км), ключевыми свойствами являются прочность, малый вес и сцепление с трассой.
+English:  Unlike road vehicles, tires for cars Formula 1 is not designed for durability (calculated one set of not more than 200 km), the key features are robustness, low weight and grip.
+Preposition:  1 - В - AT
+Answer:  болидов :  fireballs
+Output:  болидов :  fireballs  Result:  True
+Correct Sentence: Same first word
+Russian:  В отличие от дорожных автомобилей, шины для болидов Формулы-1 не рассчитаны на долговечность (один комплект рассчитан не более чем на 200 км), ключевыми свойствами являются прочность, малый вес и сцепление с трассой.
+English:  Unlike road vehicles, tires for cars Formula 1 is not designed for durability (calculated one set of not more than 200 km), the key features are robustness, low weight and grip.
+Preposition:  3 - от - from
+Answer:  один :  one
+Output:  один :  one  Result:  True
+Correct Sentence: Same first word
+Russian:  В отличие от дорожных автомобилей, шины для болидов Формулы-1 не рассчитаны на долговечность (один комплект рассчитан не более чем на 200 км), ключевыми свойствами являются прочность, малый вес и сцепление с трассой.
+English:  Unlike road vehicles, tires for cars Formula 1 is not designed for durability (calculated one set of not more than 200 km), the key features are robustness, low weight and grip.
+Preposition:  15 - на - on
+Answer:  - :  -
+Output:  - :  -  Result:  True
+Error: Different first words. 4.843875408172607 versus 5.01363
+Russian:  В отличие от дорожных автомобилей, шины для болидов Формулы-1 не рассчитаны на долговечность (один комплект рассчитан не более чем на 200 км), ключевыми свойствами являются прочность, малый вес и сцепление с трассой.
+English:  Unlike road vehicles, tires for cars Formula 1 is not designed for durability (calculated one set of not more than 200 km), the key features are robustness, low weight and grip.
+Preposition:  24 - на - on
+Answer:  от :  from
+Output:  от :  from  Result:  True
+Error: Different first words. 4.843875408172607 versus 5.01363
+Russian:  В отличие от дорожных автомобилей, шины для болидов Формулы-1 не рассчитаны на долговечность (один комплект рассчитан не более чем на 200 км), ключевыми свойствами являются прочность, малый вес и сцепление с трассой.
+English:  Unlike road vehicles, tires for cars Formula 1 is not designed for durability (calculated one set of not more than 200 km), the key features are robustness, low weight and grip.
+Preposition:  38 - с - from
+Answer:  шины :  bus
+Output:  шины :  bus  Result:  True
+Error: Different first words. 4.843875408172607 versus 5.086087
+Russian:  Для изменения жесткости резины регулируются пропорции добавляемых в нее компонентов: углерода, серы и нефти.
+English:  To change a rubber hardness regulated proportion added of its components: the carbon, sulfur and oil.
+Preposition:  8 - в - at
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Error: Different first words. 4.843875408172607 versus 4.487755
+Russian:  Чем мягче резина, тем выше ее сцепление с асфальтом, но тем быстрее она изнашивается.
+English:  The softer the tire, the greater its grip on the asphalt, but the faster it wears out.
+Preposition:  9 - с - from
+Answer: Index outside sentence. Interesting....
+Output: Index outside of sentence Result:  True
+Error: Different first words. 4.862917900085449 versus 5.1152725
+Russian:  До 2009 г. в Формуле-1 применяли "псевдослики" - шины с 4-мя продольными канавками.
+English:  Prior to 2009, Formula 1 used "psevdosliki" - tires with 4 longitudinal grooves.
+Preposition:  4 - в - at
+Answer:  - :  -
+Output:  - :  -  Result:  True
+Error: Different first words. 4.862917900085449 versus 5.1152725
+Russian:  До 2009 г. в Формуле-1 применяли "псевдослики" - шины с 4-мя продольными канавками.
+English:  Prior to 2009, Formula 1 used "psevdosliki" - tires with 4 longitudinal grooves.
+Preposition:  14 - с - from
+Answer:  4-мя :  By 4
+Output:  4-мя :  By 4  Result:  True
+Error: Different first words. 5.013629913330078 versus 4.836969
+Russian:  Они были введены вместо сликов в 1998 году с целью снижения скоростей путем уменьшения сцепления с трассой.
+English:  They were introduced instead of slicks in 1998 in order to reduce speeds by reducing grip.
+Preposition:  6 - в - at
+Answer:  в :  at
+Output:  в :  at  Result:  True
+Error: Different first words. 5.013629913330078 versus 4.836969
+Russian:  Они были введены вместо сликов в 1998 году с целью снижения скоростей путем уменьшения сцепления с трассой.
+English:  They were introduced instead of slicks in 1998 in order to reduce speeds by reducing grip.
+Preposition:  9 - с - from
+Answer:  уменьшения :  diminishing
+Output:  уменьшения :  diminishing  Result:  True
+Error: Different first words. 4.757862091064453 versus 4.836969
+Russian:  Они были введены вместо сликов в 1998 году с целью снижения скоростей путем уменьшения сцепления с трассой.
+English:  They were introduced instead of slicks in 1998 in order to reduce speeds by reducing grip.
+Preposition:  16 - с - from
+Answer:  снижения :  decrease
+Output:  снижения :  decrease  Result:  True
+Error: Different first words. 4.757862091064453 versus 5.01363
+Russian:  В 2009 г. прижимная сила антикрыльев была значительно уменьшена, для компенсации потери сцепления были вновь введены слики.
+English:  In 2009, the downforce rear wings was significantly reduced, to compensate for the loss of grip were reintroduced slick tires.
+Preposition:  1 - В - AT
+Answer:  вновь :  again
+Output:  вновь :  again  Result:  True
+Error: Different first words. 0.7328659296035767 versus 4.4444094
+Russian:  Состав газовой смеси в шинах никак не регламентируется.
+English:  The composition of the gas mixture in the tire is not regulated.
+Preposition:  4 - в - at
+Answer:  не :  not
+Output:  не :  not  Result:  True
+Error: Different first words. 5.013629913330078 versus 5.167667
+Russian:  Здесь команды вольны выбирать любые газы в любых пропорциях.
+English:  Teams are free to choose where any gases in all proportions.
+Preposition:  7 - в - at
+Answer:  любые :  any
+Output:  любые :  any  Result:  True
+Error: Different first words. 5.013629913330078 versus 5.19529
+Russian:  Однако, в ходе шпионского скандала появилась информация, что шины могут быть заполнены хладоном.
+English:  However, in the spy scandal was reported that the tires can be filled chladone.
+Preposition:  3 - в - at
+Answer:  шпионского :  Spyware
+Output:  шпионского :  Spyware  Result:  True
+Error: Different first words. 5.013629913330078 versus 4.6316233
+Russian:  Размер передних и задних шин в ходе эволюции гоночных автомобилей Формулы-1 постоянно менялся, ныне передние и задние шины разные, размер передних шин 245/55 R13, задних 270/55 R13.
+English:  The size of the front and rear tires during the evolution of racing cars of Formula 1 is constantly changing, now the front and rear tires are different, the size of the front tires 245/55 R13, rear 270/55 R13.
+Preposition:  6 - в - at
+Answer:  эволюции :  evolution
+Output:  эволюции :  evolution  Result:  True
+Error: Different first words. 4.918295860290527 versus 2.2841597
+Russian:  Корни Формулы-1 лежат в чемпионате Европы автогонок Гран-при, который проводился в 1920-е и 1930-е годы.
+English:  The roots of the Formula 1 lie in the European Championship racing Grand Prix, which took place in the 1920s and 1930s.
+Preposition:  6 - в - at
+Answer:  лежат :  lie
+Output:  лежат :  lie  Result:  True
+Error: Different first words. 4.063622951507568 versus 2.2841597
+Russian:  Корни Формулы-1 лежат в чемпионате Европы автогонок Гран-при, который проводился в 1920-е и 1930-е годы.
+English:  The roots of the Formula 1 lie in the European Championship racing Grand Prix, which took place in the 1920s and 1930s.
+Preposition:  14 - в - at
+Answer:  чемпионате :  championship
+Output:  чемпионате :  championship  Result:  True
+Error: Different first words. 4.063622951507568 versus 4.8796887
+Russian:  Организации, участвующие в Гран-при, сформулировали первый регламент проведения чемпионата мира перед Второй мировой войной и запланировали его введение в действие на 1941 год, но вплоть до 1946 года эти правила не были формализованы окончательно.
+English:  Organizations participating in the Grand Prix, first formulated the rules of the World Cup before the Second World War and its planned entry into force on 1941, but until 1946, these rules were not formalized completely.
+Preposition:  4 - в - at
+Answer:  чемпионата :  championship
+Output:  чемпионата :  championship  Result:  True
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  89.97434689283284 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  49.75575715282624 %
+Completed at: 2020-10-26 11:15:40.386815
