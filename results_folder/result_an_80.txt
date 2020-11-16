@@ -1,0 +1,24 @@
+Testing on a Loaded Network. Started at:  2020-11-09 16:52:54.454635 Testing on ru_syntagrus-ud-test.conllu Data ID: 80
+Annotation Offset: 5200
+Example: 5200
+Russian:  В 1919 году Ростислав вместе с матерью покинул Россию и уехал сначала в Румынию, а потом во Францию, где закончил Высшую школу дипломатических и коммерческих наук и в 1931 году поступил на службу в Алжирский банк.
+Traceback (most recent call last):
+  File "torchnet.py", line 513, in <module>
+    main_method()
+  File "torchnet.py", line 65, in main_method
+    loadtesting()
+  File "torchnet.py", line 96, in loadtesting
+    annotatedtest(test_set, test_map, annotation, offset)
+  File "torchnet.py", line 444, in annotatedtest
+    print('English: ', ru_translate(ru_sent))
+  File "torchnet.py", line 115, in ru_translate
+    return translator.translate(sentence_ru, src="ru", dest= "en").text
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 172, in translate
+    data = self._translate(text, dest, src)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/client.py", line 75, in _translate
+    token = self.token_acquirer.do(text)
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/gtoken.py", line 200, in do
+    self._update()
+  File "/usr3/graduate/wlehner/.local/lib/python3.7/site-packages/googletrans/gtoken.py", line 65, in _update
+    code = unicode(self.RE_TKK.search(r.text).group(1)).replace('var ', '')
+AttributeError: 'NoneType' object has no attribute 'group'

@@ -3,9 +3,9 @@
 module load python3
 
 #$ -P lxcompl
-#$ -N test79
+#$ -N train85
 #$ -j y
-#$ -o result_an_79.txt
+#$ -o result_train85.txt
 #$ -l h_rt=12:00:00
 #$ -m ea
 

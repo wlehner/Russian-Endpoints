@@ -23,10 +23,11 @@ fiction_root= 'sample_ar/TEXTS/Fiction/'
 development_set= 'ru_syntagrus-ud-dev.conllu'
 testing_set= 'ru_syntagrus-ud-test.conllu'
 training_set= 'ru_syntagrus-ud-train.conllu'
-output_number = '79'
+output_number = '85'
 graphlossout  = 'pointstoplot' + output_number
 sentencemap = 'sentmap' + output_number 
 testexamples = 'testexam' + output_number
+picklenet = 'torchnet150_85.pkl'
 graph_bool = False
 test_bool = False 
 
@@ -37,10 +38,10 @@ output_size = 50 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 hidden_layers = 1
 offset = 5200
-annotation = 200
+annotation = 50
 
 ##NN Stuff
-num_epochs = 20
+num_epochs = 150
 #batch_size = 32
 learning_rate = 0.0001 #Default 1E-3
 weight_decay = 0.00001 #Less than lr?
@@ -60,8 +61,11 @@ log_freq = 100000
 shuffle = True
 test_index = []
 
-
 def main_method():
+    main_training()
+    #loadtesting()
+
+def main_training():
     print('TRAINING:Started at:', datetime.now(), ' Learning Rate:', learning_rate, ' Epochs:', num_epochs, 
           'Hidden Layer Size:', hidden_size, 'Number of Hidden Layers:', hidden_layers, 'Weight Decay:', weight_decay, 
           'Training with:', filefortraining, 'and' , filefordev, 'Data ID:', output_number, 
@@ -73,14 +77,28 @@ def main_method():
     train_set = train_set + dev_set
     #netload('torchnet.pkl')
     train(train_set)
-    print('Annotated Test on', filefortesting)
-    annotatedtest(test_set, test_map, annotation, offset)
+    #print('Annotated Test on', filefortesting)
+    #annotatedtest(test_set, test_map, annotation, offset)
     print()
     print('Testing on', filefortraining)
     test(train_set)
     print('Testing on', filefortesting)
     test(test_set)
     print('Completed at:', datetime.now())
+
+def loadtesting():
+    print('Testing on a Loaded Network. Started at: ', datetime.now(), 'Testing on', filefortesting, 'Data ID:', output_number)
+    netload('torchnet.pkl')
+    test_set, test_map= processconllu_save(filefortesting)
+    dev_set = processconllu(filefordev)
+    train_set = processconllu(filefortraining)
+    train_set = train_set + dev_set
+    print('Annotation Offset:', offset)
+    annotatedtest(test_set, test_map, annotation, offset)
+    print('Testing on', filefortesting)
+    test(test_set)
+    print('Tested on Training Data:', filefortraining, 'and', filefordev)
+    test(train_set) 
 
 def divide_set(set):
     tenth_size = round(len(set)/10)
@@ -98,7 +116,11 @@ def ru_translate(sentence_ru):
     return translator.translate(sentence_ru, src="ru", dest= "en").text
 
 def ru_trans_conllu(sentence_ru):
-    return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
+    translation = translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
+    if translation:
+        return translation
+    else:
+        return "GTrans Error"
 
 def find_sent(sentid, corpus):
     for sentence in corpus:
@@ -376,7 +398,7 @@ def train(examplelist):
             if (i+1) % log_freq == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Avg Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), losstotal/log_freq))
                 losstotal = 0
-    torch.save(net.state_dict(), 'torchnet.pkl')
+    torch.save(net.state_dict(), picklenet)
     if graph_bool:
         pickle.dump(losscount_list, open(graphlossout, "wb"))#Loss Data is Saved
 
@@ -404,6 +426,8 @@ def annotatedtest(testlist, testmap,  limit, off_set):
         print('Example:', (i+off_set))
         output = net(question.float())
         pred = output.max(0)[1]
+        poss = np.argpartition(output.detach().numpy(), -4)[-4:]
+        pred_num = output
         total += 1
         acc = torch.eq(pred, answer)
         if acc:
@@ -439,6 +463,14 @@ def annotatedtest(testlist, testmap,  limit, off_set):
         else:
             print('Output: Index outside of sentence', 'Result: ', acc.item())
         print()
+        for x in poss:
+            poss_index = x-1
+            if (poss_index < len(sentence)):
+                ru_pred = sentence[poss_index]['form']
+                print('Possible: ', ru_pred,': ', ru_translate(ru_pred), ' Result: ', acc.item())
+            else:
+                print('Possible: Index outside of sentence', 'Result: ', acc.item())
+            print('Rated at:', output[x])
 
 def findprep(question):
     for i in range(0, input_size, 11):
@@ -482,27 +514,6 @@ def CrossEntropyLoss_2(x, y):
 #https://www.programcreek.com/python/example/107644/torch.nn.CrossEntropyLoss
 #https://github.com/asappresearch/sru/blob/master/classification/train_classifier.py
 #Formating Help: https://github.com/htfy96/future-price-predictor/blob/master/model/cnnBeta.py
-
-
-def teststuff(file):
-    corpus = parse(open(file, 'r',encoding ="utf-8").read())
-#    corpustree = parse_tree(open(file, 'r',encoding ="utf-8").read())
-    sentence = corpus[12]
-#    sentencetree = corpustree[12]
-#    sentencetree.print_tree()
-#    mod = searchtree(sentencetree,8)
-#    print(ru_translate(sentence))
-#    print('Modified Word: ', mod.token['lemma'], ' - ', mod.token['id'])
-#    print('Question: ', makequestion(sentence,8))
-#    print('Answer: ', makeanswer(sentencetree,8))
-#    print(sentence[3])
-#    print(sentence[1]['lemma'], ': ',processpos(sentence[1]))
-    for word in sentence:
-        print (word)
-        if 'feats' in word:
-            print ('yes')
-        else:
-            print('no')
             
 main_method()
 
