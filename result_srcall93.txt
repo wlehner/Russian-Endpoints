@@ -1,0 +1,7 @@
+TRAINING:Started at: 2021-01-18 10:02:49.428717  Goal: src  Prepositions: All  Learning Rate: 0.0001  Epochs: 100 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 93
+Training Set Length 59945
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  91.47718742180332 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  50.53561863952866 %
+Completed at: 2021-01-19 01:14:44.962003

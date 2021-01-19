@@ -1,0 +1,84 @@
+TRAINING:Started at: 2021-01-01 09:16:35.105318  Goal: obj  Learning Rate: 0.0001  Epochs: 100 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 85 Annotations are offset by 100
+Training Set Length 39886
+Annotated Test on ru_syntagrus-ud-test.conllu
+Example: 100
+Russian:  В первый же день запуска проекта - 31 октября - этой услугой воспользовались граждане США и Германии, а Армения стала второй страной в мире, выдающей визы иностранным гражданам через всемирную паутину.
+English:  Translation Failed
+Preposition:  24 - в - Translation Failed
+Answer:  страной :  Translation Failed
+Output:  выдающей :  Translation Failed  Result:  False
+
+Possible:  иностранным :  Translation Failed  Result:  False
+Rated at: tensor(-162.9344, grad_fn=<SelectBackward>)
+Possible:  страной :  Translation Failed  Result:  False
+Rated at: tensor(-158.9855, grad_fn=<SelectBackward>)
+Possible:  выдающей :  Translation Failed  Result:  False
+Rated at: tensor(-143.6510, grad_fn=<SelectBackward>)
+Possible:  визы :  Translation Failed  Result:  False
+Rated at: tensor(-153.6017, grad_fn=<SelectBackward>)
+Example: 101
+Russian:  Вместе с тем, из-за низкого уровня жизни и условий работы наблюдается отток специалистов и наиболее одаренной молодежи.
+English:  Translation Failed
+Preposition:  2 - с - Translation Failed
+Answer:  Вместе :  Translation Failed
+Output:  тем :  Translation Failed  Result:  False
+
+Possible: Index outside of sentence Result:  False
+Rated at: tensor(-127.6110, grad_fn=<SelectBackward>)
+Possible:  Вместе :  Translation Failed  Result:  False
+Rated at: tensor(-124.8687, grad_fn=<SelectBackward>)
+Possible:  тем :  Translation Failed  Result:  False
+Rated at: tensor(-112.6117, grad_fn=<SelectBackward>)
+Possible:  отток :  Translation Failed  Result:  False
+Rated at: tensor(-122.7175, grad_fn=<SelectBackward>)
+Example: 102
+Russian:  Для решения кадровых проблем армянский офис "LEDA Systems" совместно с Ереванским инженерным университетом открыл новый факультет, где компания обучает необходимых для неё специалистов.
+English:  Translation Failed
+Preposition:  12 - с - Translation Failed
+Answer:  совместно :  Translation Failed
+Output:  офис :  Translation Failed  Result:  False
+
+Possible:  обучает :  Translation Failed  Result:  False
+Rated at: tensor(-235.3557, grad_fn=<SelectBackward>)
+Possible:  Systems :  Translation Failed  Result:  False
+Rated at: tensor(-232.8661, grad_fn=<SelectBackward>)
+Possible:  офис :  Translation Failed  Result:  False
+Rated at: tensor(-226.0961, grad_fn=<SelectBackward>)
+Possible:  открыл :  Translation Failed  Result:  False
+Rated at: tensor(-231.7988, grad_fn=<SelectBackward>)
+Example: 103
+Russian:  В 2001 году американский исследовательский центр "Херитидж Фаундейншн" оценил Армению как одну из десяти стран, которые добились наибольшего роста в области экономической свободы.
+English:  Translation Failed
+Preposition:  15 - из - Translation Failed
+Answer:  одну :  Translation Failed
+Output:  добились :  Translation Failed  Result:  False
+
+Possible:  одну :  Translation Failed  Result:  False
+Rated at: tensor(-200.6702, grad_fn=<SelectBackward>)
+Possible:  роста :  Translation Failed  Result:  False
+Rated at: tensor(-196.0178, grad_fn=<SelectBackward>)
+Possible:  которые :  Translation Failed  Result:  False
+Rated at: tensor(-195.0746, grad_fn=<SelectBackward>)
+Possible:  добились :  Translation Failed  Result:  False
+Rated at: tensor(-191.9431, grad_fn=<SelectBackward>)
+Example: 104
+Russian:  В 2001 году американский исследовательский центр "Херитидж Фаундейншн" оценил Армению как одну из десяти стран, которые добились наибольшего роста в области экономической свободы.
+English:  Translation Failed
+Preposition:  23 - в - Translation Failed
+Answer:  роста :  Translation Failed
+Output:  роста :  Translation Failed  Result:  True
+
+Possible:  которые :  Translation Failed  Result:  True
+Rated at: tensor(-215.6418, grad_fn=<SelectBackward>)
+Possible:  свободы :  Translation Failed  Result:  True
+Rated at: tensor(-211.9169, grad_fn=<SelectBackward>)
+Possible:  роста :  Translation Failed  Result:  True
+Rated at: tensor(-203.1813, grad_fn=<SelectBackward>)
+Possible:  добились :  Translation Failed  Result:  True
+Rated at: tensor(-209.1270, grad_fn=<SelectBackward>)
+
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  95.13613799328085 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  45.41368743615934 %
+Completed at: 2021-01-01 19:44:24.639595

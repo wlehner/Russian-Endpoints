@@ -1,0 +1,7 @@
+TRAINING:Started at: 2020-11-16 01:57:32.939019  Learning Rate: 0.0001  Epochs: 50 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 82 Annotations are offset by 5200
+
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  85.88555573006649 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  50.80251221214236 %
+Completed at: 2020-11-16 09:51:55.396388

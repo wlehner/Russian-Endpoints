@@ -1,0 +1,7 @@
+TRAINING:Started at: 2021-01-02 23:57:03.695408  Goal: obj  Learning Rate: 0.0001  Epochs: 100 Hidden Layer Size: 200 Number of Hidden Layers: 1 Weight Decay: 1e-05 Training with: ru_syntagrus-ud-train.conllu and ru_syntagrus-ud-dev.conllu Data ID: 87
+Training Set Length 58042
+Testing on ru_syntagrus-ud-train.conllu
+Accuracy of the network:  97.52248371868647 %
+Testing on ru_syntagrus-ud-test.conllu
+Accuracy of the network:  73.0242214532872 %
+Completed at: 2021-01-03 15:52:50.542798

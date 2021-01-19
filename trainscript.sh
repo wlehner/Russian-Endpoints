@@ -3,10 +3,10 @@
 module load python3
 
 #$ -P lxcompl
-#$ -N train85
+#$ -N train94
 #$ -j y
-#$ -o result_train85.txt
-#$ -l h_rt=12:00:00
+#$ -o result_objall94.txt
+#$ -l h_rt=24:00:00
 #$ -m ea
 
 python torchnet.py

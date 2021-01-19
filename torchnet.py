@@ -17,31 +17,34 @@ import torch.nn.functional as f
 from datetime import datetime
 from googletrans import Translator
 
+goal = 'obj'#srcobj
+
+
 #Files
 corpus_root= 'sample_ar/TEXTS'
 fiction_root= 'sample_ar/TEXTS/Fiction/'
 development_set= 'ru_syntagrus-ud-dev.conllu'
 testing_set= 'ru_syntagrus-ud-test.conllu'
 training_set= 'ru_syntagrus-ud-train.conllu'
-output_number = '85'
+output_number = '94'
 graphlossout  = 'pointstoplot' + output_number
 sentencemap = 'sentmap' + output_number 
 testexamples = 'testexam' + output_number
-picklenet = 'torchnet150_85.pkl'
-graph_bool = False
+graph_bool = True
 test_bool = False 
 
 #Dimensions
-input_size = 450 #154
+input_size = 440 #154
 hidden_size = 200  #154
-output_size = 50 #Output Size and sentence length need to be seperated
+output_size = 45 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 hidden_layers = 1
-offset = 5200
-annotation = 50
+offset = 100
+annotation = 5
+trans_errors = 0
 
 ##NN Stuff
-num_epochs = 150
+num_epochs = 100
 #batch_size = 32
 learning_rate = 0.0001 #Default 1E-3
 weight_decay = 0.00001 #Less than lr?
@@ -52,8 +55,19 @@ filefortraining = training_set
 filefordev = development_set
 filefortesting = testing_set
 
+#Prepositions
+orig  = ['\u0432','\u043D\u0430','\u0437\u0430','\u043A','\u0438\u0437','\u0441','\u043E\u0442'] 
+#v, na, za, k, uz, c, ot
+fore = ['\u0432','\u043d\u0430','\u043a','\u043f\u043e\u0434','\u0437\u0430',
+               '\u043f\u0435\u0440\u0435\u0434','\u043d\u0430\u0434','\u0443']
+#v, na, k, pod, za, pered, nad, y
+allprep = ['\u0432','\u043D\u0430','\u0438\u0437','\u0441','\u043E\u0442','\u043a',
+           '\u043f\u043e\u0434','\u0437\u0430','\u043f\u0435\u0440\u0435\u0434','\u043d\u0430\u0434','\u0443']
+#v, na,  uz, c, ot, k, pod, za, pered, nad, y 
+prepositions = allprep
+prepstring = 'All'
+
 #Other
-prepositions = ["в","на","за","к","из","с","от"]
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
 translator = Translator()
@@ -61,25 +75,25 @@ log_freq = 100000
 shuffle = True
 test_index = []
 
+picklenet = 'tnet_' +str(num_epochs) +'hl' +str(hidden_size) +'x' +str(hidden_layers)  +goal + output_number + '.pkl'
+
 def main_method():
     main_training()
     #loadtesting()
 
 def main_training():
-    print('TRAINING:Started at:', datetime.now(), ' Learning Rate:', learning_rate, ' Epochs:', num_epochs, 
+    print('TRAINING:Started at:', datetime.now(), ' Goal:', goal,' Prepositions:', prepstring, ' Learning Rate:', learning_rate, ' Epochs:', num_epochs, 
           'Hidden Layer Size:', hidden_size, 'Number of Hidden Layers:', hidden_layers, 'Weight Decay:', weight_decay, 
-          'Training with:', filefortraining, 'and' , filefordev, 'Data ID:', output_number, 
-          'Annotations are offset by', offset)
+          'Training with:', filefortraining, 'and' , filefordev, 'Data ID:', output_number)
     dev_set = processconllu(filefordev)
     train_set = processconllu(filefortraining)
     test_set, test_map  = processconllu_save(filefortesting)
-    #train_set2, test_set2 = divide_set(train_set)
     train_set = train_set + dev_set
     #netload('torchnet.pkl')
     train(train_set)
+    print("Training Set Length", len(train_set))
     #print('Annotated Test on', filefortesting)
     #annotatedtest(test_set, test_map, annotation, offset)
-    print()
     print('Testing on', filefortraining)
     test(train_set)
     print('Testing on', filefortesting)
@@ -113,14 +127,13 @@ def divide_set(set):
     return small_set, big_set
 
 def ru_translate(sentence_ru):
-    return translator.translate(sentence_ru, src="ru", dest= "en").text
-
-def ru_trans_conllu(sentence_ru):
-    translation = translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
-    if translation:
-        return translation
-    else:
-        return "GTrans Error"
+    for i in range(10):
+        try:
+            return translator.translate(sentence_ru, src="ru", dest= "en").text
+        except:
+            global trans_errors
+            trans_errors += 1
+    return ('Translation Failed')
 
 def find_sent(sentid, corpus):
     for sentence in corpus:
@@ -216,6 +229,15 @@ def searchtree(tree, preposition):
                 x = searchtree(child, preposition)
                 if x:
                     return x
+
+def searchtree_obj(tree, preposition):
+    if tree.children:
+        for child in tree.children:
+            if child.token['id'] == preposition:
+                return (tree)
+            x = searchtree_obj(child, preposition)
+            if x:
+                return x
                 
 def makeanswer(tree, preposition):
     node = searchtree(tree, preposition)
@@ -228,6 +250,16 @@ def makeanswer(tree, preposition):
     
 def makeanswer_1(tree, preposition):
     node = searchtree(tree, preposition)
+    if node:
+        return node.token['id']
+    else:
+        return False
+
+def makeanswer_2(tree, preposition):
+    if goal == 'obj':
+        node = searchtree_obj(tree, preposition)
+    if goal == 'src':
+        node = searchtree(tree, preposition)
     if node:
         return node.token['id']
     else:
@@ -275,7 +307,7 @@ def processconlsent(sentence, preplist):
     examples = []
     for preposition in preplist:
         question = makequestion_1(sentence, preposition)  #THIS IS WHERE THE SWITCH BETWEEN STYLES IS
-        answer = makeanswer_1(sentence.to_tree(), preposition)
+        answer = makeanswer_2(sentence.to_tree(), preposition)
         if question and answer:
             examples.append((totensor(question), totensor(answer)))
     return examples
@@ -285,7 +317,7 @@ def processconlsent_save(sentence, preplist):
     prep_fin = []
     for preposition in preplist:
         question = makequestion_1(sentence, preposition) 
-        answer = makeanswer_1(sentence.to_tree(), preposition)
+        answer = makeanswer_2(sentence.to_tree(), preposition)
         if question and answer:
             examples.append((totensor(question), totensor(answer)))
             prep_fin.append(preposition)
