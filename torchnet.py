@@ -238,22 +238,6 @@ def searchtree_obj(tree, preposition):
             x = searchtree_obj(child, preposition)
             if x:
                 return x
-                
-def makeanswer(tree, preposition):
-    node = searchtree(tree, preposition)
-    if node:
-        answer = [0]*output_size
-        answer[node.token['id']]= 1
-        return answer
-    else:
-        return False
-    
-def makeanswer_1(tree, preposition):
-    node = searchtree(tree, preposition)
-    if node:
-        return node.token['id']
-    else:
-        return False
 
 def makeanswer_2(tree, preposition):
     if goal == 'obj':
@@ -273,25 +257,6 @@ def makequestion_1(sentence, preposition):
         else:
             question.append(0)
         featlist = processword(word)
-        if word['id'] == preposition:
-            featlist[1] = 1
-        if (len(question)+ len(featlist))< input_size:          
-            for feature in featlist:
-                question.append(feature)
-        else:
-            return False
-    question.extend([0]*input_size)
-    question = question[:input_size]
-    return question
-
-def makequestion(sentence, preposition):
-    question = []
-    for word in sentence:
-        if word['lemma'] in word_vectors:
-            question.append(word_vectors[word['lemma']][0])
-        else:
-            question.append(0)
-        featlist = processpos(word)
         if word['id'] == preposition:
             featlist[1] = 1
         if (len(question)+ len(featlist))< input_size:          
@@ -411,7 +376,6 @@ def netload(filename):
     net.eval()
     
 def train(examplelist):
-    count_x = 1
     losscount_list = []
     for epoch in range(num_epochs):
         losstotal = 0
