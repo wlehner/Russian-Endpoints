@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "axiomatic-atlas-300522",
+  "private_key_id": "4391e077c39145567d30117065d0208b3965a408",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDpE8FE/aNAFKx4\nwxvaBhjygkitpRO41/PowCJcIEnCvD2w5VDdrzxowigDQWE1jbV0IDsNL75tuDRJ\nWWIP8+lFojQ1gCKYHGltNHmFEMDc+/d871BvA1nEEcV8ZVn2MXp4hyJ1S1p6rhV3\nB4T7F/5kWEPXZnPeJYW5HA2WKrjyzBGNYHOKmB6m0Jf1s70qilWU7rCHv05apnF3\nOmLpVdRN5jjlAp/0Iv3Gvcx0w+DNe4SfgBAgzPMAhXMMBdSXmG/0G4fBQZJT7fJG\nClRQpbWIxobpZ8nJ1acj2NI0K0Okfa/f7BKyBuo5PVbaphv1W5AIcisvlIOM08x1\nJ1zdbmH5AgMBAAECggEASXz0kaOlLuW10ae25uHISOJCNxnW44+XdHnr+38kspU2\noElVW2hOlDsvcYNSOpfxL+mfpNM6aA7N0ZiwnhYKJW30py+8+Jfwt8F1VTrIjISX\nblloU3BLg9IUodm06TaFhm4ZM8FsCEVOOEbzK1ZP2+Smk0pW2yKajJhnQkM7KDYM\nV/zqGdzXQpRFOpA0Qh43H/DyPkM5mL2kMoHs+jvr/5bHpUO3B97Y7Hq5zN1kSBXC\nXu3QGcPHGo2lsoHB1p03qqlvSUvkQ3SwScNZeMDhNQtrIf0QBGPBCRiBGV8YbABK\nvtgxoz+A4uC0prXujz2YezzGjn2mYAuATRUNQmaGrwKBgQD//2ZqTyX7K5bP6zwC\nzqfjvjWHBCgWkU9e4nH22LEUUpknyXc5IdET/5k/V/w2Q0ktr3hYjJret56h9Rts\naecwoxAc1GO8RVqpZNBuczWu8lh4LDk6CqC376gfAxiLnSG4y+vOqBVAGeR1be4D\nK8Q6rDNZB7azXni9fC/YOdvcmwKBgQDpFE0aaY1eOx/qYp9WeZAOCyC7XGLYXesc\nBQ6AK52a07CiX8wX4+Uwns1nT/5hXucdOjNmfFrBAg7pH0wgh0BxKkpiqLANSGOg\nnPFIeVLv1g7oa8V4xz5udZQv+BAQYTIE5w30sbn2Qq+HYevMh/PLw5dZWoEAsafi\ncgiw9Hmi+wKBgFBTf3tUIoLRhpzvHwFyftPDV2BqOXn7VoBbZY8jJ01NLamCWdqf\ndc9koF1z6jvMmSWwrX57gAzqaOhA1L4L7PMh92hUbIci6/PDInPFys5+VKxAlCRW\nOV/93y779bO5Nl+Z/P/3VdOrTDhcqhZsoUIXznTdKsLVneU3Fnwui4KJAoGALqSU\nZXO4CaJ1WZdQ4aJEFLtfWn87fKcW1K2iYD3aNVClqWjYU/OUOu2cl08nzd6LC4tJ\nG/pIwxUhXL+ZoWzPlZXr+uBdEttorIybsHAvC7Xfl91xUCE3Oi2ncQ4IUO7Sbq66\nWTxzxXdE3yfWY0DVpfJHSGdXJ4dl3GgLmzXhXZ8CgYEAnxAdJ/sRU95eKaArhT36\nb/rbEVoOTkZrp1CNp+NmpHUP9TGSZsj7wsKRIGA60HWJXacm82pdIC3kCfoF8tlp\npZJuyqCKIPu/5ap/nZDoyK7xnWrBTIEQ5GeCwnUcC+00UVJYg2DmlJ7sssiBvDdC\nYZ6wxG9mBqwpdCJK168DAoA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "wlehner@axiomatic-atlas-300522.iam.gserviceaccount.com",
+  "client_id": "107788355278202102328",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wlehner%40axiomatic-atlas-300522.iam.gserviceaccount.com"
+}

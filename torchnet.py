@@ -15,10 +15,15 @@ import numpy as np
 import torch.nn as nn
 import torch.nn.functional as f
 from datetime import datetime
-from googletrans import Translator
 
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Project4391e077c391.json"
+import six
+from google.cloud import translate_v2 as translate
+
+#Annotation Imput Part 1
 goal = 'obj'#srcobj
-
+output_number = '94'
 
 #Files
 corpus_root= 'sample_ar/TEXTS'
@@ -26,7 +31,6 @@ fiction_root= 'sample_ar/TEXTS/Fiction/'
 development_set= 'ru_syntagrus-ud-dev.conllu'
 testing_set= 'ru_syntagrus-ud-test.conllu'
 training_set= 'ru_syntagrus-ud-train.conllu'
-output_number = '94'
 graphlossout  = 'pointstoplot' + output_number
 sentencemap = 'sentmap' + output_number 
 testexamples = 'testexam' + output_number
@@ -45,37 +49,45 @@ trans_errors = 0
 
 ##NN Stuff
 num_epochs = 100
-#batch_size = 32
 learning_rate = 0.0001 #Default 1E-3
 weight_decay = 0.00001 #Less than lr?
 #betas = (0.0, 0.9) #Default 0.9,0.999
 
+#Vocabulary
+#Preposition Lists
+prepositions1 = ['в','на','за','к','из','с','от','под']
+prepositions2 = ['в','на', 'из','с','от','к','под','за','перед','над','у']
+#preposition: case dictionaries
+# {'в':'acc','на':'acc','за':'acc','к':'dat','под':'acc'}
+prepdir = {'в':'acc','на':'acc','за':'acc','к':'dat','из':'gen','с':'gen','от':'gen','под':'acc'}
+preploc = {'в':'loc','на':'loc','за':'ins','под':'ins'}
+#Verb Lists
+verbs_of_change = ["стать","встать","поставить","лечь","класть",
+                    "положить","уложить","садиться","посадить","сесть",
+                    "усесться","вешать","повесить","вешаться",
+                    "повеситься","прятаться","спрятаться","прятать",
+                    "спрятать","собираться"]
+verbs_of_motion = ["идти","ходить","ехать","ездить","бежать","бегать",
+                   "брести","бродить","гнать","гонять","лезть","лазить",
+                   "лететь","летать","плыть","плавать","ползти",
+                   "ползать","везти","возить","нести","носить","вести",
+                   "водить","тащить","таскать"]
 
+#Annotation Imput Part 2
+prepositions = prepositions2
 filefortraining = training_set
 filefordev = development_set
 filefortesting = testing_set
-
-#Prepositions
-orig  = ['\u0432','\u043D\u0430','\u0437\u0430','\u043A','\u0438\u0437','\u0441','\u043E\u0442'] 
-#v, na, za, k, uz, c, ot
-fore = ['\u0432','\u043d\u0430','\u043a','\u043f\u043e\u0434','\u0437\u0430',
-               '\u043f\u0435\u0440\u0435\u0434','\u043d\u0430\u0434','\u0443']
-#v, na, k, pod, za, pered, nad, y
-allprep = ['\u0432','\u043D\u0430','\u0438\u0437','\u0441','\u043E\u0442','\u043a',
-           '\u043f\u043e\u0434','\u0437\u0430','\u043f\u0435\u0440\u0435\u0434','\u043d\u0430\u0434','\u0443']
-#v, na,  uz, c, ot, k, pod, za, pered, nad, y 
-prepositions = allprep
 prepstring = 'All'
+picklesave = 'tnet_' +str(num_epochs) +'hl' +str(hidden_size) +'x' +str(hidden_layers)  +goal + output_number + '.pkl'
 
 #Other
 model = Word2Vec.load("word2vec.model")
 word_vectors = model.wv
-translator = Translator()
+translate_client = translate.Client()
 log_freq = 100000
 shuffle = True
 test_index = []
-
-picklenet = 'tnet_' +str(num_epochs) +'hl' +str(hidden_size) +'x' +str(hidden_layers)  +goal + output_number + '.pkl'
 
 def main_method():
     main_training()
@@ -112,38 +124,8 @@ def loadtesting():
     print('Testing on', filefortesting)
     test(test_set)
     print('Tested on Training Data:', filefortraining, 'and', filefordev)
-    test(train_set) 
-
-def divide_set(set):
-    tenth_size = round(len(set)/10)
-    small_set = []
-    big_set = []
-    for i, (question1, answer1) in enumerate(set):
-        if i < tenth_size:
-            small_set.append((question1, answer1))
-        else:
-            big_set.append((question1, answer1))
-        i += 1
-    return small_set, big_set
-
-def ru_translate(sentence_ru):
-    for i in range(10):
-        try:
-            return translator.translate(sentence_ru, src="ru", dest= "en").text
-        except:
-            global trans_errors
-            trans_errors += 1
-    return ('Translation Failed')
-
-def find_sent(sentid, corpus):
-    for sentence in corpus:
-        if sentence.metadata['sent_id']==sentid:
-            return sentence
-    return False
-
-def totensor(list):
-    return torch.tensor(list)
-
+    test(train_set)
+    
 #class model
 class Net(nn.Module):
     def __init__(self, inputs, hiddens, hidden_layers2, outputs):
@@ -180,6 +162,104 @@ net = net.float()
 #criterion = nn.SmoothL1Loss() 
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(net.parameters(), lr= learning_rate, weight_decay= weight_decay)
+
+def loadlist(filename):
+    return pickle.load(open(filename,"rb"))
+
+def divide_set(set):
+    tenth_size = round(len(set)/10)
+    small_set = []
+    big_set = []
+    for i, (question1, answer1) in enumerate(set):
+        if i < tenth_size:
+            small_set.append((question1, answer1))
+        else:
+            big_set.append((question1, answer1))
+        i += 1
+    return small_set, big_set
+
+def ru_translate(text):
+    if isinstance(text, six.binary_type):
+        text = text.decode("utf-8")
+    return translate_client.translate(text, target_language='en', source_language='ru')['translatedText']
+
+def find_sent(sentid, corpus):
+    for sentence in corpus:
+        if sentence.metadata['sent_id']==sentid:
+            return sentence
+    return False
+
+def totensor(list):
+    return torch.tensor(list)
+
+def searchconllu(file):
+    corpus = parse(open(file, 'r',encoding ="utf-8").read())
+    motionlists = {'ll':[], 'dd':[], 'ld':[], 'dl':[], 'o':[]}
+    changelists = {'ll':[], 'dd':[], 'ld':[], 'dl':[], 'o':[]}
+    for sentence in corpus:
+        for word in sentence:
+            if word['lemma'] in verbs_of_motion:
+                code = searchsentverb(searchtree_id(word['id'], sentence.to_tree()), sentence)
+                if code:
+                    motionlists[code].append(sentence)
+            if word['lemma'] in verbs_of_change:
+                code = searchsentverb(searchtree_id(word['id'], sentence.to_tree()), sentence)
+                if code:
+                    changelists[code].append(sentence)
+    return motionlists, changelists
+                
+def searchtree_id(word_id, tree):
+    if tree.token['id'] == word_id:
+        return tree
+    if tree.children:
+        for child in tree.children:
+            st = searchtree_id(word_id, child)
+            if st:
+                return st
+                
+def searchsentverb(word_tree, sentence):
+    if word_tree.children:
+        for child in word_tree.children:#possible first objects
+            obj1 = False
+            if child.children:
+                obj1 = child
+                prep1 = False
+                obj2 = False
+                for grandchild in child.children: #possible 1st prepositions & 2nd objects
+                    if grandchild.token['form'] in prepositions:
+                        prep1 = grandchild.token['form']
+                    if grandchild.children:
+                        prep2 = False
+                        for grtgrandchild in grandchild.children: #possible 2nd prepositions
+                            obj2 = grandchild
+                            if grtgrandchild.token['form'] in prepositions:
+                                prep2 = grtgrandchild.token['form']
+                                obj1pos = sentence[(obj1.token['id'])-1]['upostag']
+                                obj2pos = sentence[(obj2.token['id'])-1]['upostag']
+                                if (obj1pos == 'NOUN') and (obj2pos == 'NOUN'):
+                                    case1 = sentence[((obj1.token['id'])-1)]['feats']['Case'].lower()
+                                    case2 = sentence[((obj2.token['id'])-1)]['feats']['Case'].lower()
+                                    dir1, dir2, loc1, loc2 = False, False, False, False
+                                    if prep1 in prepdir:
+                                        dir1 = (prepdir[prep1] == case1)
+                                    if prep2 in prepdir:
+                                        dir2 = (prepdir[prep2] == case2)
+                                    if prep1 in preploc:
+                                        loc1 = (preploc[prep1] == case1)
+                                    if prep2 in preploc:
+                                        loc2 = (preploc[prep2] == case2)
+                                    if dir1 and dir2:
+                                        return 'dd'
+                                    if loc1 and loc2:
+                                        return 'll'
+                                    if dir1 and loc2:
+                                        return 'ld'  #I'm going with inner- outer order
+                                    if loc1 and dir2:
+                                        return 'dl'
+                                else:
+                                    return 'o'
+    return False
+
 
 #Takes Conllu Format and Produces a list of examples
 def processconllu(file):
@@ -394,7 +474,7 @@ def train(examplelist):
             if (i+1) % log_freq == 0:                              # Logging
                 print('Epoch [%d/%d], Step [%d/%d], Avg Loss: %.4f' %(epoch+1, num_epochs, i+1, len(examplelist), losstotal/log_freq))
                 losstotal = 0
-    torch.save(net.state_dict(), picklenet)
+    torch.save(net.state_dict(), picklesave)
     if graph_bool:
         pickle.dump(losscount_list, open(graphlossout, "wb"))#Loss Data is Saved
 
@@ -408,6 +488,22 @@ def test(testlist):
         if torch.eq(pred, answer):
             correct += 1
     print('Accuracy of the network: ', (100 * correct / total), '%')
+    
+def testposs(testlist, tries):
+    firstacc = 0
+    correct = 0
+    total = 0
+    for question,answer in testlist:
+        total += 1
+        output = net(question.float())
+        pred = output.max(0)[1]
+        poss = np.argpartition(output.detach().numpy(), -tries)[-tries:]
+        for n, p in enumerate(poss):
+            if (p == pred) and (p == answer):
+                firstacc += 1
+            if (p == answer):
+                correct += 1
+    print('Accuracy of the network:', (100 * correct / total), '%, First choice: ', (100 * firstacc / total), '%')
     
 
 #Dev Tests    
@@ -423,7 +519,6 @@ def annotatedtest(testlist, testmap,  limit, off_set):
         output = net(question.float())
         pred = output.max(0)[1]
         poss = np.argpartition(output.detach().numpy(), -4)[-4:]
-        pred_num = output
         total += 1
         acc = torch.eq(pred, answer)
         if acc:
@@ -491,36 +586,5 @@ def annotatedtrain(examplelist, limit):
             if (i+1) % 1 == 0:
                 print("Predicted Value:", pred.item(), " Answer:", answer, " Loss:", loss.item())
         
-        
-def CrossEntropyLoss_1(outputs, labels):
-  batch_size = outputs.size()[0]            # batch_size
-  outputs = f.log_softmax(outputs, dim=1)   # compute the log of softmax values
-  outputs = outputs[range(batch_size), labels] # pick the values corresponding to the labels
-  return -torch.sum(outputs)#/num_examples
-
-def CrossEntropyLoss_2(x, y):
-    log_prob = -1.0 * f.log_softmax(x, 1)
-    loss = log_prob.gather(1, y)
-    loss = loss.mean()
-    return loss
-        
-#https://discuss.pytorch.org/t/runtimeerror-multi-target-not-supported-newbie/10216/3
-#https://mlpipes.com/adding-a-dimension-to-a-tensor-in-pytorch/
-#multi-target not supported at /Users/soumith/b101_2/2019_02_08/wheel_build_dirs/wheel_3.6/pytorch/aten/src/THNN/generic/ClassNLLCriterion.c:21
-#https://www.programcreek.com/python/example/107644/torch.nn.CrossEntropyLoss
-#https://github.com/asappresearch/sru/blob/master/classification/train_classifier.py
-#Formating Help: https://github.com/htfy96/future-price-predictor/blob/master/model/cnnBeta.py
-            
 main_method()
 
-
-#List of Problems
-#1- Punctuation
-#2- Line up all features
-
-#Loss Functions
-#https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7
-
-#Examples
-#https://towardsdatascience.com/a-simple-starter-guide-to-build-a-neural-network-3c2cf07b8d7c
-#https://pytorch.org/tutorials/beginner/nlp/deep_learning_tutorial.html#sphx-glr-beginner-nlp-deep-learning-tutorial-py
