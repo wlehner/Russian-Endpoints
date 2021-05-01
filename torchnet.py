@@ -17,13 +17,13 @@ import torch.nn.functional as f
 from datetime import datetime
 
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Project4391e077c391.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Project-cc0d8ec7a081.json"
 import six
 from google.cloud import translate_v2 as translate
 
 #Annotation Imput Part 1
-goal = 'obj'#srcobj
-output_number = '94'
+goal = 'src'#srcobj
+output_number = '95'
 
 #Files
 corpus_root= 'sample_ar/TEXTS'
@@ -38,8 +38,8 @@ graph_bool = True
 test_bool = False 
 
 #Dimensions
-input_size = 440 #154
-hidden_size = 200  #154
+input_size = 616 #440 #154
+hidden_size = 300  #154
 output_size = 45 #Output Size and sentence length need to be seperated
 class_num = output_size+1 #number of classes should be outputsize+1
 hidden_layers = 1
@@ -48,7 +48,7 @@ annotation = 5
 trans_errors = 0
 
 ##NN Stuff
-num_epochs = 100
+num_epochs = 60
 learning_rate = 0.0001 #Default 1E-3
 weight_decay = 0.00001 #Less than lr?
 #betas = (0.0, 0.9) #Default 0.9,0.999
@@ -82,16 +82,17 @@ prepstring = 'All'
 picklesave = 'tnet_' +str(num_epochs) +'hl' +str(hidden_size) +'x' +str(hidden_layers)  +goal + output_number + '.pkl'
 
 #Other
-model = Word2Vec.load("word2vec.model")
-word_vectors = model.wv
+modeldic = Word2Vec.load("word2vec4.model")
+word_vectors = modeldic.wv
 translate_client = translate.Client()
 log_freq = 100000
 shuffle = True
 test_index = []
 
 def main_method():
-    main_training()
+    #main_training()
     #loadtesting()
+    print('done') 
 
 def main_training():
     print('TRAINING:Started at:', datetime.now(), ' Goal:', goal,' Prepositions:', prepstring, ' Learning Rate:', learning_rate, ' Epochs:', num_epochs, 
@@ -193,7 +194,6 @@ def totensor(list):
     return torch.tensor(list)
 
 def searchconllu(file):
-    corpus = parse(open(file, 'r',encoding ="utf-8").read())
     motionlists = {'ll':[], 'dd':[], 'ld':[], 'dl':[], 'o':[]}
     changelists = {'ll':[], 'dd':[], 'ld':[], 'dl':[], 'o':[]}
     for sentence in corpus:
@@ -328,12 +328,18 @@ def makeanswer_2(tree, preposition):
         return node.token['id']
     else:
         return False
+
+def flatlist(vector):
+    vlist = []
+    for  x in vector:
+        vlist.append(x)
+    return vlist
     
 def makequestion_1(sentence, preposition):
     question = []
     for word in sentence:
         if word['lemma'] in word_vectors:
-            question.append(word_vectors[word['lemma']][0])
+            question.append(flatlist(word_vectors[word['lemma']]))
         else:
             question.append(0)
         featlist = processword(word)

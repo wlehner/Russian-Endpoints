@@ -20,7 +20,7 @@ import os
 #from tensorflow.keras import layers
 import xml.etree.ElementTree as ET
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Project4391e077c391.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Project-cc0d8ec7a081.json"
 import six
 from google.cloud import translate_v2 as translate
 
@@ -33,8 +33,8 @@ public_root = corpus_root + '/public/'
 science_root = corpus_root + '/science/'
 speech_root = corpus_root + '/speech/'
 
-loadobj = 'tnet_100hl200x1objfor92.pkl' #'tnet_100hl200x1obj87.pkl'
-loadsrc = 'tnet_100hl200x1srcfor91.pkl' #'tnet_100hl200x1src88.pkl'
+loadobj = 'networks_folder/tnet_100hl200x1obj92.pkl' #'tnet_100hl200x1obj87.pkl'
+loadsrc = 'networks_folder/tnet_100hl200x1src91.pkl' #'tnet_100hl200x1src88.pkl'
 
 fictionfiles = os.listdir(fiction_root)
 corpusfiles = 'sample_ar/TEXTS/.*.xhtml'
@@ -311,6 +311,23 @@ def searchlocatdest(directory):
                 locatdestlist.append(sentence)
     print('Possible examples: ', len(locatdestlist))
     return locatdestlist
+
+def searchlocatdest2(directory):
+    locatdestlist = []
+    filelist = os.listdir(directory)
+    for file in filelist:
+        filexml = ET.parse(directory + file)
+        for sentence in filexml.getroot()[1].iter('se'):
+            c = False
+            for index, word in enumerate(sentence.iter('w')):
+                if word[0].get('lex') in verbs_of_change:
+                    locpreps = checkword2(sentence, index, locatprep)
+                    if any(locpreps):
+                        c = True
+            if c:
+                locatdestlist.append(sentence)
+    print('Possible examples: ', len(locatdestlist))
+    return locatdestlist
                                     
     
 def searchsent(index, sentence):
@@ -404,6 +421,12 @@ def getlex(sent, lindex):
         if lindex == index:
             return word[0].get('lex')
 
+def flatlist(vector):
+    vlist = []
+    for  x in vector:
+        vlist.append(x)
+    return vlist
+
 def process_sentence(sentence, prepindex):
     product = []
     if len(sentence)*11 > input_size:
@@ -412,7 +435,7 @@ def process_sentence(sentence, prepindex):
     for index, word in enumerate(sentence.iter('w')):
         ru_word = word[0].get('lex')
         if ru_word in word_vectors:
-            product.append(word_vectors[ru_word][0])
+            product.append(flatlist(word_vectors[word['lemma']]))
         else:
             product.append(0)
         feats = processword(word)

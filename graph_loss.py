@@ -14,14 +14,15 @@ import pickle
 #import matplotlib as mpl
 #mpl.rcParams['agg.path.chunksize'] = 10000
 
-points = pickle.load( open( "pointstoplot46", "rb" ))
+points = pickle.load( open( "graphdata_folder/pointstoplot94", "rb" ))
 #points = pickle.load(open("plotdic9"))
 #intpoints = []
 #for point in points:
    #intpoints.append(torch.IntTensor.item(point)) 
 
-epoch_num = 60
-data_size = 57303 #50967 #57303
+epoch_num = 100
+#data_size = 57303 #50967 #57303
+data_size = 61607
 ave_len = 1000
 
 averages = bn.move_mean(points, window=ave_len, min_count=1)
@@ -32,6 +33,7 @@ plt.plot(averages, ',r')
 plt.ylabel('Loss')
 plt.xlabel('Epochs')
 plt.axis([0,len(points),0,6])
-epochs = [0,5,10,15,20,25,30,35,40,45,50,55,60]
-plt.xticks(np.arange(0,(epoch_num*data_size), step=data_size*5), epochs)
-plt.savefig('scatterplot46.png', dpi = 1000)
+#epochs = [0,5,10,15,20,25,30,35,40,45,50]
+epochs = [0,10,20,30,40,50,60,70,80,90]
+plt.xticks(np.arange(0,(epoch_num*data_size), step=data_size*10), epochs)
+plt.savefig('scatterplot94.png', dpi = 1000)
