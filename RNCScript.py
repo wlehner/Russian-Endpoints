@@ -20,11 +20,11 @@ import os
 #from tensorflow.keras import layers
 import xml.etree.ElementTree as ET
 
-#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ""
 import six
-#from google.cloud import translate_v2 as translate
+from google.cloud import translate_v2 as translate
 
-#translator = Translator()
+translator = Translator()
 model = Word2Vec.load("word2vec4.model")
 
 corpus_root= 'sample_ar/TEXTS'
@@ -50,7 +50,7 @@ sentchangelist = []
 sentmotionlist = []
 sentlen = 440 #205
 
-#trans_errors = 0
+trans_errors = 0
 
 ceffile= 'ChangeEx_Fiction'
 meffile= 'MotionEx_Fiction'
@@ -63,7 +63,7 @@ class color():
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 
-#translate_client = translate.Client()
+translate_client = translate.Client()
 
 prepdir2 = {'в':'acc','на':'acc','под':'acc','за':'acc','к':'dat'}
 preploc2 = {'в':'loc','на':'loc','под':'ins','за':'ins','перед':'ins','над':'ins','у':'gen'}
@@ -136,10 +136,10 @@ def netload(filename, nn):
 def pickleload(filename):
     return pickle.load(open(filename,"rb"))
 
-#def ru_translate(text):
-    #if isinstance(text, six.binary_type):
-        #text = text.decode("utf-8")
-    #return translate_client.translate(text, target_language='en', source_language='ru')['translatedText']    
+def ru_translate(text): #Requires translation be enabled
+    if isinstance(text, six.binary_type):
+        text = text.decode("utf-8")
+    return translate_client.translate(text, target_language='en', source_language='ru')['translatedText']    
     
 def test(directory):    
     file = os.listdir(directory)[2]
@@ -159,22 +159,22 @@ def printsection(biglist, num):
     printsentlist(biglist[start:end], start)
     #printgram(biglist[start:end])
         
-#def transent(sentence):
-    #bad_trans= ''
-    #for word in sentence.iter('w'):
-        #ru_word = word[0].get('lex')
-        #ru_line += (' ' + ru_word)
-        #bad_trans += (' ' + color.UNDERLINE + ru_translate(ru_word) + color.END + getgram(word))
-    #print(ru_line)
-    #return bad_trans
+def transent(sentence): #Requires translation be enabled
+    bad_trans= ''
+    for word in sentence.iter('w'):
+        ru_word = word[0].get('lex')
+        ru_line += (' ' + ru_word)
+        bad_trans += (' ' + color.UNDERLINE + ru_translate(ru_word) + color.END + getgram(word))
+    print(ru_line)
+    return bad_trans
     
-def printsentlist(sentences, offset):
+def printsentlist(sentences, offset): #Requires translation be enabled
     for index, sentence in enumerate(sentences):
         ru_line = ''
         for word in sentence.iter('w'):
             ru_line += word[0].get('lex') + ' '
         print((index+offset), ru_line)
-        #print (transent(sentence), '\n')
+        print (transent(sentence), '\n')
         
 def printgram(sentences):
     for index, sentence in enumerate(sentences):
@@ -475,14 +475,14 @@ def checkprepobj2(sentence, prepindex):
         output = netobj(torch.tensor(tempquest).float())
         return output.max(0)[1]
         
-#def ru_translate2(sentence_ru):
-    #for i in range(3):
-        #try:
-            #return translator.translate(sentence_ru, src="ru", dest= "en").text
-        #except:
-            #global trans_errors
-            #trans_errors += 1
-    #return ('TF')
+def ru_translate2(sentence_ru): #Requires translation be enabled
+    for i in range(3):
+        try:
+            return translator.translate(sentence_ru, src="ru", dest= "en").text
+        except:
+            global trans_errors
+            trans_errors += 1
+    return ('TF')
         
 # http://www.ruscorpora.ru/en/corpora-morph.html
 # https://universaldependencies.org/treebanks/ru_syntagrus/index.html
