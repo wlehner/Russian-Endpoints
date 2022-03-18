@@ -26,6 +26,7 @@ development_set= 'ru_syntagrus-ud-dev.conllu'
 testing_set= 'ru_syntagrus-ud-test.conllu'
 training_set= 'ru_syntagrus-ud-train.conllu'
 
+#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 
 #translator = Translator()
 
 #motioncorpus = parse(open(motionfilename, 'r',encoding ="utf-8").read())
