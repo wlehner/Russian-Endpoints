@@ -8,7 +8,7 @@ Created on Wed Dec  5 15:46:17 2018
 import nltk
 from conllu import parse
 from conllu import parse_tree
-#from googletrans import Translator
+from googletrans import Translator
 
 verbs_of_change = ["стать","встать","поставить","лечь","класть",
                     "положить","уложить","садиться","посадить","сесть",
@@ -26,8 +26,8 @@ development_set= 'ru_syntagrus-ud-dev.conllu'
 testing_set= 'ru_syntagrus-ud-test.conllu'
 training_set= 'ru_syntagrus-ud-train.conllu'
 
-#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 
-#translator = Translator()
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ""
+translator = Translator()
 
 #motioncorpus = parse(open(motionfilename, 'r',encoding ="utf-8").read())
 #changecorpus = parse(open(changefilename, 'r',encoding ="utf-8").read())
@@ -58,8 +58,8 @@ def searchdfile(file):
 def gettext(sentence_ru):
     return sentence_ru.metadata["text"]
 
-#def ru_translate(sentence_ru):
-    #return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
+def ru_translate(sentence_ru): #Requires translation be enabled
+    return translator.translate(sentence_ru.metadata["text"], src="ru", dest= "en").text
 
 def testprep(node):
     if node.token["lemma"] in prepositions:
@@ -161,19 +161,19 @@ def printresult(resultdict):
     print("Directional in Directional: ", len(resultdict["dirindir"]))
     print("Other situations: ", len(resultdict["other"]))
     
-#def printtranslate(sentencelist):
-    #for sentence in sentencelist:
-        #print(gettext(sentence))
-        #print(ru_translate(sentence) + "\n")
+def printtranslate(sentencelist): #Requires translation be enabled
+    for sentence in sentencelist:
+        print(gettext(sentence))
+        print(ru_translate(sentence) + "\n")
     
 
 #Need to finish printout
-def printout():
+def printout(): #Requires translation be enabled
     print("\nFor Change of State Verbs:")
     printresult(changeresult)
     print("\nLocational in Directional")
-    #printtranslate(changeresult["locindir"])
+    printtranslate(changeresult["locindir"])
     print("\nDirectional in Locational")
-    #printtranslate(changeresult["dirinloc"])
+    printtranslate(changeresult["dirinloc"])
     print("\nDirectional in Directional")
-    #printtranslate(changeresult["dirindir"])
+    printtranslate(changeresult["dirindir"])
