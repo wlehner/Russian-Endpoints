@@ -17,7 +17,7 @@ import torch.nn.functional as f
 from datetime import datetime
 
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Project-cc0d8ec7a081.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ""
 import six
 from google.cloud import translate_v2 as translate
 
@@ -179,7 +179,7 @@ def divide_set(set):
         i += 1
     return small_set, big_set
 
-def ru_translate(text):
+def ru_translate(text): #Requires translation to be enabled
     if isinstance(text, six.binary_type):
         text = text.decode("utf-8")
     return translate_client.translate(text, target_language='en', source_language='ru')['translatedText']
@@ -513,7 +513,7 @@ def testposs(testlist, tries):
     
 
 #Dev Tests    
-def annotatedtest(testlist, testmap,  limit, off_set):
+def annotatedtest(testlist, testmap,  limit, off_set): #Requires Translation to be enabled
     corpus = parse(open(filefortesting, 'r',encoding ="utf-8").read())
     testlist = testlist[(0+off_set):(limit+off_set)]
     correct = 0
