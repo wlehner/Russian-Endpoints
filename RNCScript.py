@@ -25,7 +25,7 @@ import six
 #from google.cloud import translate_v2 as translate
 
 #translator = Translator()
-model = Word2Vec.load("word2vec.model")
+model = Word2Vec.load("word2vec4.model")
 
 corpus_root= 'sample_ar/TEXTS'
 fiction_root= 'sample_ar/TEXTS/fiction/'
