@@ -9,5 +9,5 @@ module load python3
 #$ -l h_rt=24:00:00
 #$ -m ea
 
-python torchnet.py
+python main_network.py
 
