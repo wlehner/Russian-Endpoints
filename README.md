@@ -10,7 +10,7 @@ In Russian, prepositional phrases indicating location and phrases indicating des
  - I-NOM hung-PF   a clock-ACC   in.D a window-ACC in.L the room-LOC Tempe-Gen.  
  - I hung a clock on a window in Tempe's room. (RNC: Rid Grachev. In the 52nd year)  
   
-  As the example demonstrates, it is possible for the inner location to be directional and the outer locational to be locational. The purpose of this project was to determine if the reverse is possible as suggested by Blazhev[^1] or prohibited as suggested by Israeli [^2]. 
+  As the example demonstrates, it is possible for the inner location to be directional and the outer locational to be locational. The purpose of this project was to determine if the reverse is possible as suggested by Blazhev[^1] or prohibited as suggested by Israeli[^2]. 
 
 ## How to Use
 ### Organization
@@ -30,6 +30,6 @@ In Russian, prepositional phrases indicating location and phrases indicating des
 ### Google Translation
 During the project I used a Google translate API that required a Google Project and key to function. I have removed my key, but if you set up your own Google project, you can insert your own API key. You would need to put the key in the folder and insert the name of the key into in RNCscript.py, main_network.py, and searchphraseconllu.py as os.environ["GOOGLE_APPLICATION_CREDENTIALS"].  
 
-[^1] Blazhev, B. I. 1988. Upotreblenie Konstrukcii Napravlenija i Mesta v Sovremennom Russkom Jazyke. 2nd ed. Sofia: Narodna Prosveta.
+[^1]: Blazhev, B. I. 1988. Upotreblenie Konstrukcii Napravlenija i Mesta v Sovremennom Russkom Jazyke. 2nd ed. Sofia: Narodna Prosveta.
 
-[^2] Israeli, Alina. 2004. “Case Choice in Placement Verbs in Russian.” Glossos, no. 5: 1–54.
+[^2]: Israeli, Alina. 2004. “Case Choice in Placement Verbs in Russian.” Glossos, no. 5: 1–54.
