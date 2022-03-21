@@ -26,7 +26,6 @@ In Russian, prepositional phrases indicating location and phrases indicating des
   - word2vec4.model: This is the word2vec model used to encode text into numbers that can be fed into the NN. 
 - RNCscript.py: Searches the main corpus for possible examples using models.
 - Searchphraseconllu.py: Searches the deeply annotated corpus for examples of nested prepositional phrases. 
-- 
 
 ### Google Translation
 During the project I used a Google translate API that required a Google Project and key to function. I have removed my key, but if you set up your own Google project, you can insert your own API key. You would need to put the key in the folder and insert the name of the key into in RNCscript.py, main_network.py, and searchphraseconllu.py as os.environ["GOOGLE_APPLICATION_CREDENTIALS"].  
