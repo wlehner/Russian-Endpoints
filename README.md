@@ -1,7 +1,7 @@
 # Russian Endpoints
 ## Purpose
 
-The goal of the Master's project was to search the Russian National Corpus (RNC) for to nested prepositional phrases to see whether particular patterns are present. Only a portion of the RNC is tagged for grammatical relationships the Deeply Annotated Corpus (DAC). In order to search the main corpus for grammatical relationships, I trained two Pytorch models on the DAC, one to identify the object of a particular preposition and one to identify the preposition that might be modifying a particular word. These models were used to process sentences from the main corpus to determine if they contained nesting prepositional phrases that could be used as evidence. 
+This project was created as part of my final project for my Master's degree in Applied Linguistics at Boston University. The goal of the Master's project was to search the Russian National Corpus (RNC) for to nested prepositional phrases to see whether any appeared with an inner locational phrase and outer directional phrase. However, only a portion of the RNC is tagged for grammatical relationships, the Deeply Annotated Corpus (DAC). As I needed those grammatical relationships in order to search the main corpus for nested prepositional phrases, I trained two Pytorch Feedforeward Neural Networks (FFNN) on the DAC, one to identify the object of a particular preposition and one to identify the preposition that might be modifying a particular word. These FFNNs were used to process sentences from the main corpus to determine if they contained nesting prepositional phrases that could be used as evidence. 
 
 ## Linguistic Theory
 In Russian, prepositional phrases indicating location and phrases indicating destination use the same set of prepositions, and are differentiated by the case of the object. If I wanted to say that I am 'in the university' the phrase would be 'в университете' [in university.LOC] but if I wanted to say that I am walking 'to the university' I would use the phrase 'в университет' [in university.ACC]. In this example the objects are in the locative and accusative cases respectively. In the case of nested locations such as "in the car, on the road," both phrases are usually either locational or directional, mostly depending on the verb. However a subsection of verbs, typically describing a change of state, can take as endpoints either locational or directional phrases. As such these verbs can also take nested prepositional phrases that are mixed. For example:  
@@ -12,7 +12,13 @@ In Russian, prepositional phrases indicating location and phrases indicating des
   
   As the example demonstrates, it is possible for the inner location to be directional and the outer locational to be locational. The purpose of this project was to determine if the reverse is possible as suggested by Blazhev[^1] or prohibited as suggested by Israeli[^2]. 
 
-## How to Use
+## Environment
+This was developed in Python 3.6 primarily on the Boston University Shared Computing Cluster running Linux CentOS 7.5.
+
+### Requirements
+- Python 3
+- Pytorch, Gensim, Conllu, Numpy, Google Cloud Translate
+
 ### Organization
 - Corpora
   - Deeply Annotated Corpus: Stored in the three Conllu files ru_syntagrus-ud-dev.conllu, ru_syntagrus-ud-test.conllu, and ru_syntagrus-ud-train.conllu.
@@ -28,7 +34,7 @@ In Russian, prepositional phrases indicating location and phrases indicating des
 - Searchphraseconllu.py: Searches the deeply annotated corpus for examples of nested prepositional phrases. 
 
 ### Google Translation
-During the project I used a Google translate API that required a Google Project and key to function. I have removed my key, but if you set up your own Google project, you can insert your own API key. You would need to put the key in the folder and insert the name of the key into in RNCscript.py, main_network.py, and searchphraseconllu.py as os.environ["GOOGLE_APPLICATION_CREDENTIALS"].  
+During the project I used a Google translate API that required a Google Project and key to function. I have removed my key, but if you set up your own Google project, you can insert your own API key. You would need to put the key in the folder and insert the name of the key into in RNCscript.py, main_network.py, and searchphraseconllu.py as os.environ["GOOGLE_APPLICATION_CREDENTIALS"]. There are free APIs that use google translate such as googletrans but the translation requests started getting rejected after I had used it a little bit. 
 
 [^1]: Blazhev, B. I. 1988. Upotreblenie Konstrukcii Napravlenija i Mesta v Sovremennom Russkom Jazyke. 2nd ed. Sofia: Narodna Prosveta.
 
